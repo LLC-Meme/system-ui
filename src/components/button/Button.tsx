@@ -1,5 +1,5 @@
 import React from "react";
-import { cn } from "../../cn";
+import { cn } from "../../utils/cn";
 
 type ButtonVariant = "default" | "danger" | "outline";
 

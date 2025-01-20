@@ -1,8 +1,8 @@
 import React from "react";
-import { cn } from "../../cn";
+import { cn } from "../../utils/cn";
 
 export interface BadgeProps extends React.PropsWithChildren<React.HTMLAttributes<HTMLDivElement>> {
-  /** ボタンの色  */
+  /** バッジの色  */
   color: Color;
 }
 
