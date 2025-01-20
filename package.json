@@ -1,12 +1,6 @@
 {
-  "name": "system-ui",
+  "name": "@llcmeme/system-ui",
   "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": ""
+  "private": true,
+  "description": "React UI components for system design"
 }
