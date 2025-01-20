@@ -7,6 +7,7 @@ function Separator() {
     <Arrow.Right className="fill-foreground" />
   );
 }
+Separator.displayName = "Breadcrumb.Separator";
 
 function Item({
   current = false,
@@ -28,6 +29,7 @@ function Item({
     </nav>
   );
 }
+Item.displayName = "Breadcrumb.Item";
 
 function Container({
   children
@@ -40,6 +42,7 @@ function Container({
     </nav>
   );
 }
+Container.displayName = "Breadcrumb.Container";
 
 const Breadcrumb = {
   Separator,

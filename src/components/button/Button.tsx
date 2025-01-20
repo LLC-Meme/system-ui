@@ -24,5 +24,6 @@ function Button({
     </span>
   );
 }
+Button.displayName = "Button";
 
 export default Button;

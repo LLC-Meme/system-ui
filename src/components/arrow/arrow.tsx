@@ -17,6 +17,7 @@ const Left = React.forwardRef<SVGSVGElement, ArrowProps>(({ ...props }, ref) => 
     </svg>
   );
 });
+Left.displayName = "Arrow.Left";
 
 const Right = React.forwardRef<SVGSVGElement, ArrowProps>(({ ...props }, ref) => {
   return (
@@ -33,6 +34,7 @@ const Right = React.forwardRef<SVGSVGElement, ArrowProps>(({ ...props }, ref) =>
     </svg>
   );
 });
+Right.displayName = "Arrow.Right";
 
 const Arrow = {
   Left,
