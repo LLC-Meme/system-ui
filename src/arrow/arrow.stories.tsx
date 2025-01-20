@@ -2,6 +2,7 @@ import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import Arrow from "./arrow";
 
+
 /**
  * Arrowコンポーネントは、以下のサブコンポーネントを持ちます。  
  * - Arrow.Left  
@@ -34,13 +35,12 @@ const meta = {
 } satisfies Meta<typeof Arrow.Left>;
 
 export default meta;
-type Story = StoryObj<typeof Arrow.Left>;
 
 /**
  * Story: Left
  * 左向きの矢印を表示します。
  */
-export const Left: Story = {
+export const Left: StoryObj<typeof Arrow.Left> = {
   render: (args) => (
     <Arrow.Left
       className="fill-info w-4 h-4"
@@ -53,7 +53,7 @@ export const Left: Story = {
  * Story: Right
  * 右向きの矢印を表示します。
  */
-export const Right: Story = {
+export const Right: StoryObj<typeof Arrow.Right> = {
   render: (args) => (
     <Arrow.Right
       className="fill-info w-4 h-4"
