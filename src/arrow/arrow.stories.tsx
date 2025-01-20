@@ -1,12 +1,34 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import Arrow, { ArrowProps } from "./arrow";
+import Arrow from "./arrow";
 
+/**
+ * Arrowコンポーネントは、以下のサブコンポーネントを持ちます。  
+ * - Arrow.Left  
+ * - Arrow.Right  
+ *
+ * 各サブコンポーネントは、標準のSVGプロパティを受け入れ、refを転送できます。
+ * このStorybookでは、`Arrow.Left`を主要な`component`として設定し、
+ * `Arrow.Right`の追加ストーリーを表示します。
+ * 
+ * なお、各サブコンポーネントのプレビューとして、`fill-info w-4 h-4`のクラスを設定しています。
+ * 実際に用いる際には、適切なクラスを設定してください。
+ */
 const meta = {
   title: "Arrow",
   component: Arrow.Left,
   parameters: {
     layout: "centered",
+  },
+  argTypes: {
+    ref: {
+      description: "SVG要素への参照",
+      table: {
+        type: { summary: "React.Ref<SVGSVGElement>" },
+        defaultValue: { summary: "undefined" },
+      },
+      control: false, // typically there's no "control" for a ref
+    },
   },
   tags: ["autodocs"],
 } satisfies Meta<typeof Arrow.Left>;
@@ -14,6 +36,10 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof Arrow.Left>;
 
+/**
+ * Story: Left
+ * 左向きの矢印を表示します。
+ */
 export const Left: Story = {
   render: (args) => (
     <Arrow.Left
@@ -23,6 +49,10 @@ export const Left: Story = {
   ),
 };
 
+/**
+ * Story: Right
+ * 右向きの矢印を表示します。
+ */
 export const Right: Story = {
   render: (args) => (
     <Arrow.Right
