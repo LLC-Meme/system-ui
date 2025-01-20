@@ -8,6 +8,9 @@
   "files": [
     "dist"
   ],
+	"scripts": {
+		"lint": "eslint 'src/**/*.{ts,tsx}'"
+	},
   "description": "React UI components for system design",
   "dependencies": {
     "react": "^19.0.0",
