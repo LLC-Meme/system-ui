@@ -28,7 +28,7 @@ const meta = {
         type: { summary: "React.Ref<SVGSVGElement>" },
         defaultValue: { summary: "undefined" },
       },
-      control: false, // typically there's no "control" for a ref
+      control: false,
     },
   },
   tags: ["autodocs"],
