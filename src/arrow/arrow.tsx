@@ -5,7 +5,6 @@ export interface ArrowProps extends React.SVGProps<SVGSVGElement> {}
 function Left(props: ArrowProps) {
   return (
     <svg
-      className="fill-info"
       {...props}
       width="4"
       height="6"
