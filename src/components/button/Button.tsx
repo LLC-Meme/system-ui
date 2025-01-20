@@ -1,37 +1,28 @@
-import React from 'react';
+import React from "react";
+import { cn } from "../../cn";
 
-import './button.css';
+type ButtonVariant = "default" | "danger" | "outline";
 
-export interface ButtonProps {
-  /** Is this the principal call to action on the page? */
-  primary?: boolean;
-  /** What background color to use */
-  backgroundColor?: string;
-  /** How large should the button be? */
-  size?: 'small' | 'medium' | 'large';
-  /** Button contents */
-  label: string;
-  /** Optional click handler */
-  onClick?: () => void;
+function Button({
+  children,
+  variant = "default",
+  className
+}: {
+  variant?: ButtonVariant;
+  children: React.ReactNode;
+  className?: string;
+}) {
+  return (
+    <span className={cn(
+      className,
+      variant === "default" && "bg-info text-on-status",
+      variant === "danger" && "bg-alert text-on-status",
+      variant === "outline" && "border border-info text-info",
+      "px-6 py-2 font-bold rounded-lg flex items-center justify-center"
+    )}>
+      {children}
+    </span>
+  );
 }
 
-/** Primary UI component for user interaction */
-export const Button = ({
-  primary = false,
-  size = 'medium',
-  backgroundColor,
-  label,
-  ...props
-}: ButtonProps) => {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
-  return (
-    <button
-      type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
-      style={{ backgroundColor }}
-      {...props}
-    >
-      {label}
-    </button>
-  );
-};
+export default Button;
