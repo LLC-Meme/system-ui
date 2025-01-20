@@ -17,11 +17,17 @@ type Story = StoryObj<typeof Arrow.Left>;
 export const Left: Story = {
   render: (args) => (
     <Arrow.Left
+      className="fill-info w-4 h-4"
       {...args}
     />
   ),
 };
 
 export const Right: Story = {
-  render: (args) => <Arrow.Right {...args} />,
+  render: (args) => (
+    <Arrow.Right
+      className="fill-info w-4 h-4"
+      {...args}
+    />
+  ),
 };
