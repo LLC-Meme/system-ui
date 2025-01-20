@@ -2,9 +2,10 @@ import React from "react";
 
 export interface ArrowProps extends React.SVGProps<SVGSVGElement> {}
 
-function Left(props: ArrowProps) {
+const Left = React.forwardRef<SVGSVGElement, ArrowProps>(({ ...props }, ref) => {
   return (
     <svg
+      ref={ref}
       {...props}
       width="4"
       height="6"
@@ -15,11 +16,12 @@ function Left(props: ArrowProps) {
       <path d="M3.705 5.295L1.415 3L3.705 0.705L3 0L0 3L3 6L3.705 5.295Z" />
     </svg>
   );
-};
+});
 
-function Right(props: ArrowProps) {
+const Right = React.forwardRef<SVGSVGElement, ArrowProps>(({ ...props }, ref) => {
   return (
     <svg
+      ref={ref}
       {...props}
       width="4"
       height="6"
@@ -30,7 +32,7 @@ function Right(props: ArrowProps) {
       <path d="M0.294998 5.295L2.585 3L0.294998 0.705L0.999998 0L4 3L0.999998 6L0.294998 5.295Z" />
     </svg>
   );
-};
+});
 
 const Arrow = {
   Left,
