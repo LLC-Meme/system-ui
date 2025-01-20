@@ -3,13 +3,10 @@
     "target": "ES2017",
     "lib": ["ES2017", "DOM"],
 		"module": "ESNext",
-		"moduleResolution": "node",
-    "esModuleInterop": true,
 		"declaration": true,
     "strict": true,
 		"outDir": "dist",
-		"jsx": "react",
-    "skipLibCheck": true
+		"jsx": "react"
   },
 	"include": ["src"],
 	"exclude": ["node_modules", "dist"]
