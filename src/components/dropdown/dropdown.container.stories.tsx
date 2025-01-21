@@ -36,8 +36,8 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof Dropdown.Container>;
 
-export const Example: Story = {
+export const Container: Story = {
   args: {
     children: "Dropdown Container",
   },
-}
+};

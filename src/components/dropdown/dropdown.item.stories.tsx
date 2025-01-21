@@ -68,4 +68,4 @@ export const Current: Story = {
     children: "Current Item",
     current: true,
   },
-}
+};

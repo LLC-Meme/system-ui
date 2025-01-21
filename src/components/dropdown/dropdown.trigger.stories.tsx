@@ -37,8 +37,8 @@ export default meta;
 type Story = StoryObj<typeof Dropdown.Trigger>;
 
 
-export const Example: Story = {
+export const Trigger: Story = {
   args: {
     children: "Dropdown Trigger",
   },
-}
+};
