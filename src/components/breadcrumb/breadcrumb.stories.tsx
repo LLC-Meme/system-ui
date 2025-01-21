@@ -41,7 +41,8 @@ const meta = {
 } satisfies Meta<typeof BreadcrumbExample>;
 
 export default meta;
+type Story = StoryObj<typeof BreadcrumbExample>;
 
-export const Example: StoryObj<typeof BreadcrumbExample> = {
-  render: () => (<BreadcrumbExample />),
+export const Example: Story = {
+  args: {},
 };

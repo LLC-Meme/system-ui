@@ -15,7 +15,8 @@ const meta = {
 } satisfies Meta<typeof Breadcrumb.Separator>;
 
 export default meta;
+type Story = StoryObj<typeof Breadcrumb.Separator>;
 
-export const Separator: StoryObj<typeof Breadcrumb.Separator> = {
-  render: () => (<Breadcrumb.Separator />),
+export const Separator: Story = {
+  args: {},
 };

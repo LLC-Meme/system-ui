@@ -27,5 +27,6 @@ const Navigation = React.forwardRef<HTMLAnchorElement, NavigationProps>(({
     </Comp>
   );
 });
+Navigation.displayName = "Navigation";
 
 export default Navigation;

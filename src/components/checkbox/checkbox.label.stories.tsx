@@ -35,8 +35,9 @@ const meta = {
 } satisfies Meta<typeof Checkbox.Label>;
 
 export default meta;
+type Story = StoryObj<typeof Checkbox.Label>;
 
-export const Label: StoryObj<typeof Checkbox.Label> = {
+export const Label: Story = {
   render: (args) => (
     <Checkbox.Label {...args}>
       テキスト

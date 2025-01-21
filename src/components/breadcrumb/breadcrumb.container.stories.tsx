@@ -17,11 +17,8 @@ const meta = {
 } satisfies Meta<typeof Breadcrumb.Container>;
 
 export default meta;
+type Story = StoryObj<typeof Breadcrumb.Container>;
 
-export const Container: StoryObj<typeof Breadcrumb.Container> = {
-  render: () => (
-    <Breadcrumb.Container>
-      {null}
-    </Breadcrumb.Container>
-  ),
+export const Container: Story = {
+  args: {},
 };

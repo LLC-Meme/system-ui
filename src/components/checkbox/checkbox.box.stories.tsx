@@ -25,26 +25,27 @@ const meta = {
 } satisfies Meta<typeof Checkbox.Box>;
 
 export default meta;
+type Story = StoryObj<typeof Checkbox.Box>;
 
-export const Default: StoryObj<typeof Checkbox.Box> = {
+export const Default: Story = {
   render: (args) => (
     <Checkbox.Box {...args} />
   ),
 };
 
-export const Checked: StoryObj<typeof Checkbox.Box> = {
+export const Checked: Story = {
   render: (args) => (
     <Checkbox.Box {...args} checked />
   ),
 };
 
-export const Unchecked: StoryObj<typeof Checkbox.Box> = {
+export const Unchecked: Story = {
   render: (args) => (
     <Checkbox.Box {...args} checked={false} />
   ),
 };
 
-export const Disabled: StoryObj<typeof Checkbox.Box> = {
+export const Disabled: Story = {
   render: (args) => (
     <Checkbox.Box {...args} disabled />
   ),

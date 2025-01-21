@@ -13,6 +13,8 @@ const Container = React.forwardRef<HTMLDivElement, HeaderContainerProps>(({
     </header>
   );
 });
+Container.displayName = "Header.Container";
+
 
 export interface SidebarControllerProps {
   onClick: () => void;
@@ -39,6 +41,7 @@ const SidebarController = React.forwardRef<HTMLButtonElement, SidebarControllerP
     </button>
   );
 });
+SidebarController.displayName = "Header.SidebarController";
 
 
 const Header = {

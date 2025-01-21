@@ -22,6 +22,8 @@ const Container = React.forwardRef<HTMLDivElement, SearchWindowContainerProps>((
     </div>
   );
 });
+Container.displayName = "SearchWindow.Container";
+
 
 function MagnifyingGlass({
   className
@@ -59,6 +61,7 @@ const Input = React.forwardRef<HTMLInputElement, SearchWindowInputProps>(({
     />
   );
 });
+Input.displayName = "SearchWindow.Input";
 
 
 const SearchWindow = {

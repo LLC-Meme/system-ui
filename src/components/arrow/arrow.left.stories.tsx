@@ -26,8 +26,9 @@ const meta = {
 } satisfies Meta<typeof Arrow.Left>;
 
 export default meta;
+type Story = StoryObj<typeof Arrow.Left>;
 
-export const Left: StoryObj<typeof Arrow.Left> = {
+export const Left: Story = {
   render: (args) => (
     <Arrow.Left
       className="fill-info w-4 h-4"

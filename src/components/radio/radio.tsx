@@ -25,6 +25,8 @@ const Button = React.forwardRef<HTMLInputElement, RadioButtonProps>(({
     />
   );
 });
+Button.displayName = "Radio.Button";
+
 
 
 export interface RadioLabelProps extends React.ComponentPropsWithoutRef<"label"> {
@@ -48,6 +50,8 @@ const RadioLabel = React.forwardRef<HTMLLabelElement, RadioLabelProps>(({
     </Label>
   );
 });
+RadioLabel.displayName = "Radio.Label";
+
 
 
 export interface RadioGroupProps extends React.ComponentPropsWithoutRef<"div"> {
@@ -70,6 +74,9 @@ const Group = React.forwardRef<HTMLDivElement, RadioGroupProps>(({
     </div>
   );
 });
+Group.displayName = "Radio.Group";
+
+
 
 const Radio = {
   Button,

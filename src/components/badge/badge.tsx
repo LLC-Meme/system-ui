@@ -50,5 +50,6 @@ const Badge = React.forwardRef<HTMLDivElement, BadgeProps>(({
     </div>
   );
 });
+Badge.displayName = "Badge";
 
 export default Badge;

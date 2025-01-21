@@ -22,5 +22,6 @@ const LabelText = React.forwardRef<HTMLSpanElement, LabelTextProps>(({
     </span>
   );
 });
+LabelText.displayName = "LabelText";
 
 export default LabelText;

@@ -8,7 +8,7 @@ import Breadcrumb from "./breadcrumb";
  */
 const meta = {
   title: "Breadcrumb/Item",
-  component: Breadcrumb.Separator,
+  component: Breadcrumb.Item,
   parameters: {
     layout: "centered",
   },
@@ -37,23 +37,18 @@ const meta = {
 } satisfies Meta<typeof Breadcrumb.Item>;
 
 export default meta;
+type Story = StoryObj<typeof Breadcrumb.Item>;
 
-export const Default: StoryObj<typeof Breadcrumb.Item> = {
-  render: () => (
-    <Breadcrumb.Item
-      current={false}
-    >
-      Item
-    </Breadcrumb.Item>
-  ),
+export const Default: Story = {
+  args: {
+    current: false,
+    children: "Item",
+  },
 };
 
-export const Current: StoryObj<typeof Breadcrumb.Item> = {
-  render: () => (
-    <Breadcrumb.Item
-      current={true}
-    >
-      Item
-    </Breadcrumb.Item>
-  ),
+export const Current: Story = {
+  args: {
+    current: true,
+    children: "Item",
+  },
 };

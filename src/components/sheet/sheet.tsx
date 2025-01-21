@@ -54,5 +54,7 @@ const Sheet = React.forwardRef<HTMLElement, SheetProps>(({
     </div>
   );
 });
+Sheet.displayName = "Sheet";
+
 
 export default Sheet;

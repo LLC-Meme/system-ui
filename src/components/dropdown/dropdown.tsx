@@ -36,7 +36,7 @@ const Container = React.forwardRef<HTMLDivElement, DropdownContainerProps>(({
     </DropdownContext.Provider>
   );
 });
-
+Container.displayName = "Dropdown.Container";
 
 
 export interface DropdownTriggerProps extends React.ComponentPropsWithoutRef<"div"> {
@@ -71,6 +71,7 @@ const Trigger = React.forwardRef<HTMLDivElement, DropdownTriggerProps>(({
     </div>
   );
 });
+Trigger.displayName = "Dropdown.Trigger";
 
 
 
@@ -99,6 +100,7 @@ const Content = React.forwardRef<HTMLDivElement, DropdownContentProps>(({
     </div>
   );
 });
+Content.displayName = "Dropdown.Content";
 
 
 
@@ -131,6 +133,7 @@ const Item = React.forwardRef<HTMLAnchorElement, DropdownItemProps>(({
     </Comp>
   );
 });
+Item.displayName = "Dropdown.Item";
 
 
 const Dropdown = {

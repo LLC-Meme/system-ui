@@ -23,6 +23,7 @@ const Box = React.forwardRef<HTMLInputElement, CheckboxBoxProps>((props, ref) =>
     />
   );
 });
+Box.displayName = "Checkbox.Box";
 
 
 export interface CheckboxLabelProps extends React.LabelHTMLAttributes<HTMLLabelElement> {
@@ -47,6 +48,7 @@ const CheckboxLabel = React.forwardRef<HTMLLabelElement, CheckboxLabelProps>(({
     </Label>
   );
 });
+CheckboxLabel.displayName = "Checkbox.Label";
 
 
 const Checkbox = {

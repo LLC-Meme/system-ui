@@ -9,6 +9,7 @@ const Separator = React.forwardRef<SVGSVGElement, BreadcrumbSeparatorProps>(({},
     <Arrow.Right ref={ref} className="fill-foreground" />
   );
 });
+Separator.displayName = "Breadcrumb.Separator";
 
 export interface BreadcrumbItemProps {
   current?: boolean;
@@ -34,6 +35,7 @@ const Item = React.forwardRef<HTMLLIElement, BreadcrumbItemProps>(({
     </li>
   );
 });
+Item.displayName = "Breadcrumb.Item";
 
 
 export interface BreadcrumbContainerProps {
@@ -47,6 +49,8 @@ const Container = React.forwardRef<HTMLOListElement, BreadcrumbContainerProps>((
     </ol>
   );
 });
+Container.displayName = "Breadcrumb.Container";
+
 
 const Breadcrumb = {
   Separator,

@@ -3,6 +3,14 @@ import type { Meta, StoryObj } from "@storybook/react";
 import Arrow from "./arrow";
 
 
+function ArrowExample() {
+  return (
+    <Arrow.Left
+      className="fill-info w-4 h-4"
+    />
+  );
+}
+
 /**
  * 右および左向きの矢印を表示します。  
  * 
@@ -11,7 +19,7 @@ import Arrow from "./arrow";
  */
 const meta = {
   title: "Arrow",
-  component: Arrow.Left,
+  component: ArrowExample,
   parameters: {
     layout: "centered",
   },
@@ -26,15 +34,11 @@ const meta = {
     },
   },
   tags: ["autodocs"],
-} satisfies Meta<typeof Arrow.Left>;
+} satisfies Meta<typeof ArrowExample>;
 
 export default meta;
+type Story = StoryObj<typeof ArrowExample>;
 
-export const Example: StoryObj<typeof Arrow.Left> = {
-  render: (args) => (
-    <Arrow.Left
-      className="fill-info w-4 h-4"
-      {...args}
-    />
-  ),
+export const Example: Story = {
+  args: {}
 };

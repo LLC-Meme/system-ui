@@ -21,5 +21,6 @@ const Cross = React.forwardRef<SVGSVGElement, CrossProps>(({
     </svg>
   );
 });
+Cross.displayName = "Cross";
 
 export default Cross;

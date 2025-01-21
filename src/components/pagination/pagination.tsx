@@ -20,6 +20,9 @@ const Container = React.forwardRef<HTMLDivElement, PaginationContainerProps>(({
     </nav>
   );
 });
+Container.displayName = "Pagination.Container";
+
+
 
 export interface PaginationItemProps extends React.ComponentPropsWithoutRef<"a"> {
   children: React.ReactNode;
@@ -49,6 +52,8 @@ const Item = React.forwardRef<HTMLAnchorElement, PaginationItemProps>(({
     </Comp>
   );
 });
+Item.displayName = "Pagination.Item";
+
 
 
 export interface PaginationButtonProps extends React.ComponentPropsWithoutRef<"a"> {
@@ -72,6 +77,9 @@ const Prev = React.forwardRef<HTMLAnchorElement, PaginationButtonProps>(({
     </Comp>
   );
 });
+Prev.displayName = "Pagination.Prev";
+
+
 
 const Next = React.forwardRef<HTMLAnchorElement, PaginationButtonProps>(({
   asChild,
@@ -90,6 +98,8 @@ const Next = React.forwardRef<HTMLAnchorElement, PaginationButtonProps>(({
     </Comp>
   );
 });
+Next.displayName = "Pagination.Next";
+
 
 
 const Ellipsis = React.forwardRef<HTMLDivElement, {}>(({}, ref) => {
@@ -107,6 +117,7 @@ const Ellipsis = React.forwardRef<HTMLDivElement, {}>(({}, ref) => {
     </div>
   );
 });
+Ellipsis.displayName = "Pagination.Ellipsis";
 
 
 const Pagination = {

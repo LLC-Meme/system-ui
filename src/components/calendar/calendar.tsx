@@ -114,6 +114,7 @@ const Calendar = React.forwardRef<HTMLDivElement, CalendarProps>(({
     </div>
   );
 });
+Calendar.displayName = "Calendar";
 
 
 const PrevMonthButton = memo(function PrevMonthButton({
