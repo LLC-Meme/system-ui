@@ -16,3 +16,4 @@ Memeの社内システムで用いるReactコンポーネントライブラリ�
 5. 単体テストを追加(react-testing-library/Vitest)  
 6. ライブラリで問題があれば解決  
 7. ドキュメントを更新  
+8. 余力があればeslint, prettierを追加  
