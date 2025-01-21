@@ -5,7 +5,6 @@ import Label from "./label";
  * formの`label`エレメントです。  
  * `input`や`select`などのフォーム要素にラップして使用します。  
  */
-
 const meta = {
   title: "Label",
   component: Label,
@@ -20,6 +19,12 @@ const meta = {
       },
       control: {
         type: "text",
+      },
+    },
+    ref: {
+      description: "labelエレメントへの参照",
+      table: {
+        type: { summary: "React.RefObject<HTMLLabelElement>" },
       },
     }
   },
