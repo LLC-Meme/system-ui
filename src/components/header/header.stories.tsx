@@ -14,12 +14,19 @@ function HeaderExample() {
   );
 }
 
+/**
+ * ヘッダーコンポーネントです。  
+ * 
+ * `Header.Container` はヘッダーのコンテナです。  
+ * `Header.SidebarController` はサイドバーのコントローラーです。用いなくても問題ありません。  
+ */
 const meta = {
   title: "Header",
   component: HeaderExample,
   parameters: {
     layout: "fullscreen",
   },
+  tags: ["autodocs"],
 } satisfies Meta<typeof HeaderExample>;
 
 export default meta;
