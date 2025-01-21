@@ -90,10 +90,10 @@ const Content = React.forwardRef<HTMLDivElement, DropdownContentProps>(({
       {...props}
       className={cn(
         props.className,
-        "absolute top-full left-0 w-full overflow-hidden transition-all transform origin-top",
+        "w-full overflow-hidden transform origin-top",
         isOpen
-          ? "max-h-96 opacity-100 scale-y-100"
-          : "max-h-0 opacity-0 scale-y-0",
+          ? "max-h-96 scale-y-100"
+          : "max-h-0 scale-y-0",
       )}
     >
       {children}
