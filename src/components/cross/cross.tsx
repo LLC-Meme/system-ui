@@ -1,7 +1,7 @@
 import React from "react";
 import { cn } from "../../utils/cn";
 
-type Props = React.SVGProps<SVGSVGElement>;
+interface Props extends React.SVGProps<SVGSVGElement> {};
 
 const Cross = React.forwardRef<SVGSVGElement, Props>(({
   ...props
