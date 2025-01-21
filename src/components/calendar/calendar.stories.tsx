@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import Calendar, { CalendarProps } from "./calendar";
 
@@ -69,12 +69,6 @@ type Story = StoryObj<typeof Calendar>;
  */
 const CalendarWithHooks = (props: Omit<CalendarProps, "setDate">) => {
   const [date, setDate] = useState<Date | null>(new Date());
-
-  // Storybookで変更されたstateを同期
-  useEffect(() => {
-    setDate(props.date ?? null);
-  }, [props.date]);
-
   return (
     <Calendar
       {...props}
@@ -85,11 +79,6 @@ const CalendarWithHooks = (props: Omit<CalendarProps, "setDate">) => {
 }
 
 export const Example: Story = {
-  args: {
-    date: new Date(),
-    disableAfter: undefined,
-    disableBefore: undefined,
-  },
   render: (args) => {
     return (
       <CalendarWithHooks {...args} />
