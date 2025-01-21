@@ -4,42 +4,47 @@ import Arrow from "../arrow/arrow";
 
 function Separator() {
   return (
-    <Arrow.Right className="fill-foreground" />
+    <Arrow.Right  className="fill-foreground" />
   );
-}
+};
 
-function Item({
-  current = false,
-  children
-}: {
+export interface BreadcrumbItemProps {
   current?: boolean;
   children: React.ReactNode;
-}) {
+};
+
+const Item = React.forwardRef<HTMLLIElement, BreadcrumbItemProps>(({
+  current,
+  children,
+}, ref) => {
   return (
-    <nav
+    <li
+      ref={ref}
       className={cn(
         "text-info text-sm",
         !current && "hover:underline",
         current && "font-semibold",
-        "hover:cursor-pointer"
+        "hover:cursor-pointer",
+        "list-none"
       )}
     >
       {children}
-    </nav>
+    </li>
   );
-}
+});
 
-function Container({
-  children
-}: {
+
+export interface BreadcrumbContainerProps {
   children: React.ReactNode;
-}) {
+};
+
+const Container = React.forwardRef<HTMLOListElement, BreadcrumbContainerProps>(({ children }, ref) => {
   return (
-    <nav className="flex items-center gap-2">
+    <ol ref={ref} className="flex items-center gap-2">
       {children}
-    </nav>
+    </ol>
   );
-}
+});
 
 const Breadcrumb = {
   Separator,
