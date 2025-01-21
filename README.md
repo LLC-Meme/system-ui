@@ -7,3 +7,11 @@ Memeの社内システムで用いるReactコンポーネントライブラリ�
 - Storybookでドキュメント化  
 - ChromaticでStorybookをデプロイ  
 - デプロイはGitHub Actionsで自動化  
+
+## ネクストステップ  
+1. GitHub Actionsがワークしない問題を解消(おそらくbuildがうまくいってない)  
+2. Dropdownがグループ化されてる問題を解消  
+3. ダークモード・ライトモードの切り替えに対応  
+4. ライブラリ化してnpmで使えるようにする  
+5. 単体テストを追加(react-testing-library/Vitest)  
+6. ライブラリで問題があれば解決  
