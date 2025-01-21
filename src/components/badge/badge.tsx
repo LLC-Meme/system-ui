@@ -20,15 +20,14 @@ type Color =
   "pink" |
   "brown";
 
-const Badge = React.forwardRef(({
+const Badge = React.forwardRef<HTMLDivElement, BadgeProps>(({
   color,
   children,
   ...props
-}: React.PropsWithChildren<React.HTMLAttributes<HTMLDivElement>> & {
-  color: Color
-}) => {
+}, ref) => {
   return (
     <div
+      ref={ref}
       {...props}
       className={cn(
         props.className,
