@@ -1,29 +1,46 @@
 import React from "react";
 import { cn } from "../../utils/cn";
+import { Slot } from "@radix-ui/react-slot";
 
 type ButtonVariant = "default" | "danger" | "outline";
 
-function Button({
-  children,
-  variant = "default",
-  className
-}: {
+export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  /** ボタンのデザインバリアント */
   variant?: ButtonVariant;
+  /** ボタンの中身 */
   children: React.ReactNode;
+  /** クラス名 */
   className?: string;
-}) {
-  return (
-    <span className={cn(
-      className,
-      variant === "default" && "bg-info text-on-status",
-      variant === "danger" && "bg-alert text-on-status",
-      variant === "outline" && "border border-info text-info",
-      "px-6 py-2 font-bold rounded-lg flex items-center justify-center"
-    )}>
-      {children}
-    </span>
-  );
+  /** ボタン以外の要素を使う場合（a, div, etc.）にtrueを指定します。 */
+  asChild?: boolean;
 }
-Button.displayName = "Button";
+
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(({
+  variant = "default",
+  children,
+  className,
+  asChild,
+  ...props
+}, ref) => {
+
+  const Component = asChild ? Slot : "button";
+
+  return (
+    <Component
+      ref={!asChild ? ref : undefined}
+      {...props}
+      className={cn(
+        className,
+        variant === "default" && "bg-info text-on-status",
+        variant === "danger" && "bg-alert text-on-status",
+        variant === "outline" && "border border-info text-info",
+        "px-6 py-2 font-bold rounded-lg flex items-center justify-center",
+        "hover disabled"
+      )}
+    >
+      {children}
+    </Component>
+  );
+});
 
 export default Button;
