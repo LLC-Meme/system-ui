@@ -4,7 +4,7 @@ import { Slot } from "@radix-ui/react-slot";
 
 type ButtonVariant = "default" | "danger" | "outline";
 
-export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps extends React.ComponentPropsWithoutRef<"button">{
   /** ボタンのデザインバリアント */
   variant?: ButtonVariant;
   /** ボタンの中身 */
