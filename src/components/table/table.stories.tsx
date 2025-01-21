@@ -114,6 +114,9 @@ function PlainTable() {
 const meta = {
   title: "Table",
   component: BasicTable,
+  parameters: {
+    layout: "centered",
+  },
   tags: ["autodocs"]
 } satisfies Meta<typeof BasicTable>;
 

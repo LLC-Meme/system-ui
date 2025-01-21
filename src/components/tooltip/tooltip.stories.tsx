@@ -31,6 +31,9 @@ function TooltipExample() {
 const meta = {
   title: "Tooltip",
   component: TooltipExample,
+  parameters: {
+    layout: "centered",
+  },
   tags: ["autodocs"]
 } satisfies Meta<typeof TooltipExample>;
 
