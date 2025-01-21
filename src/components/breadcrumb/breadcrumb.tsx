@@ -2,7 +2,7 @@ import React from "react";
 import { cn } from "../../utils/cn";
 import Arrow from "../arrow/arrow";
 
-export interface BreadcrumbSeparatorProps {};
+export interface BreadcrumbSeparatorProps {}
 
 const Separator = React.forwardRef<SVGSVGElement, BreadcrumbSeparatorProps>((_, ref) => {
   return (
@@ -13,7 +13,7 @@ const Separator = React.forwardRef<SVGSVGElement, BreadcrumbSeparatorProps>((_, 
 export interface BreadcrumbItemProps {
   current?: boolean;
   children: React.ReactNode;
-};
+}
 
 const Item = React.forwardRef<HTMLLIElement, BreadcrumbItemProps>(({
   current,
@@ -38,7 +38,7 @@ const Item = React.forwardRef<HTMLLIElement, BreadcrumbItemProps>(({
 
 export interface BreadcrumbContainerProps {
   children: React.ReactNode;
-};
+}
 
 const Container = React.forwardRef<HTMLOListElement, BreadcrumbContainerProps>(({ children }, ref) => {
   return (

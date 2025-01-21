@@ -12,7 +12,7 @@ export interface CalendarProps {
   disableAfter?: Date;
   /** この日付以前を無効にする(その日を含む) */
   disableBefore?: Date;
-};
+}
 
 const Calendar = React.forwardRef<HTMLDivElement, CalendarProps>(({
   date,

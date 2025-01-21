@@ -4,7 +4,7 @@ import { cn } from "../../utils/cn";
 import Label from "../label/label";
 
 
-export interface CheckboxBoxProps extends React.InputHTMLAttributes<HTMLInputElement> {};
+export interface CheckboxBoxProps extends React.InputHTMLAttributes<HTMLInputElement> {}
 
 const Box = React.forwardRef<HTMLInputElement, CheckboxBoxProps>((props, ref) => {
   return (
@@ -27,7 +27,7 @@ const Box = React.forwardRef<HTMLInputElement, CheckboxBoxProps>((props, ref) =>
 
 export interface CheckboxLabelProps extends React.LabelHTMLAttributes<HTMLLabelElement> {
   children: React.ReactNode;
-};
+}
 
 const CheckboxLabel = React.forwardRef<HTMLLabelElement, CheckboxLabelProps>(({
   children,
