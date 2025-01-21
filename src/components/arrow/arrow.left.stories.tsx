@@ -5,9 +5,6 @@ import Arrow from "./arrow";
 
 /**
  * 左向きの矢印を表示します。
- * 
- * なお、プレビューとして`fill-info w-4 h-4`のクラスを設定しています。
- * 実際に用いる際には、適切なクラスを設定してください。
  */
 const meta = {
   title: "Arrow/Left",

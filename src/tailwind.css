@@ -11,6 +11,10 @@
   .disabled {
     @apply disabled:cursor-not-allowed disabled:opacity-[var(--hover-opacity)];
   }
+
+  .overlay {
+    @apply bg-overlay backdrop-blur-[16px] z-10;
+  }
 }
 
 
