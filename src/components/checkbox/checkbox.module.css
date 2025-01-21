@@ -1,0 +1,16 @@
+.checkbox:checked {
+  position: relative;
+  background-color: var(--info);
+}
+
+.checkbox:checked::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%) rotate(45deg);
+  width: 6px;
+  height: 12px;
+  border: solid var(--on-status);
+  border-width: 0 2px 2px 0;
+}
