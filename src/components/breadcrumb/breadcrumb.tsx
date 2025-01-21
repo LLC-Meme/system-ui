@@ -2,11 +2,13 @@ import React from "react";
 import { cn } from "../../utils/cn";
 import Arrow from "../arrow/arrow";
 
-function Separator() {
+export interface BreadcrumbSeparatorProps {};
+
+const Separator = React.forwardRef<SVGSVGElement, BreadcrumbSeparatorProps>((_, ref) => {
   return (
-    <Arrow.Right  className="fill-foreground" />
+    <Arrow.Right ref={ref} className="fill-foreground" />
   );
-};
+});
 
 export interface BreadcrumbItemProps {
   current?: boolean;
