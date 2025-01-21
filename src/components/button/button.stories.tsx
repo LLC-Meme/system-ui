@@ -1,3 +1,4 @@
+import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import Button from "./button";
 
@@ -80,3 +81,18 @@ export const Outline: Story = {
     variant: "outline",
   },
 };
+
+export const Link: Story = {
+  args: {
+    children: <a href={"/"}>ボタン</a>,
+    variant: "default",
+  },
+};
+
+export const Disabled: Story = {
+  args: {
+    children: "ボタン",
+    variant: "default",
+    disabled: true,
+  },
+}
