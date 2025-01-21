@@ -11,6 +11,16 @@ const meta = {
   parameters: {
     layout: "centered",
   },
+  argTypes: {
+    ref: {
+      description: "input要素への参照",
+      table: {
+        type: { summary: "React.Ref<HTMLInputElement>" },
+        defaultValue: { summary: "undefined" },
+      },
+      control: false,
+    }
+  },
   tags: ["autodocs"],
 } satisfies Meta<typeof Checkbox.Box>;
 

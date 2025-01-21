@@ -3,12 +3,14 @@ import styles from "./checkbox.module.css";
 import { cn } from "../../utils/cn";
 import Label from "../label/label";
 
-function Box({
-  ...props
-}: React.InputHTMLAttributes<HTMLInputElement>) {
+
+export interface CheckboxBoxProps extends React.InputHTMLAttributes<HTMLInputElement> {};
+
+const Box = React.forwardRef<HTMLInputElement, CheckboxBoxProps>((props, ref) => {
   return (
     <input
       type="checkbox"
+      ref={ref}
       {...props}
       className={cn(
         props.className,
@@ -20,14 +22,20 @@ function Box({
       )}
     />
   );
-}
+});
 
-function CheckboxLabel({
+
+export interface CheckboxLabelProps extends React.LabelHTMLAttributes<HTMLLabelElement> {
+  children: React.ReactNode;
+};
+
+const CheckboxLabel = React.forwardRef<HTMLLabelElement, CheckboxLabelProps>(({
   children,
   ...props
-}: React.PropsWithChildren<React.LabelHTMLAttributes<HTMLLabelElement>>) {
+}, ref) => {
   return (
     <Label
+      ref={ref}
       {...props}
       className={cn(
         props.className,
@@ -38,7 +46,7 @@ function CheckboxLabel({
       {children}
     </Label>
   );
-}
+});
 
 
 const Checkbox = {

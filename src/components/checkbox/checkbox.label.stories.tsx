@@ -21,6 +21,14 @@ const meta = {
       control: {
         type: "text",
       },
+    },
+    ref: {
+      description: "label要素への参照",
+      table: {
+        type: { summary: "React.Ref<HTMLLabelElement>" },
+        defaultValue: { summary: "undefined" },
+      },
+      control: false,
     }
   },
   tags: ["autodocs"],
