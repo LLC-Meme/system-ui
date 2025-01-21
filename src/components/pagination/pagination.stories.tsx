@@ -8,7 +8,8 @@ function PaginationExample() {
       <Pagination.Prev />
       <Pagination.Item current>1</Pagination.Item>
       <Pagination.Item>2</Pagination.Item>
-      <Pagination.Item>3</Pagination.Item>
+      <Pagination.Ellipsis />
+      <Pagination.Item>20</Pagination.Item>
       <Pagination.Next />
     </Pagination.Container>
   );
