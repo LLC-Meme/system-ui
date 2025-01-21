@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 
+input, textarea {
+  caret-color: var(--info);
+}
+
 @layer components {
   .hover {
     @apply hover:opacity-[var(--hover-opacity)] transition-opacity;
