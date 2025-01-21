@@ -62,7 +62,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Group: Story = {
+export const Example: Story = {
   args: {
     children: "Group",
   },

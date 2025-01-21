@@ -23,7 +23,7 @@ const Item = React.forwardRef<HTMLAnchorElement, SidebarItemProps>(({
       {...props}
       className={cn(
         props.className,
-        "py-2 px-4 flex gap-2 rounded-[4px]",
+        "py-2 px-4 flex gap-2 rounded-[4px] hover:cursor-pointer",
         !current && "hover:bg-surface-muted2",
         current && "bg-surface-muted1 font-medium"
       )}
