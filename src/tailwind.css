@@ -15,6 +15,10 @@
   .overlay {
     @apply bg-overlay backdrop-blur-[16px] z-10;
   }
+
+  .center {
+    @apply flex items-center justify-center;
+  }
 }
 
 
@@ -62,7 +66,7 @@
 }
 
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #000;
     --foreground: #fff;
@@ -100,4 +104,4 @@
     --brown: #AC8E68;
     --brown-muted: rgba(172, 142, 104, 0.2);
   }
-}
+} */
