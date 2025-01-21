@@ -7,19 +7,19 @@ function BreadcrumbExample() {
   return (
     <Breadcrumb.Container>
       <Breadcrumb.Item current={false}>
-        <a href="/#">Home</a>
+        <a href="/">Home</a>
       </Breadcrumb.Item>
       <Breadcrumb.Separator />
       <Breadcrumb.Item current={false}>
-        <a href="/#/#">Products</a>
+        <a href="/dashboard">Dashboard</a>
       </Breadcrumb.Item>
       <Breadcrumb.Separator />
       <Breadcrumb.Item current={false}>
-        <a href="/#/#/#">Product 1</a>
+        <a href="/dashboard/sales">Sales</a>
       </Breadcrumb.Item>
       <Breadcrumb.Separator />
       <Breadcrumb.Item current={true}>
-        <a href="/#/#/#/#">Product 1</a>
+        <a href="/dashboard/sales/data">Data</a>
       </Breadcrumb.Item>
     </Breadcrumb.Container>
   );
