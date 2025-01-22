@@ -8,6 +8,11 @@ Memeの社内システムで用いるReactコンポーネントライブラリ�
 - ChromaticでStorybookをデプロイ  
 - デプロイはGitHub Actionsで自動化  
 
+## 依存関係  
+- react/react-dom  
+- storybook  
+- tailwind  
+
 ## ネクストステップ  
 - Dropdownがグループ化されてる問題を解消  
 - ダークモード・ライトモードの切り替えに対応  
@@ -17,3 +22,4 @@ Memeの社内システムで用いるReactコンポーネントライブラリ�
 - ドキュメントを更新  
 - 余力があればeslint, prettierを追加  
 - ユーティリティコンポーネントを作成  
+- DropdownやSheetなどに適宜radixを用いる  
