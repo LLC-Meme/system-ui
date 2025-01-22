@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useCallback, memo } from "react";
-import { cn } from "../../../utils/cn";
+import { cn } from "../../../lib/cn";
 import Arrow from "../../symbol/arrow/arrow";
 
 

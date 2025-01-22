@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./table.module.css";
 import { useContext, createContext } from "react";
-import { cn } from "../../../utils/cn";
+import { cn } from "../../../lib/cn";
 
 type TableStyle = "basic" | "plain";
 

@@ -1,6 +1,6 @@
 import React, { useState, createContext, useContext } from "react";
 import { Slot } from "@radix-ui/react-slot";
-import { cn } from "../../../utils/cn";
+import { cn } from "../../../lib/cn";
 import Arrow from "../../symbol/arrow/arrow";
 
 const DropdownContext = createContext<{

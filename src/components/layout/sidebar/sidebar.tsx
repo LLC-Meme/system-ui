@@ -1,6 +1,6 @@
 import React from "react";
 import { Slot } from "@radix-ui/react-slot";
-import { cn } from "../../../utils/cn";
+import { cn } from "../../../lib/cn";
 
 
 export interface SidebarItemProps extends React.ComponentPropsWithoutRef<"a"> {

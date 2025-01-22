@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./checkbox.module.css";
-import { cn } from "../../../utils/cn";
+import { cn } from "../../../lib/cn";
 import Label from "../label/label";
 
 

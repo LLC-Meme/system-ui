@@ -1,5 +1,5 @@
 import React from "react";
-import { cn } from "../../../utils/cn";
+import { cn } from "../../../lib/cn";
 
 export interface SelectorSelectProps extends React.ComponentPropsWithoutRef<"select"> {
   children: React.ReactNode;
