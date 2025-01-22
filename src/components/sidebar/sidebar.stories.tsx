@@ -60,7 +60,7 @@ const meta = {
 } satisfies Meta<typeof SidebarExample>;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof SidebarExample>;
 
 export const Example: Story = {
   args: {

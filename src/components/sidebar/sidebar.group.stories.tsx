@@ -33,7 +33,7 @@ const meta = {
 } satisfies Meta<typeof Sidebar.Group>;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof Sidebar.Group>;
 
 export const Group: Story = {
   args: {

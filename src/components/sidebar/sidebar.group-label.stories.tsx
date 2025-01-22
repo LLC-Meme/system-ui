@@ -33,7 +33,7 @@ const meta = {
 } satisfies Meta<typeof Sidebar.GroupLabel>;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof Sidebar.GroupLabel>;
 
 export const GroupLabel: Story = {
   args: {
