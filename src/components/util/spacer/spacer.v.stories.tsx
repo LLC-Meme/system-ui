@@ -37,8 +37,9 @@ const meta = {
 } satisfies Meta<typeof Spacer.V>;
 
 export default meta;
+type Story = StoryObj<typeof Spacer.V>;
 
-export const Example: StoryObj<typeof Spacer.V> = {
+export const Example: Story = {
   args: {
     unit: 4
   },
