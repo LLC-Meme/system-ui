@@ -12,14 +12,15 @@ Memeの社内システムで用いるReactコンポーネントライブラリ�
 - react/react-dom  
 - storybook  
 - tailwind  
+- radix  
 
 ## ネクストステップ  
 - Dropdownがグループ化されてる問題を解消  
 - ダークモード・ライトモードの切り替えに対応  
-- ライブラリ化してnpmで使えるようにする  
-- 単体テストを追加(react-testing-library/Vitest)  
-- ライブラリで問題があれば解決  
-- ドキュメントを更新  
-- 余力があればeslint, prettierを追加  
-- ユーティリティコンポーネントを作成  
 - DropdownやSheetなどに適宜radixを用いる  
+- 単体テストを追加(react-testing-library/Vitest)  
+- eslint, prettierを追加  
+- ライブラリ化してnpmで使えるようにする  
+- ライブラリで問題があれば解決  
+- ユーティリティコンポーネントを作成  
+- ドキュメントを丁寧に書く  
