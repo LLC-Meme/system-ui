@@ -1,5 +1,6 @@
 # Meme System UI  
 Memeの社内システムで用いるReactコンポーネントライブラリです。  
+Apple風のデザインで様々なUIを提供します。  
 
 ## 概要  
 - 全てReact/TypeScriptを用いて開発  
