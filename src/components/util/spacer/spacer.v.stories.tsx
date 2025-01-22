@@ -23,6 +23,14 @@ const meta = {
         type: "select",
         options: [1, 2, 3, 4, 5, 6]
       }
+    },
+    ref: {
+      description: "この要素への参照",
+      table: {
+        type: { summary: "Ref<HTMLDivElement>" },
+        defaultValue: { summary: "undefined" }
+      },
+      control: false,
     }
   },
   tags: ["autodocs"]
