@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import Sheet from "./sheet";
 
 const meta = {
-  title: "Sheet",
+  title: "UI/Sheet",
   component: Sheet,
   parameters: {
     layout: "fullscreen",

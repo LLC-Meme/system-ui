@@ -5,7 +5,7 @@ import Pagination from "./pagination";
  * 前のページへ移動するためのページネーションアイテムコンポーネントです。  
  */
 const meta = {
-  title: "Pagination/Prev",
+  title: "UI/Pagination/Prev",
   component: Pagination.Prev,
   parameters: {
     layout: "centered",

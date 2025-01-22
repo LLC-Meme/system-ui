@@ -5,7 +5,7 @@ import Pagination from "./pagination";
  * 全ページネーションアイテムをラップするコンテナコンポーネントです。  
  */
 const meta = {
-  title: "Pagination/Container",
+  title: "UI/Pagination/Container",
   component: Pagination.Container,
   parameters: {
     layout: "centered",

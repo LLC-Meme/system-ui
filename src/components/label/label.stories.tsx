@@ -6,7 +6,7 @@ import Label from "./label";
  * `input`や`select`などのフォーム要素にラップして使用します。  
  */
 const meta = {
-  title: "Label",
+  title: "Form/Label",
   component: Label,
   parameters: {
     layout: "centered",

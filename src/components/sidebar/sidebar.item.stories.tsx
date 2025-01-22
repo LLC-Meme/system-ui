@@ -7,7 +7,7 @@ import Sidebar from "./sidebar";
  * `asChild`を`true`にすることで、`Slot`コンポーネントとして使うことができます。  
  */
 const meta = {
-  title: "Sidebar/Item",
+  title: "Layout/Sidebar/Item",
   component: Sidebar.Item,
   parameters: {
     layout: "centered",

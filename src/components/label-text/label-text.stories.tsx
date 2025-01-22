@@ -7,7 +7,7 @@ import LabelText from "./label-text";
  * <span style="color:red">label要素とは違うので注意してください。</span>  
  */
 const meta = {
-  title: "LabelText",
+  title: "Form/LabelText",
   component: LabelText,
   parameters: {
     layout: "centered",

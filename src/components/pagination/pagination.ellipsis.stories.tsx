@@ -5,7 +5,7 @@ import Pagination from "./pagination";
  * ページネーションの省略記号です。  
  */
 const meta = {
-  title: "Pagination/Ellipsis",
+  title: "UI/Pagination/Ellipsis",
   component: Pagination.Ellipsis,
   parameters: {
     layout: "centered",

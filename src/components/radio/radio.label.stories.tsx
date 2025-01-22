@@ -5,7 +5,7 @@ import Radio from "./radio";
  * ラジオボタンの`label`要素を提供します。  
  */
 const meta = {
-  title: "Radio/Label",
+  title: "Form/Radio/Label",
   component: Radio.Label,
   parameters: {
     layout: "centered",

@@ -6,7 +6,7 @@ import Textarea from "./textarea";
  * フォームに用いるテキストエリアのコンポーネントです。  
  */
 const meta = {
-  title: "Textarea",
+  title: "Form/Textarea",
   component: Textarea,
   parameters: {
     layout: "centered",

@@ -112,7 +112,7 @@ function PlainTable() {
  * - `Table.Cell`: テーブルのセルを表すコンテナです。`<td>`に対応します。  
  */
 const meta = {
-  title: "Table",
+  title: "UI/Table",
   component: BasicTable,
   parameters: {
     layout: "centered",

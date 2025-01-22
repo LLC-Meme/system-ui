@@ -16,7 +16,7 @@ function SearchWindowExample() {
  * 必ず`SearchWindow.Container`と`SearchWindow.Input`を組み合わせて使用してください。  
  */
 const meta = {
-  title: "SearchWindow",
+  title: "UI/SearchWindow",
   component: SearchWindowExample,
   parameters: {
     layout: "centered",

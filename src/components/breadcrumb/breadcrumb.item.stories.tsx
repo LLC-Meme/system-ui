@@ -1,4 +1,3 @@
-import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import Breadcrumb from "./breadcrumb";
 
@@ -7,7 +6,7 @@ import Breadcrumb from "./breadcrumb";
  * 適宜`a`や`Link`をラップして用いてください。  
  */
 const meta = {
-  title: "Breadcrumb/Item",
+  title: "UI/Breadcrumb/Item",
   component: Breadcrumb.Item,
   parameters: {
     layout: "centered",

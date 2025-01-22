@@ -5,7 +5,7 @@ import Sidebar from "./sidebar";
  * サイドバーのグループラベルです。
  */
 const meta = {
-  title: "Sidebar/GroupLabel",
+  title: "Layout/Sidebar/GroupLabel",
   component: Sidebar.GroupLabel,
   parameters: {
     layout: "centered",

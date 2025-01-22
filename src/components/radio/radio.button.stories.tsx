@@ -5,7 +5,7 @@ import Radio from "./radio";
  * ラジオボタンのボタン部分を提供します。  
  */
 const meta = {
-  title: "Radio/Button",
+  title: "Form/Radio/Button",
   component: Radio.Button,
   parameters: {
     layout: "centered",

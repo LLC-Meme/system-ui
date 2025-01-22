@@ -6,7 +6,7 @@ import Selector from "./selector";
  * `Selector.Select`の子要素として使用してください。
  */
 const meta = {
-  title: "Selector/Option",
+  title: "Form/Selector/Option",
   component: Selector.Option,
   parameters: {
     layout: "centered",

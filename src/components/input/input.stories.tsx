@@ -6,7 +6,7 @@ import Input from "./input";
  * テキストの入力を受け付ける`input`コンポーネント  
  */
 const meta = {
-  title: "Input",
+  title: "Form/Input",
   component: Input,
   parameters: {
     layout: "centered",

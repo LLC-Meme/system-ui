@@ -5,7 +5,7 @@ import Cross from "./cross";
  * クロスアイコンコンポーネントです。
  */
 const meta = {
-  title: "Cross",
+  title: "Symbol/Cross",
   component: Cross,
   parameters: {
     layout: "centered",

@@ -6,7 +6,7 @@ import Checkbox from "./checkbox";
  * チェックボックスのボックス部分です。
  */
 const meta = {
-  title: "Checkbox/Box",
+  title: "Form/Checkbox/Box",
   component: Checkbox.Box,
   parameters: {
     layout: "centered",

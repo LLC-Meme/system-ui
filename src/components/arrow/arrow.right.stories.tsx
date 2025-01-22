@@ -7,7 +7,7 @@ import Arrow from "./arrow";
  * 右向きの矢印を表示します。
  */
 const meta = {
-  title: "Arrow/Right",
+  title: "Symbol/Arrow/Right",
   component: Arrow.Right,
   parameters: {
     layout: "centered",

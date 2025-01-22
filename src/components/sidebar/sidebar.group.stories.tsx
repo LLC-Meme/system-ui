@@ -5,7 +5,7 @@ import Sidebar from "./sidebar";
  * サイドバーの各アイテムをグループ化する際のラッピングに使用します。  
  */
 const meta = {
-  title: "Sidebar/Group",
+  title: "Layout/Sidebar/Group",
   component: Sidebar.Group,
   parameters: {
     layout: "centered",

@@ -20,7 +20,7 @@ function HeaderExample() {
  * `Header.SidebarController` はサイドバーのコントローラーです。用いなくても問題ありません。  
  */
 const meta = {
-  title: "Header",
+  title: "Layout/Header",
   component: HeaderExample,
   parameters: {
     layout: "fullscreen",

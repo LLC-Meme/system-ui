@@ -5,7 +5,7 @@ import Pagination from "./pagination";
  * 次のページへ移動するためのページネーションアイテムコンポーネントです。  
  */
 const meta = {
-  title: "Pagination/Next",
+  title: "UI/Pagination/Next",
   component: Pagination.Next,
   parameters: {
     layout: "centered",

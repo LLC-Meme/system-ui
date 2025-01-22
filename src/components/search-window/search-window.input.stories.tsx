@@ -5,7 +5,7 @@ import SearchWindow from "./search-window";
  * 検索ウィンドウの入力部分を提供します。  
  */
 const meta = {
-  title: "SearchWindow/Input",
+  title: "UI/SearchWindow/Input",
   component: SearchWindow.Input,
   parameters: {
     layout: "centered",

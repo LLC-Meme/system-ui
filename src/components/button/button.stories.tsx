@@ -7,7 +7,7 @@ import Button from "./button";
  * asChildをtrueにすることで、ボタン以外の要素を使うことができます。  
 */
 const meta = {
-  title: "Button",
+  title: "UI/Button",
   component: Button,
   parameters: {
     layout: "centered",

@@ -23,7 +23,7 @@ function SelectorExample() {
  * `Selector.Select`で各`Selector.Option`をラップして使用してください。  
  */
 const meta = {
-  title: "Selector",
+  title: "Form/Selector",
   component: SelectorExample,
   parameters: {
     layout: "centered",

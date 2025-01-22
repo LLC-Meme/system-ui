@@ -1,4 +1,3 @@
-import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import Breadcrumb from "./breadcrumb";
 
@@ -8,7 +7,7 @@ import Breadcrumb from "./breadcrumb";
  * このコンポーネント直下に`Item`や`Separator`を配置してください。
  */
 const meta = {
-  title: "Breadcrumb/Container",
+  title: "UI/Breadcrumb/Container",
   component: Breadcrumb.Container,
   parameters: {
     layout: "centered",

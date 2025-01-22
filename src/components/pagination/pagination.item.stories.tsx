@@ -8,7 +8,7 @@ import Pagination from "./pagination";
  * ページのインデックス番号などをラッピングして用いてください。  
  */
 const meta = {
-  title: "Pagination/Item",
+  title: "UI/Pagination/Item",
   component: Pagination.Item,
   parameters: {
     layout: "centered",

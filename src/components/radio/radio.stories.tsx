@@ -28,7 +28,7 @@ function RadioExample() {
  * `Radio.Group`、`Radio.Label`、`Radio.Button`の３つを組み合わせて使用します。  
  */
 const meta = {
-  title: "Radio",
+  title: "Form/Radio",
   component: RadioExample,
   parameters: {
     layout: "centered",

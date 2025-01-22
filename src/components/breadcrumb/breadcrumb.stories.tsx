@@ -32,7 +32,7 @@ function BreadcrumbExample() {
  * `Container`、`Item`、`Separator`を組み合わせて使用します。
  */
 const meta = {
-  title: "Breadcrumb",
+  title: "UI/Breadcrumb",
   component: BreadcrumbExample,
   parameters: {
     layout: "centered",

@@ -7,7 +7,7 @@ import Radio from "./radio";
  * 全`Radio.Label`コンポーネントをラップして用います。  
  */
 const meta = {
-  title: "Radio/Group",
+  title: "Form/Radio/Group",
   component: Radio.Group,
   parameters: {
     layout: "centered",

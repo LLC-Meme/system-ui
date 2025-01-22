@@ -6,7 +6,7 @@ import Badge from "./badge";
  * 任意のテキストやアイコンを中に入れることで、ラベルとして利用できます。  
 */
 const meta = {
-  title: "Badge",
+  title: "UI/Badge",
   component: Badge,
   parameters: {
     layout: "centered",

@@ -29,7 +29,7 @@ function TooltipExample() {
  * - `Tooltip.Content`: ツールチップの中身をラップします。  
  */
 const meta = {
-  title: "Tooltip",
+  title: "UI/Tooltip",
   component: TooltipExample,
   parameters: {
     layout: "centered",

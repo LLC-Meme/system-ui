@@ -51,7 +51,7 @@ function SidebarExample() {
  * `Dropdown`コンポーネントなどと併用してサイドバーを表現しています。  
  */
 const meta = {
-  title: "Sidebar",
+  title: "Layout/Sidebar",
   component: SidebarExample,
   parameters: {
     layout: "centered",

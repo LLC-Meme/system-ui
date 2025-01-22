@@ -18,7 +18,7 @@ const CheckboxExample = () => {
  * `Checkbox.Box`と`Checkbox.Label`を組み合わせて使います。
  */
 const meta = {
-  title: "Checkbox",
+  title: "Form/Checkbox",
   component: CheckboxExample,
   parameters: {
     layout: "centered",

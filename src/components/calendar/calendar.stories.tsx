@@ -7,7 +7,7 @@ import Calendar, { CalendarProps } from "./calendar";
  * ユーザーが日付を選択でき、disableAfter/disableBefore で無効化したい日付を設定できます。  
  */
 const meta = {
-  title: "Calendar",
+  title: "UI/Calendar",
   component: Calendar,
   parameters: {
     layout: "centered",

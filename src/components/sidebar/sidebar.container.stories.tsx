@@ -6,7 +6,7 @@ import Sidebar from "./sidebar";
  * 全てのサイドバーの要素はこのコンテナの中に配置します。  
  */
 const meta = {
-  title: "Sidebar/Container",
+  title: "Layout/Sidebar/Container",
   component: Sidebar.Container,
   parameters: {
     layout: "centered",

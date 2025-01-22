@@ -18,7 +18,7 @@ function ArrowExample() {
  * 実際に用いる際には、適切なクラスを設定してください。
  */
 const meta = {
-  title: "Arrow",
+  title: "Symbol/Arrow",
   component: ArrowExample,
   parameters: {
     layout: "centered",

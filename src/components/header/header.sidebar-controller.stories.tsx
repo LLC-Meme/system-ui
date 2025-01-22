@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import Header from "./header";
 
 const meta = {
-  title: "Header/SidebarController",
+  title: "Layout/Header/SidebarController",
   component: Header.SidebarController,
   parameters: {
     layout: "centered",

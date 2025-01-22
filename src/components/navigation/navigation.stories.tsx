@@ -9,7 +9,7 @@ import Navigation from "./navigation";
  * デフォルトでは`a`要素を使います。  
  */
 const meta = {
-  title: "Navigation",
+  title: "UI/Navigation",
   component: Navigation,
   parameters: {
     layout: "centered",

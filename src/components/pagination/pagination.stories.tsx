@@ -19,7 +19,7 @@ function PaginationExample() {
  * ページネーションコンポーネントです。  
  */
 const meta = {
-  title: "Pagination",
+  title: "UI/Pagination",
   component: PaginationExample,
   parameters: {
     layout: "centered",

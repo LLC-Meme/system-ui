@@ -7,7 +7,7 @@ import Checkbox from "./checkbox";
  * `Checkbox.Box`とテキストを用いてチェックボックスを作ります。  
  */
 const meta = {
-  title: "Checkbox/Label",
+  title: "Form/Checkbox/Label",
   component: Checkbox.Label,
   parameters: {
     layout: "centered",

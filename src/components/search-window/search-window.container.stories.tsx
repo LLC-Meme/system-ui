@@ -5,7 +5,7 @@ import SearchWindow from "./search-window";
  * 検索ウィンドウのコンテナ部分を提供します。  
  */
 const meta = {
-  title: "SearchWindow/Container",
+  title: "UI/SearchWindow/Container",
   component: SearchWindow.Container,
   parameters: {
     layout: "centered",
