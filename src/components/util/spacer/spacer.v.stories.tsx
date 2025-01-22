@@ -4,6 +4,7 @@ import Spacer from "./spacer";
 
 /**
  * 垂直方向のスペーシングをするためのコンポーネントです。  
+ * unitによって16px単位で高さを指定できます。  
  */
 const meta = {
   title: "Util/Spacer/V",

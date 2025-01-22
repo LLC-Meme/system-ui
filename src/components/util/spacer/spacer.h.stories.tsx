@@ -3,7 +3,8 @@ import Spacer from "./spacer";
 
 
 /**
- * 水平方向のスペーシングをするためのコンポーネントです。
+ * 水平方向のスペーシングをするためのコンポーネントです。  
+ * unitによって16px単位で幅を指定できます。  
  */
 const meta = {
   title: "Util/Spacer/H",
