@@ -46,11 +46,10 @@ const meta = {
           "purple",
           "pink",
           "brown",
-          "monochrome",
         ],
       },
       table: {
-        type: { summary: "\"red\" | \"orange\" | \"yellow\" | ... | \"monochrome\"" },
+        type: { summary: "\"red\" | \"orange\" | \"yellow\" | ... | \"brown\"" },
         defaultValue: { summary: "blue" },
       },
     },
