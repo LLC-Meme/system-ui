@@ -6,8 +6,7 @@ function HeaderExample() {
   return (
     <Header.Container>
       <Header.SidebarController onClick={() => {}} />
-      <div className="w-4" />
-      <div className="text-lg font-semibold bg-red-100">
+      <div className="ml-4 text-lg font-semibold">
         Acme Dashboard
       </div>
     </Header.Container>
