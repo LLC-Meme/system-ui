@@ -8,7 +8,7 @@ import Spacer from "./spacer";
  */
 const meta = {
   title: "Util/Spacer/H",
-  component: Spacer.V,
+  component: Spacer.H,
   parameters: {
     layout: "centered"
   },
