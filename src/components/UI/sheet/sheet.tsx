@@ -9,7 +9,6 @@ import Stack from "../../util/stack/stack";
 
 const Root = Dialog.Root;
 const Trigger = Dialog.Trigger;
-const Close = Dialog.Close;
 
 
 interface SheetOverlayProps extends Dialog.DialogOverlayProps {
@@ -67,6 +66,5 @@ const Sheet = {
   Root,
   Trigger,
   Content,
-  Close,
 };
 export default Sheet;
