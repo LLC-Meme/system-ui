@@ -4,11 +4,11 @@ import { cn } from "../../../lib/cn";
 import Arrow from "../../symbol/arrow/arrow";
 
 
-export interface PaginationContainerProps {
+export interface PaginationContainerProps extends React.ComponentPropsWithoutRef<"nav"> {
   children: React.ReactNode;
 }
 
-const Container = React.forwardRef<HTMLDivElement, PaginationContainerProps>(({
+const Container = React.forwardRef<HTMLElement, PaginationContainerProps>(({
   children,
 }, ref) => {
   return (

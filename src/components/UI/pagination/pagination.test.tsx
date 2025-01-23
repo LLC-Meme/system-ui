@@ -117,4 +117,68 @@ describe("Pagination Component", () => {
   });
 
 
+  it("Containerにrefを設定", () => {
+    // nav要素のrefを設定
+    const ref = React.createRef<HTMLDivElement>();
+    render(
+      <Container ref={ref}>
+        <Item href="#">1</Item>
+      </Container>
+    );
+
+    // refが正しく設定されていることを確認
+    expect(ref.current).toBeInstanceOf(HTMLElement);
+    // refがnav要素であることを確認
+  expect(ref.current?.tagName).toBe("NAV");
+  });
+
+
+  it("Prevにrefを設定", () => {
+    // button要素のrefを設定
+    const ref = React.createRef<HTMLAnchorElement>();
+    render(<Prev ref={ref} href="#" />);
+
+    // refが正しく設定されていることを確認
+    expect(ref.current).toBeInstanceOf(HTMLAnchorElement);
+    // refがbutton要素であることを確認
+    expect(ref.current?.tagName).toBe("A");
+  });
+
+
+  it("Nextにrefを設定", () => {
+    // button要素のrefを設定
+    const ref = React.createRef<HTMLAnchorElement>();
+    render(<Next ref={ref} href="#" />);
+
+    // refが正しく設定されていることを確認
+    expect(ref.current).toBeInstanceOf(HTMLAnchorElement);
+    // refがbutton要素であることを確認
+    expect(ref.current?.tagName).toBe("A");
+  });
+
+
+  it("Itemにrefを設定", () => {
+    // a要素のrefを設定
+    const ref = React.createRef<HTMLAnchorElement>();
+    render(<Item ref={ref} href="#">1</Item>);
+
+    // refが正しく設定されていることを確認
+    expect(ref.current).toBeInstanceOf(HTMLAnchorElement);
+    // refがa要素であることを確認
+    expect(ref.current?.tagName).toBe("A");
+  });
+
+
+  it("Ellipsisにrefを設定", () => {
+    // span要素のrefを設定
+    const ref = React.createRef<HTMLDivElement>();
+    render(<Ellipsis ref={ref} />);
+
+    // refが正しく設定されていることを確認
+    expect(ref.current).toBeInstanceOf(HTMLDivElement);
+    // refがspan要素であることを確認
+    expect(ref.current?.tagName).toBe("DIV");
+  });
+
+
 });
