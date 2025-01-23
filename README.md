@@ -16,7 +16,6 @@ Apple風のデザインで様々なUIを提供します。
 - radix  
 
 ## ネクストステップ  
-- RadioGroupの改定  
 - 単体テストを追加(react-testing-library/Vitest)  
 - eslint, prettierを追加  
 - ライブラリ化してnpmで使えるようにする  
