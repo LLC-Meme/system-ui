@@ -9,7 +9,7 @@ import Stack from "../../util/stack/stack";
 
 const Root = Dialog.Root;
 const Trigger = Dialog.Trigger;
-
+const Close = Dialog.Close;
 
 interface SheetOverlayProps extends Dialog.DialogOverlayProps {
   className?: string;
@@ -50,9 +50,9 @@ const Content = React.forwardRef<
       >
         <Stack.H className="justify-between mb-4">
           <div />
-          <Dialog.Close>
+          <Close>
             <Cross className="w-4 h-auto" />
-          </Dialog.Close>
+          </Close>
         </Stack.H>
         {children}
       </Dialog.Content>
@@ -66,5 +66,6 @@ const Sheet = {
   Root,
   Trigger,
   Content,
+  Close
 };
 export default Sheet;

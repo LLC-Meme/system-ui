@@ -71,6 +71,8 @@ export default {
         "fade-out": "fade-out 0.3s ease-out",
         "slide-in-from-right": "slide-in-from-right 0.3s ease-out",
         "slide-out-to-right": "slide-out-to-right 0.3s ease-out",
+        "zoom-in": "zoom-in 0.3s ease-out",
+        "zoom-out": "zoom-out 0.3s ease-out",
       },
     },
   },
