@@ -6,15 +6,15 @@ function RadioExample() {
   return (
     <Radio.Group>
       <Radio.Label>
-        <Radio.Button />
+        <Radio.Button name="test" />
         <span>ラジオボタン1</span>
       </Radio.Label>
       <Radio.Label>
-        <Radio.Button />
+        <Radio.Button name="test" />
         <span>ラジオボタン2</span>
       </Radio.Label>
       <Radio.Label>
-        <Radio.Button />
+        <Radio.Button name="test" />
         <span>ラジオボタン3</span>
       </Radio.Label>
     </Radio.Group>
