@@ -7,7 +7,7 @@ import Arrow from "../../symbol/arrow/arrow";
 
 export interface CalendarProps {
   /** 選択された日付 */
-  date: Date | null;
+  date?: Date | null;
   /** 日付を設定する関数 */
   setDate: React.Dispatch<React.SetStateAction<Date | null>>;
   /** この日付以降を無効にする(その日を含む) */
@@ -17,12 +17,12 @@ export interface CalendarProps {
 }
 
 const Calendar = React.forwardRef<HTMLDivElement, CalendarProps>(({
-  date,
+  date = new Date(),
   setDate,
   disableAfter,
   disableBefore,
 }: {
-  date: Date | null,
+  date?: Date | null,
   setDate: React.Dispatch<React.SetStateAction<Date | null>>
   disableAfter?: Date;
   disableBefore?: Date;
@@ -90,20 +90,20 @@ const Calendar = React.forwardRef<HTMLDivElement, CalendarProps>(({
         {days.map((day) => {
           const dayDate = new Date(focusedYear, focusedMonth, day);
 
-          const isDisabled =
+          const disabled =
             (disableAfter && dayDate > disableAfter) ||
             (disableBefore && dayDate < disableBefore);
 
           return (
             <Day
               key={day}
-              isSelected={
+              selected={
                 !!date &&
                 date.getFullYear() === focusedYear &&
                 date.getMonth() === focusedMonth &&
                 date.getDate() === day
               }
-              disabled={isDisabled}
+              disabled={disabled}
               onClick={() => handleDateClick(day)}
             >
               {day}
@@ -128,6 +128,7 @@ const PrevMonthButton = memo(function PrevMonthButton({
     <button
       className="w-6 h-6 center cursor-pointer hover:bg-info-muted rounded-[4px] border border-info"
       onClick={onClick}
+      aria-label="prev-month"
     >
       <Arrow.Left className="w-2 h-auto fill-info" />
     </button>
@@ -143,6 +144,7 @@ const NextMonthButton = memo(function NextMonthButton({
     <button
       className="w-6 h-6 center cursor-pointer hover:bg-info-muted rounded-[4px] border border-info"
       onClick={onClick}
+      aria-label="next-month"
     >
       <Arrow.Right className="w-2 h-auto fill-info" />
     </button>
@@ -165,12 +167,12 @@ function DayLabel({
 
 const Day = memo(function Day({
   children,
-  isSelected = false,
+  selected = false,
   disabled = false,
   onClick,
 }: {
   children: React.ReactNode,
-  isSelected?: boolean,
+  selected?: boolean,
   disabled?: boolean,
   onClick: () => void,
 }) {
@@ -180,8 +182,8 @@ const Day = memo(function Day({
         "w-12 h-12 center rounded-[4px]",
         disabled && "text-foreground-muted cursor-not-allowed",
         !disabled && "cursor-pointer font-medium",
-        (!isSelected && !disabled) && "hover:bg-info-muted",
-        isSelected && "bg-info text-on-status",
+        (!selected && !disabled) && "hover:bg-info-muted",
+        selected && "bg-info text-on-status",
       )}
       onClick={() => {if (!disabled) onClick()}}
     >
