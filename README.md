@@ -16,7 +16,6 @@ Apple風のデザインで様々なUIを提供します。
 - radix  
 
 ## ネクストステップ  
-- SheetやSidebarなどに適宜radixを用いる  
 - RadioGroupの改定  
 - 単体テストを追加(react-testing-library/Vitest)  
 - eslint, prettierを追加  
