@@ -1,69 +1,35 @@
-import React, { useState} from "react";
+import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import Sheet from "./sheet";
+import Button from "../button/button";
+
+function SheetExample() {
+  return (
+    <Sheet.Root>
+      <Sheet.Trigger>
+        <Button>Open sheet</Button>
+      </Sheet.Trigger>
+      <Sheet.Content>
+        Sheet content
+      </Sheet.Content>
+    </Sheet.Root>
+  );
+}
+
 
 const meta = {
   title: "UI/Sheet",
-  component: Sheet,
+  component: SheetExample,
   parameters: {
-    layout: "fullscreen",
-  },
-  argTypes: {
-    ref: {
-      description: "シート要素への参照",
-      table: {
-        type: { summary: "React.Ref<HTMLElement>" },
-        defaultValue: { summary: "undefined" },
-      },
-      control: false,
-    },
-    children: {
-      description: "シートに表示するコンテンツ",
-      table: {
-        type: { summary: "React.ReactNode" },
-      },
-      control: {
-        type: "text",
-      },
-    },
-    isOpen: {
-      description: "シートの表示状態",
-      table: {
-        type: { summary: "boolean" },
-      },
-      control: {
-        type: "boolean",
-      },
-    },
-    setIsOpen: {
-      description: "シートの表示状態を変更する関数",
-      table: {
-        type: { summary: "React.Dispatch<React.SetStateAction<boolean>>" },
-      },
-      control: false,
-    },
+    layout: "centered",
   },
   tags: ["autodocs"],
-} satisfies Meta<typeof Sheet>;
+} satisfies Meta<typeof SheetExample>;
 
 export default meta;
-type Story = StoryObj<typeof Sheet>;
+type Story = StoryObj<typeof SheetExample>;
 
-
-const SheetWithHooks = (props: React.ComponentProps<typeof Sheet>) => {
-  const [isOpen, setIsOpen] = useState(true);
-  return (
-    <Sheet
-      {...props}
-      isOpen={isOpen}
-      setIsOpen={setIsOpen}
-    />
-  );
-};
 
 export const Example: Story = {
-  args: {
-    children: "Sheet content",
-  },
-  render: SheetWithHooks,
+  args: {},
 };

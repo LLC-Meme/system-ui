@@ -1,60 +1,70 @@
-import React, { useEffect } from "react";
+import React from "react";
+import * as Dialog from "@radix-ui/react-dialog";
 import { cn } from "../../../lib/cn";
 import Cross from "../../symbol/cross/cross";
+import Stack from "../../util/stack/stack";
 
 
-export interface SheetProps extends React.ComponentPropsWithoutRef<"aside"> {
-  children: React.ReactNode;
-  isOpen: boolean;
-  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+const Root = Dialog.Root;
+const Trigger = Dialog.Trigger;
+const Close = Dialog.Close;
+
+
+interface SheetOverlayProps extends Dialog.DialogOverlayProps {
+  className?: string;
 }
 
-const Sheet = React.forwardRef<HTMLElement, SheetProps>(({
-  children,
-  isOpen,
-  setIsOpen,
-}, ref) => {
-
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-
-    return () => {
-      document.body.style.overflow = "";
-    }
-  }, [isOpen]);
-
+function Overlay({
+  className,
+  ...props
+}: SheetOverlayProps) {
   return (
-    <div className={cn(
-      "w-screen h-screen fixed inset-0 z-50",
-      "transition-opacity",
-      isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
-    )}>
-      <div className="flex w-full h-full bg-[rgba(0,0,0,0.5)] backdrop-blur-sm">
-        <div className="w-full h-full" onClick={() => setIsOpen(false)} />
-        <aside
-          ref={ref}
-          className={cn(
-            "w-[480px] h-full p-6 bg-surface border-l border-border",
-            "transform transition-transform",
-            isOpen ? "translate-x-0" : "translate-x-full"
-          )}
-        >
-          <div className="flex justify-end">
-            <button onClick={() => setIsOpen(false)}>
-              <Cross className="w-4 h-auto" />
-            </button>
-          </div>
-          {children}
-        </aside>
-      </div>
-    </div>
+    <Dialog.DialogOverlay
+      {...props}
+      className={cn(
+        className,
+        "data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
+        "fixed inset-0 z-50 bg-black/80",
+      )}
+    />
+  );
+}
+
+
+const Content = React.forwardRef<
+  React.ComponentRef<typeof Dialog.Content>,
+  React.ComponentPropsWithoutRef<typeof Dialog.Content>
+>(({ className, children, ...props }, ref) => {
+  return (
+    <Dialog.Portal>
+      <Overlay />
+      <Dialog.Content
+        ref={ref}
+        {...props}
+        className={cn(
+          className,
+          "fixed z-50 gap-4 bg-background p-8 shadow-lg transition ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:duration-500",
+          "inset-y-0 right-0 h-full w-[480px]  border-l border-border data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right",
+        )}
+      >
+        <Stack.H className="justify-between mb-4">
+          <div />
+          <Dialog.Close>
+            <Cross className="w-4 h-auto" />
+          </Dialog.Close>
+        </Stack.H>
+        {children}
+      </Dialog.Content>
+    </Dialog.Portal>
   );
 });
-Sheet.displayName = "Sheet";
+Content.displayName = "Sheet.Content";
 
 
+const Sheet = {
+  Root,
+  Trigger,
+  Content,
+  Close,
+};
 export default Sheet;
