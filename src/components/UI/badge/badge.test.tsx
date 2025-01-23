@@ -26,4 +26,12 @@ describe("Badge", () => {
     expect(badgeEl).toHaveClass("test-class", "bg-alert-muted", "text-alert");
   });
 
+
+  it("refが正しく設定されている", () => {
+    const ref = React.createRef<HTMLDivElement>();
+    render(<Badge ref={ref} color="pink">Ref Test</Badge>);
+    expect(ref.current).toBeInstanceOf(HTMLDivElement);
+    expect(ref.current?.textContent).toBe("Ref Test");
+  });
+
 });
