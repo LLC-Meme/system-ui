@@ -259,4 +259,15 @@ describe("Calendar component", () => {
     const day20 = screen.getByText("20");
     expect(day20).toHaveClass("bg-info", "text-on-status");
   });
+
+
+
+  it("refが正しく設定されている", () => {
+    const ref = React.createRef<HTMLDivElement>();
+    const setDate = vi.fn();
+    render(<Calendar date={new Date()} ref={ref} setDate={setDate} />);
+    expect(ref.current).toBeInstanceOf(HTMLDivElement);
+  });
+
+
 });
