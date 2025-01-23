@@ -7,7 +7,7 @@ import Arrow from "../../symbol/arrow/arrow";
 
 export interface CalendarProps {
   /** 選択された日付 */
-  date?: Date | null;
+  date: Date | null;
   /** 日付を設定する関数 */
   setDate: React.Dispatch<React.SetStateAction<Date | null>>;
   /** この日付以降を無効にする(その日を含む) */
@@ -17,12 +17,12 @@ export interface CalendarProps {
 }
 
 const Calendar = React.forwardRef<HTMLDivElement, CalendarProps>(({
-  date = new Date(),
+  date,
   setDate,
   disableAfter,
   disableBefore,
 }: {
-  date?: Date | null,
+  date: Date | null,
   setDate: React.Dispatch<React.SetStateAction<Date | null>>
   disableAfter?: Date;
   disableBefore?: Date;

@@ -68,7 +68,7 @@ type Story = StoryObj<typeof Calendar>;
  * - カレンダー内部で日付選択が行われると、その状態はuseStateで管理されます。
  */
 const CalendarWithHooks = (props: Omit<CalendarProps, "setDate">) => {
-  const [date, setDate] = useState<Date | null>(new Date());
+  const [date, setDate] = useState<Date | null>(null);
   return (
     <Calendar
       {...props}
