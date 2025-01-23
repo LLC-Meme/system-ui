@@ -126,7 +126,7 @@ const Item = React.forwardRef<HTMLAnchorElement, DropdownItemProps>(({
       {...props}
       className={cn(
         props.className,
-        "py-2 pl-12 pr-4 flex gap-2 rounded-[4px]",
+        "py-2 pl-8 pr-4 flex gap-2 rounded-[4px]",
         !current && "hover:bg-surface-muted2",
         current && "bg-surface-muted1 font-medium",
       )}
