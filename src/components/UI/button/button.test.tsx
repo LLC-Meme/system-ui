@@ -68,4 +68,12 @@ describe("Button", () => {
   });
 
 
+  it("refが正しく設定されている", () => {
+    const ref = React.createRef<HTMLButtonElement>();
+    render(<Button ref={ref}>Ref Test</Button>);
+    expect(ref.current).toBeInstanceOf(HTMLButtonElement);
+    expect(ref.current?.textContent).toBe("Ref Test");
+  });
+
+
 });
