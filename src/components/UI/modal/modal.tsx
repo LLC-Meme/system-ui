@@ -10,8 +10,7 @@ const Root = Dialog.Root;
 const Trigger = Dialog.Trigger;
 const Close = Dialog.Close;
 
-function Overlay
-({
+function Overlay({
   className,
   ...props
 }: React.ComponentProps<typeof Dialog.Overlay>) {
