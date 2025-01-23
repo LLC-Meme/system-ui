@@ -16,7 +16,6 @@ Apple風のデザインで様々なUIを提供します。
 - radix  
 
 ## ネクストステップ  
-- ダークモード・ライトモードの切り替えに対応  
 - DropdownやSheetなどに適宜radixを用いる  
 - 単体テストを追加(react-testing-library/Vitest)  
 - eslint, prettierを追加  
