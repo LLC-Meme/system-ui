@@ -18,6 +18,7 @@ Apple風のデザインで様々なUIを提供します。
 ## ネクストステップ  
 - 単体テストを追加(react-testing-library/Vitest)  
 - eslint, prettierを追加  
+- huskyの導入  
 - ライブラリ化してnpmで使えるようにする  
 - ライブラリで問題があれば解決  
 - 可能であればstyle定義を呼び出した側にも影響させる  
