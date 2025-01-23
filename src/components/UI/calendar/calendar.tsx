@@ -21,11 +21,6 @@ const Calendar = React.forwardRef<HTMLDivElement, CalendarProps>(({
   setDate,
   disableAfter,
   disableBefore,
-}: {
-  date: Date | null,
-  setDate: React.Dispatch<React.SetStateAction<Date | null>>
-  disableAfter?: Date;
-  disableBefore?: Date;
 }, ref) => {
 
   const [focusedYear, setFocusedYear] = useState(date ? date.getFullYear() : new Date().getFullYear());
