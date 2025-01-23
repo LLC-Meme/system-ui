@@ -28,4 +28,10 @@ describe('Cross', () => {
     expect(pathElement).toHaveAttribute("d", "M6.79467 0.229334L3.966 3.05733L1.138 0.229334L0.195335 1.172L3.02334 4L0.195335 6.828L1.138 7.77067L3.966 4.94267L6.79467 7.77067L7.73734 6.828L4.90934 4L7.73734 1.172L6.79467 0.229334Z");
   });
 
+  it('refが正しく設定されている', () => {
+    const ref = React.createRef<SVGSVGElement>();
+    render(<Cross ref={ref} />);
+    expect(ref.current).toBeInstanceOf(SVGSVGElement);
+  });
+
 });
