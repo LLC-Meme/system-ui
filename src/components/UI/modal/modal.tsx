@@ -20,6 +20,7 @@ function Overlay({
         className,
         "fixed inset-0 z-30 bg-black/80  data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
       )}
+      aria-label="modal-overlay"
       {...props}
     />
   );
@@ -43,7 +44,7 @@ const Content = React.forwardRef<
     >
       <Stack.H className="justify-between mb-4">
         <div />
-        <Close>
+        <Close aria-label="close-modal">
           <Cross className="h-4 w-4" />
         </Close>
       </Stack.H>
