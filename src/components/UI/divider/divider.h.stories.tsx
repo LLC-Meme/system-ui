@@ -1,3 +1,4 @@
+import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import Divider from "./divider";
 
@@ -40,7 +41,9 @@ export default meta;
 type Story = StoryObj<typeof Divider.H>;
 
 export const Example: Story = {
-  args: {
-    thickness: 1
-  },
+  render: () => (
+    <div className="w-40">
+      <Divider.H />
+    </div>
+  ),
 };
