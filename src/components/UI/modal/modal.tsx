@@ -57,5 +57,6 @@ const Modal = {
   Root,
   Trigger,
   Content,
+  Close
 };
 export default Modal;
