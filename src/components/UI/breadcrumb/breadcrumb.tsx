@@ -1,4 +1,5 @@
 import React from "react";
+import { Slot } from "@radix-ui/react-slot";
 import { cn } from "../../../lib/cn";
 import Arrow from "../../symbol/arrow/arrow";
 
@@ -11,27 +12,37 @@ const Separator = React.forwardRef<SVGSVGElement, BreadcrumbSeparatorProps>(({},
 });
 Separator.displayName = "Breadcrumb.Separator";
 
-export interface BreadcrumbItemProps {
+
+export interface BreadcrumbItemProps extends React.ComponentPropsWithoutRef<"a"> {
   current?: boolean;
   children: React.ReactNode;
+  asChild?: boolean;
 }
 
 const Item = React.forwardRef<HTMLLIElement, BreadcrumbItemProps>(({
   current,
   children,
+  asChild,
+  ...props
 }, ref) => {
+  const Comp = asChild ? Slot : "a";
+
   return (
     <li
       ref={ref}
-      className={cn(
-        "text-info text-sm",
-        !current && "hover:underline",
-        current && "font-semibold",
-        "hover:cursor-pointer",
-        "list-none"
-      )}
+      className="list-none"
     >
-      {children}
+      <Comp
+        {...props}
+        className={cn(
+          "text-info text-sm",
+          !current && "hover:underline",
+          current && "font-semibold",
+          "hover:cursor-pointer",
+        )}
+      >
+        {children}
+      </Comp>
     </li>
   );
 });

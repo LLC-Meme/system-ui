@@ -6,20 +6,20 @@ import Breadcrumb from "./breadcrumb";
 function BreadcrumbExample() {
   return (
     <Breadcrumb.Container>
-      <Breadcrumb.Item current={false}>
-        <a href="/">Home</a>
+      <Breadcrumb.Item href="/" current={false}>
+        Home
       </Breadcrumb.Item>
       <Breadcrumb.Separator />
-      <Breadcrumb.Item current={false}>
-        <a href="/dashboard">Dashboard</a>
+      <Breadcrumb.Item href="/dashboard" current={false}>
+        Dashboard
       </Breadcrumb.Item>
       <Breadcrumb.Separator />
-      <Breadcrumb.Item current={false}>
-        <a href="/dashboard/sales">Sales</a>
+      <Breadcrumb.Item href="/dashboard/sales" current={false}>
+        Sales
       </Breadcrumb.Item>
       <Breadcrumb.Separator />
-      <Breadcrumb.Item current={true}>
-        <a href="/dashboard/sales/data">Data</a>
+      <Breadcrumb.Item href="/dashboard/sales/data" current={true}>
+        Data
       </Breadcrumb.Item>
     </Breadcrumb.Container>
   );
