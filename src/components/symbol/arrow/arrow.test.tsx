@@ -28,6 +28,14 @@ describe("Arrow", () => {
       const pathElement = screen.getByTestId("arrow-left").querySelector("path");
       expect(pathElement).toHaveAttribute("d", "M3.705 5.295L1.415 3L3.705 0.705L3 0L0 3L3 6L3.705 5.295Z");
     });
+
+
+    it("refが正しく設定されている", () => {
+      const ref = React.createRef<SVGSVGElement>();
+      render(<Arrow.Left ref={ref} />);
+      expect(ref.current).toBeInstanceOf(SVGSVGElement);
+    });
+
   });
 
 
@@ -52,6 +60,14 @@ describe("Arrow", () => {
       const pathElement = screen.getByTestId("arrow-right").querySelector("path");
       expect(pathElement).toHaveAttribute("d", "M0.294998 5.295L2.585 3L0.294998 0.705L0.999998 0L4 3L0.999998 6L0.294998 5.295Z");
     });
+
+
+    it("refが正しく設定されている", () => {
+      const ref = React.createRef<SVGSVGElement>();
+      render(<Arrow.Right ref={ref} />);
+      expect(ref.current).toBeInstanceOf(SVGSVGElement);
+    });
+
   });
 
 
