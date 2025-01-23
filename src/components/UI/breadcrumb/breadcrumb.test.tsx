@@ -29,6 +29,18 @@ describe("Breadcrumb", () => {
       expect(screen.getByTestId("child-1")).toBeInTheDocument();
       expect(screen.getByTestId("child-2")).toBeInTheDocument();
     });
+
+    it("refが正しく設定されている", () => {
+      const ref = React.createRef<HTMLOListElement>();
+      render(
+        <Breadcrumb.Container ref={ref}>
+          <li>Ref Test</li>
+        </Breadcrumb.Container>
+      );
+      expect(ref.current).toBeInstanceOf(HTMLOListElement);
+      expect(ref.current?.textContent).toBe("Ref Test");
+    });
+
   });
 
 
@@ -77,6 +89,14 @@ describe("Breadcrumb", () => {
       const linkEl = screen.getByTestId("link-prop");
       expect(linkEl).toHaveAttribute("href", "#");
     });
+
+    it("refが正しく設定されている", () => {
+      const ref = React.createRef<HTMLLIElement>();
+      render(<Breadcrumb.Item ref={ref}>Ref Test</Breadcrumb.Item>);
+      expect(ref.current).toBeInstanceOf(HTMLLIElement);
+      expect(ref.current?.textContent).toBe("Ref Test");
+    });
+
   });
 
   describe("Separator", () => {
@@ -85,6 +105,12 @@ describe("Breadcrumb", () => {
       const sepEl = screen.getByTestId("sep");
       expect(sepEl.tagName).toBe("svg");
       expect(sepEl).toHaveClass("fill-foreground");
+    });
+
+    it("refが正しく設定されている", () => {
+      const ref = React.createRef<SVGSVGElement>();
+      render(<Breadcrumb.Separator ref={ref} />);
+      expect(ref.current).toBeInstanceOf(SVGSVGElement);
     });
   });
 
