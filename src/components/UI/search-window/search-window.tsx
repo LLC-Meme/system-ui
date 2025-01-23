@@ -53,10 +53,9 @@ const Input = React.forwardRef<HTMLInputElement, SearchWindowInputProps>(({
       className={cn(
         props.className,
         "w-full h-full bg-transparent rounded-lg",
-        "pl-8 focus:pl-[31px] pr-2",
-        "focus:border-info focus:border",
+        "pl-8 pr-2",
+        "focus:outline-1 focus:outline-info",
         "placeholder:text-foreground-muted",
-        "outline-none"
       )}
     />
   );
