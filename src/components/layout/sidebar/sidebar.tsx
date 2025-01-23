@@ -94,8 +94,8 @@ const Container = React.forwardRef<HTMLElement, SidebarContainerProps>(({
       {...props}
       className={cn(
         props.className,
-        "fixed top-16 left-0",
-        "min-h-screen p-6 flex flex-col gap-8 bg-surface border-r border-border",
+        "fixed top-16 left-0 bottom-0 overflow-y-scroll z-20",
+        "p-6 flex flex-col gap-8 bg-surface border-r border-border",
         "transform transition-transform",
         isOpen
           ? "translate-x-0"

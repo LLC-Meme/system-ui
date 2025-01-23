@@ -40,6 +40,58 @@ function SidebarExample() {
             </Dropdown.Item>
           </Dropdown.Content>
         </Dropdown.Container>
+        <Dropdown.Container>
+          <Dropdown.Trigger>
+            Dropdown Trigger
+          </Dropdown.Trigger>
+          <Dropdown.Content>
+            <Dropdown.Item href="/item1">
+              Dropdown Item 1
+            </Dropdown.Item>
+            <Dropdown.Item href="/item2">
+              Dropdown Item 2
+            </Dropdown.Item>
+          </Dropdown.Content>
+        </Dropdown.Container>
+        <Dropdown.Container>
+          <Dropdown.Trigger>
+            Dropdown Trigger
+          </Dropdown.Trigger>
+          <Dropdown.Content>
+            <Dropdown.Item href="/item1">
+              Dropdown Item 1
+            </Dropdown.Item>
+            <Dropdown.Item href="/item2">
+              Dropdown Item 2
+            </Dropdown.Item>
+          </Dropdown.Content>
+        </Dropdown.Container>
+        <Dropdown.Container>
+          <Dropdown.Trigger>
+            Dropdown Trigger
+          </Dropdown.Trigger>
+          <Dropdown.Content>
+            <Dropdown.Item href="/item1">
+              Dropdown Item 1
+            </Dropdown.Item>
+            <Dropdown.Item href="/item2">
+              Dropdown Item 2
+            </Dropdown.Item>
+          </Dropdown.Content>
+        </Dropdown.Container>
+        <Dropdown.Container>
+          <Dropdown.Trigger>
+            Dropdown Trigger
+          </Dropdown.Trigger>
+          <Dropdown.Content>
+            <Dropdown.Item href="/item1">
+              Dropdown Item 1
+            </Dropdown.Item>
+            <Dropdown.Item href="/item2">
+              Dropdown Item 2
+            </Dropdown.Item>
+          </Dropdown.Content>
+        </Dropdown.Container>
       </Sidebar.Group>
     </Sidebar.Container>
   );
