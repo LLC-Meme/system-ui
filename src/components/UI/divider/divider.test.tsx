@@ -45,6 +45,17 @@ describe("Divider", () => {
       // 追加のstyleが適用されていることを確認
       expect(divider).toHaveStyle({ borderStyle: "dashed" });
     });
+
+
+    it("refが正しく設定されている", () => {
+      const ref = React.createRef<HTMLHRElement>();
+      render(
+        <Divider.V ref={ref} />
+      );
+
+      expect(ref.current).toBeInstanceOf(HTMLHRElement);
+    });
+
   });
 
 
@@ -84,6 +95,16 @@ describe("Divider", () => {
       expect(divider).toHaveClass("custom-class");
       // 追加のstyleが適用されている
       expect(divider).toHaveStyle({ borderStyle: "dashed" });
+    });
+
+
+    it("refが正しく設定されている", () => {
+      const ref = React.createRef<HTMLHRElement>();
+      render(
+        <Divider.H ref={ref} />
+      );
+
+      expect(ref.current).toBeInstanceOf(HTMLHRElement);
     });
 
 
