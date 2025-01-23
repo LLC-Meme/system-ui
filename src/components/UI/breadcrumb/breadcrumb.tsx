@@ -5,9 +5,11 @@ import Arrow from "../../symbol/arrow/arrow";
 
 export interface BreadcrumbSeparatorProps {}
 
-const Separator = React.forwardRef<SVGSVGElement, BreadcrumbSeparatorProps>(({}, ref) => {
+const Separator = React.forwardRef<SVGSVGElement, BreadcrumbSeparatorProps>(({
+  ...props
+}, ref) => {
   return (
-    <Arrow.Right ref={ref} className="fill-foreground" />
+    <Arrow.Right ref={ref} {...props} className="fill-foreground" />
   );
 });
 Separator.displayName = "Breadcrumb.Separator";
