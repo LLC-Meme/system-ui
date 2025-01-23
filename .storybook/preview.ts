@@ -4,14 +4,15 @@ import "../src/tailwind.css";
 
 const preview: Preview = {
   parameters: {
+    backgrounds: {
+      disable: true,
+    },
     controls: {
       matchers: {
-        color: /(background|color)$/i,
         date: /Date$/i,
       },
     },
   },
-
   decorators: [withThemeByClassName({
       themes: {
           // nameOfTheme: 'classNameForTheme',
@@ -19,7 +20,7 @@ const preview: Preview = {
           dark: 'dark',
       },
       defaultTheme: 'light',
-  })]
+  })],
 };
 
 export default preview;

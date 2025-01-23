@@ -26,12 +26,16 @@ input, textarea {
 }
 
 
-:root {
+body {
+  background-color: var(--background);
+}
+
+body {
   --disabled-opacity: 0.4;
   --hover-opacity: 0.7;
 }
 
-:root {
+body {
   --background: #f2f2f7;
   --foreground: #000;
   --foreground-muted: #595959;
@@ -70,42 +74,42 @@ input, textarea {
 }
 
 
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #000;
-    --foreground: #fff;
-    --foreground-muted: #eaeaea;
-    --surface: #1c1c1e;
-    --surface-muted1: #38383B;
-    --surface-muted2: #2c282e;
-    --overlay: rgba(28, 28, 30, 0.8);
-    --border: #545458;
-  
-    --info: #0A84FF;
-    --info-muted: rgba(10, 132, 255, 0.2);
-    --alert: #FF453A;
-    --alert-muted: rgba(255, 69, 58, 0.2);
-    --warning: #FF9F0A;
-    --warning-muted: rgba(255, 159, 10, 0.2);
-    --success: #32D74B;
-    --success-muted: rgba(50, 215, 75, 0.2);
-    --on-status: #fff;
-  
-    --yellow: #FFD60A;
-    --yellow-muted: rgba(255, 214, 10, 0.2);
-    --mint: #66D4CF;
-    --mint-muted: rgba(102, 212, 207, 0.2);
-    --teal: #6AC4DC;
-    --teal-muted: rgba(106, 196, 220, 0.2);
-    --cyan: #5AC8F5;
-    --cyan-muted: rgba(90, 200, 245, 0.2);
-    --indigo: #5E5CE6;
-    --indigo-muted: rgba(94, 92, 230, 0.2);
-    --purple: #BF5AF2;
-    --purple-muted: rgba(191, 90, 242, 0.2);
-    --pink: #FF375F;
-    --pink-muted: rgba(255, 55, 95, 0.2);
-    --brown: #AC8E68;
-    --brown-muted: rgba(172, 142, 104, 0.2);
-  }
-} */
+body.dark {
+
+  --background: #000;
+  --foreground: #fff;
+  --foreground-muted: #eaeaea;
+  --surface: #1c1c1e;
+  --surface-muted1: #38383B;
+  --surface-muted2: #2c282e;
+  --overlay: rgba(28, 28, 30, 0.8);
+  --border: #545458;
+
+  --info: #0A84FF;
+  --info-muted: rgba(10, 132, 255, 0.2);
+  --alert: #FF453A;
+  --alert-muted: rgba(255, 69, 58, 0.2);
+  --warning: #FF9F0A;
+  --warning-muted: rgba(255, 159, 10, 0.2);
+  --success: #32D74B;
+  --success-muted: rgba(50, 215, 75, 0.2);
+  --on-status: #fff;
+
+  --yellow: #FFD60A;
+  --yellow-muted: rgba(255, 214, 10, 0.2);
+  --mint: #66D4CF;
+  --mint-muted: rgba(102, 212, 207, 0.2);
+  --teal: #6AC4DC;
+  --teal-muted: rgba(106, 196, 220, 0.2);
+  --cyan: #5AC8F5;
+  --cyan-muted: rgba(90, 200, 245, 0.2);
+  --indigo: #5E5CE6;
+  --indigo-muted: rgba(94, 92, 230, 0.2);
+  --purple: #BF5AF2;
+  --purple-muted: rgba(191, 90, 242, 0.2);
+  --pink: #FF375F;
+  --pink-muted: rgba(255, 55, 95, 0.2);
+  --brown: #AC8E68;
+  --brown-muted: rgba(172, 142, 104, 0.2);
+
+}
