@@ -5,13 +5,13 @@ import Tooltip from "./tooltip";
 
 function TooltipExample() {
   return (
-    <Tooltip.Container className="w-40">
-      <Tooltip.Trigger>
+    <Tooltip.Container>
+      <Tooltip.Trigger className="w-fit">
         <div>
           Hover me
         </div>
       </Tooltip.Trigger>
-      <Tooltip.Content className="w-40">
+      <Tooltip.Content>
         <div>Tooltip content</div>
       </Tooltip.Content>
     </Tooltip.Container>

@@ -1,81 +1,46 @@
+"use client";
+
 import React from "react";
+import * as TooltipPrimitive from "@radix-ui/react-tooltip";
 import { cn } from "../../../lib/cn";
 
 
-export interface TooltipContainerProps extends React.ComponentPropsWithoutRef<"div"> {
-  children: React.ReactNode;
-}
 
-const Container = React.forwardRef<HTMLDivElement, TooltipContainerProps>(({
+const Container = ({
   children,
   ...props
-}, ref) => {
+}: React.ComponentProps<typeof TooltipPrimitive.Root>) => {
   return (
-    <div
-      ref={ref}
-      {...props}
-      className={cn(
-        props.className,
-        "relative group")}
-      >
-      {children}
-    </div>
+    <TooltipPrimitive.Provider>
+      <TooltipPrimitive.Root {...props} delayDuration={0}>
+        {children}
+      </TooltipPrimitive.Root>
+    </TooltipPrimitive.Provider>
   );
-});
-
-
-
-export interface TooltipTriggerProps extends React.ComponentPropsWithoutRef<"div"> {
-  children: React.ReactNode;
 }
 
-const Trigger = React.forwardRef<HTMLDivElement, TooltipTriggerProps>(({
-  children,
-  ...props
-}, ref) => {
+const Trigger = TooltipPrimitive.Trigger;
+
+const Content = React.forwardRef<
+  React.ComponentRef<typeof TooltipPrimitive.Content>,
+  React.ComponentPropsWithoutRef<typeof TooltipPrimitive.Content>
+>(({ className, ...props }, ref) => {
   return (
-    <div
+    <TooltipPrimitive.Content
       ref={ref}
-      {...props}
-    >
-      {children}
-    </div>
-  );
-});
-Trigger.displayName = "Tooltip.Trigger";
-
-
-
-export interface TooltipContentProps extends React.ComponentPropsWithoutRef<"div"> {
-  children: React.ReactNode;
-}
-
-const Content = React.forwardRef<HTMLDivElement, TooltipContentProps>(({
-  children,
-  ...props
-}, ref) => {
-  return (
-    <div
-      ref={ref}
-      {...props}
       className={cn(
-        props.className,
-        `h-8 px-4 center absolute top-[-40px] left-1/2 overlay rounded-[4px] overflow-hidden border border-border`,
-        "transform -translate-x-1/2",
-        "opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all"
+        className,
+        "z-50 overflow-hidden rounded-[4px] border overlay px-3 py-1.5 animate-in fade-in-0 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
       )}
-    >
-      {children}
-    </div>
+      {...props}
+    />
   );
 });
-Content.displayName = "Tooltip.Content";
+
 
 const Tooltip = {
   Container,
   Trigger,
-  Content,
+  Content
 };
-
-
 export default Tooltip;
