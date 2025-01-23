@@ -72,6 +72,7 @@ const Prev = React.forwardRef<HTMLAnchorElement, PaginationButtonProps>(({
         "center w-8 h-8 rounded-[4px] text-info",
         "hover:bg-info-muted hover:cursor-pointer",
       )}
+      aria-label="pagination-prev"
     >
       <Arrow.Left className="w-2 h-auto fill-info" />
     </Comp>
@@ -93,6 +94,7 @@ const Next = React.forwardRef<HTMLAnchorElement, PaginationButtonProps>(({
         "center w-8 h-8 rounded-[4px] text-info",
         "hover:bg-info-muted hover:cursor-pointer",
       )}
+      aria-label="pagination-next"
     >
       <Arrow.Right className="w-2 h-auto fill-info" />
     </Comp>
