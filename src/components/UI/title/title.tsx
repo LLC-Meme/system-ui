@@ -63,7 +63,7 @@ const Block = React.forwardRef<HTMLHeadingElement, BlockTitleProps>(({
       ref={ref}
       className={cn(
         props.className,
-        "text-md font-semibold text-foreground"
+        "text-md font-bold text-foreground"
       )}
     >
       {children}
