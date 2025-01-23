@@ -56,26 +56,31 @@ Item.displayName = "Pagination.Item";
 
 
 
-export interface PaginationButtonProps extends React.ComponentPropsWithoutRef<"a"> {
-  asChild?: boolean;
+export interface PaginationButtonProps
+  extends Omit<React.ComponentPropsWithoutRef<"a">, "as"> {
+  as?: React.ElementType;
+  disabled?: boolean;
 }
 
 const Prev = React.forwardRef<HTMLAnchorElement, PaginationButtonProps>(({
-  asChild,
+  as: Tag = "a",
+  disabled,
+  ...props
 }, ref) => {
-  const Comp = asChild ? Slot : "a";
 
   return (
-    <Comp
+    <Tag
       ref={ref}
+      {...props}
       className={cn(
+        props.className,
         "center w-8 h-8 rounded-[4px] text-info",
         "hover:bg-info-muted hover:cursor-pointer",
       )}
       aria-label="pagination-prev"
     >
       <Arrow.Left className="w-2 h-auto fill-info" />
-    </Comp>
+    </Tag>
   );
 });
 Prev.displayName = "Pagination.Prev";
@@ -83,21 +88,23 @@ Prev.displayName = "Pagination.Prev";
 
 
 const Next = React.forwardRef<HTMLAnchorElement, PaginationButtonProps>(({
-  asChild,
+  as: Tag = "a",
+  disabled,
+  ...props
 }, ref) => {
-  const Comp = asChild ? Slot : "a";
-
   return (
-    <Comp
+    <Tag
       ref={ref}
+      {...props}
       className={cn(
+        props.className,
         "center w-8 h-8 rounded-[4px] text-info",
         "hover:bg-info-muted hover:cursor-pointer",
       )}
       aria-label="pagination-next"
     >
       <Arrow.Right className="w-2 h-auto fill-info" />
-    </Comp>
+    </Tag>
   );
 });
 Next.displayName = "Pagination.Next";
@@ -109,6 +116,7 @@ const Ellipsis = React.forwardRef<HTMLDivElement, {}>(({}, ref) => {
     <div
       ref={ref}
       className="w-8 h-8 center"
+      aria-label="pagination-ellipsis"
     >
       <svg className="w-4 h-auto" width="8" height="2" viewBox="0 0 8 2" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
