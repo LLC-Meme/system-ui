@@ -15,11 +15,12 @@ const preview: Preview = {
   },
   decorators: [withThemeByClassName({
       themes: {
-          // nameOfTheme: 'classNameForTheme',
-          light: '',
-          dark: 'dark',
+          // nameOfTheme: "classNameForTheme",
+          light: "",
+          dark: "dark",
       },
-      defaultTheme: 'light',
+      defaultTheme: "light",
+      parentSelector: "body",
   })],
 };
 
