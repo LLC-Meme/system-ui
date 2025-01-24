@@ -9,7 +9,7 @@ function Separator () {
   return (
     <ChevronRight
       size={24}
-      className="w-4 h-4 color-foreground mt-[5px]"
+      className="w-3 h-3 color-foreground mt-1"
       aria-label="breadcrumb-separator"
     />
   );
@@ -34,7 +34,7 @@ const Item = React.forwardRef<HTMLLIElement, BreadcrumbItemProps>(({
   return (
     <li
       ref={ref}
-      className="list-none"
+      className="list-none center"
     >
       <Comp
         {...props}
