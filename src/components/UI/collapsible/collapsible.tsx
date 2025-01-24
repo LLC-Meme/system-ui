@@ -2,6 +2,7 @@
 
 import React, { useState, createContext, useContext } from "react";
 import { Slot } from "@radix-ui/react-slot";
+import * as RadixCollapsible from "@radix-ui/react-collapsible";
 import { cn } from "../../../lib/cn";
 import { ChevronRight } from "lucide-react";
 
@@ -26,40 +27,37 @@ const Container = React.forwardRef<HTMLDivElement, CollapsibleContainerProps>(({
   const [isOpen, setIsOpen] = useState(false);
   return (
     <CollapsibleContext.Provider value={{ isOpen, setIsOpen }}>
-      <div
+      <RadixCollapsible.Root
+        open={isOpen}
+        onOpenChange={setIsOpen}
         ref={ref}
         {...props}
-        className={cn(
-          props.className,
-          "relative"
-        )}
       >
         {children}
-      </div>
+      </RadixCollapsible.Root>
     </CollapsibleContext.Provider>
   );
 });
 Container.displayName = "Collapsible.Container";
 
 
-export interface CollapsibleTriggerProps extends React.ComponentPropsWithoutRef<"div"> {
+export interface CollapsibleTriggerProps extends React.ComponentPropsWithoutRef<"button"> {
   children: React.ReactNode;
 }
 
-const Trigger = React.forwardRef<HTMLDivElement, CollapsibleTriggerProps>(({
+const Trigger = React.forwardRef<HTMLButtonElement, CollapsibleTriggerProps>(({
   children,
   ...props
 }, ref) => {
-  const { isOpen, setIsOpen } = useContext(CollapsibleContext);
+  const { isOpen } = useContext(CollapsibleContext);
   return (
-    <div
+    <RadixCollapsible.Trigger
       ref={ref}
       {...props}
       className={cn(
         props.className,
-        "py-2 px-4 flex items-center justify-between rounded-[4px] cursor-pointer hover:bg-surface-muted2"
+        "w-full py-2 px-4 flex items-center justify-between rounded-[4px] cursor-pointer hover:bg-surface-muted2"
       )}
-      onClick={() => setIsOpen(!isOpen)}
     >
       <div className="flex gap-2">
         {children}
@@ -72,7 +70,7 @@ const Trigger = React.forwardRef<HTMLDivElement, CollapsibleTriggerProps>(({
           isOpen && "transform rotate-90"
         )}
       />
-    </div>
+    </RadixCollapsible.Trigger>
   );
 });
 Trigger.displayName = "Collapsible.Trigger";
@@ -87,21 +85,13 @@ const Content = React.forwardRef<HTMLDivElement, CollapsibleContentProps>(({
   children,
   ...props
 }, ref) => {
-  const { isOpen } = useContext(CollapsibleContext);
   return (
-    <div
+    <RadixCollapsible.Content
       ref={ref}
       {...props}
-      className={cn(
-        props.className,
-        "w-full overflow-hidden transform origin-top",
-        isOpen
-          ? "max-h-96 scale-y-100"
-          : "max-h-0 scale-y-0",
-      )}
     >
       {children}
-    </div>
+    </RadixCollapsible.Content>
   );
 });
 Content.displayName = "Collapsible.Content";
@@ -121,7 +111,6 @@ const Item = React.forwardRef<HTMLAnchorElement, CollapsibleItemProps>(({
   ...props
 }, ref) => {
   const Comp = asChild ? Slot : "a";
-
   return (
     <Comp
       ref={ref}

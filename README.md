@@ -17,7 +17,7 @@ Apple風のデザインで様々なUIを提供します。
 
 ## ネクストステップ  
 - Dropdownを作る  
-- CollapsibleとSidebarを改定(stateとcontextから解放、radixを使う?)→テスト  
+- Sidebarを改定(radixを使う?)→テスト  
 - eslint, prettierを追加  
 - huskyの導入  
 - ライブラリ化してnpmで使えるようにする  
