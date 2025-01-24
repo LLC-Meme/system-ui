@@ -12,6 +12,7 @@ const Container = React.forwardRef<HTMLDivElement, SearchWindowContainerProps>((
   return (
     <div
       ref={ref}
+      {...props}
       className={cn(
         props.className,
         "relative bg-surface-muted1 h-8 rounded-lg"
