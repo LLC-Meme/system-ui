@@ -1,4 +1,5 @@
 import React from "react";
+import { cn } from "../../../lib/cn";
 
 export interface LabelProps extends React.LabelHTMLAttributes<HTMLLabelElement> {
   children: React.ReactNode;
@@ -9,7 +10,14 @@ const Label = React.forwardRef<HTMLLabelElement, LabelProps>(({
   ...props
 }, ref) => {
   return (
-    <label ref={ref} {...props}>
+    <label
+      ref={ref}
+      {...props}
+      className={cn(
+        props.className,
+        "flex flex-col gap-2"
+      )}
+    >
       {children}
     </label>
   );

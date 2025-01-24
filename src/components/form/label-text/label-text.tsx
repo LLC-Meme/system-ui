@@ -15,7 +15,7 @@ const LabelText = React.forwardRef<HTMLSpanElement, LabelTextProps>(({
       {...props}
       className={cn(
         props.className,
-        "font-medium"
+        "font-semibold"
       )}
     >
       {children}
