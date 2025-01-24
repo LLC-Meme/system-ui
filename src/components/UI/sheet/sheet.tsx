@@ -49,8 +49,7 @@ const Content = React.forwardRef<
           "rounded-tl-2xl rounded-bl-2xl"
         )}
       >
-        <Stack.H className="justify-between mb-4">
-          <div />
+        <Stack.H className="justify-end mb-4">
           <Close className="hover:text-foreground-muted">
             <X className="w-6 h-6" />
           </Close>

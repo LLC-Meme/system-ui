@@ -43,8 +43,7 @@ const Content = React.forwardRef<
       )}
       {...props}
     >
-      <Stack.H className="justify-between mb-4">
-        <div />
+      <Stack.H className="justify-end mb-4">
         <Close aria-label="close-modal">
           <X className="w-6 h-6" />
         </Close>
