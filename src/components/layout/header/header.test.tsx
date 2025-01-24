@@ -28,7 +28,7 @@ describe("Header", () => {
         "px-6",
         "flex",
         "items-center",
-        "overlay",
+        "bg-surface",
         "border-b",
         "border-border",
         "z-20"
