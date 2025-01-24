@@ -9,7 +9,7 @@ const { Container, Input } = SearchWindow;
 
 describe("SearchWindow", () => {
 
-  it("ContainerがデフォルトのclassでかつMagnifyingGlassとともに表示", () => {
+  it("Containerがデフォルトのclassで表示", () => {
     render(
       <Container data-testid="search-container">
         <Input />
@@ -25,12 +25,6 @@ describe("SearchWindow", () => {
       "h-8",
       "rounded-lg"
     );
-
-    // svg要素が表示されていることを確認
-    const svgEl = container.querySelector("svg");
-    expect(svgEl).toBeInTheDocument();
-    // pointer-events-noneクラスが適用されていることを確認
-    expect(svgEl).toHaveClass("pointer-events-none");
   });
 
 

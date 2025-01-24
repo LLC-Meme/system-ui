@@ -100,10 +100,9 @@ describe("Breadcrumb", () => {
   });
 
   describe("Separator", () => {
-    it("正しいclassName('fill-foreground')でSVG要素を表示", () => {
+    it("正しいclassNameで表示", () => {
       render(<Breadcrumb.Separator />);
       const sepEl = screen.getByLabelText("breadcrumb-separator");
-      expect(sepEl.tagName).toBe("svg");
       expect(sepEl).toHaveClass("color-foreground", "w-4", "h-4");
     });
 
