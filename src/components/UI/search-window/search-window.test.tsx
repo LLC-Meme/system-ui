@@ -73,7 +73,7 @@ describe("SearchWindow", () => {
       "h-full",
       "bg-transparent",
       "rounded-lg",
-      "pl-8",
+      "pl-9",
       "pr-2",
       "placeholder:text-foreground-muted"
     );
