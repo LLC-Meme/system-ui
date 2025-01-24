@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Header from "./components/layout/header/header";
 import Sidebar from "./components/layout/sidebar/sidebar";
+import Main from "./components/layout/main/main";
 import Collapsible from "./components/UI/collapsible/collapsible";
 import Breadcrumb from "./components/UI/breadcrumb/breadcrumb";
 import { cn } from "./lib/cn";
@@ -108,13 +109,7 @@ export default function Page() {
       </Sidebar.Container>
 
 
-      <main
-        className={cn(
-          "mt-16 pt-6 px-8 pb-12",
-          "transition-[margin-left]",
-          sidebarOpen ? "ml-80" : "ml-0"
-        )}
-      >
+      <Main sidebarOpen={sidebarOpen}>
 
         <Breadcrumb.Container>
           <Breadcrumb.Item href="/" current={false}>
@@ -134,7 +129,7 @@ export default function Page() {
           </Breadcrumb.Item>
         </Breadcrumb.Container>
 
-      </main>
+      </Main>
 
     </div>
   );
