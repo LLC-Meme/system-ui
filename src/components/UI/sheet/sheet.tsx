@@ -62,10 +62,45 @@ const Content = React.forwardRef<
 Content.displayName = "Sheet.Content";
 
 
+const Title = React.forwardRef<
+  React.ComponentRef<typeof Dialog.Title>,
+  React.ComponentPropsWithoutRef<typeof Dialog.Title>
+>(({ className, ...props }, ref) => {
+  return (
+    <Dialog.Title
+      ref={ref}
+      className={cn(
+        "text-lg font-bold",
+        className
+      )}
+      {...props}
+    />
+  )
+});
+Title.displayName = "Modal.Title";
+
+
+const Description = React.forwardRef<
+  React.ComponentRef<typeof Dialog.Description>,
+  React.ComponentPropsWithoutRef<typeof Dialog.Description>
+>(({ className, ...props }, ref) => {
+  return (
+    <Dialog.Description
+      ref={ref}
+      className={className}
+      {...props}
+    />
+  );
+});
+Description.displayName = "Modal.Description";
+
+
 const Sheet = {
   Root,
   Trigger,
   Content,
   Close,
+  Title,
+  Description,
 };
 export default Sheet;
