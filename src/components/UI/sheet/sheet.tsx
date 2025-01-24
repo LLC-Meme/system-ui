@@ -44,7 +44,7 @@ const Content = React.forwardRef<
         {...props}
         className={cn(
           className,
-          "fixed z-40 gap-4 bg-surface p-8 shadow-lg transition ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:duration-500",
+          "fixed z-40 gap-4 bg-surface p-8 pl-10 shadow-lg transition ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:duration-500",
           "inset-y-0 right-0 h-full w-[400px] data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right",
           "rounded-tl-2xl rounded-bl-2xl"
         )}
@@ -52,7 +52,7 @@ const Content = React.forwardRef<
         <Stack.H className="justify-between mb-4">
           <div />
           <Close className="hover:text-foreground-muted">
-            <X className="w-4 h-4" />
+            <X className="w-6 h-6" />
           </Close>
         </Stack.H>
         {children}
