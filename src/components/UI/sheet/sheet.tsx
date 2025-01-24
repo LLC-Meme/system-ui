@@ -3,7 +3,7 @@
 import React from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 import { cn } from "../../../lib/cn";
-import Cross from "../../symbol/cross/cross";
+import { X } from "lucide-react";
 import Stack from "../../util/stack/stack";
 
 
@@ -45,14 +45,14 @@ const Content = React.forwardRef<
         className={cn(
           className,
           "fixed z-40 gap-4 bg-surface p-8 shadow-lg transition ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:duration-500",
-          "inset-y-0 right-0 h-full w-[480px] data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right",
+          "inset-y-0 right-0 h-full w-[400px] data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right",
           "rounded-tl-2xl rounded-bl-2xl"
         )}
       >
         <Stack.H className="justify-between mb-4">
           <div />
-          <Close>
-            <Cross className="w-4 h-auto" />
+          <Close className="hover:text-foreground-muted">
+            <X className="w-4 h-4" />
           </Close>
         </Stack.H>
         {children}
