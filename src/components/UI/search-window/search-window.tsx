@@ -1,5 +1,7 @@
 import React from "react";
 import { cn } from "../../../lib/cn";
+import { Search } from "lucide-react";
+
 
 export interface SearchWindowContainerProps extends React.ComponentPropsWithoutRef<"div"> {
   children: React.ReactNode;
@@ -32,12 +34,12 @@ function MagnifyingGlass({
   className: string;
 }) {
   return (
-    <svg className={cn(className, "pointer-events-none")} width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path
-        d="M7.33333 14C8.87167 14 10.2858 13.4708 11.4142 12.5933L15.0775 16.2567L16.2558 15.0783L12.5925 11.415C13.4708 10.2858 14 8.87167 14 7.33333C14 3.6575 11.0092 0.666668 7.33333 0.666668C3.6575 0.666668 0.666668 3.6575 0.666668 7.33333C0.666668 11.0092 3.6575 14 7.33333 14ZM7.33333 2.33333C10.0908 2.33333 12.3333 4.57583 12.3333 7.33333C12.3333 10.0908 10.0908 12.3333 7.33333 12.3333C4.57583 12.3333 2.33333 10.0908 2.33333 7.33333C2.33333 4.57583 4.57583 2.33333 7.33333 2.33333Z"
-        className="fill-foreground-muted"
-      />
-    </svg>
+    <Search
+      className={cn(
+        className,
+        "pointer-events-none w-5 h-5"
+      )}
+    />
   );
 }
 
@@ -54,7 +56,7 @@ const Input = React.forwardRef<HTMLInputElement, SearchWindowInputProps>(({
       className={cn(
         props.className,
         "w-full h-full bg-transparent rounded-lg",
-        "pl-8 pr-2",
+        "pl-9 pr-2",
         "focus:outline-1 focus:outline-info",
         "placeholder:text-foreground-muted",
       )}
