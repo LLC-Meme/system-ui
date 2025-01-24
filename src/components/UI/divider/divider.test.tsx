@@ -10,14 +10,14 @@ describe("Divider", () => {
 
 
   describe("Divider.V", () => {
-    it("thickness(2px)をデフォルトで表示", () => {
+    it("thickness(1px)をデフォルトで表示", () => {
       render(<Divider.V data-testid="vertical-divider" />);
       const divider = screen.getByTestId("vertical-divider");
 
       // <hr>要素であることを確認
       expect(divider.tagName).toBe("HR");
-      // デフォルトのthickness(2)が適用されていることを確認
-      expect(divider).toHaveStyle({ width: "2px" });
+      // デフォルトのthickness(1)が適用されていることを確認
+      expect(divider).toHaveStyle({ width: "1px" });
       // デフォルトのクラスが適用されていることを確認
       expect(divider).toHaveClass("h-full", "bg-border", "rounded-full");
     });
@@ -61,14 +61,14 @@ describe("Divider", () => {
 
 
   describe("Divider.H", () => {
-    it("thickness(2px)をデフォルトで表示", () => {
+    it("thickness(1px)をデフォルトで表示", () => {
       render(<Divider.H data-testid="horizontal-divider" />);
       const divider = screen.getByTestId("horizontal-divider");
 
       // <hr>要素であることを確認
       expect(divider.tagName).toBe("HR");
       // デフォルトのthickness(2)が適用されている
-      expect(divider).toHaveStyle({ height: "2px" });
+      expect(divider).toHaveStyle({ height: "1px" });
       // デフォルトのクラスが適用されている
       expect(divider).toHaveClass("w-full", "bg-border", "rounded-full");
     });
