@@ -27,6 +27,8 @@ function Overlay({
   );
 };
 
+
+
 const Content = React.forwardRef<
   React.ComponentRef<typeof Dialog.Content>,
   React.ComponentPropsWithoutRef<typeof Dialog.Content>
@@ -52,11 +54,49 @@ const Content = React.forwardRef<
     </Dialog.Content>
   </Dialog.Portal>
 ));
+Content.displayName = "Modal.Content";
+
+
+const Title = React.forwardRef<
+  React.ComponentRef<typeof Dialog.Title>,
+  React.ComponentPropsWithoutRef<typeof Dialog.Title>
+>(({ className, ...props }, ref) => {
+  return (
+    <Dialog.Title
+      ref={ref}
+      className={cn(
+        "font-bold",
+        className
+      )}
+      {...props}
+    />
+  )
+});
+Title.displayName = "Modal.Title";
+
+
+
+const Description = React.forwardRef<
+  React.ComponentRef<typeof Dialog.Description>,
+  React.ComponentPropsWithoutRef<typeof Dialog.Description>
+>(({ className, ...props }, ref) => {
+  return (
+    <Dialog.Description
+      ref={ref}
+      className={className}
+      {...props}
+    />
+  );
+});
+Description.displayName = "Modal.Description";
+
 
 const Modal = {
   Root,
   Trigger,
   Content,
-  Close
+  Close,
+  Title,
+  Description
 };
 export default Modal;
