@@ -17,7 +17,7 @@ describe("Input", () => {
       "px-4",
       "py-2",
       "bg-surface",
-      "rounded-[4px]",
+      "rounded-lg",
       "outline-none",
       "border",
       "border-border",

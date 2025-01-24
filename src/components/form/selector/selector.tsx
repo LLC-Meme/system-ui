@@ -18,7 +18,7 @@ const Select = React.forwardRef<HTMLSelectElement, SelectorSelectProps>(({
           props.className,
           "appearance-none bg-transparent outline-none cursor-pointer",
           "min-w-40 px-4 py-2",
-          "border border-border rounded-[4px]",
+          "border border-border rounded-lg",
           "focus:border-info",
         )}
       >

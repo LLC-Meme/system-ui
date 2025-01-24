@@ -13,7 +13,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(({
       {...props}
       className={cn(
         props.className,
-        "min-w-40 min-h-20 px-4 py-2 bg-surface rounded-[4px]",
+        "min-w-40 min-h-20 px-4 py-2 bg-surface rounded-lg",
         "outline-none resize-none",
         "border border-border",
         "focus:border-info",
