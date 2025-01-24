@@ -17,7 +17,7 @@ const Surface = React.forwardRef<HTMLDivElement, SurfaceProps>(({
       {...props}
       className={cn(
         props.className,
-        "bg-surface rounded-2xl px-6 py-8"
+        "bg-surface rounded-2xl px-8 py-4"
       )}
     >
       {children}
