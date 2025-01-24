@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./checkbox.module.css";
 import { cn } from "../../../lib/cn";
-import Label from "../label/label";
 
 
 export interface CheckboxBoxProps extends React.InputHTMLAttributes<HTMLInputElement> {}
@@ -30,12 +29,12 @@ export interface CheckboxLabelProps extends React.LabelHTMLAttributes<HTMLLabelE
   children: React.ReactNode;
 }
 
-const CheckboxLabel = React.forwardRef<HTMLLabelElement, CheckboxLabelProps>(({
+const Label = React.forwardRef<HTMLLabelElement, CheckboxLabelProps>(({
   children,
   ...props
 }, ref) => {
   return (
-    <Label
+    <label
       ref={ref}
       {...props}
       className={cn(
@@ -45,15 +44,37 @@ const CheckboxLabel = React.forwardRef<HTMLLabelElement, CheckboxLabelProps>(({
       )}
     >
       {children}
-    </Label>
+    </label>
   );
 });
-CheckboxLabel.displayName = "Checkbox.Label";
+Label.displayName = "Checkbox.Label";
+
+
+
+export interface CheckboxLabelTextProps extends React.ComponentPropsWithoutRef<"span"> {
+  children: React.ReactNode;
+}
+
+const LabelText = React.forwardRef<HTMLSpanElement, CheckboxLabelTextProps>(({
+  children,
+  ...props
+}, ref) => {
+  return (
+    <span
+      ref={ref}
+      {...props}
+    >
+      {children}
+    </span>
+  );
+});
+LabelText.displayName = "Checkbox.LabelText";
 
 
 const Checkbox = {
   Box,
-  Label: CheckboxLabel
+  Label,
+  LabelText,
 };
 
 export default Checkbox;
