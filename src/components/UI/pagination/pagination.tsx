@@ -1,7 +1,7 @@
 import React from "react";
 import { Slot } from "@radix-ui/react-slot";
 import { cn } from "../../../lib/cn";
-import Arrow from "../../symbol/arrow/arrow";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 
 export interface PaginationContainerProps extends React.ComponentPropsWithoutRef<"nav"> {
@@ -79,7 +79,7 @@ const Prev = React.forwardRef<HTMLAnchorElement, PaginationButtonProps>(({
       )}
       aria-label="pagination-prev"
     >
-      <Arrow.Left className="w-2 h-auto fill-info" />
+      <ChevronLeft className="w-6 h-6 text-info" />
     </Tag>
   );
 });
@@ -103,7 +103,7 @@ const Next = React.forwardRef<HTMLAnchorElement, PaginationButtonProps>(({
       )}
       aria-label="pagination-next"
     >
-      <Arrow.Right className="w-2 h-auto fill-info" />
+      <ChevronRight className="w-6 h-6 text-info" />
     </Tag>
   );
 });
