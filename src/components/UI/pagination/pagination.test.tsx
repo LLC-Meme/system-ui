@@ -50,7 +50,7 @@ describe("Pagination Component", () => {
     const item = screen.getByTestId("pagination-item");
 
     expect(item).toBeInTheDocument();
-    expect(item).toHaveClass("center", "w-8", "h-8", "rounded-[4px]", "text-info");
+    expect(item).toHaveClass("center", "w-8", "h-8", "rounded-[4px]", "text-info", "hover:bg-info-muted");
     expect(item).toHaveTextContent("1");
   });
 
@@ -60,7 +60,8 @@ describe("Pagination Component", () => {
     const currentItem = screen.getByTestId("current-item");
 
     expect(currentItem).toBeInTheDocument();
-    expect(currentItem).toHaveClass("border", "border-info");
+    expect(currentItem).toHaveClass("bg-info text-on-status hover");
+    expect(currentItem).not.toHaveClass("hover:bg-info-muted");
   });
 
 

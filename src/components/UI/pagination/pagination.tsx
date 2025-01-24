@@ -44,8 +44,9 @@ const Item = React.forwardRef<HTMLAnchorElement, PaginationItemProps>(({
       {...props}
       className={cn(
         "center w-8 h-8 rounded-[4px] text-info",
-        "hover:bg-info-muted hover:cursor-pointer",
-        current && "border border-info"
+        "hover:cursor-pointer",
+        current && "bg-info text-on-status hover",
+        !current && "hover:bg-info-muted",
       )}
     >
       {children}
