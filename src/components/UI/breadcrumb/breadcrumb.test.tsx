@@ -103,7 +103,7 @@ describe("Breadcrumb", () => {
     it("正しいclassNameで表示", () => {
       render(<Breadcrumb.Separator />);
       const sepEl = screen.getByLabelText("breadcrumb-separator");
-      expect(sepEl).toHaveClass("color-foreground", "w-4", "h-4");
+      expect(sepEl).toHaveClass("color-foreground", "w-3", "h-3");
     });
 
   });
