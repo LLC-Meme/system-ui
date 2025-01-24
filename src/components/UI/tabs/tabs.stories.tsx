@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import Tab from "./tab";
+import Tabs from "./tabs";
 
 const meta = {
-  title: "UI/Tab",
-  component: Tab,
+  title: "UI/Tabs",
+  component: Tabs,
   parameters: {
     layout: "centered",
   },
@@ -40,17 +40,17 @@ const meta = {
     },
   },
   tags: ["autodocs"],
-} satisfies Meta<typeof Tab>;
+} satisfies Meta<typeof Tabs>;
 
 export default meta;
-type Story = StoryObj<typeof Tab>;
+type Story = StoryObj<typeof Tabs>;
 
 
 const TabWithHooks = () => {
   const [selectedValue, setSelectedValue] = useState("Tab1");
   const values = ["Tab1", "Tab2", "Tab3"];
   return (
-    <Tab
+    <Tabs
       values={values}
       selectedValue={selectedValue}
       setSelectedValue={setSelectedValue}

@@ -10,7 +10,7 @@ export interface TabProps extends React.ComponentPropsWithoutRef<"div"> {
   setSelectedValue: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const Tab = React.forwardRef<HTMLDivElement, TabProps>(({
+const Tabs = React.forwardRef<HTMLDivElement, TabProps>(({
   values,
   selectedValue,
   setSelectedValue,
@@ -33,7 +33,7 @@ const Tab = React.forwardRef<HTMLDivElement, TabProps>(({
     </div>
   );
 });
-Tab.displayName = "Tab";
+Tabs.displayName = "Tab";
 
 
 function Item({
@@ -62,4 +62,4 @@ function Item({
   );
 }
 
-export default Tab;
+export default Tabs;

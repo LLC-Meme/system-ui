@@ -2,17 +2,17 @@ import React from "react";
 import "@testing-library/jest-dom";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { describe, it, expect, vi } from "vitest";
-import Tab from "./tab";
+import Tabs from "./tabs";
 
 
-describe("Tab", () => {
+describe("Tabs", () => {
 
   it("正しい選択肢数でtabを表示", () => {
     const values = ["Tab1", "Tab2", "Tab3"];
     const setSelectedValue = vi.fn();
 
     render(
-      <Tab
+      <Tabs
         values={values}
         selectedValue="Tab1"
         setSelectedValue={setSelectedValue}
@@ -31,7 +31,7 @@ describe("Tab", () => {
     const setSelectedValue = vi.fn();
 
     render(
-      <Tab
+      <Tabs
         data-testid="tab-container"
         values={values}
         selectedValue="Tab1"
@@ -53,7 +53,7 @@ describe("Tab", () => {
     const setSelectedValue = vi.fn();
 
     render(
-      <Tab
+      <Tabs
         values={values}
         selectedValue="Tab2"
         setSelectedValue={setSelectedValue}
@@ -75,7 +75,7 @@ describe("Tab", () => {
     const setSelectedValue = vi.fn();
 
     render(
-      <Tab
+      <Tabs
         values={values}
         selectedValue="Tab1"
         setSelectedValue={setSelectedValue}
@@ -97,7 +97,7 @@ describe("Tab", () => {
     const setSelectedValue = vi.fn();
 
     render(
-      <Tab
+      <Tabs
         ref={ref}
         values={values}
         selectedValue="Tab1"
