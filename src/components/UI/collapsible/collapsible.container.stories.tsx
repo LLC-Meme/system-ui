@@ -1,19 +1,19 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import Dropdown from "./dropdown";
+import Collapsible from "./collapsible";
 
 /**
- * ドロップダウンが開かれた時に表示されるコンポーネントのラッパーです。  
- * `Dropdown.Item`コンポーネントをラップします。  
+ * ドロップダウンのコンテナコンポーネントです。  
+ * 各ドロップダウンのアイテムをラップします。  
  */
 const meta = {
-  title: "UI/Dropdown/Content",
-  component: Dropdown.Content,
+  title: "UI/Collapsible/Container",
+  component: Collapsible.Container,
   parameters: {
     layout: "centered",
   },
   argTypes: {
     ref: {
-      description: "ドロップダウンコンテンツ要素への参照",
+      description: "ドロップダウンコンテナ要素への参照",
       table: {
         type: { summary: "React.Ref<HTMLDivElement>" },
         defaultValue: { summary: "undefined" },
@@ -31,11 +31,13 @@ const meta = {
     },
   },
   tags: ["autodocs"],
-} satisfies Meta<typeof Dropdown.Content>;
+} satisfies Meta<typeof Collapsible.Container>;
 
 export default meta;
-type Story = StoryObj<typeof Dropdown.Content>;
+type Story = StoryObj<typeof Collapsible.Container>;
 
-export const Content: Story = {
-  args: {},
+export const Container: Story = {
+  args: {
+    children: "Collapsible Container",
+  },
 };

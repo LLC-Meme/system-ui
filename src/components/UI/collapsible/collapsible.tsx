@@ -6,7 +6,7 @@ import { cn } from "../../../lib/cn";
 import { ChevronRight } from "lucide-react";
 
 
-const DropdownContext = createContext<{
+const CollapsibleContext = createContext<{
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }>({
@@ -15,17 +15,17 @@ const DropdownContext = createContext<{
 });
 
 
-export interface DropdownContainerProps extends React.ComponentPropsWithoutRef<"div"> {
+export interface CollapsibleContainerProps extends React.ComponentPropsWithoutRef<"div"> {
   children: React.ReactNode;
 }
 
-const Container = React.forwardRef<HTMLDivElement, DropdownContainerProps>(({
+const Container = React.forwardRef<HTMLDivElement, CollapsibleContainerProps>(({
   children,
   ...props
 }, ref) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <DropdownContext.Provider value={{ isOpen, setIsOpen }}>
+    <CollapsibleContext.Provider value={{ isOpen, setIsOpen }}>
       <div
         ref={ref}
         {...props}
@@ -36,21 +36,21 @@ const Container = React.forwardRef<HTMLDivElement, DropdownContainerProps>(({
       >
         {children}
       </div>
-    </DropdownContext.Provider>
+    </CollapsibleContext.Provider>
   );
 });
-Container.displayName = "Dropdown.Container";
+Container.displayName = "Collapsible.Container";
 
 
-export interface DropdownTriggerProps extends React.ComponentPropsWithoutRef<"div"> {
+export interface CollapsibleTriggerProps extends React.ComponentPropsWithoutRef<"div"> {
   children: React.ReactNode;
 }
 
-const Trigger = React.forwardRef<HTMLDivElement, DropdownTriggerProps>(({
+const Trigger = React.forwardRef<HTMLDivElement, CollapsibleTriggerProps>(({
   children,
   ...props
 }, ref) => {
-  const { isOpen, setIsOpen } = useContext(DropdownContext);
+  const { isOpen, setIsOpen } = useContext(CollapsibleContext);
   return (
     <div
       ref={ref}
@@ -75,19 +75,19 @@ const Trigger = React.forwardRef<HTMLDivElement, DropdownTriggerProps>(({
     </div>
   );
 });
-Trigger.displayName = "Dropdown.Trigger";
+Trigger.displayName = "Collapsible.Trigger";
 
 
 
-export interface DropdownContentProps extends React.ComponentPropsWithoutRef<"div"> {
+export interface CollapsibleContentProps extends React.ComponentPropsWithoutRef<"div"> {
   children: React.ReactNode;
 }
 
-const Content = React.forwardRef<HTMLDivElement, DropdownContentProps>(({
+const Content = React.forwardRef<HTMLDivElement, CollapsibleContentProps>(({
   children,
   ...props
 }, ref) => {
-  const { isOpen } = useContext(DropdownContext);
+  const { isOpen } = useContext(CollapsibleContext);
   return (
     <div
       ref={ref}
@@ -104,17 +104,17 @@ const Content = React.forwardRef<HTMLDivElement, DropdownContentProps>(({
     </div>
   );
 });
-Content.displayName = "Dropdown.Content";
+Content.displayName = "Collapsible.Content";
 
 
 
-export interface DropdownItemProps extends React.ComponentPropsWithoutRef<"a"> {
+export interface CollapsibleItemProps extends React.ComponentPropsWithoutRef<"a"> {
   children: React.ReactNode;
   current?: boolean;
   asChild?: boolean;
 }
 
-const Item = React.forwardRef<HTMLAnchorElement, DropdownItemProps>(({
+const Item = React.forwardRef<HTMLAnchorElement, CollapsibleItemProps>(({
   children,
   current,
   asChild,
@@ -137,14 +137,14 @@ const Item = React.forwardRef<HTMLAnchorElement, DropdownItemProps>(({
     </Comp>
   );
 });
-Item.displayName = "Dropdown.Item";
+Item.displayName = "Collapsible.Item";
 
 
-const Dropdown = {
+const Collapsible = {
   Container,
   Trigger,
   Content,
   Item,
 };
 
-export default Dropdown;
+export default Collapsible;

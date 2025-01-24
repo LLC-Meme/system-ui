@@ -1,7 +1,7 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import Sidebar from "./sidebar";
-import Dropdown from "../../UI/dropdown/dropdown";
+import Collapsible from "../../UI/collapsible/collapsible";
 
 
 function SidebarExample() {
@@ -14,84 +14,84 @@ function SidebarExample() {
       </Sidebar.Group>
       <Sidebar.Group>
         <Sidebar.GroupLabel>Group Label</Sidebar.GroupLabel>
-        <Dropdown.Container>
-          <Dropdown.Trigger>
-            Dropdown Trigger
-          </Dropdown.Trigger>
-          <Dropdown.Content>
-            <Dropdown.Item href="/item1">
-              Dropdown Item 1
-            </Dropdown.Item>
-            <Dropdown.Item href="/item2">
-              Dropdown Item 2
-            </Dropdown.Item>
-          </Dropdown.Content>
-        </Dropdown.Container>
-        <Dropdown.Container>
-          <Dropdown.Trigger>
-            Dropdown Trigger
-          </Dropdown.Trigger>
-          <Dropdown.Content>
-            <Dropdown.Item href="/item1">
-              Dropdown Item 1
-            </Dropdown.Item>
-            <Dropdown.Item href="/item2">
-              Dropdown Item 2
-            </Dropdown.Item>
-          </Dropdown.Content>
-        </Dropdown.Container>
-        <Dropdown.Container>
-          <Dropdown.Trigger>
-            Dropdown Trigger
-          </Dropdown.Trigger>
-          <Dropdown.Content>
-            <Dropdown.Item href="/item1">
-              Dropdown Item 1
-            </Dropdown.Item>
-            <Dropdown.Item href="/item2">
-              Dropdown Item 2
-            </Dropdown.Item>
-          </Dropdown.Content>
-        </Dropdown.Container>
-        <Dropdown.Container>
-          <Dropdown.Trigger>
-            Dropdown Trigger
-          </Dropdown.Trigger>
-          <Dropdown.Content>
-            <Dropdown.Item href="/item1">
-              Dropdown Item 1
-            </Dropdown.Item>
-            <Dropdown.Item href="/item2">
-              Dropdown Item 2
-            </Dropdown.Item>
-          </Dropdown.Content>
-        </Dropdown.Container>
-        <Dropdown.Container>
-          <Dropdown.Trigger>
-            Dropdown Trigger
-          </Dropdown.Trigger>
-          <Dropdown.Content>
-            <Dropdown.Item href="/item1">
-              Dropdown Item 1
-            </Dropdown.Item>
-            <Dropdown.Item href="/item2">
-              Dropdown Item 2
-            </Dropdown.Item>
-          </Dropdown.Content>
-        </Dropdown.Container>
-        <Dropdown.Container>
-          <Dropdown.Trigger>
-            Dropdown Trigger
-          </Dropdown.Trigger>
-          <Dropdown.Content>
-            <Dropdown.Item href="/item1">
-              Dropdown Item 1
-            </Dropdown.Item>
-            <Dropdown.Item href="/item2">
-              Dropdown Item 2
-            </Dropdown.Item>
-          </Dropdown.Content>
-        </Dropdown.Container>
+        <Collapsible.Container>
+          <Collapsible.Trigger>
+            Collapsible Trigger
+          </Collapsible.Trigger>
+          <Collapsible.Content>
+            <Collapsible.Item href="/item1">
+              Collapsible Item 1
+            </Collapsible.Item>
+            <Collapsible.Item href="/item2">
+              Collapsible Item 2
+            </Collapsible.Item>
+          </Collapsible.Content>
+        </Collapsible.Container>
+        <Collapsible.Container>
+          <Collapsible.Trigger>
+            Collapsible Trigger
+          </Collapsible.Trigger>
+          <Collapsible.Content>
+            <Collapsible.Item href="/item1">
+              Collapsible Item 1
+            </Collapsible.Item>
+            <Collapsible.Item href="/item2">
+              Collapsible Item 2
+            </Collapsible.Item>
+          </Collapsible.Content>
+        </Collapsible.Container>
+        <Collapsible.Container>
+          <Collapsible.Trigger>
+            Collapsible Trigger
+          </Collapsible.Trigger>
+          <Collapsible.Content>
+            <Collapsible.Item href="/item1">
+              Collapsible Item 1
+            </Collapsible.Item>
+            <Collapsible.Item href="/item2">
+              Collapsible Item 2
+            </Collapsible.Item>
+          </Collapsible.Content>
+        </Collapsible.Container>
+        <Collapsible.Container>
+          <Collapsible.Trigger>
+            Collapsible Trigger
+          </Collapsible.Trigger>
+          <Collapsible.Content>
+            <Collapsible.Item href="/item1">
+              Collapsible Item 1
+            </Collapsible.Item>
+            <Collapsible.Item href="/item2">
+              Collapsible Item 2
+            </Collapsible.Item>
+          </Collapsible.Content>
+        </Collapsible.Container>
+        <Collapsible.Container>
+          <Collapsible.Trigger>
+            Collapsible Trigger
+          </Collapsible.Trigger>
+          <Collapsible.Content>
+            <Collapsible.Item href="/item1">
+              Collapsible Item 1
+            </Collapsible.Item>
+            <Collapsible.Item href="/item2">
+              Collapsible Item 2
+            </Collapsible.Item>
+          </Collapsible.Content>
+        </Collapsible.Container>
+        <Collapsible.Container>
+          <Collapsible.Trigger>
+            Collapsible Trigger
+          </Collapsible.Trigger>
+          <Collapsible.Content>
+            <Collapsible.Item href="/item1">
+              Collapsible Item 1
+            </Collapsible.Item>
+            <Collapsible.Item href="/item2">
+              Collapsible Item 2
+            </Collapsible.Item>
+          </Collapsible.Content>
+        </Collapsible.Container>
       </Sidebar.Group>
     </Sidebar.Container>
   );
@@ -100,7 +100,7 @@ function SidebarExample() {
 
 /**
  * サイドバーのサンプルです。  
- * `Dropdown`コンポーネントなどと併用してサイドバーを表現しています。  
+ * `Collapsible`コンポーネントなどと併用してサイドバーを表現しています。  
  */
 const meta = {
   title: "Layout/Sidebar",

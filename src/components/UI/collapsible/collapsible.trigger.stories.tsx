@@ -1,13 +1,14 @@
+
 import type { Meta, StoryObj } from "@storybook/react";
-import Dropdown from "./dropdown";
+import Collapsible from "./collapsible";
 
 /**
  * ドロップダウンのトリガーコンポーネントです。  
  * ドロップダウンのラベルになります。  
  */
 const meta = {
-  title: "UI/Dropdown/Trigger",
-  component: Dropdown.Trigger,
+  title: "UI/Collapsible/Trigger",
+  component: Collapsible.Trigger,
   parameters: {
     layout: "centered",
   },
@@ -31,14 +32,14 @@ const meta = {
     },
   },
   tags: ["autodocs"],
-} satisfies Meta<typeof Dropdown.Trigger>;
+} satisfies Meta<typeof Collapsible.Trigger>;
 
 export default meta;
-type Story = StoryObj<typeof Dropdown.Trigger>;
+type Story = StoryObj<typeof Collapsible.Trigger>;
 
 
 export const Trigger: Story = {
   args: {
-    children: "Dropdown Trigger",
+    children: "Collapsible Trigger",
   },
 };
