@@ -13,6 +13,7 @@ const Page = React.forwardRef<HTMLHeadingElement, PageTitleProps>(({
   return (
     <h1
       ref={ref}
+      {...props}
       className={cn(
         props.className,
         "text-xl font-bold text-foreground"
@@ -37,6 +38,7 @@ const Section = React.forwardRef<HTMLHeadingElement, SectionTitleProps>(({
   return (
     <h2
       ref={ref}
+      {...props}
       className={cn(
         props.className,
         "text-lg font-bold text-foreground"
@@ -61,6 +63,7 @@ const Block = React.forwardRef<HTMLHeadingElement, BlockTitleProps>(({
   return (
     <h3
       ref={ref}
+      {...props}
       className={cn(
         props.className,
         "text-md font-bold text-foreground"
