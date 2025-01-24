@@ -76,7 +76,9 @@ const Prev = React.forwardRef<HTMLAnchorElement, PaginationButtonProps>(({
       className={cn(
         props.className,
         "center w-8 h-8 rounded-[4px] text-info",
-        "hover:bg-info-muted hover:cursor-pointer",
+        "center w-8 h-8 rounded-[4px] text-info",
+        disabled && "opacity-[var(--disabled-opacity)] cursor-auto",
+        !disabled && "hover:bg-info-muted hover:cursor-pointer"
       )}
       aria-label="pagination-prev"
     >
@@ -100,7 +102,8 @@ const Next = React.forwardRef<HTMLAnchorElement, PaginationButtonProps>(({
       className={cn(
         props.className,
         "center w-8 h-8 rounded-[4px] text-info",
-        "hover:bg-info-muted hover:cursor-pointer",
+        disabled && "opacity-[var(--disabled-opacity)] cursor-auto",
+        !disabled && "hover:bg-info-muted hover:cursor-pointer"
       )}
       aria-label="pagination-next"
     >
