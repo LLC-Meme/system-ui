@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./radio.module.css";
 import { cn } from "../../../lib/cn";
-import Label from "../label/label";
+
 
 export interface RadioButtonProps extends React.ComponentPropsWithoutRef<"input"> {}
 
@@ -38,7 +38,7 @@ const RadioLabel = React.forwardRef<HTMLLabelElement, RadioLabelProps>(({
   ...props
 }, ref) => {
   return (
-    <Label
+    <label
       ref={ref}
       {...props}
       className={cn(
@@ -47,7 +47,7 @@ const RadioLabel = React.forwardRef<HTMLLabelElement, RadioLabelProps>(({
       )}
     >
       {children}
-    </Label>
+    </label>
   );
 });
 RadioLabel.displayName = "Radio.Label";
@@ -87,7 +87,7 @@ const Group = React.forwardRef<HTMLDivElement, RadioGroupProps>(({
       {...props}
       className={cn(
         props.className,
-        "flex flex-col space-y-2"
+        "flex flex-col gap-2"
       )}>
       {children}
     </div>
@@ -96,11 +96,37 @@ const Group = React.forwardRef<HTMLDivElement, RadioGroupProps>(({
 Group.displayName = "Radio.Group";
 
 
+export interface RadioGroupTitleProps extends React.ComponentPropsWithoutRef<"span"> {
+  children: React.ReactNode;
+}
+
+const GroupTitle = React.forwardRef<HTMLSpanElement, RadioGroupTitleProps>(({
+  children,
+  ...props
+}, ref) => {
+  return (
+    <span
+      ref={ref}
+      {...props}
+      className={cn(
+        props.className,
+        "font-semibold"
+      )}
+    >
+      {children}
+    </span>
+  );
+});
+GroupTitle.displayName = "Radio.GroupTitle";
+
+
+
 const Radio = {
   Button,
   Label: RadioLabel,
   Group,
   LabelText,
+  GroupTitle,
 };
 
 export default Radio;
