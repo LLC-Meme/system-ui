@@ -53,6 +53,25 @@ const RadioLabel = React.forwardRef<HTMLLabelElement, RadioLabelProps>(({
 RadioLabel.displayName = "Radio.Label";
 
 
+export interface RadioLabelTextProps extends React.ComponentPropsWithoutRef<"span"> {
+  children: React.ReactNode;
+}
+
+const LabelText = React.forwardRef<HTMLSpanElement, RadioLabelTextProps>(({
+  children,
+  ...props
+}, ref) => {
+  return (
+    <span
+      ref={ref}
+      {...props}
+    >
+      {children}
+    </span>
+  );
+});
+
+
 
 export interface RadioGroupProps extends React.ComponentPropsWithoutRef<"div"> {
   children: React.ReactNode;
@@ -77,11 +96,11 @@ const Group = React.forwardRef<HTMLDivElement, RadioGroupProps>(({
 Group.displayName = "Radio.Group";
 
 
-
 const Radio = {
   Button,
   Label: RadioLabel,
-  Group
+  Group,
+  LabelText,
 };
 
 export default Radio;
