@@ -3,7 +3,8 @@
 import React, { useState, createContext, useContext } from "react";
 import { Slot } from "@radix-ui/react-slot";
 import { cn } from "../../../lib/cn";
-import Arrow from "../../symbol/arrow/arrow";
+import { ChevronRight } from "lucide-react";
+
 
 const DropdownContext = createContext<{
   isOpen: boolean;
@@ -63,9 +64,10 @@ const Trigger = React.forwardRef<HTMLDivElement, DropdownTriggerProps>(({
       <div className="flex gap-2">
         {children}
       </div>
-      <Arrow.Right
+      <ChevronRight
+        strokeWidth={3}
         className={cn(
-          "w-2 h-auto fill-info",
+          "w-5 h-5 text-info",
           "transition-transform",
           isOpen && "transform rotate-90"
         )}
