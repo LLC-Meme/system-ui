@@ -34,7 +34,7 @@ const SidebarController = React.forwardRef<HTMLButtonElement, SidebarControllerP
 }, ref) => {
   return (
     <button {...props} ref={ref} onClick={onClick} className="hover">
-      <PanelLeft className="w-6 h-6 text-info" />
+      <PanelLeft className="w-6 h-6 mr-2 text-info" />
     </button>
   );
 });
