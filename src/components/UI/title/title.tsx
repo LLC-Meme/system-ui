@@ -5,7 +5,7 @@ export interface PageTitleProps extends React.ComponentPropsWithoutRef<"h1"> {
   children: React.ReactNode;
 }
 
-// Page, Section, Block
+
 const Page = React.forwardRef<HTMLHeadingElement, PageTitleProps>(({
   children,
   ...props
