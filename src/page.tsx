@@ -4,7 +4,7 @@ import Sidebar from "./components/layout/sidebar/sidebar";
 import Main from "./components/layout/main/main";
 import Collapsible from "./components/UI/collapsible/collapsible";
 import Breadcrumb from "./components/UI/breadcrumb/breadcrumb";
-import { cn } from "./lib/cn";
+
 
 export default function Page() {
   const [sidebarOpen, setSidebarOpen] = useState(true);
