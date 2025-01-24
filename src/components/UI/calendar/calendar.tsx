@@ -2,8 +2,7 @@
 
 import React, { useState, useMemo, useCallback, memo } from "react";
 import { cn } from "../../../lib/cn";
-import Arrow from "../../symbol/arrow/arrow";
-
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export interface CalendarProps {
   /** 選択された日付 */
@@ -125,7 +124,7 @@ const PrevMonthButton = memo(function PrevMonthButton({
       onClick={onClick}
       aria-label="prev-month"
     >
-      <Arrow.Left className="w-2 h-auto fill-info" />
+      <ChevronLeft size={24} className="w-4 h-4 text-info" />
     </button>
   );
 });
@@ -141,7 +140,7 @@ const NextMonthButton = memo(function NextMonthButton({
       onClick={onClick}
       aria-label="next-month"
     >
-      <Arrow.Right className="w-2 h-auto fill-info" />
+      <ChevronRight className="w-4 h-4 text-info" />
     </button>
   );
 });
