@@ -26,7 +26,7 @@ describe("LabelText コンポーネント", () => {
     const labelTextEl = screen.getByTestId("label-text");
 
     // デフォルトクラス "font-medium" と追加クラスが適用されていることを確認
-    expect(labelTextEl).toHaveClass("font-medium");
+    expect(labelTextEl).toHaveClass("font-semibold");
     expect(labelTextEl).toHaveClass("custom-class");
   });
 
