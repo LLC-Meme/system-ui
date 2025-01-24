@@ -17,6 +17,7 @@ Apple風のデザインで様々なUIを提供します。
 
 ## ネクストステップ  
 - Form周りのAPIの命名考える、LabelTextには同じの使うとか  
+- CalendarのTrigger作る  
 - Theme Switcher作る  
 - CalendarのTriggerを作る  
 - eslint, prettierを追加  
