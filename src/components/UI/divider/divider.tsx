@@ -7,7 +7,7 @@ export interface DividerProps extends React.ComponentPropsWithoutRef<"hr"> {
 }
 
 const V = React.forwardRef<HTMLHRElement, DividerProps>(({
-  thickness = 2,
+  thickness = 1,
   ...props
 }, ref) => {
   return (
@@ -20,7 +20,7 @@ const V = React.forwardRef<HTMLHRElement, DividerProps>(({
       }}
       className={cn(
         props.className,
-        "h-full bg-border rounded-full"
+        "h-full bg-border rounded-full border-none"
       )}
     />
   );
@@ -28,7 +28,7 @@ const V = React.forwardRef<HTMLHRElement, DividerProps>(({
 V.displayName = "Divider.V";
 
 const H = React.forwardRef<HTMLHRElement, DividerProps>(({
-  thickness = 2,
+  thickness = 1,
   ...props
 }, ref) => {
   return (
@@ -41,7 +41,7 @@ const H = React.forwardRef<HTMLHRElement, DividerProps>(({
       }}
       className={cn(
         props.className,
-        "w-full bg-border rounded-full"
+        "w-full bg-border rounded-full border-none"
       )}
     />
   );
