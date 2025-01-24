@@ -16,7 +16,7 @@ describe("Breadcrumb", () => {
       );
       const childEl = screen.getByTestId("child");
       const containerEl = childEl.closest("ol");
-      expect(containerEl).toHaveClass("flex", "items-center", "gap-2");
+      expect(containerEl).toHaveClass("flex", "gap-2");
     });
 
     it("ol配下に個を表示", () => {
@@ -101,17 +101,12 @@ describe("Breadcrumb", () => {
 
   describe("Separator", () => {
     it("正しいclassName('fill-foreground')でSVG要素を表示", () => {
-      render(<Breadcrumb.Separator data-testid="sep" />);
-      const sepEl = screen.getByTestId("sep");
+      render(<Breadcrumb.Separator />);
+      const sepEl = screen.getByLabelText("breadcrumb-separator");
       expect(sepEl.tagName).toBe("svg");
-      expect(sepEl).toHaveClass("fill-foreground");
+      expect(sepEl).toHaveClass("color-foreground", "w-4", "h-4");
     });
 
-    it("refが正しく設定されている", () => {
-      const ref = React.createRef<SVGSVGElement>();
-      render(<Breadcrumb.Separator ref={ref} />);
-      expect(ref.current).toBeInstanceOf(SVGSVGElement);
-    });
   });
 
 

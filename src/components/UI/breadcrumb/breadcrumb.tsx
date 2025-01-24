@@ -1,17 +1,19 @@
 import React from "react";
 import { Slot } from "@radix-ui/react-slot";
 import { cn } from "../../../lib/cn";
-import Arrow from "../../symbol/arrow/arrow";
+import { ChevronRight, LucideProps } from "lucide-react";
 
-export interface BreadcrumbSeparatorProps {}
+export interface BreadcrumbSeparatorProps extends LucideProps {}
 
-const Separator = React.forwardRef<SVGSVGElement, BreadcrumbSeparatorProps>(({
-  ...props
-}, ref) => {
+function Separator () {
   return (
-    <Arrow.Right ref={ref} {...props} className="fill-foreground" />
+    <ChevronRight
+      size={24}
+      className="w-4 h-4 color-foreground mt-[5px]"
+      aria-label="breadcrumb-separator"
+    />
   );
-});
+};
 Separator.displayName = "Breadcrumb.Separator";
 
 
@@ -57,7 +59,7 @@ export interface BreadcrumbContainerProps {
 
 const Container = React.forwardRef<HTMLOListElement, BreadcrumbContainerProps>(({ children }, ref) => {
   return (
-    <ol ref={ref} className="flex items-center gap-2">
+    <ol ref={ref} className="flex gap-2">
       {children}
     </ol>
   );
