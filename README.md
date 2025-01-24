@@ -16,7 +16,6 @@ Apple風のデザインで様々なUIを提供します。
 - radix  
 
 ## ネクストステップ  
-- Dropdownを作る  
 - Sidebarを改定(radixを使う?)→テスト  
 - Theme Switcher作る  
 - eslint, prettierを追加  
