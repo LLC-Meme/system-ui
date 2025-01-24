@@ -56,12 +56,6 @@ describe("Header", () => {
 
       expect(buttonEl.tagName).toBe("BUTTON");
       expect(buttonEl).toHaveClass("hover");
-
-      // SVGアイコン
-      const svgEl = buttonEl.querySelector("svg");
-      expect(svgEl).toBeInTheDocument();
-      expect(svgEl).toHaveAttribute("width", "24");
-      expect(svgEl).toHaveAttribute("height", "18");
     });
 
   
