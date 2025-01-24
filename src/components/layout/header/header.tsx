@@ -2,15 +2,20 @@
 
 import React from "react";
 
-export interface HeaderContainerProps {
+export interface HeaderContainerProps extends React.ComponentPropsWithoutRef<"header"> {
   children: React.ReactNode;
 }
 
 const Container = React.forwardRef<HTMLDivElement, HeaderContainerProps>(({
-  children
+  children,
+  ...props
 }, ref) => {
   return (
-    <header ref={ref} className="fixed inset-0 h-16 px-6 flex items-center overlay border-b border-border z-20">
+    <header
+      ref={ref}
+      {...props}
+      className="fixed inset-0 h-16 px-6 flex items-center overlay border-b border-border z-20"
+    >
       {children}
     </header>
   );
@@ -18,15 +23,16 @@ const Container = React.forwardRef<HTMLDivElement, HeaderContainerProps>(({
 Container.displayName = "Header.Container";
 
 
-export interface SidebarControllerProps {
+export interface SidebarControllerProps extends React.ComponentPropsWithoutRef<"button"> {
   onClick: () => void;
 }
 
 const SidebarController = React.forwardRef<HTMLButtonElement, SidebarControllerProps>(({
-  onClick
+  onClick,
+  ...props
 }, ref) => {
   return (
-    <button ref={ref} onClick={onClick} className="hover">
+    <button {...props} ref={ref} onClick={onClick} className="hover">
       <svg
         width="24"
         height="18"
