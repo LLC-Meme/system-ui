@@ -16,6 +16,7 @@ Apple風のデザインで様々なUIを提供します。
 - radix  
 
 ## ネクストステップ  
+- lucide-reactでリプレース  
 - Dropdownを改名、Dropdownを作る、Alertを作る  
 - DropdownとSidebarを改定(stateとcontextから解放、radixを使う?)→テスト  
 - eslint, prettierを追加  
