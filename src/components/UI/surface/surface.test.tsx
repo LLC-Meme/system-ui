@@ -12,7 +12,7 @@ describe("Surface", () => {
     const surfaceEl = screen.getByTestId("surface");
     
     // デフォルトのclassが適用されていることを確認
-    expect(surfaceEl).toHaveClass("bg-surface", "rounded-2xl", "px-6", "py-8");
+    expect(surfaceEl).toHaveClass("bg-surface", "rounded-2xl", "px-8", "py-6");
     // テキストが表示されていることを確認
     expect(surfaceEl).toHaveTextContent("Hello");
     // タグ名がsectionであることを確認
