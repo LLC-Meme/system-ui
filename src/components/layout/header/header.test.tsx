@@ -3,7 +3,6 @@ import "@testing-library/jest-dom";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { describe, it, expect, vi } from "vitest";
 import Header from "./header";
-import exp from "constants";
 
 
 const { Container, SidebarController } = Header;
