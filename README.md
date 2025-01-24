@@ -16,8 +16,8 @@ Apple風のデザインで様々なUIを提供します。
 - radix  
 
 ## ネクストステップ  
-- Sidebarを改定(radixを使う?)→テスト  
 - Theme Switcher作る  
+- CalendarのTriggerを作る  
 - eslint, prettierを追加  
 - huskyの導入  
 - ライブラリ化してnpmで使えるようにする  
