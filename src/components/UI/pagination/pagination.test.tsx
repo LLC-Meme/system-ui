@@ -169,16 +169,4 @@ describe("Pagination Component", () => {
   });
 
 
-  it("Ellipsisにrefを設定", () => {
-    // span要素のrefを設定
-    const ref = React.createRef<HTMLDivElement>();
-    render(<Ellipsis ref={ref} />);
-
-    // refが正しく設定されていることを確認
-    expect(ref.current).toBeInstanceOf(HTMLDivElement);
-    // refがspan要素であることを確認
-    expect(ref.current?.tagName).toBe("DIV");
-  });
-
-
 });

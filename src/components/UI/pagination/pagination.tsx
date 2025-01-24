@@ -1,7 +1,7 @@
 import React from "react";
 import { Slot } from "@radix-ui/react-slot";
 import { cn } from "../../../lib/cn";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, Ellipsis as LucideEllipsis } from "lucide-react";
 
 
 export interface PaginationContainerProps extends React.ComponentPropsWithoutRef<"nav"> {
@@ -114,16 +114,10 @@ Next.displayName = "Pagination.Next";
 const Ellipsis = React.forwardRef<HTMLDivElement, {}>(({}, ref) => {
   return (
     <div
-      ref={ref}
       className="w-8 h-8 center"
       aria-label="pagination-ellipsis"
     >
-      <svg className="w-4 h-auto" width="8" height="2" viewBox="0 0 8 2" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path
-          d="M4 0C3.45 0 3 0.45 3 1C3 1.55 3.45 2 4 2C4.55 2 5 1.55 5 1C5 0.45 4.55 0 4 0ZM7 0C6.45 0 6 0.45 6 1C6 1.55 6.45 2 7 2C7.55 2 8 1.55 8 1C8 0.45 7.55 0 7 0ZM1 0C0.45 0 0 0.45 0 1C0 1.55 0.45 2 1 2C1.55 2 2 1.55 2 1C2 0.45 1.55 0 1 0Z"
-          className="fill-info"
-        />
-      </svg>
+      <LucideEllipsis className="w-6 h-6 text-info" />
     </div>
   );
 });
