@@ -57,9 +57,30 @@ const Option = React.forwardRef<HTMLOptionElement, SelectorOptionProps>(({
 Option.displayName = "Selector.Option";
 
 
+
+const DefaultOption = React.forwardRef<HTMLOptionElement, SelectorOptionProps>(({
+  children,
+  ...props
+}, ref) => {
+  return (
+    <option
+      ref={ref}
+      disabled
+      selected
+      {...props}
+    >
+      {children}
+    </option>
+  );
+})
+DefaultOption.displayName = "Selector.DefaultOption";
+
+
+
 const Selector = {
   Select,
-  Option
+  Option,
+  DefaultOption,
 };
 
 export default Selector;

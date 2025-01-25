@@ -269,6 +269,7 @@ export default function Page() {
                   <Label>
                     <LabelText>Selector</LabelText>
                     <Selector.Select className="w-full">
+                      <Selector.DefaultOption>Select an option</Selector.DefaultOption>
                       <Selector.Option>Option 1</Selector.Option>
                       <Selector.Option>Option 2</Selector.Option>
                       <Selector.Option>Option 3</Selector.Option>
