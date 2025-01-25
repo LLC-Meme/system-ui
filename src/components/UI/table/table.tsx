@@ -81,8 +81,10 @@ Foot.displayName = "Table.Foot";
 function Row({
   children,
   muted = false,
+  className,
   ...props
 }: React.PropsWithChildren<React.TableHTMLAttributes<HTMLTableRowElement>> & {
+  className?: string;
   muted?: boolean;
 }) {
   const tableStyle = useContext(TableStyleContext);
@@ -90,7 +92,7 @@ function Row({
     <tr
       {...props}
       className={cn(
-        props.className,
+        className,
         tableStyle === "plain" && styles.row,
         muted && "bg-surface-muted2",
       )}
@@ -104,14 +106,17 @@ Row.displayName = "Table.Row";
 
 function HeadingCell({
   children,
+  className,
   ...props
-}: React.PropsWithChildren<React.TableHTMLAttributes<HTMLTableHeaderCellElement>>) {
+}: React.PropsWithChildren<React.TableHTMLAttributes<HTMLTableHeaderCellElement>> & {
+  className?: string;
+}) {
   const tableStyle = useContext(TableStyleContext);
   return (
     <th
       {...props}
       className={cn(
-        props.className,
+        className,
         tableStyle === "basic" && "font-semibold p-4 pr-24",
         tableStyle === "plain" && "font-semibold pl-2 pr-12 py-1 border-y border-border",
       )}
@@ -125,14 +130,17 @@ HeadingCell.displayName = "Table.HeadingCell";
 
 function Cell({
   children,
+  className,
   ...props
-}: React.PropsWithChildren<React.TdHTMLAttributes<HTMLTableCellElement>>) {
+}: React.PropsWithChildren<React.TdHTMLAttributes<HTMLTableCellElement>> & {
+  className?: string;
+}) {
   const tableStyle = useContext(TableStyleContext);
   return (
     <td
       {...props}
       className={cn(
-        props.className,
+        className,
         tableStyle === "basic" && "p-4 border-t border-border",
         tableStyle === "plain" && "px-2 py-1",
       )}
