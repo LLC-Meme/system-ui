@@ -17,6 +17,7 @@ Apple風のデザインで様々なUIを提供します。
 
 ## ネクストステップ  
 - Theme Switcher作る  
+- Selectorがデフォルトの時の文字色  
 - eslint, prettierを追加  
 - huskyの導入  
 - ライブラリ化してnpmで使えるようにする  
