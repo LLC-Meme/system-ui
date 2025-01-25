@@ -8,17 +8,20 @@ export default [
     files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
     settings: {
       react: {
-        version: "detect"
+        version: "detect",
       },
     },
     rules: {
       "no-unused-vars": "warn",
-      "@typescript-eslint/no-unused-vars": ["warn", { argsIgnorePattern: "^_" }],
+      "@typescript-eslint/no-unused-vars": [
+        "warn",
+        { argsIgnorePattern: "^_" },
+      ],
       quotes: ["error", "double"],
-    }
+    },
   },
-  { languageOptions: { parserOptions: { ecmaFeatures: { jsx: true } }}},
-  { languageOptions: { globals: globals.browser }},
+  { languageOptions: { parserOptions: { ecmaFeatures: { jsx: true } } } },
+  { languageOptions: { globals: globals.browser } },
   { ignores: ["node_modules"] },
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,

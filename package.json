@@ -53,6 +53,8 @@
     "build-storybook": "storybook build",
     "chromatic": "npx chromatic --project-token=$CHROMATIC_PROJECT_TOKEN",
     "test": "vitest",
-    "test:watch": "vitest --watch"
+    "test:watch": "vitest --watch",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   }
 }

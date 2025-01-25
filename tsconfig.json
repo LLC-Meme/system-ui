@@ -2,18 +2,15 @@
   "compilerOptions": {
     "target": "ES2017",
     "lib": ["ES2017", "DOM"],
-		"module": "ESNext",
-		"moduleResolution": "bundler",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
     "allowJs": true,
     "noEmit": false,
-		"declaration": true,
+    "declaration": true,
     "strict": true,
-		"outDir": "dist",
-		"jsx": "preserve",
+    "outDir": "dist",
+    "jsx": "preserve"
   },
-	"include": [
-    "src",
-    "global.d.ts"
-  ],
-	"exclude": ["node_modules", "dist"]
+  "include": ["src", "global.d.ts"],
+  "exclude": ["node_modules", "dist"]
 }
