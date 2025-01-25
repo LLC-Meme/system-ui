@@ -60,5 +60,9 @@
     "format:check": "prettier --check src",
     "lint": "eslint src",
     "prepare": "husky"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx}": "npm run lint",
+    "src/**/*.{js,jsx,ts,tsx,css,scss}": "npm run format"
   }
 }
