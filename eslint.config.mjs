@@ -11,6 +11,11 @@ export default [
         version: "detect"
       },
     },
+    rules: {
+      "no-unused-vars": "warn",
+      "@typescript-eslint/no-unused-vars": ["warn", { argsIgnorePattern: "^_" }],
+      quotes: ["error", "double"],
+    }
   },
   { languageOptions: { parserOptions: { ecmaFeatures: { jsx: true } }}},
   { languageOptions: { globals: globals.browser }},
