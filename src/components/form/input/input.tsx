@@ -18,6 +18,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(({
         "focus:border-info",
         "placeholder:text-foreground-muted",
         "disabled",
+        "invalid:border-alert"
       )}
     />
   );

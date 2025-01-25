@@ -20,6 +20,7 @@ const Select = React.forwardRef<HTMLSelectElement, SelectorSelectProps>(({
           "px-4 py-2",
           "border border-border rounded-lg",
           "focus:border-info",
+          "invalid:border-alert"
         )}
       >
         {children}

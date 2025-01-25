@@ -18,7 +18,8 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(({
         "border border-border",
         "focus:border-info",
         "placeholder:text-foreground-muted",
-        "disabled:disabled"
+        "disabled:disabled",
+        "invalid:border-alert"
       )}
     />
   );
