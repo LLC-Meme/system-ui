@@ -26,5 +26,6 @@ const Main = React.forwardRef<HTMLDivElement, MainProps>(({
     </main>
   );
 });
+Main.displayName = "Main";
 
 export default Main;
