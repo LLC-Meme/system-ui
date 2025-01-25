@@ -3,7 +3,6 @@ import type { Meta, StoryObj } from "@storybook/react";
 import Sidebar from "./sidebar";
 import Collapsible from "../../UI/collapsible/collapsible";
 
-
 function SidebarExample() {
   return (
     <Sidebar.Container isOpen className="w-80">
@@ -15,9 +14,7 @@ function SidebarExample() {
       <Sidebar.Group>
         <Sidebar.GroupLabel>Group Label</Sidebar.GroupLabel>
         <Collapsible.Container>
-          <Collapsible.Trigger>
-            Collapsible Trigger
-          </Collapsible.Trigger>
+          <Collapsible.Trigger>Collapsible Trigger</Collapsible.Trigger>
           <Collapsible.Content>
             <Collapsible.Item href="/item1">
               Collapsible Item 1
@@ -28,9 +25,7 @@ function SidebarExample() {
           </Collapsible.Content>
         </Collapsible.Container>
         <Collapsible.Container>
-          <Collapsible.Trigger>
-            Collapsible Trigger
-          </Collapsible.Trigger>
+          <Collapsible.Trigger>Collapsible Trigger</Collapsible.Trigger>
           <Collapsible.Content>
             <Collapsible.Item href="/item1">
               Collapsible Item 1
@@ -41,9 +36,7 @@ function SidebarExample() {
           </Collapsible.Content>
         </Collapsible.Container>
         <Collapsible.Container>
-          <Collapsible.Trigger>
-            Collapsible Trigger
-          </Collapsible.Trigger>
+          <Collapsible.Trigger>Collapsible Trigger</Collapsible.Trigger>
           <Collapsible.Content>
             <Collapsible.Item href="/item1">
               Collapsible Item 1
@@ -54,9 +47,7 @@ function SidebarExample() {
           </Collapsible.Content>
         </Collapsible.Container>
         <Collapsible.Container>
-          <Collapsible.Trigger>
-            Collapsible Trigger
-          </Collapsible.Trigger>
+          <Collapsible.Trigger>Collapsible Trigger</Collapsible.Trigger>
           <Collapsible.Content>
             <Collapsible.Item href="/item1">
               Collapsible Item 1
@@ -67,9 +58,7 @@ function SidebarExample() {
           </Collapsible.Content>
         </Collapsible.Container>
         <Collapsible.Container>
-          <Collapsible.Trigger>
-            Collapsible Trigger
-          </Collapsible.Trigger>
+          <Collapsible.Trigger>Collapsible Trigger</Collapsible.Trigger>
           <Collapsible.Content>
             <Collapsible.Item href="/item1">
               Collapsible Item 1
@@ -80,9 +69,7 @@ function SidebarExample() {
           </Collapsible.Content>
         </Collapsible.Container>
         <Collapsible.Container>
-          <Collapsible.Trigger>
-            Collapsible Trigger
-          </Collapsible.Trigger>
+          <Collapsible.Trigger>Collapsible Trigger</Collapsible.Trigger>
           <Collapsible.Content>
             <Collapsible.Item href="/item1">
               Collapsible Item 1
@@ -97,10 +84,9 @@ function SidebarExample() {
   );
 }
 
-
 /**
- * サイドバーのサンプルです。  
- * `Collapsible`コンポーネントなどと併用してサイドバーを表現しています。  
+ * サイドバーのサンプルです。
+ * `Collapsible`コンポーネントなどと併用してサイドバーを表現しています。
  */
 const meta = {
   title: "Layout/Sidebar",
@@ -108,7 +94,7 @@ const meta = {
   parameters: {
     layout: "centered",
   },
-  tags: ["autodocs"]
+  tags: ["autodocs"],
 } satisfies Meta<typeof SidebarExample>;
 
 export default meta;

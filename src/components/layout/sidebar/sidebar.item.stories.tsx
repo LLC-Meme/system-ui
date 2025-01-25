@@ -2,9 +2,9 @@ import type { Meta, StoryObj } from "@storybook/react";
 import Sidebar from "./sidebar";
 
 /**
- * サイドバーのアイテムです。  
- * 
- * `asChild`を`true`にすることで、`Slot`コンポーネントとして使うことができます。  
+ * サイドバーのアイテムです。
+ *
+ * `asChild`を`true`にすることで、`Slot`コンポーネントとして使うことができます。
  */
 const meta = {
   title: "Layout/Sidebar/Item",
@@ -51,7 +51,7 @@ const meta = {
       },
     },
   },
-  tags: ["autodocs"]
+  tags: ["autodocs"],
 } satisfies Meta<typeof Sidebar.Item>;
 
 export default meta;

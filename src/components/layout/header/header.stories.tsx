@@ -6,18 +6,16 @@ function HeaderExample() {
   return (
     <Header.Container>
       <Header.SidebarController onClick={() => {}} />
-      <div className="ml-4 text-lg font-semibold">
-        Acme Dashboard
-      </div>
+      <div className="ml-4 text-lg font-semibold">Acme Dashboard</div>
     </Header.Container>
   );
 }
 
 /**
- * ヘッダーコンポーネントです。  
- * 
- * `Header.Container` はヘッダーのコンテナです。  
- * `Header.SidebarController` はサイドバーのコントローラーです。用いなくても問題ありません。  
+ * ヘッダーコンポーネントです。
+ *
+ * `Header.Container` はヘッダーのコンテナです。
+ * `Header.SidebarController` はサイドバーのコントローラーです。用いなくても問題ありません。
  */
 const meta = {
   title: "Layout/Header",

@@ -26,7 +26,7 @@ const meta = {
       },
     },
   },
-  tags: ["autodocs"]
+  tags: ["autodocs"],
 } satisfies Meta<typeof ErrorMessage>;
 
 export default meta;
@@ -35,5 +35,5 @@ type Story = StoryObj<typeof ErrorMessage>;
 export const Example: Story = {
   args: {
     children: "エラーメッセージ",
-  }
+  },
 };

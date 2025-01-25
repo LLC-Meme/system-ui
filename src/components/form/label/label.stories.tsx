@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import Label from "./label";
 
-/** 
- * formの`label`エレメントです。  
- * `input`や`select`などのフォーム要素にラップして使用します。  
+/**
+ * formの`label`エレメントです。
+ * `input`や`select`などのフォーム要素にラップして使用します。
  */
 const meta = {
   title: "Form/Label",
@@ -26,7 +26,7 @@ const meta = {
       table: {
         type: { summary: "React.RefObject<HTMLLabelElement>" },
       },
-    }
+    },
   },
   tags: ["autodocs"],
 } satisfies Meta<typeof Label>;
@@ -38,4 +38,4 @@ export const Example: Story = {
   args: {
     children: "ラベル",
   },
-}
+};

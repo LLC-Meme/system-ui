@@ -1,9 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import Textarea from "./textarea";
 
-
 /**
- * フォームに用いるテキストエリアのコンポーネントです。  
+ * フォームに用いるテキストエリアのコンポーネントです。
  */
 const meta = {
   title: "Form/Textarea",
@@ -11,24 +10,24 @@ const meta = {
   parameters: {
     layout: "centered",
   },
-  tags: ["autodocs"]
+  tags: ["autodocs"],
 } satisfies Meta<typeof Textarea>;
 
 export default meta;
 type Story = StoryObj<typeof Textarea>;
 
 export const Example: Story = {
-  args: {}
+  args: {},
 };
 
 export const Disabled: Story = {
   args: {
-    disabled: true
-  }
+    disabled: true,
+  },
 };
 
 export const Invalid: Story = {
   args: {
-    required: true
-  }
+    required: true,
+  },
 };

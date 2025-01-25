@@ -4,7 +4,6 @@ import { render, screen } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
 import LabelText from "./label-text";
 
-
 describe("LabelText コンポーネント", () => {
   it("LabelText が正しくレンダリングされる", () => {
     render(<LabelText data-testid="label-text">テストテキスト</LabelText>);
@@ -21,7 +20,7 @@ describe("LabelText コンポーネント", () => {
     render(
       <LabelText data-testid="label-text" className="custom-class">
         テストテキスト
-      </LabelText>
+      </LabelText>,
     );
     const labelTextEl = screen.getByTestId("label-text");
 

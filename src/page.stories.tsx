@@ -6,12 +6,10 @@ const meta = {
   component: Page,
   parameters: {
     layout: "fullscreen",
-  }
+  },
 } satisfies Meta<typeof Page>;
 
 export default meta;
 type Story = StoryObj<typeof Page>;
 
-export const Example: Story = {
-  
-};
+export const Example: Story = {};

@@ -4,7 +4,6 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
 import Radio from "./radio";
 
-
 describe("Radio コンポーネント", () => {
   it("Radio.Group が正しくレンダリングされる", () => {
     render(
@@ -21,7 +20,7 @@ describe("Radio コンポーネント", () => {
           <Radio.Button name="test" />
           <span>ラジオボタン3</span>
         </Radio.Label>
-      </Radio.Group>
+      </Radio.Group>,
     );
 
     // Radio.Group が存在することを確認
@@ -48,7 +47,7 @@ describe("Radio コンポーネント", () => {
           <Radio.Button name="test" value="3" />
           <span>ラジオボタン3</span>
         </Radio.Label>
-      </Radio.Group>
+      </Radio.Group>,
     );
 
     const radioButtons = screen.getAllByRole("radio");
@@ -75,7 +74,7 @@ describe("Radio コンポーネント", () => {
           <Radio.Button name="test" className="custom-class" />
           <span>ラジオボタン1</span>
         </Radio.Label>
-      </Radio.Group>
+      </Radio.Group>,
     );
 
     const radioButton = screen.getByRole("radio");
@@ -90,7 +89,7 @@ describe("Radio コンポーネント", () => {
           <Radio.Button name="test" />
           <span>ラジオボタン1</span>
         </Radio.Label>
-      </Radio.Group>
+      </Radio.Group>,
     );
 
     // refが正しく設定されていることを確認
@@ -105,11 +104,10 @@ describe("Radio コンポーネント", () => {
           <Radio.Button ref={ref} name="test" />
           <span>ラジオボタン1</span>
         </Radio.Label>
-      </Radio.Group>
+      </Radio.Group>,
     );
 
     // refが正しく設定されていることを確認
     expect(ref.current).toBeInstanceOf(HTMLInputElement);
   });
-
 });

@@ -1,13 +1,10 @@
 import React from "react";
 import { cn } from "../../../lib/cn";
 
-
 const Textarea = React.forwardRef<
   HTMLTextAreaElement,
   React.ComponentPropsWithoutRef<"textarea">
->(({
-  ...props
-}, ref) => {
+>(({ ...props }, ref) => {
   return (
     <textarea
       ref={ref}
@@ -20,12 +17,11 @@ const Textarea = React.forwardRef<
         "focus:border-info",
         "placeholder:text-foreground-muted",
         "disabled:disabled",
-        "invalid:border-alert"
+        "invalid:border-alert",
       )}
     />
   );
 });
 Textarea.displayName = "Textarea";
-
 
 export default Textarea;

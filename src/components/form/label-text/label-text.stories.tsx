@@ -2,9 +2,9 @@ import type { Meta, StoryObj } from "@storybook/react";
 import LabelText from "./label-text";
 
 /**
- * `input`、`select`などフォーム内の各アイテムに対するラベルを表現するコンポーネント。  
- * 
- * <span style="color:red">label要素とは違うので注意してください。</span>  
+ * `input`、`select`などフォーム内の各アイテムに対するラベルを表現するコンポーネント。
+ *
+ * <span style="color:red">label要素とは違うので注意してください。</span>
  */
 const meta = {
   title: "Form/LabelText",
@@ -38,7 +38,7 @@ const meta = {
         defaultValue: { summary: "undefined" },
       },
       control: false,
-    }
+    },
   },
   tags: ["autodocs"],
 } satisfies Meta<typeof LabelText>;

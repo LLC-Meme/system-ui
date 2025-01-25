@@ -2,7 +2,6 @@ import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import Checkbox from "./checkbox";
 
-
 const CheckboxExample = () => {
   return (
     <Checkbox.Label>
@@ -10,11 +9,11 @@ const CheckboxExample = () => {
       <span>テキスト</span>
     </Checkbox.Label>
   );
-}
+};
 
 /**
  * チェックボックスのコンポーネントです。
- * 
+ *
  * `Checkbox.Box`と`Checkbox.Label`を組み合わせて使います。
  */
 const meta = {
@@ -29,5 +28,5 @@ const meta = {
 export default meta;
 
 export const Example: StoryObj<typeof CheckboxExample> = {
-  render: () => (<CheckboxExample />),
+  render: () => <CheckboxExample />,
 };

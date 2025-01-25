@@ -2,9 +2,9 @@ import type { Meta, StoryObj } from "@storybook/react";
 import Radio from "./radio";
 
 /**
- * ラジオボタンのグループを提供します。  
- * 
- * 全`Radio.Label`コンポーネントをラップして用います。  
+ * ラジオボタンのグループを提供します。
+ *
+ * 全`Radio.Label`コンポーネントをラップして用います。
  */
 const meta = {
   title: "Form/Radio/Group",
@@ -19,7 +19,7 @@ const meta = {
         type: { summary: "React.Ref<HTMLDivElement>" },
         defaultValue: { summary: "undefined" },
       },
-      control: false
+      control: false,
     },
     children: {
       description: "ラジオボタンとそのラベル",
@@ -27,7 +27,7 @@ const meta = {
         type: { summary: "React.ReactNode" },
       },
       control: false,
-    }
+    },
   },
   tags: ["autodocs"],
 } satisfies Meta<typeof Radio.Group>;

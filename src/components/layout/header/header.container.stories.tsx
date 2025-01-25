@@ -23,8 +23,8 @@ const meta = {
         type: { summary: "React.Ref<HTMLDivElement>" },
         defaultValue: { summary: "undefined" },
       },
-      control: false
-    }
+      control: false,
+    },
   },
   tags: ["autodocs"],
 } satisfies Meta<typeof Header.Container>;

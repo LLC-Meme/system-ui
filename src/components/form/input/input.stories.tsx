@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import Input from "./input";
 
 /**
- * テキストの入力を受け付ける`input`コンポーネント  
+ * テキストの入力を受け付ける`input`コンポーネント
  */
 const meta = {
   title: "Form/Input",
@@ -29,24 +29,18 @@ type Story = StoryObj<typeof Input>;
 
 export const Default: Story = {
   render: () => {
-    return (
-      <Input placeholder="Default" />
-    );
-  }
+    return <Input placeholder="Default" />;
+  },
 };
 
 export const Disabled: Story = {
   render: () => {
-    return (
-      <Input disabled placeholder="Default" />
-    );
-  }
+    return <Input disabled placeholder="Default" />;
+  },
 };
 
 export const Invalid: Story = {
   render: () => {
-    return (
-      <Input required placeholder="Default" />
-    );
-  }
+    return <Input required placeholder="Default" />;
+  },
 };

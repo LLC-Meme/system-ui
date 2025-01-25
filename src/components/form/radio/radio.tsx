@@ -2,13 +2,10 @@ import React from "react";
 import styles from "./radio.module.css";
 import { cn } from "../../../lib/cn";
 
-
 const Button = React.forwardRef<
   HTMLInputElement,
   React.ComponentPropsWithoutRef<"input">
->(({
-  ...props
-}, ref) => {
+>(({ ...props }, ref) => {
   return (
     <input
       ref={ref}
@@ -21,106 +18,89 @@ const Button = React.forwardRef<
         "border-[1.5px] border-info",
         "focus:outline-none",
         "hover disabled",
-        styles.radio
+        styles.radio,
       )}
     />
   );
 });
 Button.displayName = "Radio.Button";
 
-
-
-export interface RadioLabelProps extends React.ComponentPropsWithoutRef<"label"> {
+export interface RadioLabelProps
+  extends React.ComponentPropsWithoutRef<"label"> {
   children: React.ReactNode;
 }
 
-const RadioLabel = React.forwardRef<HTMLLabelElement, RadioLabelProps>(({
-  children,
-  ...props
-}, ref) => {
-  return (
-    <label
-      ref={ref}
-      {...props}
-      className={cn(
-        props.className,
-        "flex items-center space-x-4 cursor-pointer hover"
-      )}
-    >
-      {children}
-    </label>
-  );
-});
+const RadioLabel = React.forwardRef<HTMLLabelElement, RadioLabelProps>(
+  ({ children, ...props }, ref) => {
+    return (
+      <label
+        ref={ref}
+        {...props}
+        className={cn(
+          props.className,
+          "flex items-center space-x-4 cursor-pointer hover",
+        )}
+      >
+        {children}
+      </label>
+    );
+  },
+);
 RadioLabel.displayName = "Radio.Label";
-
 
 export interface RadioTextProps extends React.ComponentPropsWithoutRef<"span"> {
   children: React.ReactNode;
 }
 
-const Text = React.forwardRef<HTMLSpanElement, RadioTextProps>(({
-  children,
-  ...props
-}, ref) => {
-  return (
-    <span
-      ref={ref}
-      {...props}
-    >
-      {children}
-    </span>
-  );
-});
+const Text = React.forwardRef<HTMLSpanElement, RadioTextProps>(
+  ({ children, ...props }, ref) => {
+    return (
+      <span ref={ref} {...props}>
+        {children}
+      </span>
+    );
+  },
+);
 Text.displayName = "Radio.Text";
-
 
 export interface RadioGroupProps extends React.ComponentPropsWithoutRef<"div"> {
   children: React.ReactNode;
 }
 
-const Group = React.forwardRef<HTMLDivElement, RadioGroupProps>(({
-  children,
-  ...props
-}, ref) => {
-  return (
-    <div
-      ref={ref}
-      {...props}
-      className={cn(
-        props.className,
-        "flex flex-col gap-2"
-      )}>
-      {children}
-    </div>
-  );
-});
+const Group = React.forwardRef<HTMLDivElement, RadioGroupProps>(
+  ({ children, ...props }, ref) => {
+    return (
+      <div
+        ref={ref}
+        {...props}
+        className={cn(props.className, "flex flex-col gap-2")}
+      >
+        {children}
+      </div>
+    );
+  },
+);
 Group.displayName = "Radio.Group";
 
-
-export interface RadioLabelTextProps extends React.ComponentPropsWithoutRef<"span"> {
+export interface RadioLabelTextProps
+  extends React.ComponentPropsWithoutRef<"span"> {
   children: React.ReactNode;
 }
 
-const LabelText = React.forwardRef<HTMLSpanElement, RadioLabelTextProps>(({
-  children,
-  ...props
-}, ref) => {
-  return (
-    <span
-      ref={ref}
-      {...props}
-      className={cn(
-        props.className,
-        "font-semibold"
-      )}
-    >
-      {children}
-    </span>
-  );
-});
+const LabelText = React.forwardRef<HTMLSpanElement, RadioLabelTextProps>(
+  ({ children, ...props }, ref) => {
+    return (
+      <span
+        ref={ref}
+        {...props}
+        className={cn(props.className, "font-semibold")}
+      >
+        {children}
+      </span>
+    );
+  },
+);
 LabelText.displayName = "Radio.LabelText";
-
-
 
 const Radio = {
   Button,

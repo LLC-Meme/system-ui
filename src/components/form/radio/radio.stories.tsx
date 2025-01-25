@@ -21,11 +21,10 @@ function RadioExample() {
   );
 }
 
-
 /**
- * ラジオボタンのグループを提供します。  
- * 
- * `Radio.Group`、`Radio.Label`、`Radio.Button`の３つを組み合わせて使用します。  
+ * ラジオボタンのグループを提供します。
+ *
+ * `Radio.Group`、`Radio.Label`、`Radio.Button`の３つを組み合わせて使用します。
  */
 const meta = {
   title: "Form/Radio",

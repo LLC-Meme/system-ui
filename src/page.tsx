@@ -25,18 +25,16 @@ import Textarea from "./components/form/textarea/textarea";
 import ErrorMessage from "./components/form/error-message/error-message";
 import ThemeSwitch from "./components/UI/theme-switch/theme-switch";
 
-
 export default function Page() {
   const [sidebarOpen, setSidebarOpen] = useState(true);
 
   return (
     <div>
-
       <Header.Container>
-        <Header.SidebarController onClick={() => setSidebarOpen(!sidebarOpen)} />
-        <h1 className="text-2xl font-bold whitespace-nowrap">
-          Acme Inc.
-        </h1>
+        <Header.SidebarController
+          onClick={() => setSidebarOpen(!sidebarOpen)}
+        />
+        <h1 className="text-2xl font-bold whitespace-nowrap">Acme Inc.</h1>
         <Stack.H className="w-full justify-end">
           <ThemeSwitch.Container>
             <ThemeSwitch.Light />
@@ -55,9 +53,7 @@ export default function Page() {
         <Sidebar.Group>
           <Sidebar.GroupLabel>Group Label</Sidebar.GroupLabel>
           <Collapsible.Container>
-            <Collapsible.Trigger>
-              Collapsible Trigger
-            </Collapsible.Trigger>
+            <Collapsible.Trigger>Collapsible Trigger</Collapsible.Trigger>
             <Collapsible.Content>
               <Collapsible.Item href="/item1">
                 Collapsible Item 1
@@ -68,9 +64,7 @@ export default function Page() {
             </Collapsible.Content>
           </Collapsible.Container>
           <Collapsible.Container>
-            <Collapsible.Trigger>
-              Collapsible Trigger
-            </Collapsible.Trigger>
+            <Collapsible.Trigger>Collapsible Trigger</Collapsible.Trigger>
             <Collapsible.Content>
               <Collapsible.Item href="/item1">
                 Collapsible Item 1
@@ -81,9 +75,7 @@ export default function Page() {
             </Collapsible.Content>
           </Collapsible.Container>
           <Collapsible.Container>
-            <Collapsible.Trigger>
-              Collapsible Trigger
-            </Collapsible.Trigger>
+            <Collapsible.Trigger>Collapsible Trigger</Collapsible.Trigger>
             <Collapsible.Content>
               <Collapsible.Item href="/item1">
                 Collapsible Item 1
@@ -94,9 +86,7 @@ export default function Page() {
             </Collapsible.Content>
           </Collapsible.Container>
           <Collapsible.Container>
-            <Collapsible.Trigger>
-              Collapsible Trigger
-            </Collapsible.Trigger>
+            <Collapsible.Trigger>Collapsible Trigger</Collapsible.Trigger>
             <Collapsible.Content>
               <Collapsible.Item href="/item1">
                 Collapsible Item 1
@@ -107,9 +97,7 @@ export default function Page() {
             </Collapsible.Content>
           </Collapsible.Container>
           <Collapsible.Container>
-            <Collapsible.Trigger>
-              Collapsible Trigger
-            </Collapsible.Trigger>
+            <Collapsible.Trigger>Collapsible Trigger</Collapsible.Trigger>
             <Collapsible.Content>
               <Collapsible.Item href="/item1">
                 Collapsible Item 1
@@ -120,9 +108,7 @@ export default function Page() {
             </Collapsible.Content>
           </Collapsible.Container>
           <Collapsible.Container>
-            <Collapsible.Trigger>
-              Collapsible Trigger
-            </Collapsible.Trigger>
+            <Collapsible.Trigger>Collapsible Trigger</Collapsible.Trigger>
             <Collapsible.Content>
               <Collapsible.Item href="/item1">
                 Collapsible Item 1
@@ -135,9 +121,7 @@ export default function Page() {
         </Sidebar.Group>
       </Sidebar.Container>
 
-
       <Main sidebarOpen={sidebarOpen}>
-
         <Breadcrumb.Container>
           <Breadcrumb.Item href="/" current={false}>
             Home
@@ -164,113 +148,108 @@ export default function Page() {
 
         <Spacer.V unit={2} />
 
-        <Title.Page>
-          Data
-        </Title.Page>
+        <Title.Page>Data</Title.Page>
 
-        <Alert variant="danger">
-          This is an danger alert
-        </Alert>
+        <Alert variant="danger">This is an danger alert</Alert>
 
         <Spacer.V />
 
         <Surface>
-          <Title.Section>
-            Section Title
-          </Title.Section>
+          <Title.Section>Section Title</Title.Section>
           <p className="mt-4">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.
-            Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec
+            odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla
+            quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent
+            mauris. Fusce nec tellus sed augue semper porta.
           </p>
           <Stack.H className="justify-end mt-6">
             <Modal.Root>
               <Modal.Trigger asChild>
-                <Button>
-                  Open Modal
-                </Button>
+                <Button>Open Modal</Button>
               </Modal.Trigger>
               <Modal.Content className="w-96">
-                <Modal.Title>
-                  Modal Title
-                </Modal.Title>
+                <Modal.Title>Modal Title</Modal.Title>
                 <Modal.Description className="mt-2">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.
-                  Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Integer nec odio. Praesent libero. Sed cursus ante dapibus
+                  diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.
+                  Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed
+                  augue semper porta.
                 </Modal.Description>
                 <Stack.H className="justify-between mt-6">
                   <Modal.Close asChild>
-                    <Button variant="danger">
-                      Close
-                    </Button>
+                    <Button variant="danger">Close</Button>
                   </Modal.Close>
-                  <Button>
-                    Save
-                  </Button>
+                  <Button>Save</Button>
                 </Stack.H>
               </Modal.Content>
             </Modal.Root>
           </Stack.H>
         </Surface>
 
-
         <Spacer.V unit={2} />
 
         <Surface>
-          <Title.Section>
-            Section Title
-          </Title.Section>
+          <Title.Section>Section Title</Title.Section>
           <p className="mt-4">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.
-            Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec
+            odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla
+            quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent
+            mauris. Fusce nec tellus sed augue semper porta.
           </p>
           <p className="mt-4">
-            Lorem <Navigation href="/#">ipsum</Navigation> dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.
-            Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta.
+            Lorem <Navigation href="/#">ipsum</Navigation> dolor sit amet,
+            consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed
+            cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum
+            imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus
+            sed augue semper porta.
           </p>
           <p className="mt-4">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.
-            Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. <Navigation href="/#">Fusce</Navigation> nec tellus sed augue semper porta.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec
+            odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla
+            quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent
+            mauris. <Navigation href="/#">Fusce</Navigation> nec tellus sed
+            augue semper porta.
           </p>
         </Surface>
 
         <Spacer.V unit={2} />
 
         <Surface>
-          <Title.Section>
-            Section Title
-          </Title.Section>
+          <Title.Section>Section Title</Title.Section>
           <p className="mt-4">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.
-            Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec
+            odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla
+            quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent
+            mauris. Fusce nec tellus sed augue semper porta.
           </p>
           <Divider.H className="my-4" />
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.
-            Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec
+            odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla
+            quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent
+            mauris. Fusce nec tellus sed augue semper porta.
           </p>
           <Divider.H className="my-4" />
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.
-            Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec
+            odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla
+            quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent
+            mauris. Fusce nec tellus sed augue semper porta.
           </p>
           <Stack.H className="justify-end mt-6">
             <Sheet.Root>
               <Sheet.Trigger asChild>
-                <Button>
-                  Open Sheet
-                </Button>
+                <Button>Open Sheet</Button>
               </Sheet.Trigger>
               <Sheet.Content>
-                <Sheet.Title>
-                  Sheet Title
-                </Sheet.Title>
+                <Sheet.Title>Sheet Title</Sheet.Title>
                 <Sheet.Description className="mt-2">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 </Sheet.Description>
                 <Spacer.V />
 
                 <form className="flex flex-col gap-6 mt-2">
-
                   <Label>
                     <LabelText>Input</LabelText>
                     <Input placeholder="input something" />
@@ -279,7 +258,9 @@ export default function Page() {
                   <Label>
                     <LabelText>Selector</LabelText>
                     <Selector.Select className="w-full">
-                      <Selector.DefaultOption>Select an option</Selector.DefaultOption>
+                      <Selector.DefaultOption>
+                        Select an option
+                      </Selector.DefaultOption>
                       <Selector.Option>Option 1</Selector.Option>
                       <Selector.Option>Option 2</Selector.Option>
                       <Selector.Option>Option 3</Selector.Option>
@@ -321,29 +302,19 @@ export default function Page() {
 
                   <Spacer.V />
                   <Sheet.Close asChild>
-                    <Button variant="default">
-                      Save
-                    </Button>
+                    <Button variant="default">Save</Button>
                   </Sheet.Close>
-
-
                 </form>
-
               </Sheet.Content>
             </Sheet.Root>
-
           </Stack.H>
         </Surface>
-
 
         {/* Table */}
         {/* Tabs */}
         {/* Tooltip */}
         {/* Calendar */}
-
-
       </Main>
-
     </div>
   );
 }

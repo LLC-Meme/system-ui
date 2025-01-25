@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import Sidebar from "./sidebar";
 
 /**
- * サイドバーの各アイテムをグループ化する際のラッピングに使用します。  
+ * サイドバーの各アイテムをグループ化する際のラッピングに使用します。
  */
 const meta = {
   title: "Layout/Sidebar/Group",
@@ -29,7 +29,7 @@ const meta = {
       },
     },
   },
-  tags: ["autodocs"]
+  tags: ["autodocs"],
 } satisfies Meta<typeof Sidebar.Group>;
 
 export default meta;

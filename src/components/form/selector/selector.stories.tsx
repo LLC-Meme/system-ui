@@ -5,22 +5,16 @@ import Selector from "./selector";
 function SelectorExample() {
   return (
     <Selector.Select>
-      <Selector.Option value="1">
-        選択肢1
-      </Selector.Option>
-      <Selector.Option value="2">
-        選択肢2
-      </Selector.Option>
-      <Selector.Option value="3">
-        選択肢3
-      </Selector.Option>
+      <Selector.Option value="1">選択肢1</Selector.Option>
+      <Selector.Option value="2">選択肢2</Selector.Option>
+      <Selector.Option value="3">選択肢3</Selector.Option>
     </Selector.Select>
   );
 }
 
 /**
- * セレクトボックスを提供します。  
- * `Selector.Select`で各`Selector.Option`をラップして使用してください。  
+ * セレクトボックスを提供します。
+ * `Selector.Select`で各`Selector.Option`をラップして使用してください。
  */
 const meta = {
   title: "Form/Selector",

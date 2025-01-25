@@ -13,7 +13,7 @@ const meta = {
       table: {
         type: { summary: "() => void" },
       },
-      control: false
+      control: false,
     },
     ref: {
       description: "サイドバーを開くためのボタン要素への参照",
@@ -21,8 +21,8 @@ const meta = {
         type: { summary: "React.Ref<HTMLButtonElement>" },
         defaultValue: { summary: "undefined" },
       },
-      control: false
-    }
+      control: false,
+    },
   },
   tags: ["autodocs"],
 } satisfies Meta<typeof Header.SidebarController>;
@@ -32,6 +32,6 @@ type Story = StoryObj<typeof Header.SidebarController>;
 
 export const SidebarController: Story = {
   args: {
-    onClick: () => {}
+    onClick: () => {},
   },
 };

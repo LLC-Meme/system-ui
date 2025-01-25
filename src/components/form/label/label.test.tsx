@@ -4,7 +4,6 @@ import { render, screen } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
 import Label from "./label";
 
-
 describe("Label コンポーネント", () => {
   it("ラベルが正しくレンダリングされる", () => {
     render(<Label data-testid="label">テストラベル</Label>);
@@ -18,7 +17,11 @@ describe("Label コンポーネント", () => {
   });
 
   it("追加のクラス名が適用される", () => {
-    render(<Label data-testid="label" className="custom-class">テストラベル</Label>);
+    render(
+      <Label data-testid="label" className="custom-class">
+        テストラベル
+      </Label>,
+    );
     const labelEl = screen.getByTestId("label");
 
     // クラスが正しく適用されていることを確認
@@ -34,7 +37,11 @@ describe("Label コンポーネント", () => {
   });
 
   it("任意の属性が適用される", () => {
-    render(<Label data-testid="label" htmlFor="input-id">テストラベル</Label>);
+    render(
+      <Label data-testid="label" htmlFor="input-id">
+        テストラベル
+      </Label>,
+    );
     const labelEl = screen.getByTestId("label");
 
     // htmlFor属性が正しく適用されていることを確認

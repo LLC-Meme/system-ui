@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import Radio from "./radio";
 
 /**
- * ラジオボタンのボタン部分を提供します。  
+ * ラジオボタンのボタン部分を提供します。
  */
 const meta = {
   title: "Form/Radio/Button",
@@ -18,7 +18,7 @@ const meta = {
         defaultValue: { summary: "undefined" },
       },
       control: false,
-    }
+    },
   },
   tags: ["autodocs"],
 } satisfies Meta<typeof Radio.Button>;

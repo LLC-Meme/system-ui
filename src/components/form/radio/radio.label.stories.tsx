@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import Radio from "./radio";
 
 /**
- * ラジオボタンの`label`要素を提供します。  
+ * ラジオボタンの`label`要素を提供します。
  */
 const meta = {
   title: "Form/Radio/Label",
@@ -25,7 +25,7 @@ const meta = {
         type: { summary: "React.ReactNode" },
       },
       control: false,
-    }
+    },
   },
   tags: ["autodocs"],
 } satisfies Meta<typeof Radio.Label>;

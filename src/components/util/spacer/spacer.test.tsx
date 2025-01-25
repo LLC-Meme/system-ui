@@ -7,12 +7,10 @@ import Spacer from "./spacer";
 const { V, H } = Spacer;
 
 describe("Spacer.V", () => {
-
   it("表示される", () => {
     render(<V data-testid="spacer-v" />);
     expect(screen.getByTestId("spacer-v")).toBeInTheDocument();
   });
-
 
   it("デフォルト(unit=1)で'h-4'が適用", () => {
     render(<V data-testid="spacer-v" />);
@@ -27,14 +25,11 @@ describe("Spacer.V", () => {
   });
 
   it("デフォルトと追加のclassが適用", () => {
-    render(
-      <V data-testid="spacer-v" className="custom-class" unit={2} />
-    );
+    render(<V data-testid="spacer-v" className="custom-class" unit={2} />);
     const spacerEl = screen.getByTestId("spacer-v");
 
     expect(spacerEl).toHaveClass("custom-class", "h-8");
   });
-
 
   it("refが適用", () => {
     const ref = React.createRef<HTMLDivElement>();
@@ -43,9 +38,7 @@ describe("Spacer.V", () => {
   });
 });
 
-
 describe("Spacer.H", () => {
-
   it("表示される", () => {
     render(<H data-testid="spacer-h" />);
     expect(screen.getByTestId("spacer-h")).toBeInTheDocument();
@@ -63,11 +56,8 @@ describe("Spacer.H", () => {
     expect(spacerEl).toHaveClass("w-20");
   });
 
-
   it("デフォルトと追加のclassが適用", () => {
-    render(
-      <H data-testid="spacer-h" className="custom-h" unit={2} />
-    );
+    render(<H data-testid="spacer-h" className="custom-h" unit={2} />);
     const spacerEl = screen.getByTestId("spacer-h");
     expect(spacerEl).toHaveClass("custom-h", "w-8");
   });
@@ -77,5 +67,4 @@ describe("Spacer.H", () => {
     render(<H ref={ref} data-testid="spacer-h" />);
     expect(ref.current).toBeInstanceOf(HTMLDivElement);
   });
-
 });

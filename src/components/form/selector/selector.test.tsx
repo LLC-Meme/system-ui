@@ -4,7 +4,6 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
 import Selector from "./selector";
 
-
 describe("Selector コンポーネント", () => {
   it("正しい選択肢がレンダリングされる", () => {
     render(
@@ -12,7 +11,7 @@ describe("Selector コンポーネント", () => {
         <Selector.Option value="1">選択肢1</Selector.Option>
         <Selector.Option value="2">選択肢2</Selector.Option>
         <Selector.Option value="3">選択肢3</Selector.Option>
-      </Selector.Select>
+      </Selector.Select>,
     );
 
     // セレクトボックスが存在することを確認
@@ -32,7 +31,7 @@ describe("Selector コンポーネント", () => {
         <Selector.Option value="1">選択肢1</Selector.Option>
         <Selector.Option value="2">選択肢2</Selector.Option>
         <Selector.Option value="3">選択肢3</Selector.Option>
-      </Selector.Select>
+      </Selector.Select>,
     );
 
     const select = screen.getByTestId("select") as HTMLSelectElement;
@@ -53,7 +52,7 @@ describe("Selector コンポーネント", () => {
     render(
       <Selector.Select className="custom-class" data-testid="select">
         <Selector.Option value="1">選択肢1</Selector.Option>
-      </Selector.Select>
+      </Selector.Select>,
     );
 
     const select = screen.getByTestId("select");
@@ -65,7 +64,7 @@ describe("Selector コンポーネント", () => {
     render(
       <Selector.Select ref={ref}>
         <Selector.Option value="1">選択肢1</Selector.Option>
-      </Selector.Select>
+      </Selector.Select>,
     );
 
     expect(ref.current).toBeInstanceOf(HTMLSelectElement);
@@ -77,11 +76,10 @@ describe("Selector コンポーネント", () => {
         <Selector.Option value="1" className="option-class">
           選択肢1
         </Selector.Option>
-      </Selector.Select>
+      </Selector.Select>,
     );
 
     const option = screen.getByText("選択肢1");
     expect(option).toHaveClass("option-class");
   });
-
 });

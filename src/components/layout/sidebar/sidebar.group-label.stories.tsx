@@ -29,7 +29,7 @@ const meta = {
       },
     },
   },
-  tags: ["autodocs"]
+  tags: ["autodocs"],
 } satisfies Meta<typeof Sidebar.GroupLabel>;
 
 export default meta;

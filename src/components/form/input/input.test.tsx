@@ -23,7 +23,7 @@ describe("Input", () => {
       "border-border",
       "focus:border-info",
       "placeholder:text-foreground-muted",
-      "disabled"
+      "disabled",
     );
   });
 

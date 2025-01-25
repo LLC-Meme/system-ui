@@ -19,7 +19,7 @@ const meta = {
         defaultValue: { summary: "undefined" },
       },
       control: false,
-    }
+    },
   },
   tags: ["autodocs"],
 } satisfies Meta<typeof Checkbox.Box>;
@@ -28,25 +28,17 @@ export default meta;
 type Story = StoryObj<typeof Checkbox.Box>;
 
 export const Default: Story = {
-  render: (args) => (
-    <Checkbox.Box {...args} />
-  ),
+  render: (args) => <Checkbox.Box {...args} />,
 };
 
 export const Checked: Story = {
-  render: (args) => (
-    <Checkbox.Box {...args} checked />
-  ),
+  render: (args) => <Checkbox.Box {...args} checked />,
 };
 
 export const Unchecked: Story = {
-  render: (args) => (
-    <Checkbox.Box {...args} checked={false} />
-  ),
+  render: (args) => <Checkbox.Box {...args} checked={false} />,
 };
 
 export const Disabled: Story = {
-  render: (args) => (
-    <Checkbox.Box {...args} disabled />
-  ),
+  render: (args) => <Checkbox.Box {...args} disabled />,
 };

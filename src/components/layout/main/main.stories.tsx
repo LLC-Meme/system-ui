@@ -22,7 +22,7 @@ const meta = {
       table: {
         type: { summary: "React.ReactNode" },
       },
-      control: false
+      control: false,
     },
     sidebarOpen: {
       description: "サイドバーが開いているかどうか",
@@ -30,7 +30,7 @@ const meta = {
         type: { summary: "boolean" },
         defaultValue: { summary: "false" },
       },
-      control: false
+      control: false,
     },
   },
   tags: ["autodocs"],
@@ -42,8 +42,6 @@ type Story = StoryObj<typeof Main>;
 export const Example: Story = {
   args: {
     sidebarOpen: false,
-    children: (
-      <p>Mainコンポーネントのサンプル</p>
-    ),
-  }
+    children: <p>Mainコンポーネントのサンプル</p>,
+  },
 };

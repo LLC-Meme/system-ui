@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import Selector from "./selector";
 
 /**
- * セレクトボックスの選択肢を提供します。  
+ * セレクトボックスの選択肢を提供します。
  * `Selector.Select`の子要素として使用してください。
  */
 const meta = {
@@ -19,7 +19,7 @@ const meta = {
         defaultValue: { summary: "undefined" },
       },
       control: false,
-    }
+    },
   },
   tags: ["autodocs"],
 } satisfies Meta<typeof Selector.Option>;

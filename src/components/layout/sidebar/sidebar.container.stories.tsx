@@ -2,8 +2,8 @@ import type { Meta, StoryObj } from "@storybook/react";
 import Sidebar from "./sidebar";
 
 /**
- * サイドバーのコンテナです。  
- * 全てのサイドバーの要素はこのコンテナの中に配置します。  
+ * サイドバーのコンテナです。
+ * 全てのサイドバーの要素はこのコンテナの中に配置します。
  */
 const meta = {
   title: "Layout/Sidebar/Container",
@@ -40,7 +40,7 @@ const meta = {
       },
     },
   },
-  tags: ["autodocs"]
+  tags: ["autodocs"],
 } satisfies Meta<typeof Sidebar.Container>;
 
 export default meta;
