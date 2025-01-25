@@ -1,5 +1,5 @@
 {
-  "name": "@llcmeme/system-ui",
+  "name": "@memellc/system-ui",
   "version": "1.0.0",
   "description": "React UI components for system design in LLC Meme",
   "main": "dist/index.js",
