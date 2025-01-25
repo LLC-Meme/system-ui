@@ -7,9 +7,15 @@
     "allowJs": true,
     "noEmit": false,
     "declaration": true,
-    "strict": true,
+    "declarationDir": "dist",
+    "allowSyntheticDefaultImports": true,
     "outDir": "dist",
-    "jsx": "preserve"
+    "strict": true,
+    "jsx": "preserve",
+    "baseUrl": "./",
+    "paths": {
+      "@llcmeme/system-ui/*": ["src/*"]
+    }
   },
   "include": ["src", "global.d.ts"],
   "exclude": ["node_modules", "dist"]
