@@ -277,30 +277,30 @@ export default function Page() {
                   </Label>
 
                   <Radio.Group>
-                    <Radio.GroupTitle>Radio Group</Radio.GroupTitle>
+                    <Radio.LabelText>Radio Group</Radio.LabelText>
                     <Radio.Label>
                       <Radio.Button name="test" />
-                      <Radio.LabelText>Option 1</Radio.LabelText>
+                      <Radio.Text>Option 1</Radio.Text>
                     </Radio.Label>
                     <Radio.Label>
                       <Radio.Button name="test" />
-                      <Radio.LabelText>Option 2</Radio.LabelText>
+                      <Radio.Text>Option 2</Radio.Text>
                     </Radio.Label>
                     <Radio.Label>
                       <Radio.Button name="test" />
-                      <Radio.LabelText>Option 3</Radio.LabelText>
+                      <Radio.Text>Option 3</Radio.Text>
                     </Radio.Label>
                   </Radio.Group>
 
                   <Checkbox.Container>
-                    <Checkbox.Title>Checkbox</Checkbox.Title>
+                    <Checkbox.LabelText>Checkbox</Checkbox.LabelText>
                     <Checkbox.Label>
                       <Checkbox.Box />
-                      <Checkbox.LabelText>Checkbox 1</Checkbox.LabelText>
+                      <Checkbox.Text>Checkbox 1</Checkbox.Text>
                     </Checkbox.Label>
                     <Checkbox.Label>
                       <Checkbox.Box />
-                      <Checkbox.LabelText>Checkbox 2</Checkbox.LabelText>
+                      <Checkbox.Text>Checkbox 2</Checkbox.Text>
                     </Checkbox.Label>
                   </Checkbox.Container>
 

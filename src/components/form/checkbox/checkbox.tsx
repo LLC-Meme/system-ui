@@ -51,11 +51,11 @@ Label.displayName = "Checkbox.Label";
 
 
 
-export interface CheckboxLabelTextProps extends React.ComponentPropsWithoutRef<"span"> {
+export interface CheckboxTextProps extends React.ComponentPropsWithoutRef<"span"> {
   children: React.ReactNode;
 }
 
-const LabelText = React.forwardRef<HTMLSpanElement, CheckboxLabelTextProps>(({
+const Text = React.forwardRef<HTMLSpanElement, CheckboxTextProps>(({
   children,
   ...props
 }, ref) => {
@@ -68,7 +68,7 @@ const LabelText = React.forwardRef<HTMLSpanElement, CheckboxLabelTextProps>(({
     </span>
   );
 });
-LabelText.displayName = "Checkbox.LabelText";
+Text.displayName = "Checkbox.Text";
 
 
 export interface CheckboxContainerProps extends React.ComponentPropsWithoutRef<"div"> {
@@ -96,11 +96,11 @@ const Container = React.forwardRef<HTMLDivElement, CheckboxContainerProps>(({
 Container.displayName = "Checkbox.Container";
 
 
-export interface CheckboxTitleProps extends React.ComponentPropsWithoutRef<"span"> {
+export interface CheckboxLabelTextProps extends React.ComponentPropsWithoutRef<"span"> {
   children: React.ReactNode;
 }
 
-const Title = React.forwardRef<HTMLSpanElement, CheckboxTitleProps>(({
+const LabelText = React.forwardRef<HTMLSpanElement, CheckboxLabelTextProps>(({
   children,
   ...props
 }, ref) => {
@@ -117,15 +117,15 @@ const Title = React.forwardRef<HTMLSpanElement, CheckboxTitleProps>(({
     </span>
   );
 });
-Title.displayName = "Checkbox.Title";
+LabelText.displayName = "Checkbox.LabelText";
 
 
 const Checkbox = {
   Box,
   Label,
-  LabelText,
+  Text,
   Container,
-  Title,
+  LabelText,
 };
 
 export default Checkbox;
