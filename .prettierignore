@@ -4,3 +4,4 @@ dist
 *.yml
 .env
 README.md
+package-lock.json
