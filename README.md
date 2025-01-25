@@ -17,6 +17,7 @@ Apple風のデザインで様々なUIを提供します。
 
 ## ネクストステップ  
 - Form周りのAPIの命名考える、LabelTextには同じの使うとか  
+- FormItemのエラー時のUI  
 - Theme Switcher作る  
 - eslint, prettierを追加  
 - huskyの導入  
