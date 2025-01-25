@@ -3,9 +3,14 @@ import styles from "./checkbox.module.css";
 import { cn } from "../../../lib/cn";
 
 
-export interface CheckboxBoxProps extends React.InputHTMLAttributes<HTMLInputElement> {}
+export interface CheckboxBoxProps extends React.InputHTMLAttributes<HTMLInputElement> {
+  className?: string;
+}
 
-const Box = React.forwardRef<HTMLInputElement, CheckboxBoxProps>((props, ref) => {
+const Box = React.forwardRef<
+  HTMLInputElement,
+  CheckboxBoxProps
+>(({ ...props }, ref) => {
   return (
     <input
       type="checkbox"
