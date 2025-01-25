@@ -2,9 +2,10 @@ import React from "react";
 import { cn } from "../../../lib/cn";
 
 
-export interface TextareaProps extends React.ComponentPropsWithoutRef<"textarea"> {}
-
-const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(({
+const Textarea = React.forwardRef<
+  HTMLTextAreaElement,
+  React.ComponentPropsWithoutRef<"textarea">
+>(({
   ...props
 }, ref) => {
   return (
