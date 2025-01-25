@@ -6,7 +6,9 @@ function PaginationExample() {
   return (
     <Pagination.Container>
       <Pagination.Prev href="/1" disabled />
-      <Pagination.Item href="/1" current>1</Pagination.Item>
+      <Pagination.Item href="/1" current>
+        1
+      </Pagination.Item>
       <Pagination.Item href="/2">2</Pagination.Item>
       <Pagination.Ellipsis />
       <Pagination.Item href="/20">20</Pagination.Item>
@@ -16,7 +18,7 @@ function PaginationExample() {
 }
 
 /**
- * ページネーションコンポーネントです。  
+ * ページネーションコンポーネントです。
  */
 const meta = {
   title: "UI/Pagination",

@@ -7,76 +7,64 @@ type TableStyle = "basic" | "plain";
 
 const TableStyleContext = createContext<TableStyle>("basic");
 
-
 export interface TableProps extends React.ComponentPropsWithoutRef<"table"> {
   tableStyle?: TableStyle;
   children: React.ReactNode;
 }
 
-const Container = React.forwardRef<HTMLTableElement, TableProps>(({
-  tableStyle = "basic",
-  children,
-  ...props
-}, ref) => {
-  return (
-    <TableStyleContext.Provider value={tableStyle}>
-      <table
-        ref={ref}
-        {...props}
-        className={cn(
-          styles.table,
-          props.className,
-          "border-separate border-spacing-0",
-          tableStyle === "basic" && "border border-border rounded-lg overflow-hidden",
-          tableStyle === "plain" && "",
-        )}
-      >
-        {children}
-      </table>
-    </TableStyleContext.Provider>
-  );
-});
+const Container = React.forwardRef<HTMLTableElement, TableProps>(
+  ({ tableStyle = "basic", children, ...props }, ref) => {
+    return (
+      <TableStyleContext.Provider value={tableStyle}>
+        <table
+          ref={ref}
+          {...props}
+          className={cn(
+            styles.table,
+            props.className,
+            "border-separate border-spacing-0",
+            tableStyle === "basic" &&
+              "border border-border rounded-lg overflow-hidden",
+            tableStyle === "plain" && "",
+          )}
+        >
+          {children}
+        </table>
+      </TableStyleContext.Provider>
+    );
+  },
+);
 Container.displayName = "Table.Container";
-
 
 function Head({
   children,
   ...props
-}: React.PropsWithChildren<React.TableHTMLAttributes<HTMLTableSectionElement>>) {
-  return (
-    <thead {...props}>
-      {children}
-    </thead>
-  );
+}: React.PropsWithChildren<
+  React.TableHTMLAttributes<HTMLTableSectionElement>
+>) {
+  return <thead {...props}>{children}</thead>;
 }
 Head.displayName = "Table.Head";
-
 
 function Body({
   children,
   ...props
-}: React.PropsWithChildren<React.TableHTMLAttributes<HTMLTableSectionElement>>) {
-  return (
-    <tbody {...props}>
-      {children}
-    </tbody>
-  );
+}: React.PropsWithChildren<
+  React.TableHTMLAttributes<HTMLTableSectionElement>
+>) {
+  return <tbody {...props}>{children}</tbody>;
 }
 Body.displayName = "Table.Body";
-
 
 function Foot({
   children,
   ...props
-}: React.PropsWithChildren<React.TableHTMLAttributes<HTMLTableSectionElement>>) {
-  return (
-    <tfoot {...props}>
-      {children}
-    </tfoot>
-  );
+}: React.PropsWithChildren<
+  React.TableHTMLAttributes<HTMLTableSectionElement>
+>) {
+  return <tfoot {...props}>{children}</tfoot>;
 }
 Foot.displayName = "Table.Foot";
-
 
 function Row({
   children,
@@ -103,12 +91,13 @@ function Row({
 }
 Row.displayName = "Table.Row";
 
-
 function HeadingCell({
   children,
   className,
   ...props
-}: React.PropsWithChildren<React.TableHTMLAttributes<HTMLTableHeaderCellElement>> & {
+}: React.PropsWithChildren<
+  React.TableHTMLAttributes<HTMLTableHeaderCellElement>
+> & {
   className?: string;
 }) {
   const tableStyle = useContext(TableStyleContext);
@@ -118,7 +107,8 @@ function HeadingCell({
       className={cn(
         className,
         tableStyle === "basic" && "font-semibold p-4 pr-24",
-        tableStyle === "plain" && "font-semibold pl-2 pr-12 py-1 border-y border-border",
+        tableStyle === "plain" &&
+          "font-semibold pl-2 pr-12 py-1 border-y border-border",
       )}
     >
       {children}
@@ -126,7 +116,6 @@ function HeadingCell({
   );
 }
 HeadingCell.displayName = "Table.HeadingCell";
-
 
 function Cell({
   children,
@@ -150,7 +139,6 @@ function Cell({
   );
 }
 Cell.displayName = "Table.Cell";
-
 
 const Table = {
   Container,

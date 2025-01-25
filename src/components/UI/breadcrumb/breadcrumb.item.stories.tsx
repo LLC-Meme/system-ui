@@ -2,8 +2,8 @@ import type { Meta, StoryObj } from "@storybook/react";
 import Breadcrumb from "./breadcrumb";
 
 /**
- * Breadcrumbの各リンクアイテムを表示します。  
- * 適宜`a`や`Link`をラップして用いてください。  
+ * Breadcrumbの各リンクアイテムを表示します。
+ * 適宜`a`や`Link`をラップして用いてください。
  */
 const meta = {
   title: "UI/Breadcrumb/Item",

@@ -22,21 +22,21 @@ const meta = {
       table: {
         type: { summary: "string[]" },
       },
-      control: false
+      control: false,
     },
     selectedValue: {
       description: "選択されたタブの値",
       table: {
         type: { summary: "string" },
       },
-      control: false
+      control: false,
     },
     setSelectedValue: {
       description: "選択されたタブの値を更新する関数",
       table: {
         type: { summary: "React.Dispatch<React.SetStateAction<string>>" },
       },
-      control: false
+      control: false,
     },
   },
   tags: ["autodocs"],
@@ -44,7 +44,6 @@ const meta = {
 
 export default meta;
 type Story = StoryObj<typeof Tabs>;
-
 
 const TabWithHooks = () => {
   const [selectedValue, setSelectedValue] = useState("Tab1");

@@ -15,106 +15,107 @@ export interface CalendarProps {
   disableBefore?: Date;
 }
 
-const Calendar = React.forwardRef<HTMLDivElement, CalendarProps>(({
-  date,
-  setDate,
-  disableAfter,
-  disableBefore,
-}, ref) => {
+const Calendar = React.forwardRef<HTMLDivElement, CalendarProps>(
+  ({ date, setDate, disableAfter, disableBefore }, ref) => {
+    const [focusedYear, setFocusedYear] = useState(
+      date ? date.getFullYear() : new Date().getFullYear(),
+    );
+    const [focusedMonth, setFocusedMonth] = useState(
+      date ? date.getMonth() : new Date().getMonth(),
+    );
 
-  const [focusedYear, setFocusedYear] = useState(date ? date.getFullYear() : new Date().getFullYear());
-  const [focusedMonth, setFocusedMonth] = useState(date ? date.getMonth() : new Date().getMonth());
+    const daysInMonth = new Date(focusedYear, focusedMonth + 1, 0).getDate();
+    const firstDay = new Date(focusedYear, focusedMonth, 1).getDay();
 
-  const daysInMonth = new Date(focusedYear, focusedMonth + 1, 0).getDate();
-  const firstDay = new Date(focusedYear, focusedMonth, 1).getDay();
+    const days = useMemo(
+      () => Array.from({ length: daysInMonth }, (_, i) => i + 1),
+      [daysInMonth],
+    );
+    const emptyDays = useMemo(
+      () => Array.from({ length: firstDay }, (_, i) => i),
+      [firstDay],
+    );
 
-  const days = useMemo(() => Array.from({ length: daysInMonth }, (_, i) => i + 1), [daysInMonth]);
-  const emptyDays = useMemo(() => Array.from({ length: firstDay }, (_, i) => i), [firstDay]);
+    const handleDateClick = useCallback(
+      (day: number) => {
+        setDate(new Date(focusedYear, focusedMonth, day));
+      },
+      [focusedYear, focusedMonth, setDate],
+    );
 
+    const handlePrevMonthClick = useCallback(() => {
+      if (focusedMonth === 0) {
+        setFocusedYear((prev) => prev - 1);
+        setFocusedMonth(11);
+      } else {
+        setFocusedMonth((prev) => prev - 1);
+      }
+    }, [focusedMonth]);
 
-  const handleDateClick = useCallback((day: number) => {
-    setDate(new Date(focusedYear, focusedMonth, day));
-  }, [focusedYear, focusedMonth, setDate]);
+    const handleNextMonthClick = useCallback(() => {
+      if (focusedMonth === 11) {
+        setFocusedYear((prev) => prev + 1);
+        setFocusedMonth(0);
+      } else {
+        setFocusedMonth((prev) => prev + 1);
+      }
+    }, [focusedMonth]);
 
-  const handlePrevMonthClick = useCallback(() => {
-    if (focusedMonth === 0) {
-      setFocusedYear((prev) => prev - 1);
-      setFocusedMonth(11);
-    } else {
-      setFocusedMonth((prev) => prev - 1);
-    }
-  }, [focusedMonth]);
-
-  const handleNextMonthClick = useCallback(() => {
-    if (focusedMonth === 11) {
-      setFocusedYear((prev) => prev + 1);
-      setFocusedMonth(0);
-    } else {
-      setFocusedMonth((prev) => prev + 1);
-    }
-  }, [focusedMonth]);
-
-  return (
-    <div
-      ref={ref}
-      className="p-6 overlay rounded-lg"
-    >
-
-      <div className="flex items-center justify-between">
-        <PrevMonthButton onClick={handlePrevMonthClick} />
-        <div className="text-lg">
-          {focusedYear}年{focusedMonth + 1}月
+    return (
+      <div ref={ref} className="p-6 overlay rounded-lg">
+        <div className="flex items-center justify-between">
+          <PrevMonthButton onClick={handlePrevMonthClick} />
+          <div className="text-lg">
+            {focusedYear}年{focusedMonth + 1}月
+          </div>
+          <NextMonthButton onClick={handleNextMonthClick} />
         </div>
-        <NextMonthButton onClick={handleNextMonthClick} />
+
+        <div className="grid grid-cols-7">
+          <DayLabel>日</DayLabel>
+          <DayLabel>月</DayLabel>
+          <DayLabel>火</DayLabel>
+          <DayLabel>水</DayLabel>
+          <DayLabel>木</DayLabel>
+          <DayLabel>金</DayLabel>
+          <DayLabel>土</DayLabel>
+
+          {emptyDays.map((_, i) => (
+            <div key={i} className="w-12 h-12" />
+          ))}
+
+          {days.map((day) => {
+            const dayDate = new Date(focusedYear, focusedMonth, day);
+
+            const disabled =
+              (disableAfter && dayDate > disableAfter) ||
+              (disableBefore && dayDate < disableBefore);
+
+            return (
+              <Day
+                key={day}
+                selected={
+                  !!date &&
+                  date.getFullYear() === focusedYear &&
+                  date.getMonth() === focusedMonth &&
+                  date.getDate() === day
+                }
+                disabled={disabled}
+                onClick={() => handleDateClick(day)}
+              >
+                {day}
+              </Day>
+            );
+          })}
+        </div>
       </div>
-
-      <div className="grid grid-cols-7">
-        <DayLabel>日</DayLabel>
-        <DayLabel>月</DayLabel>
-        <DayLabel>火</DayLabel>
-        <DayLabel>水</DayLabel>
-        <DayLabel>木</DayLabel>
-        <DayLabel>金</DayLabel>
-        <DayLabel>土</DayLabel>
-
-        {emptyDays.map((_, i) => (
-          <div key={i} className="w-12 h-12" />
-        ))}
-
-        {days.map((day) => {
-          const dayDate = new Date(focusedYear, focusedMonth, day);
-
-          const disabled =
-            (disableAfter && dayDate > disableAfter) ||
-            (disableBefore && dayDate < disableBefore);
-
-          return (
-            <Day
-              key={day}
-              selected={
-                !!date &&
-                date.getFullYear() === focusedYear &&
-                date.getMonth() === focusedMonth &&
-                date.getDate() === day
-              }
-              disabled={disabled}
-              onClick={() => handleDateClick(day)}
-            >
-              {day}
-            </Day>
-          );
-        })}
-
-      </div>
-
-    </div>
-  );
-});
+    );
+  },
+);
 Calendar.displayName = "Calendar";
 
-
 const PrevMonthButton = memo(function PrevMonthButton({
-  onClick
+  onClick,
 }: {
   onClick: () => void;
 }) {
@@ -130,7 +131,7 @@ const PrevMonthButton = memo(function PrevMonthButton({
 });
 
 const NextMonthButton = memo(function NextMonthButton({
-  onClick
+  onClick,
 }: {
   onClick: () => void;
 }) {
@@ -145,12 +146,7 @@ const NextMonthButton = memo(function NextMonthButton({
   );
 });
 
-
-function DayLabel({
-  children
-}: {
-  children: React.ReactNode;
-}) {
+function DayLabel({ children }: { children: React.ReactNode }) {
   return (
     <div className="w-12 h-12 center text-foreground-muted font-medium">
       {children}
@@ -158,17 +154,16 @@ function DayLabel({
   );
 }
 
-
 const Day = memo(function Day({
   children,
   selected = false,
   disabled = false,
   onClick,
 }: {
-  children: React.ReactNode,
-  selected?: boolean,
-  disabled?: boolean,
-  onClick: () => void,
+  children: React.ReactNode;
+  selected?: boolean;
+  disabled?: boolean;
+  onClick: () => void;
 }) {
   return (
     <div
@@ -176,15 +171,16 @@ const Day = memo(function Day({
         "w-12 h-12 center rounded-[4px]",
         disabled && "text-foreground-muted cursor-not-allowed",
         !disabled && "cursor-pointer font-medium",
-        (!selected && !disabled) && "hover:bg-info-muted",
+        !selected && !disabled && "hover:bg-info-muted",
         selected && "bg-info text-on-status",
       )}
-      onClick={() => {if (!disabled) onClick()}}
+      onClick={() => {
+        if (!disabled) onClick();
+      }}
     >
       {children}
     </div>
   );
 });
-
 
 export default Calendar;

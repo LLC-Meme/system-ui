@@ -21,7 +21,7 @@ const meta = {
       table: {
         type: { summary: "React.ReactNode" },
       },
-      control: false
+      control: false,
     },
   },
   tags: ["autodocs"],

@@ -4,15 +4,13 @@ import { render, screen } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
 import Breadcrumb from "./breadcrumb";
 
-
 describe("Breadcrumb", () => {
-
   describe("Container", () => {
     it("正しいclassNameでol要素を表示", () => {
       render(
         <Breadcrumb.Container>
           <li data-testid="child">Child Node</li>
-        </Breadcrumb.Container>
+        </Breadcrumb.Container>,
       );
       const childEl = screen.getByTestId("child");
       const containerEl = childEl.closest("ol");
@@ -24,7 +22,7 @@ describe("Breadcrumb", () => {
         <Breadcrumb.Container>
           <li data-testid="child-1">Child 1</li>
           <li data-testid="child-2">Child 2</li>
-        </Breadcrumb.Container>
+        </Breadcrumb.Container>,
       );
       expect(screen.getByTestId("child-1")).toBeInTheDocument();
       expect(screen.getByTestId("child-2")).toBeInTheDocument();
@@ -35,14 +33,12 @@ describe("Breadcrumb", () => {
       render(
         <Breadcrumb.Container ref={ref}>
           <li>Ref Test</li>
-        </Breadcrumb.Container>
+        </Breadcrumb.Container>,
       );
       expect(ref.current).toBeInstanceOf(HTMLOListElement);
       expect(ref.current?.textContent).toBe("Ref Test");
     });
-
   });
-
 
   describe("Item", () => {
     it("'list-none'のli要素の中にa要素がデフォルトで表示", () => {
@@ -54,7 +50,7 @@ describe("Breadcrumb", () => {
       expect(linkEl).toHaveClass(
         "text-info",
         "text-sm",
-        "hover:cursor-pointer"
+        "hover:cursor-pointer",
       );
     });
 
@@ -76,16 +72,24 @@ describe("Breadcrumb", () => {
       render(
         <Breadcrumb.Item asChild>
           <span data-testid="custom-span">Custom Content</span>
-        </Breadcrumb.Item>
+        </Breadcrumb.Item>,
       );
       const customEl = screen.getByTestId("custom-span");
       expect(customEl.tagName).toBe("SPAN");
       expect(customEl).toHaveTextContent("Custom Content");
-      expect(customEl).toHaveClass("text-info", "text-sm", "hover:cursor-pointer");
+      expect(customEl).toHaveClass(
+        "text-info",
+        "text-sm",
+        "hover:cursor-pointer",
+      );
     });
 
     it("href属性が指定された場合、a要素にhref属性が設定される", () => {
-      render(<Breadcrumb.Item href="#" data-testid="link-prop">Link Test</Breadcrumb.Item>);
+      render(
+        <Breadcrumb.Item href="#" data-testid="link-prop">
+          Link Test
+        </Breadcrumb.Item>,
+      );
       const linkEl = screen.getByTestId("link-prop");
       expect(linkEl).toHaveAttribute("href", "#");
     });
@@ -96,7 +100,6 @@ describe("Breadcrumb", () => {
       expect(ref.current).toBeInstanceOf(HTMLLIElement);
       expect(ref.current?.textContent).toBe("Ref Test");
     });
-
   });
 
   describe("Separator", () => {
@@ -105,8 +108,5 @@ describe("Breadcrumb", () => {
       const sepEl = screen.getByLabelText("breadcrumb-separator");
       expect(sepEl).toHaveClass("color-foreground", "w-3", "h-3");
     });
-
   });
-
-
 });

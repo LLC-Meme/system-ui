@@ -4,12 +4,13 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
 import Collapsible from "./collapsible";
 
-
 describe("Collapsible", () => {
   function TestCollapsible() {
     return (
       <Collapsible.Container>
-        <Collapsible.Trigger aria-label="open-collapsible">Toggle</Collapsible.Trigger>
+        <Collapsible.Trigger aria-label="open-collapsible">
+          Toggle
+        </Collapsible.Trigger>
         <Collapsible.Content>
           <p>Collapsible Content</p>
           <Collapsible.Item>Item 1</Collapsible.Item>
@@ -26,7 +27,6 @@ describe("Collapsible", () => {
     expect(content).not.toBeInTheDocument();
   });
 
-
   it("TriggerをクリックするとContentが表示", async () => {
     render(<TestCollapsible />);
     const trigger = screen.getByLabelText("open-collapsible");
@@ -35,7 +35,6 @@ describe("Collapsible", () => {
     const content = screen.getByText("Collapsible Content");
     expect(content).toBeInTheDocument();
   });
-
 
   it("Content内にItemが表示", async () => {
     render(<TestCollapsible />);
@@ -46,6 +45,4 @@ describe("Collapsible", () => {
     expect(screen.getByText("Item 1")).toBeInTheDocument();
     expect(screen.getByText("Item 2")).toBeInTheDocument();
   });
-
-
 });

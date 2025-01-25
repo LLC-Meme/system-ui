@@ -2,8 +2,8 @@ import type { Meta, StoryObj } from "@storybook/react";
 import Collapsible from "./collapsible";
 
 /**
- * ドロップダウンのコンテナコンポーネントです。  
- * 各ドロップダウンのアイテムをラップします。  
+ * ドロップダウンのコンテナコンポーネントです。
+ * 各ドロップダウンのアイテムをラップします。
  */
 const meta = {
   title: "UI/Collapsible/Container",

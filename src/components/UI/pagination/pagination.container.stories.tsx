@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import Pagination from "./pagination";
 
 /**
- * 全ページネーションアイテムをラップするコンテナコンポーネントです。  
+ * 全ページネーションアイテムをラップするコンテナコンポーネントです。
  */
 const meta = {
   title: "UI/Pagination/Container",
@@ -27,7 +27,7 @@ const meta = {
       control: {
         type: "text",
       },
-    }
+    },
   },
   tags: ["autodocs"],
 } satisfies Meta<typeof Pagination.Container>;

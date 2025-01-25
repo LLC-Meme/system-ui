@@ -9,13 +9,10 @@ function SheetExample() {
       <Sheet.Trigger>
         <Button>Open sheet</Button>
       </Sheet.Trigger>
-      <Sheet.Content>
-        Sheet content
-      </Sheet.Content>
+      <Sheet.Content>Sheet content</Sheet.Content>
     </Sheet.Root>
   );
 }
-
 
 const meta = {
   title: "UI/Sheet",
@@ -28,7 +25,6 @@ const meta = {
 
 export default meta;
 type Story = StoryObj<typeof SheetExample>;
-
 
 export const Example: Story = {
   args: {},

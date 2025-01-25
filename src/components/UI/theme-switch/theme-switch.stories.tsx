@@ -2,7 +2,6 @@ import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import ThemeSwitch from "./theme-switch";
 
-
 function ThemeSwitchExample() {
   return (
     <ThemeSwitch.Container>

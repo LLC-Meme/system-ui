@@ -2,7 +2,6 @@ import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import Table from "./table";
 
-
 function BasicTable() {
   return (
     <Table.Container tableStyle="basic">
@@ -95,21 +94,20 @@ function PlainTable() {
   );
 }
 
-
 /**
- * テーブルコンポーネントです。  
- * `basic`スタイルと`plain`スタイルの2つのスタイルを提供します。  
- * 
- * 
- * ## **使い方**  
- * 以下の各コンポーネントを組み合わせて使用します。  
- * - `Table.Container`: テーブル全体を囲むコンテナです。`<table>`に対応します。  
- * - `Table.Head`: テーブルのヘッダ部分を囲むコンテナです。`<thead>`に対応します。  
- * - `Table.Body`: テーブルのボディ部分を囲むコンテナです。`<tbody>`に対応します。  
- * - `Table.Foot`: テーブルのフッタ部分を囲むコンテナです。`<tfoot>`に対応します。  
- * - `Table.Row`: テーブルの行を表すコンテナです。`<tr>`に対応します。  
- * - `Table.HeadingCell`: テーブルのヘッダセルを表すコンテナです。`<th>`に対応します。  
- * - `Table.Cell`: テーブルのセルを表すコンテナです。`<td>`に対応します。  
+ * テーブルコンポーネントです。
+ * `basic`スタイルと`plain`スタイルの2つのスタイルを提供します。
+ *
+ *
+ * ## **使い方**
+ * 以下の各コンポーネントを組み合わせて使用します。
+ * - `Table.Container`: テーブル全体を囲むコンテナです。`<table>`に対応します。
+ * - `Table.Head`: テーブルのヘッダ部分を囲むコンテナです。`<thead>`に対応します。
+ * - `Table.Body`: テーブルのボディ部分を囲むコンテナです。`<tbody>`に対応します。
+ * - `Table.Foot`: テーブルのフッタ部分を囲むコンテナです。`<tfoot>`に対応します。
+ * - `Table.Row`: テーブルの行を表すコンテナです。`<tr>`に対応します。
+ * - `Table.HeadingCell`: テーブルのヘッダセルを表すコンテナです。`<th>`に対応します。
+ * - `Table.Cell`: テーブルのセルを表すコンテナです。`<td>`に対応します。
  */
 const meta = {
   title: "UI/Table",
@@ -117,7 +115,7 @@ const meta = {
   parameters: {
     layout: "centered",
   },
-  tags: ["autodocs"]
+  tags: ["autodocs"],
 } satisfies Meta<typeof BasicTable>;
 
 export default meta;

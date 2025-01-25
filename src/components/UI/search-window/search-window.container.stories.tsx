@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import SearchWindow from "./search-window";
 
 /**
- * 検索ウィンドウのコンテナ部分を提供します。  
+ * 検索ウィンドウのコンテナ部分を提供します。
  */
 const meta = {
   title: "UI/SearchWindow/Container",
@@ -18,7 +18,7 @@ const meta = {
         defaultValue: { summary: "undefined" },
       },
       control: false,
-    }
+    },
   },
   tags: ["autodocs"],
 } satisfies Meta<typeof SearchWindow.Container>;

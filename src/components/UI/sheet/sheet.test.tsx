@@ -4,7 +4,6 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
 import Sheet from "./sheet";
 
-
 const { Root, Trigger, Content, Close } = Sheet;
 
 describe("Sheet", () => {
@@ -27,7 +26,6 @@ describe("Sheet", () => {
     expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
   });
 
-
   it("triggerのクリックでsheetとoverlayが表示", async () => {
     render(<TestSheet />);
     // sheetを開く
@@ -39,7 +37,6 @@ describe("Sheet", () => {
     const dialogEl = screen.getByRole("dialog");
     expect(dialogEl).toBeInTheDocument();
   });
-
 
   it("closeボタンのクリックでsheetが非表示になる", async () => {
     render(<TestSheet />);
@@ -53,5 +50,4 @@ describe("Sheet", () => {
     expect(screen.queryByText("Sheet Content")).not.toBeInTheDocument();
     expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
   });
-
 });

@@ -5,7 +5,6 @@ import userEvent from "@testing-library/user-event";
 import { describe, it, expect } from "vitest";
 import Modal from "./modal";
 
-
 describe("Modal", () => {
   // テスト用のコンポーネントを作成
   function TestModal() {
@@ -38,10 +37,9 @@ describe("Modal", () => {
     expect(screen.getByLabelText("modal-overlay")).toBeInTheDocument();
   });
 
-
   it("モーダル内の閉じるボタンをクリックするとモーダルが閉じる", async () => {
     render(<TestModal />);
-  
+
     // 1. トリガーボタンをクリックしてモーダルを開く
     fireEvent.click(screen.getByLabelText("open-modal"));
     // 2. "Modal content here" が表示されるまで待つ
@@ -52,7 +50,6 @@ describe("Modal", () => {
     expect(screen.queryByText("Modal content here")).not.toBeInTheDocument();
     expect(screen.queryByLabelText("modal-overlay")).not.toBeInTheDocument();
   });
-
 
   it("デフォルトでモーダル内にあるClose以外のCloseでモーダルを閉じる", async () => {
     // モーダル内に別のCloseボタンがある場合
@@ -83,21 +80,19 @@ describe("Modal", () => {
     expect(screen.queryByLabelText("modal-overlay")).not.toBeInTheDocument();
   });
 
-
   it("モーダルを開いたときにbodyがスクロール不可になる", async () => {
     render(<TestModal />);
-  
+
     // デフォルトではbodyはスクロール可能
     expect(document.body).not.toHaveStyle({ overflow: "hidden" });
-  
+
     // トリガーボタンをクリックしてモーダルを開く
     fireEvent.click(screen.getByLabelText("open-modal"));
     await screen.findByText("Modal content here");
-  
+
     // モーダルが開かれたときにbodyがスクロール不可になる
     expect(document.body).toHaveStyle({ overflow: "hidden" });
   });
-
 
   it("モーダルが開いた時にフォーカストラップが有効になる", async () => {
     render(<TestModal />);
@@ -121,6 +116,4 @@ describe("Modal", () => {
     // クリーンアップ
     document.body.removeChild(backgroundButton);
   });
-
-
 });

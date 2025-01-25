@@ -2,8 +2,8 @@ import type { Meta, StoryObj } from "@storybook/react";
 import Breadcrumb from "./breadcrumb";
 
 /**
- * Breadcrumbのコンテナです。  
- * 
+ * Breadcrumbのコンテナです。
+ *
  * このコンポーネント直下に`Item`や`Separator`を配置してください。
  */
 const meta = {

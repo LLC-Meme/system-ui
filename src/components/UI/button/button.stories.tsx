@@ -2,10 +2,10 @@ import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import Button from "./button";
 
-/** 
- * ボタンコンポーネントです。  
- * asChildをtrueにすることで、ボタン以外の要素を使うことができます。  
-*/
+/**
+ * ボタンコンポーネントです。
+ * asChildをtrueにすることで、ボタン以外の要素を使うことができます。
+ */
 const meta = {
   title: "UI/Button",
   component: Button,
@@ -34,14 +34,10 @@ const meta = {
       description: "ボタンのデザインバリアントを指定します。",
       control: {
         type: "select",
-        options: [
-          "default",
-          "danger",
-          "outline",
-        ],
+        options: ["default", "danger", "outline"],
       },
       table: {
-        type: { summary: "\"default\" | \"danger\" | \"outline\"" },
+        type: { summary: "default | danger | outline" },
         defaultValue: { summary: "default" },
       },
     },
@@ -53,7 +49,7 @@ const meta = {
       control: {
         type: "text",
       },
-    }
+    },
   },
   tags: ["autodocs"],
 } satisfies Meta<typeof Button>;
@@ -65,14 +61,14 @@ export const Default: Story = {
   args: {
     children: "ボタン",
     variant: "default",
-  }
+  },
 };
 
 export const Danger: Story = {
   args: {
     children: "ボタン",
     variant: "danger",
-  }
+  },
 };
 
 export const Outline: Story = {
@@ -95,4 +91,4 @@ export const Disabled: Story = {
     variant: "default",
     disabled: true,
   },
-}
+};

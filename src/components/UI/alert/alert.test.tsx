@@ -4,7 +4,6 @@ import { render, screen } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
 import Alert from "./alert";
 
-
 describe("Alert", () => {
   it("個要素とともに表示される", () => {
     render(<Alert variant="info">This is an info alert</Alert>);
@@ -39,7 +38,7 @@ describe("Alert", () => {
     render(
       <Alert variant="info" className="custom-class">
         Custom Class
-      </Alert>
+      </Alert>,
     );
     const alertEl = screen.getByText("Custom Class");
     expect(alertEl).toHaveClass("custom-class", "bg-info-muted", "text-info");
@@ -50,10 +49,9 @@ describe("Alert", () => {
     render(
       <Alert ref={ref} variant="info">
         Ref Test
-      </Alert>
+      </Alert>,
     );
     expect(ref.current).toBeInstanceOf(HTMLDivElement);
     expect(ref.current?.textContent).toBe("Ref Test");
   });
-
 });

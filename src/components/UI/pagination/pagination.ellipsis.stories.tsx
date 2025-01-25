@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import Pagination from "./pagination";
 
 /**
- * ページネーションの省略記号です。  
+ * ページネーションの省略記号です。
  */
 const meta = {
   title: "UI/Pagination/Ellipsis",

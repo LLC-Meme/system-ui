@@ -1,10 +1,9 @@
-
 import type { Meta, StoryObj } from "@storybook/react";
 import Collapsible from "./collapsible";
 
 /**
- * ドロップダウンのトリガーコンポーネントです。  
- * ドロップダウンのラベルになります。  
+ * ドロップダウンのトリガーコンポーネントです。
+ * ドロップダウンのラベルになります。
  */
 const meta = {
   title: "UI/Collapsible/Trigger",
@@ -36,7 +35,6 @@ const meta = {
 
 export default meta;
 type Story = StoryObj<typeof Collapsible.Trigger>;
-
 
 export const Trigger: Story = {
   args: {

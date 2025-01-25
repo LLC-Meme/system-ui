@@ -2,8 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-
-input, textarea {
+input,
+textarea {
   caret-color: var(--info);
 }
 
@@ -25,7 +25,6 @@ input, textarea {
   }
 }
 
-
 body {
   background-color: var(--background);
   color: var(--foreground);
@@ -46,71 +45,68 @@ body {
   --overlay: rgba(255, 255, 255, 0.8);
   --border: #c6c6c8;
 
-  --info: #007AFF;
+  --info: #007aff;
   --info-muted: rgba(0, 122, 255, 0.2);
-  --alert: #FF453A;
+  --alert: #ff453a;
   --alert-muted: rgba(255, 69, 58, 0.2);
-  --warning: #FF9500;
+  --warning: #ff9500;
   --warning-muted: rgba(255, 149, 0, 0.2);
-  --success: #28CD41;
+  --success: #28cd41;
   --success-muted: rgba(40, 205, 65, 0.2);
   --on-status: #fff;
 
-  --yellow: #FFCC00;
+  --yellow: #ffcc00;
   --yellow-muted: rgba(255, 204, 0, 0.2);
-  --mint: #00C7BE;
+  --mint: #00c7be;
   --mint-muted: rgb(0, 199, 190, 0.2);
-  --teal: #59ADC4;
+  --teal: #59adc4;
   --teal-muted: rgba(89, 173, 196, 0.2);
-  --cyan: #55BEF0;
+  --cyan: #55bef0;
   --cyan-muted: rgba(85, 190, 240, 0.2);
-  --indigo: #0256D6;
+  --indigo: #0256d6;
   --indigo-muted: rgba(2, 86, 214, 0.2);
-  --purple: #AF52DE;
+  --purple: #af52de;
   --purple-muted: rgba(175, 82, 222, 0.2);
-  --pink: #FF2D55;
+  --pink: #ff2d55;
   --pink-muted: rgba(255, 45, 85, 0.2);
-  --brown: #A2845E;
+  --brown: #a2845e;
   --brown-muted: rgb(162, 132, 94, 0.2);
 }
 
-
 body.dark {
-
   --background: #000;
   --foreground: #fff;
   --foreground-muted: #98989f;
   --surface: #1c1c1e;
-  --surface-muted1: #38383B;
+  --surface-muted1: #38383b;
   --surface-muted2: #2c282e;
   --overlay: rgba(28, 28, 30, 0.8);
   --border: #545458;
 
-  --info: #0A84FF;
+  --info: #0a84ff;
   --info-muted: rgba(10, 132, 255, 0.2);
-  --alert: #FF453A;
+  --alert: #ff453a;
   --alert-muted: rgba(255, 69, 58, 0.2);
-  --warning: #FF9F0A;
+  --warning: #ff9f0a;
   --warning-muted: rgba(255, 159, 10, 0.2);
-  --success: #32D74B;
+  --success: #32d74b;
   --success-muted: rgba(50, 215, 75, 0.2);
   --on-status: #fff;
 
-  --yellow: #FFD60A;
+  --yellow: #ffd60a;
   --yellow-muted: rgba(255, 214, 10, 0.2);
-  --mint: #66D4CF;
+  --mint: #66d4cf;
   --mint-muted: rgba(102, 212, 207, 0.2);
-  --teal: #6AC4DC;
+  --teal: #6ac4dc;
   --teal-muted: rgba(106, 196, 220, 0.2);
-  --cyan: #5AC8F5;
+  --cyan: #5ac8f5;
   --cyan-muted: rgba(90, 200, 245, 0.2);
-  --indigo: #5E5CE6;
+  --indigo: #5e5ce6;
   --indigo-muted: rgba(94, 92, 230, 0.2);
-  --purple: #BF5AF2;
+  --purple: #bf5af2;
   --purple-muted: rgba(191, 90, 242, 0.2);
-  --pink: #FF375F;
+  --pink: #ff375f;
   --pink-muted: rgba(255, 55, 95, 0.2);
-  --brown: #AC8E68;
+  --brown: #ac8e68;
   --brown-muted: rgba(172, 142, 104, 0.2);
-
 }

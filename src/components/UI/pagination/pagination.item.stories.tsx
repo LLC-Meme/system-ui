@@ -2,10 +2,10 @@ import type { Meta, StoryObj } from "@storybook/react";
 import Pagination from "./pagination";
 
 /**
- * ページネーションアイテムコンポーネントです。  
- * asChildをtrueにすることで、アイテム以外の要素を使うことができます。  
- * 
- * ページのインデックス番号などをラッピングして用いてください。  
+ * ページネーションアイテムコンポーネントです。
+ * asChildをtrueにすることで、アイテム以外の要素を使うことができます。
+ *
+ * ページのインデックス番号などをラッピングして用いてください。
  */
 const meta = {
   title: "UI/Pagination/Item",

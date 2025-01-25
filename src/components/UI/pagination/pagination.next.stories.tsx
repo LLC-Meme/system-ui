@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import Pagination from "./pagination";
 
 /**
- * 次のページへ移動するためのページネーションアイテムコンポーネントです。  
+ * 次のページへ移動するためのページネーションアイテムコンポーネントです。
  */
 const meta = {
   title: "UI/Pagination/Next",

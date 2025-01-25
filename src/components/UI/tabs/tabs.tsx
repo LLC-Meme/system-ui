@@ -3,38 +3,37 @@
 import React from "react";
 import { cn } from "../../../lib/cn";
 
-
 export interface TabProps extends React.ComponentPropsWithoutRef<"div"> {
   values: string[];
   selectedValue: string;
   setSelectedValue: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const Tabs = React.forwardRef<HTMLDivElement, TabProps>(({
-  values,
-  selectedValue,
-  setSelectedValue,
-  ...props
-}, ref) => {
-  return (
-    <div
-      ref={ref}
-      {...props}
-      className={cn(
-        props.className,
-        "flex p-1 rounded-[8px] bg-surface-muted1"
-      )}
-    >
-      {values.map((item, index) => (
-        <Item key={index} isSelected={selectedValue === item} onClick={() => setSelectedValue(item)}>
-          {item}
-        </Item>
-      ))}
-    </div>
-  );
-});
+const Tabs = React.forwardRef<HTMLDivElement, TabProps>(
+  ({ values, selectedValue, setSelectedValue, ...props }, ref) => {
+    return (
+      <div
+        ref={ref}
+        {...props}
+        className={cn(
+          props.className,
+          "flex p-1 rounded-[8px] bg-surface-muted1",
+        )}
+      >
+        {values.map((item, index) => (
+          <Item
+            key={index}
+            isSelected={selectedValue === item}
+            onClick={() => setSelectedValue(item)}
+          >
+            {item}
+          </Item>
+        ))}
+      </div>
+    );
+  },
+);
 Tabs.displayName = "Tab";
-
 
 function Item({
   children,
@@ -53,7 +52,7 @@ function Item({
         className,
         "min-w-32 py-2 center",
         "rounded-[4px] transition-colors cursor-pointer",
-        isSelected ? "bg-surface font-medium" : "text-foreground-muted"
+        isSelected ? "bg-surface font-medium" : "text-foreground-muted",
       )}
       onClick={onClick}
     >

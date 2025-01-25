@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import Surface from "./surface";
 
 /**
- * Surfaceを表現するコンポーネントです。  
+ * Surfaceを表現するコンポーネントです。
  */
 const meta = {
   title: "UI/Surface",
@@ -25,7 +25,7 @@ const meta = {
       table: {
         type: { summary: "React.ReactNode" },
       },
-      control: false
+      control: false,
     },
   },
   tags: ["autodocs"],
@@ -41,6 +41,6 @@ export const Example: Story = {
       <Surface>
         <p>Surfaceコンポーネントのサンプル</p>
       </Surface>
-    )
-  }
+    );
+  },
 };

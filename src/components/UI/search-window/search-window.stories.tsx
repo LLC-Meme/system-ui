@@ -2,7 +2,6 @@ import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import SearchWindow from "./search-window";
 
-
 function SearchWindowExample() {
   return (
     <SearchWindow.Container>
@@ -12,8 +11,8 @@ function SearchWindowExample() {
 }
 
 /**
- * 検索ウィンドウを提供します。  
- * 必ず`SearchWindow.Container`と`SearchWindow.Input`を組み合わせて使用してください。  
+ * 検索ウィンドウを提供します。
+ * 必ず`SearchWindow.Container`と`SearchWindow.Input`を組み合わせて使用してください。
  */
 const meta = {
   title: "UI/SearchWindow",

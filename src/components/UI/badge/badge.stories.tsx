@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import Badge from "./badge";
 
-/** 
- * タグ付けなどに使う小さなラベルを表示するコンポーネントです。  
- * 任意のテキストやアイコンを中に入れることで、ラベルとして利用できます。  
-*/
+/**
+ * タグ付けなどに使う小さなラベルを表示するコンポーネントです。
+ * 任意のテキストやアイコンを中に入れることで、ラベルとして利用できます。
+ */
 const meta = {
   title: "UI/Badge",
   component: Badge,
@@ -49,13 +49,13 @@ const meta = {
         ],
       },
       table: {
-        type: { summary: "\"red\" | \"orange\" | \"yellow\" | ... | \"brown\"" },
+        type: { summary: "red | orange | yellow | ... brown" },
         defaultValue: { summary: "blue" },
       },
     },
   },
   args: {
-    color: "blue"
+    color: "blue",
   },
   tags: ["autodocs"],
 } satisfies Meta<typeof Badge>;
@@ -138,4 +138,3 @@ export const Brown: Story = {
     children: "brown",
   },
 };
-

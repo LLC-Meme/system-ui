@@ -4,13 +4,10 @@ import { render, screen } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
 import Title from "./title";
 
-
 const { Page, Section, Block } = Title;
 
 describe("Title", () => {
-
   describe("PageTitle", () => {
-
     it("h1要素がデフォルトのclassで表示", () => {
       render(<Page data-testid="title-page">Hello Page</Page>);
       const titleEl = screen.getByTestId("title-page");
@@ -24,10 +21,15 @@ describe("Title", () => {
       render(
         <Page data-testid="title-page" className="custom-page-class">
           With Custom Class
-        </Page>
+        </Page>,
       );
       const titleEl = screen.getByTestId("title-page");
-      expect(titleEl).toHaveClass("custom-page-class", "text-xl", "font-bold", "text-foreground");
+      expect(titleEl).toHaveClass(
+        "custom-page-class",
+        "text-xl",
+        "font-bold",
+        "text-foreground",
+      );
     });
 
     it("refが適用", () => {
@@ -37,7 +39,6 @@ describe("Title", () => {
       expect(ref.current?.tagName).toBe("H1");
     });
   });
-
 
   describe("SectionTitle", () => {
     it("h1要素がデフォルトのclassで表示", () => {
@@ -53,10 +54,15 @@ describe("Title", () => {
       render(
         <Section data-testid="title-section" className="custom-section-class">
           With Custom Class
-        </Section>
+        </Section>,
       );
       const titleEl = screen.getByTestId("title-section");
-      expect(titleEl).toHaveClass("custom-section-class", "text-lg", "font-bold", "text-foreground");
+      expect(titleEl).toHaveClass(
+        "custom-section-class",
+        "text-lg",
+        "font-bold",
+        "text-foreground",
+      );
     });
 
     it("refが適用", () => {
@@ -81,10 +87,15 @@ describe("Title", () => {
       render(
         <Block data-testid="title-block" className="custom-block-class">
           With Custom Class
-        </Block>
+        </Block>,
       );
       const titleEl = screen.getByTestId("title-block");
-      expect(titleEl).toHaveClass("custom-block-class", "text-md", "font-bold", "text-foreground");
+      expect(titleEl).toHaveClass(
+        "custom-block-class",
+        "text-md",
+        "font-bold",
+        "text-foreground",
+      );
     });
 
     it("refが適用", () => {
@@ -94,5 +105,4 @@ describe("Title", () => {
       expect(ref.current?.tagName).toBe("H3");
     });
   });
-
 });

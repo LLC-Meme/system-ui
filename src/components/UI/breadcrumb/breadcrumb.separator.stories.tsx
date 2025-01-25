@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import Breadcrumb from "./breadcrumb";
 
 /**
- * Breadcrumbのセパレータを表示します。  
+ * Breadcrumbのセパレータを表示します。
  */
 const meta = {
   title: "UI/Breadcrumb/Separator",

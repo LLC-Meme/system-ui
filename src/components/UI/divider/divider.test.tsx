@@ -4,11 +4,7 @@ import { render, screen } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
 import Divider from "./divider";
 
-
-
 describe("Divider", () => {
-
-
   describe("Divider.V", () => {
     it("thickness(1px)をデフォルトで表示", () => {
       render(<Divider.V data-testid="vertical-divider" />);
@@ -36,7 +32,7 @@ describe("Divider", () => {
           data-testid="vertical-divider"
           className="custom-class"
           style={{ borderStyle: "dashed" }}
-        />
+        />,
       );
 
       const divider = screen.getByTestId("vertical-divider");
@@ -46,19 +42,13 @@ describe("Divider", () => {
       expect(divider).toHaveStyle({ borderStyle: "dashed" });
     });
 
-
     it("refが正しく設定されている", () => {
       const ref = React.createRef<HTMLHRElement>();
-      render(
-        <Divider.V ref={ref} />
-      );
+      render(<Divider.V ref={ref} />);
 
       expect(ref.current).toBeInstanceOf(HTMLHRElement);
     });
-
   });
-
-
 
   describe("Divider.H", () => {
     it("thickness(1px)をデフォルトで表示", () => {
@@ -87,7 +77,7 @@ describe("Divider", () => {
           data-testid="horizontal-divider"
           className="custom-class"
           style={{ borderStyle: "dashed" }}
-        />
+        />,
       );
       const divider = screen.getByTestId("horizontal-divider");
 
@@ -97,16 +87,11 @@ describe("Divider", () => {
       expect(divider).toHaveStyle({ borderStyle: "dashed" });
     });
 
-
     it("refが正しく設定されている", () => {
       const ref = React.createRef<HTMLHRElement>();
-      render(
-        <Divider.H ref={ref} />
-      );
+      render(<Divider.H ref={ref} />);
 
       expect(ref.current).toBeInstanceOf(HTMLHRElement);
     });
-
-
   });
 });

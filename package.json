@@ -55,6 +55,7 @@
     "test": "vitest",
     "test:watch": "vitest --watch",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "lint": "eslint src"
   }
 }

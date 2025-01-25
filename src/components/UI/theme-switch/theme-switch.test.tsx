@@ -4,7 +4,6 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import { describe, it, expect, vi } from "vitest";
 import ThemeSwitch from "./theme-switch";
 
-
 const { Container, Light, Dark, System } = ThemeSwitch;
 
 describe("ThemeSwitch", () => {
@@ -14,7 +13,7 @@ describe("ThemeSwitch", () => {
       render(
         <Container data-testid="theme-container">
           <div>Child Element</div>
-        </Container>
+        </Container>,
       );
       const containerEl = screen.getByTestId("theme-container");
 
@@ -22,7 +21,15 @@ describe("ThemeSwitch", () => {
       expect(containerEl).toHaveTextContent("Child Element");
 
       // 確認: デフォルトのclassが適用されているか
-      expect(containerEl).toHaveClass("p-[2px]", "flex", "items-center", "justify-center", "rounded-full", "border", "border-info");
+      expect(containerEl).toHaveClass(
+        "p-[2px]",
+        "flex",
+        "items-center",
+        "justify-center",
+        "rounded-full",
+        "border",
+        "border-info",
+      );
     });
   });
 
@@ -36,7 +43,14 @@ describe("ThemeSwitch", () => {
       expect(buttonEl).toHaveAttribute("aria-label", "light-theme");
 
       // 確認: 正しいclassが適用されているか
-      expect(buttonEl).toHaveClass("bg-info", "text-on-status", "w-8", "h-8", "center", "rounded-full");
+      expect(buttonEl).toHaveClass(
+        "bg-info",
+        "text-on-status",
+        "w-8",
+        "h-8",
+        "center",
+        "rounded-full",
+      );
     });
 
     it("triggers onClick event when clicked", () => {
@@ -62,7 +76,14 @@ describe("ThemeSwitch", () => {
       expect(buttonEl).toHaveAttribute("aria-label", "dark-theme");
 
       // 確認: 正しいclassが適用されているか
-      expect(buttonEl).toHaveClass("bg-none", "text-info", "w-8", "h-8", "center", "rounded-full");
+      expect(buttonEl).toHaveClass(
+        "bg-none",
+        "text-info",
+        "w-8",
+        "h-8",
+        "center",
+        "rounded-full",
+      );
     });
   });
 
@@ -76,7 +97,14 @@ describe("ThemeSwitch", () => {
       expect(buttonEl).toHaveAttribute("aria-label", "system-theme");
 
       // 確認: 正しいclassが適用されているか
-      expect(buttonEl).toHaveClass("bg-none", "text-info", "w-8", "h-8", "center", "rounded-full");
+      expect(buttonEl).toHaveClass(
+        "bg-none",
+        "text-info",
+        "w-8",
+        "h-8",
+        "center",
+        "rounded-full",
+      );
     });
 
     it("triggers onClick event when clicked", () => {
@@ -91,5 +119,4 @@ describe("ThemeSwitch", () => {
       expect(handleClick).toHaveBeenCalledTimes(1);
     });
   });
-
 });

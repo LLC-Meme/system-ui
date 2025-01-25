@@ -3,10 +3,10 @@ import type { Meta, StoryObj } from "@storybook/react";
 import Navigation from "./navigation";
 
 /**
- * リンクをスタイリングするコンポーネントです。  
- * 
- * `asChild`を`true`にすることで、リンク以外の要素を使うことができます。  
- * デフォルトでは`a`要素を使います。  
+ * リンクをスタイリングするコンポーネントです。
+ *
+ * `asChild`を`true`にすることで、リンク以外の要素を使うことができます。
+ * デフォルトでは`a`要素を使います。
  */
 const meta = {
   title: "UI/Navigation",
@@ -51,10 +51,6 @@ type Story = StoryObj<typeof Navigation>;
 
 export const Example: Story = {
   render: () => {
-    return (
-      <Navigation href="/#">
-        リンク
-      </Navigation>
-    );
-  }
+    return <Navigation href="/#">リンク</Navigation>;
+  },
 };

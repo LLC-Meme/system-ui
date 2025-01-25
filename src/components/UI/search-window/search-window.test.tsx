@@ -6,14 +6,12 @@ import SearchWindow from "./search-window";
 
 const { Container, Input } = SearchWindow;
 
-
 describe("SearchWindow", () => {
-
   it("Containerがデフォルトのclassで表示", () => {
     render(
       <Container data-testid="search-container">
         <Input />
-      </Container>
+      </Container>,
     );
 
     const container = screen.getByTestId("search-container");
@@ -23,21 +21,19 @@ describe("SearchWindow", () => {
       "relative",
       "bg-surface-muted1",
       "h-8",
-      "rounded-lg"
+      "rounded-lg",
     );
   });
-
 
   it("カスタムのclassNameが適用されている", () => {
     render(
       <Container data-testid="search-container" className="custom-container">
         <Input />
-      </Container>
+      </Container>,
     );
     const container = screen.getByTestId("search-container");
     expect(container).toHaveClass("custom-container");
   });
-
 
   it("refがContainerに適用されている", () => {
     const containerRef = React.createRef<HTMLDivElement>();
@@ -45,19 +41,18 @@ describe("SearchWindow", () => {
     render(
       <Container ref={containerRef}>
         <Input />
-      </Container>
+      </Container>,
     );
 
     // refがContainerに適用されていることを確認
     expect(containerRef.current).toBeInstanceOf(HTMLDivElement);
   });
 
-
   it("inputがデフォルトのclassで表示", () => {
     render(
       <Container>
         <Input data-testid="search-input" placeholder="Search..." />
-      </Container>
+      </Container>,
     );
     const inputEl = screen.getByTestId("search-input");
 
@@ -69,24 +64,22 @@ describe("SearchWindow", () => {
       "rounded-lg",
       "pl-9",
       "pr-2",
-      "placeholder:text-foreground-muted"
+      "placeholder:text-foreground-muted",
     );
 
     // placeholderが適用されていることを確認
     expect(inputEl).toHaveAttribute("placeholder", "Search...");
   });
 
-
   it("inputにカスタムのクラスが適用", () => {
     render(
       <Container>
         <Input data-testid="search-input" className="custom-input" />
-      </Container>
+      </Container>,
     );
     const inputEl = screen.getByTestId("search-input");
     expect(inputEl).toHaveClass("custom-input");
   });
-
 
   it("inputにrefが適用", () => {
     const inputRef = React.createRef<HTMLInputElement>();
@@ -94,25 +87,22 @@ describe("SearchWindow", () => {
     render(
       <Container>
         <Input ref={inputRef} />
-      </Container>
+      </Container>,
     );
 
     // refがinputに適用されていることを確認
     expect(inputRef.current).toBeInstanceOf(HTMLInputElement);
   });
 
-
   it("inputに入力できる", () => {
     render(
       <Container>
         <Input data-testid="search-input" />
-      </Container>
+      </Container>,
     );
     const inputEl = screen.getByTestId("search-input") as HTMLInputElement;
 
     fireEvent.change(inputEl, { target: { value: "Hello" } });
     expect(inputEl.value).toBe("Hello");
   });
-
-
 });

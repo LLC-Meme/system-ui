@@ -7,26 +7,24 @@ export interface NavigationProps extends React.ComponentPropsWithoutRef<"a"> {
   asChild?: boolean;
 }
 
-const Navigation = React.forwardRef<HTMLAnchorElement, NavigationProps>(({
-  children,
-  asChild,
-  ...props
-}, ref) => {
-  const Comp = asChild ? Slot : "a";
+const Navigation = React.forwardRef<HTMLAnchorElement, NavigationProps>(
+  ({ children, asChild, ...props }, ref) => {
+    const Comp = asChild ? Slot : "a";
 
-  return (
-    <Comp
-      ref={ref}
-      {...props}
-      className={cn(
-        props.className,
-        "text-info hover:underline hover:cursor-pointer",
-      )}
-    >
-      {children}
-    </Comp>
-  );
-});
+    return (
+      <Comp
+        ref={ref}
+        {...props}
+        className={cn(
+          props.className,
+          "text-info hover:underline hover:cursor-pointer",
+        )}
+      >
+        {children}
+      </Comp>
+    );
+  },
+);
 Navigation.displayName = "Navigation";
 
 export default Navigation;

@@ -2,7 +2,6 @@ import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import Breadcrumb from "./breadcrumb";
 
-
 function BreadcrumbExample() {
   return (
     <Breadcrumb.Container>
@@ -25,10 +24,9 @@ function BreadcrumbExample() {
   );
 }
 
-
 /**
  * Breadcrumbの使用例です。
- * 
+ *
  * `Container`、`Item`、`Separator`を組み合わせて使用します。
  */
 const meta = {

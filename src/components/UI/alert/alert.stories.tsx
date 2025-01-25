@@ -29,15 +29,10 @@ const meta = {
       description: "アラートの種類を指定します。",
       control: {
         type: "select",
-        options: [
-          "info",
-          "success",
-          "warning",
-          "danger",
-        ],
+        options: ["info", "success", "warning", "danger"],
       },
       table: {
-        type: { summary: "\"info\" | \"success\" | \"warning\" | \"danger\"" },
+        type: { summary: "info | success | warning | danger" },
         defaultValue: { summary: "info" },
       },
     },

@@ -5,7 +5,6 @@ import { describe, it, expect } from "vitest";
 import userEvent from "@testing-library/user-event";
 import Tooltip from "./tooltip";
 
-
 const { Container, Trigger, Content } = Tooltip;
 
 describe("Tooltip", () => {
@@ -28,6 +27,4 @@ describe("Tooltip", () => {
     await userEvent.hover(screen.getByTestId("tooltip-trigger"));
     expect(await screen.findByTestId("tooltip-content")).toBeInTheDocument();
   });
-
-
 });

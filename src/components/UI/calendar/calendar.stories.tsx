@@ -3,8 +3,8 @@ import type { Meta, StoryObj } from "@storybook/react";
 import Calendar, { CalendarProps } from "./calendar";
 
 /**
- * カレンダーコンポーネント  
- * ユーザーが日付を選択でき、disableAfter/disableBefore で無効化したい日付を設定できます。  
+ * カレンダーコンポーネント
+ * ユーザーが日付を選択でき、disableAfter/disableBefore で無効化したい日付を設定できます。
  */
 const meta = {
   title: "UI/Calendar",
@@ -69,19 +69,11 @@ type Story = StoryObj<typeof Calendar>;
  */
 const CalendarWithHooks = (props: Omit<CalendarProps, "setDate">) => {
   const [date, setDate] = useState<Date | null>(null);
-  return (
-    <Calendar
-      {...props}
-      date={date}
-      setDate={setDate}
-    />
-  );
-}
+  return <Calendar {...props} date={date} setDate={setDate} />;
+};
 
 export const Example: Story = {
   render: (args) => {
-    return (
-      <CalendarWithHooks {...args} />
-    );
+    return <CalendarWithHooks {...args} />;
   },
-}
+};

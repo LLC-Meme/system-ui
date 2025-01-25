@@ -7,7 +7,6 @@ import Table from "./table";
 const { Container, Head, Body, Foot, Row, HeadingCell, Cell } = Table;
 
 describe("Table", () => {
-
   it("basicスタイルのtableのclassが正しい", () => {
     render(
       <Container tableStyle="basic" data-testid="table-basic">
@@ -27,7 +26,7 @@ describe("Table", () => {
             <Cell>Row 2, Cell 2</Cell>
           </Row>
         </Body>
-      </Container>
+      </Container>,
     );
 
     // Containerにbasicスタイルのclassが適用されていることを確認
@@ -51,7 +50,6 @@ describe("Table", () => {
     expect(rows[1]).toHaveClass("bg-surface-muted2");
   });
 
-
   it("plainスタイルのtableのclassが正しい", () => {
     render(
       <Container tableStyle="plain" data-testid="table-plain">
@@ -70,7 +68,7 @@ describe("Table", () => {
             <Cell>Footer content</Cell>
           </Row>
         </Foot>
-      </Container>
+      </Container>,
     );
 
     // Containerにbasicスタイルのclassが適用されていないことを確認
@@ -85,14 +83,13 @@ describe("Table", () => {
       "pr-12",
       "py-1",
       "border-y",
-      "border-border"
+      "border-border",
     );
 
     // Body cellのclassが正しいことを確認
     const bodyCell = screen.getByRole("cell", { name: "Row A, Cell A" });
     expect(bodyCell).toHaveClass("px-2", "py-1");
   });
-
 
   it("tableが正しい構造で表示", () => {
     // 実際のユースケースを想定したサンプル
@@ -137,7 +134,7 @@ describe("Table", () => {
             <Cell>Row 4, Cell 5</Cell>
           </Row>
         </Body>
-      </Container>
+      </Container>,
     );
 
     // 5行のテーブルが表示されていることを確認
@@ -153,7 +150,6 @@ describe("Table", () => {
     expect(rows[3]).toHaveClass("bg-surface-muted2");
   });
 
-
   it("tableにrefが適用", () => {
     const ref = React.createRef<HTMLTableElement>();
     render(
@@ -163,11 +159,9 @@ describe("Table", () => {
             <Cell>Cell 1</Cell>
           </Row>
         </Body>
-      </Container>
+      </Container>,
     );
 
     expect(ref.current).toBeInstanceOf(HTMLTableElement);
   });
-
-
 });

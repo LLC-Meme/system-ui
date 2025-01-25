@@ -2,8 +2,8 @@ import type { Meta, StoryObj } from "@storybook/react";
 import Collapsible from "./collapsible";
 
 /**
- * ドロップダウンが開かれた時に表示されるコンポーネントのラッパーです。  
- * `Collapsible.Item`コンポーネントをラップします。  
+ * ドロップダウンが開かれた時に表示されるコンポーネントのラッパーです。
+ * `Collapsible.Item`コンポーネントをラップします。
  */
 const meta = {
   title: "UI/Collapsible/Content",

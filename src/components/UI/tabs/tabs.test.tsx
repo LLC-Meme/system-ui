@@ -4,9 +4,7 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import { describe, it, expect, vi } from "vitest";
 import Tabs from "./tabs";
 
-
 describe("Tabs", () => {
-
   it("正しい選択肢数でtabを表示", () => {
     const values = ["Tab1", "Tab2", "Tab3"];
     const setSelectedValue = vi.fn();
@@ -16,7 +14,7 @@ describe("Tabs", () => {
         values={values}
         selectedValue="Tab1"
         setSelectedValue={setSelectedValue}
-      />
+      />,
     );
 
     // 3つの選択肢が表示される
@@ -24,7 +22,6 @@ describe("Tabs", () => {
       expect(screen.getByText(val)).toBeInTheDocument();
     });
   });
-
 
   it("追加のclassNameが適用される", () => {
     const values = ["Tab1", "Tab2"];
@@ -37,16 +34,19 @@ describe("Tabs", () => {
         selectedValue="Tab1"
         setSelectedValue={setSelectedValue}
         className="custom-tab"
-      />
+      />,
     );
 
     // デフォルトのclassと追加のclassが適用されている
     const container = screen.getByTestId("tab-container");
     expect(container).toHaveClass("custom-tab");
-    expect(container).toHaveClass("flex", "p-1", "rounded-[8px]", "bg-surface-muted1");
+    expect(container).toHaveClass(
+      "flex",
+      "p-1",
+      "rounded-[8px]",
+      "bg-surface-muted1",
+    );
   });
-
-
 
   it("選択・非選択タブのスタイルが正しい", () => {
     const values = ["Tab1", "Tab2"];
@@ -57,7 +57,7 @@ describe("Tabs", () => {
         values={values}
         selectedValue="Tab2"
         setSelectedValue={setSelectedValue}
-      />
+      />,
     );
 
     // Tab2(選択中)のクラスが正しい
@@ -69,7 +69,6 @@ describe("Tabs", () => {
     expect(unselectedTab).toHaveClass("text-foreground-muted");
   });
 
-
   it("setSelectedItemがクリックで発火する", () => {
     const values = ["Tab1", "Tab2"];
     const setSelectedValue = vi.fn();
@@ -79,7 +78,7 @@ describe("Tabs", () => {
         values={values}
         selectedValue="Tab1"
         setSelectedValue={setSelectedValue}
-      />
+      />,
     );
 
     const tab2 = screen.getByText("Tab2");
@@ -89,7 +88,6 @@ describe("Tabs", () => {
     expect(setSelectedValue).toHaveBeenCalledTimes(1);
     expect(setSelectedValue).toHaveBeenCalledWith("Tab2");
   });
-
 
   it("refが適用される", () => {
     const ref = React.createRef<HTMLDivElement>();
@@ -102,13 +100,10 @@ describe("Tabs", () => {
         values={values}
         selectedValue="Tab1"
         setSelectedValue={setSelectedValue}
-      />
+      />,
     );
 
     // refが正しく設定されていることを確認
     expect(ref.current).toBeInstanceOf(HTMLDivElement);
   });
-
-
-
 });
