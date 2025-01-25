@@ -13,15 +13,17 @@ const preview: Preview = {
       },
     },
   },
-  decorators: [withThemeByClassName({
+  decorators: [
+    withThemeByClassName({
       themes: {
-          // nameOfTheme: "classNameForTheme",
-          light: "",
-          dark: "dark",
+        // nameOfTheme: "classNameForTheme",
+        light: "",
+        dark: "dark",
       },
       defaultTheme: "light",
       parentSelector: "body",
-  })],
+    }),
+  ],
 };
 
 export default preview;
