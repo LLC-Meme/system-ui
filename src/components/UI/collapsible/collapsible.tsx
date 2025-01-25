@@ -1,12 +1,12 @@
 "use client";
 
-import React, { useState, createContext, useContext } from "react";
+import * as React from "react";
 import { Slot } from "@radix-ui/react-slot";
 import * as RadixCollapsible from "@radix-ui/react-collapsible";
 import { cn } from "../../../lib/cn";
 import { ChevronRight } from "lucide-react";
 
-const CollapsibleContext = createContext<{
+const CollapsibleContext = React.createContext<{
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }>({
@@ -21,7 +21,7 @@ export interface CollapsibleContainerProps
 
 const Container = React.forwardRef<HTMLDivElement, CollapsibleContainerProps>(
   ({ children, ...props }, ref) => {
-    const [isOpen, setIsOpen] = useState(false);
+    const [isOpen, setIsOpen] = React.useState(false);
     return (
       <CollapsibleContext.Provider value={{ isOpen, setIsOpen }}>
         <RadixCollapsible.Root
@@ -45,7 +45,7 @@ export interface CollapsibleTriggerProps
 
 const Trigger = React.forwardRef<HTMLButtonElement, CollapsibleTriggerProps>(
   ({ children, ...props }, ref) => {
-    const { isOpen } = useContext(CollapsibleContext);
+    const { isOpen } = React.useContext(CollapsibleContext);
     return (
       <RadixCollapsible.Trigger
         ref={ref}

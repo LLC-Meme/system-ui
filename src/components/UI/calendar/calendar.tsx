@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useMemo, useCallback, memo } from "react";
+import * as React from "react";
 import { cn } from "../../../lib/cn";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -17,33 +17,33 @@ export interface CalendarProps {
 
 const Calendar = React.forwardRef<HTMLDivElement, CalendarProps>(
   ({ date, setDate, disableAfter, disableBefore }, ref) => {
-    const [focusedYear, setFocusedYear] = useState(
+    const [focusedYear, setFocusedYear] = React.useState(
       date ? date.getFullYear() : new Date().getFullYear(),
     );
-    const [focusedMonth, setFocusedMonth] = useState(
+    const [focusedMonth, setFocusedMonth] = React.useState(
       date ? date.getMonth() : new Date().getMonth(),
     );
 
     const daysInMonth = new Date(focusedYear, focusedMonth + 1, 0).getDate();
     const firstDay = new Date(focusedYear, focusedMonth, 1).getDay();
 
-    const days = useMemo(
+    const days = React.useMemo(
       () => Array.from({ length: daysInMonth }, (_, i) => i + 1),
       [daysInMonth],
     );
-    const emptyDays = useMemo(
+    const emptyDays = React.useMemo(
       () => Array.from({ length: firstDay }, (_, i) => i),
       [firstDay],
     );
 
-    const handleDateClick = useCallback(
+    const handleDateClick = React.useCallback(
       (day: number) => {
         setDate(new Date(focusedYear, focusedMonth, day));
       },
       [focusedYear, focusedMonth, setDate],
     );
 
-    const handlePrevMonthClick = useCallback(() => {
+    const handlePrevMonthClick = React.useCallback(() => {
       if (focusedMonth === 0) {
         setFocusedYear((prev) => prev - 1);
         setFocusedMonth(11);
@@ -52,7 +52,7 @@ const Calendar = React.forwardRef<HTMLDivElement, CalendarProps>(
       }
     }, [focusedMonth]);
 
-    const handleNextMonthClick = useCallback(() => {
+    const handleNextMonthClick = React.useCallback(() => {
       if (focusedMonth === 11) {
         setFocusedYear((prev) => prev + 1);
         setFocusedMonth(0);
@@ -114,7 +114,7 @@ const Calendar = React.forwardRef<HTMLDivElement, CalendarProps>(
 );
 Calendar.displayName = "Calendar";
 
-const PrevMonthButton = memo(function PrevMonthButton({
+const PrevMonthButton = React.memo(function PrevMonthButton({
   onClick,
 }: {
   onClick: () => void;
@@ -130,7 +130,7 @@ const PrevMonthButton = memo(function PrevMonthButton({
   );
 });
 
-const NextMonthButton = memo(function NextMonthButton({
+const NextMonthButton = React.memo(function NextMonthButton({
   onClick,
 }: {
   onClick: () => void;
@@ -154,7 +154,7 @@ function DayLabel({ children }: { children: React.ReactNode }) {
   );
 }
 
-const Day = memo(function Day({
+const Day = React.memo(function Day({
   children,
   selected = false,
   disabled = false,

@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import styles from "./radio.module.css";
 import { cn } from "../../../lib/cn";
 

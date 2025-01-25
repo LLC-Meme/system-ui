@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import * as React from "react";
 import { cn } from "../../../lib/cn";
 
 export interface SelectorSelectProps
@@ -10,7 +10,7 @@ export interface SelectorSelectProps
 
 const Select = React.forwardRef<HTMLSelectElement, SelectorSelectProps>(
   ({ children, ...props }, ref) => {
-    const [isDefault, setIsDefault] = useState(true);
+    const [isDefault, setIsDefault] = React.useState(true);
 
     const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
       if (props.onChange) {
@@ -23,7 +23,7 @@ const Select = React.forwardRef<HTMLSelectElement, SelectorSelectProps>(
       (child) => React.isValidElement(child) && child.type === DefaultOption,
     );
 
-    useEffect(() => {
+    React.useEffect(() => {
       if (!hasDefaultOption) {
         setIsDefault(false);
       }

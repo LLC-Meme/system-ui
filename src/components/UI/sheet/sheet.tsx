@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import * as React from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 import { cn } from "../../../lib/cn";
 import { X } from "lucide-react";

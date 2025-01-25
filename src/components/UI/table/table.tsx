@@ -1,11 +1,10 @@
-import React from "react";
+import * as React from "react";
 import styles from "./table.module.css";
-import { useContext, createContext } from "react";
 import { cn } from "../../../lib/cn";
 
 type TableStyle = "basic" | "plain";
 
-const TableStyleContext = createContext<TableStyle>("basic");
+const TableStyleContext = React.createContext<TableStyle>("basic");
 
 export interface TableProps extends React.ComponentPropsWithoutRef<"table"> {
   tableStyle?: TableStyle;
@@ -75,7 +74,7 @@ function Row({
   className?: string;
   muted?: boolean;
 }) {
-  const tableStyle = useContext(TableStyleContext);
+  const tableStyle = React.useContext(TableStyleContext);
   return (
     <tr
       {...props}
@@ -100,7 +99,7 @@ function HeadingCell({
 > & {
   className?: string;
 }) {
-  const tableStyle = useContext(TableStyleContext);
+  const tableStyle = React.useContext(TableStyleContext);
   return (
     <th
       {...props}
@@ -124,7 +123,7 @@ function Cell({
 }: React.PropsWithChildren<React.TdHTMLAttributes<HTMLTableCellElement>> & {
   className?: string;
 }) {
-  const tableStyle = useContext(TableStyleContext);
+  const tableStyle = React.useContext(TableStyleContext);
   return (
     <td
       {...props}

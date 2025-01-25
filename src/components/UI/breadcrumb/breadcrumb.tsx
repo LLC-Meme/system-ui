@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import { Slot } from "@radix-ui/react-slot";
 import { cn } from "../../../lib/cn";
 import { ChevronRight } from "lucide-react";

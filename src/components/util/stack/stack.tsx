@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import { cn } from "../../../lib/cn";
 
 type Gap = "none" | "xs" | "sm" | "md" | "lg" | "xl";
