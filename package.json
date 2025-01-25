@@ -56,8 +56,8 @@
     "chromatic": "npx chromatic --project-token=$CHROMATIC_PROJECT_TOKEN",
     "test": "vitest",
     "test:watch": "vitest --watch",
-    "format": "prettier --write .",
-    "format:check": "prettier --check .",
+    "format": "prettier --write src",
+    "format:check": "prettier --check src",
     "lint": "eslint src",
     "prepare": "husky"
   }
