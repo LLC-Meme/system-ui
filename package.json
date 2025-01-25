@@ -2,6 +2,7 @@
   "name": "@memellc/system-ui",
   "version": "1.0.0",
   "description": "React UI components for system design in LLC Meme",
+  "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
