@@ -37,6 +37,7 @@ const Content = React.forwardRef<
     />
   );
 });
+Content.displayName = "Tooltip.Content";
 
 
 const Tooltip = {
