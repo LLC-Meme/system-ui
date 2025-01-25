@@ -39,6 +39,7 @@
     "eslint": "^9.19.0",
     "eslint-plugin-react": "^7.37.4",
     "globals": "^15.14.0",
+    "husky": "^9.1.7",
     "jsdom": "^26.0.0",
     "postcss": "^8.5.1",
     "prettier": "^3.4.2",
@@ -56,6 +57,7 @@
     "test:watch": "vitest --watch",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "prepare": "husky"
   }
 }
