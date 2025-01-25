@@ -5,7 +5,7 @@ import pluginReact from "eslint-plugin-react";
 
 export default [
   {
-    files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
+    files: ["src/**/*.{js,mjs,cjs,ts,jsx,tsx}"],
     settings: {
       react: {
         version: "detect",
@@ -22,7 +22,7 @@ export default [
   },
   { languageOptions: { parserOptions: { ecmaFeatures: { jsx: true } } } },
   { languageOptions: { globals: globals.browser } },
-  { ignores: ["node_modules", "tailwind.config.ts", "postcss.config.js", "dist"] },
+  { ignores: ["node_modules", "dist"] },
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
   pluginReact.configs.flat.recommended,
