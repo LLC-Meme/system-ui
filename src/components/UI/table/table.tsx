@@ -1,3 +1,5 @@
+"use client";
+
 import * as React from "react";
 import styles from "./table.module.css";
 import { cn } from "../../../lib/cn";
