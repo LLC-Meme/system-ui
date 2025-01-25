@@ -124,7 +124,7 @@ function Ellipsis() {
       <LucideEllipsis className="w-6 h-6 text-info" />
     </div>
   );
-};
+}
 Ellipsis.displayName = "Pagination.Ellipsis";
 
 

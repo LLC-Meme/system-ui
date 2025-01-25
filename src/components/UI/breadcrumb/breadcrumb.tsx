@@ -12,7 +12,7 @@ function Separator () {
       aria-label="breadcrumb-separator"
     />
   );
-};
+}
 Separator.displayName = "Breadcrumb.Separator";
 
 
