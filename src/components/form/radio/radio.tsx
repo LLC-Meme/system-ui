@@ -3,9 +3,10 @@ import styles from "./radio.module.css";
 import { cn } from "../../../lib/cn";
 
 
-export interface RadioButtonProps extends React.ComponentPropsWithoutRef<"input"> {}
-
-const Button = React.forwardRef<HTMLInputElement, RadioButtonProps>(({
+const Button = React.forwardRef<
+  HTMLInputElement,
+  React.ComponentPropsWithoutRef<"input">
+>(({
   ...props
 }, ref) => {
   return (
@@ -70,7 +71,7 @@ const Text = React.forwardRef<HTMLSpanElement, RadioTextProps>(({
     </span>
   );
 });
-
+Text.displayName = "Radio.Text";
 
 
 export interface RadioGroupProps extends React.ComponentPropsWithoutRef<"div"> {
