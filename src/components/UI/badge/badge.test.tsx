@@ -9,13 +9,13 @@ describe("Badge", () => {
 
   it("Badgeを表示", () => {
     render(<Badge color="yellow">Hello Badge!</Badge>);
-    expect(screen.getByText('Hello Badge!')).toBeInTheDocument();
+    expect(screen.getByText("Hello Badge!")).toBeInTheDocument();
   });
 
 
   it("colorを指定", () => {
     render(<Badge color="blue">Blue Badge</Badge>);
-    const badgeEl = screen.getByText('Blue Badge');
+    const badgeEl = screen.getByText("Blue Badge");
     expect(badgeEl).toHaveClass("bg-info-muted", "text-info");
   });
 
