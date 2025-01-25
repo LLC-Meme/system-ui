@@ -16,7 +16,6 @@ Apple風のデザインで様々なUIを提供します。
 - radix  
 
 ## ネクストステップ  
-- Selectorがデフォルトの時の文字色  
 - eslint, prettierを追加  
 - huskyの導入  
 - ライブラリ化してnpmで使えるようにする  
