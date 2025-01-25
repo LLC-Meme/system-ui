@@ -23,6 +23,7 @@ import Radio from "./components/form/radio/radio";
 import Checkbox from "./components/form/checkbox/checkbox";
 import Textarea from "./components/form/textarea/textarea";
 import ErrorMessage from "./components/form/error-message/error-message";
+import ThemeSwitch from "./components/UI/theme-switch/theme-switch";
 
 
 export default function Page() {
@@ -33,9 +34,16 @@ export default function Page() {
 
       <Header.Container>
         <Header.SidebarController onClick={() => setSidebarOpen(!sidebarOpen)} />
-        <h1 className="text-2xl font-bold">
+        <h1 className="text-2xl font-bold whitespace-nowrap">
           Acme Inc.
         </h1>
+        <Stack.H className="w-full justify-end">
+          <ThemeSwitch.Container>
+            <ThemeSwitch.Light />
+            <ThemeSwitch.Dark />
+            <ThemeSwitch.System current />
+          </ThemeSwitch.Container>
+        </Stack.H>
       </Header.Container>
 
       <Sidebar.Container isOpen={sidebarOpen}>
