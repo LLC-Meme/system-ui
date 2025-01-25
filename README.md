@@ -16,7 +16,6 @@ Apple風のデザインで様々なUIを提供します。
 - radix  
 
 ## ネクストステップ  
-- Theme Switcher作る  
 - Selectorがデフォルトの時の文字色  
 - eslint, prettierを追加  
 - huskyの導入  
