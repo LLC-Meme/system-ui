@@ -44,9 +44,10 @@ function MagnifyingGlass({
 }
 
 
-export interface SearchWindowInputProps extends React.ComponentPropsWithoutRef<"input"> {}
-
-const Input = React.forwardRef<HTMLInputElement, SearchWindowInputProps>(({
+const Input = React.forwardRef<
+  HTMLInputElement,
+  React.ComponentPropsWithoutRef<"input">
+>(({
   ...props
 }, ref) => {
   return (
