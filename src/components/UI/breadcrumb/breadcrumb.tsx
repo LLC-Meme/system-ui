@@ -1,9 +1,8 @@
 import React from "react";
 import { Slot } from "@radix-ui/react-slot";
 import { cn } from "../../../lib/cn";
-import { ChevronRight, LucideProps } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 
-export interface BreadcrumbSeparatorProps extends LucideProps {}
 
 function Separator () {
   return (
