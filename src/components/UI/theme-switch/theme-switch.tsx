@@ -72,7 +72,7 @@ const Dark = React.forwardRef<HTMLButtonElement, ThemeSwitchButtonProps>(({
     </button>
   );
 });
-
+Dark.displayName = "ThemeSwitch.Dark";
 
 
 const System = React.forwardRef<HTMLButtonElement, ThemeSwitchButtonProps>(({
@@ -94,7 +94,7 @@ const System = React.forwardRef<HTMLButtonElement, ThemeSwitchButtonProps>(({
     </button>
   );
 });
-
+System.displayName = "ThemeSwitch.System";
 
 
 const ThemeSwitch = {
