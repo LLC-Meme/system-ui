@@ -22,6 +22,7 @@ import LabelText from "./components/form/label-text/label-text";
 import Radio from "./components/form/radio/radio";
 import Checkbox from "./components/form/checkbox/checkbox";
 import Textarea from "./components/form/textarea/textarea";
+import ErrorMessage from "./components/form/error-message/error-message";
 
 
 export default function Page() {
@@ -265,6 +266,7 @@ export default function Page() {
                   <Label>
                     <LabelText>Input</LabelText>
                     <Input placeholder="input something" />
+                    <ErrorMessage>This is an error message.</ErrorMessage>
                   </Label>
                   <Label>
                     <LabelText>Selector</LabelText>
