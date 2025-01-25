@@ -115,7 +115,7 @@ Next.displayName = "Pagination.Next";
 
 
 
-const Ellipsis = React.forwardRef<HTMLDivElement, {}>(({}, ref) => {
+function Ellipsis() {
   return (
     <div
       className="w-8 h-8 center"
@@ -124,7 +124,7 @@ const Ellipsis = React.forwardRef<HTMLDivElement, {}>(({}, ref) => {
       <LucideEllipsis className="w-6 h-6 text-info" />
     </div>
   );
-});
+};
 Ellipsis.displayName = "Pagination.Ellipsis";
 
 
