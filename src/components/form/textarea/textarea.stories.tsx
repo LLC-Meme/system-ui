@@ -20,3 +20,15 @@ type Story = StoryObj<typeof Textarea>;
 export const Example: Story = {
   args: {}
 };
+
+export const Disabled: Story = {
+  args: {
+    disabled: true
+  }
+};
+
+export const Invalid: Story = {
+  args: {
+    required: true
+  }
+};

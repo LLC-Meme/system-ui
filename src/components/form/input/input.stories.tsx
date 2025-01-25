@@ -42,3 +42,11 @@ export const Disabled: Story = {
     );
   }
 };
+
+export const Invalid: Story = {
+  render: () => {
+    return (
+      <Input required placeholder="Default" />
+    );
+  }
+};
