@@ -22,7 +22,7 @@ export default [
   },
   { languageOptions: { parserOptions: { ecmaFeatures: { jsx: true } } } },
   { languageOptions: { globals: globals.browser } },
-  { ignores: ["node_modules", "tailwind.config.ts", "postcss.config.js"] },
+  { ignores: ["node_modules", "tailwind.config.ts", "postcss.config.js", "dist"] },
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
   pluginReact.configs.flat.recommended,
