@@ -52,7 +52,7 @@ export default function Page() {
         </Sidebar.Group>
         <Sidebar.Group>
           <Sidebar.GroupLabel>Group Label</Sidebar.GroupLabel>
-          <Collapsible.Container>
+          <Collapsible.Root>
             <Collapsible.Trigger>Collapsible Trigger</Collapsible.Trigger>
             <Collapsible.Content>
               <Collapsible.Item href="/item1">
@@ -62,8 +62,8 @@ export default function Page() {
                 Collapsible Item 2
               </Collapsible.Item>
             </Collapsible.Content>
-          </Collapsible.Container>
-          <Collapsible.Container>
+          </Collapsible.Root>
+          <Collapsible.Root>
             <Collapsible.Trigger>Collapsible Trigger</Collapsible.Trigger>
             <Collapsible.Content>
               <Collapsible.Item href="/item1">
@@ -73,8 +73,8 @@ export default function Page() {
                 Collapsible Item 2
               </Collapsible.Item>
             </Collapsible.Content>
-          </Collapsible.Container>
-          <Collapsible.Container>
+          </Collapsible.Root>
+          <Collapsible.Root>
             <Collapsible.Trigger>Collapsible Trigger</Collapsible.Trigger>
             <Collapsible.Content>
               <Collapsible.Item href="/item1">
@@ -84,8 +84,8 @@ export default function Page() {
                 Collapsible Item 2
               </Collapsible.Item>
             </Collapsible.Content>
-          </Collapsible.Container>
-          <Collapsible.Container>
+          </Collapsible.Root>
+          <Collapsible.Root>
             <Collapsible.Trigger>Collapsible Trigger</Collapsible.Trigger>
             <Collapsible.Content>
               <Collapsible.Item href="/item1">
@@ -95,8 +95,8 @@ export default function Page() {
                 Collapsible Item 2
               </Collapsible.Item>
             </Collapsible.Content>
-          </Collapsible.Container>
-          <Collapsible.Container>
+          </Collapsible.Root>
+          <Collapsible.Root>
             <Collapsible.Trigger>Collapsible Trigger</Collapsible.Trigger>
             <Collapsible.Content>
               <Collapsible.Item href="/item1">
@@ -106,8 +106,8 @@ export default function Page() {
                 Collapsible Item 2
               </Collapsible.Item>
             </Collapsible.Content>
-          </Collapsible.Container>
-          <Collapsible.Container>
+          </Collapsible.Root>
+          <Collapsible.Root>
             <Collapsible.Trigger>Collapsible Trigger</Collapsible.Trigger>
             <Collapsible.Content>
               <Collapsible.Item href="/item1">
@@ -117,7 +117,7 @@ export default function Page() {
                 Collapsible Item 2
               </Collapsible.Item>
             </Collapsible.Content>
-          </Collapsible.Container>
+          </Collapsible.Root>
         </Sidebar.Group>
       </Sidebar.Container>
 
