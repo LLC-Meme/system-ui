@@ -30,6 +30,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           variant === "outline" && "border border-info text-info",
           "px-6 py-2 font-bold rounded-lg flex items-center justify-center",
           "hover disabled",
+          "focus:outline-none",
         )}
       >
         {children}
