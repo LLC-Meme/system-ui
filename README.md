@@ -16,6 +16,7 @@ Apple風のデザインで様々なUIを提供します。
 - radix  
 
 ## ネクストステップ  
+- ContainerやRootの命名を揃える  
 - use clientをピンポイントできかせる  
 - 可能であればstyle定義を呼び出した側にも影響させる  
 - npm importに死ぬほど時間かかる問題を解決  
