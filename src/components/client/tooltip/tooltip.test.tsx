@@ -5,15 +5,15 @@ import { describe, it, expect } from "vitest";
 import userEvent from "@testing-library/user-event";
 import Tooltip from "./tooltip";
 
-const { Container, Trigger, Content } = Tooltip;
+const { Root, Trigger, Content } = Tooltip;
 
 describe("Tooltip", () => {
   function TestTooltip() {
     return (
-      <Container>
+      <Root>
         <Trigger data-testid="tooltip-trigger">Hover me</Trigger>
         <Content data-testid="tooltip-content">Tooltip text</Content>
-      </Container>
+      </Root>
     );
   }
 

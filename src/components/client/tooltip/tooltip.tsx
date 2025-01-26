@@ -4,7 +4,7 @@ import * as React from "react";
 import * as TooltipPrimitive from "@radix-ui/react-tooltip";
 import { cn } from "../../../lib/cn";
 
-const Container = ({
+const Root = ({
   children,
   ...props
 }: React.ComponentProps<typeof TooltipPrimitive.Root>) => {
@@ -16,8 +16,10 @@ const Container = ({
     </TooltipPrimitive.Provider>
   );
 };
+Root.displayName = "Tooltip.Root";
 
 const Trigger = TooltipPrimitive.Trigger;
+Trigger.displayName = "Tooltip.Trigger";
 
 const Content = React.forwardRef<
   React.ComponentRef<typeof TooltipPrimitive.Content>,
@@ -38,7 +40,7 @@ const Content = React.forwardRef<
 Content.displayName = "Tooltip.Content";
 
 const Tooltip = {
-  Container,
+  Root,
   Trigger,
   Content,
 };
