@@ -1,7 +1,7 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import Sidebar from "./sidebar";
-import Collapsible from "../../UI/collapsible/collapsible";
+import Collapsible from "../../client/collapsible/collapsible";
 
 function SidebarExample() {
   return (
@@ -13,7 +13,7 @@ function SidebarExample() {
       </Sidebar.Group>
       <Sidebar.Group>
         <Sidebar.GroupLabel>Group Label</Sidebar.GroupLabel>
-        <Collapsible.Container>
+        <Collapsible.Root>
           <Collapsible.Trigger>Collapsible Trigger</Collapsible.Trigger>
           <Collapsible.Content>
             <Collapsible.Item href="/item1">
@@ -23,8 +23,8 @@ function SidebarExample() {
               Collapsible Item 2
             </Collapsible.Item>
           </Collapsible.Content>
-        </Collapsible.Container>
-        <Collapsible.Container>
+        </Collapsible.Root>
+        <Collapsible.Root>
           <Collapsible.Trigger>Collapsible Trigger</Collapsible.Trigger>
           <Collapsible.Content>
             <Collapsible.Item href="/item1">
@@ -34,8 +34,8 @@ function SidebarExample() {
               Collapsible Item 2
             </Collapsible.Item>
           </Collapsible.Content>
-        </Collapsible.Container>
-        <Collapsible.Container>
+        </Collapsible.Root>
+        <Collapsible.Root>
           <Collapsible.Trigger>Collapsible Trigger</Collapsible.Trigger>
           <Collapsible.Content>
             <Collapsible.Item href="/item1">
@@ -45,8 +45,8 @@ function SidebarExample() {
               Collapsible Item 2
             </Collapsible.Item>
           </Collapsible.Content>
-        </Collapsible.Container>
-        <Collapsible.Container>
+        </Collapsible.Root>
+        <Collapsible.Root>
           <Collapsible.Trigger>Collapsible Trigger</Collapsible.Trigger>
           <Collapsible.Content>
             <Collapsible.Item href="/item1">
@@ -56,8 +56,8 @@ function SidebarExample() {
               Collapsible Item 2
             </Collapsible.Item>
           </Collapsible.Content>
-        </Collapsible.Container>
-        <Collapsible.Container>
+        </Collapsible.Root>
+        <Collapsible.Root>
           <Collapsible.Trigger>Collapsible Trigger</Collapsible.Trigger>
           <Collapsible.Content>
             <Collapsible.Item href="/item1">
@@ -67,8 +67,8 @@ function SidebarExample() {
               Collapsible Item 2
             </Collapsible.Item>
           </Collapsible.Content>
-        </Collapsible.Container>
-        <Collapsible.Container>
+        </Collapsible.Root>
+        <Collapsible.Root>
           <Collapsible.Trigger>Collapsible Trigger</Collapsible.Trigger>
           <Collapsible.Content>
             <Collapsible.Item href="/item1">
@@ -78,7 +78,7 @@ function SidebarExample() {
               Collapsible Item 2
             </Collapsible.Item>
           </Collapsible.Content>
-        </Collapsible.Container>
+        </Collapsible.Root>
       </Sidebar.Group>
     </Sidebar.Container>
   );

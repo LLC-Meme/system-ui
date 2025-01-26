@@ -14,12 +14,12 @@ const CollapsibleContext = React.createContext<{
   setIsOpen: () => {},
 });
 
-export interface CollapsibleContainerProps
+export interface CollapsibleRootProps
   extends React.ComponentPropsWithoutRef<"div"> {
   children: React.ReactNode;
 }
 
-const Container = React.forwardRef<HTMLDivElement, CollapsibleContainerProps>(
+const Root = React.forwardRef<HTMLDivElement, CollapsibleRootProps>(
   ({ children, ...props }, ref) => {
     const [isOpen, setIsOpen] = React.useState(false);
     return (
@@ -36,7 +36,7 @@ const Container = React.forwardRef<HTMLDivElement, CollapsibleContainerProps>(
     );
   },
 );
-Container.displayName = "Collapsible.Container";
+Root.displayName = "Collapsible.Root";
 
 export interface CollapsibleTriggerProps
   extends React.ComponentPropsWithoutRef<"button"> {
@@ -115,7 +115,7 @@ const Item = React.forwardRef<HTMLAnchorElement, CollapsibleItemProps>(
 Item.displayName = "Collapsible.Item";
 
 const Collapsible = {
-  Container,
+  Root,
   Trigger,
   Content,
   Item,

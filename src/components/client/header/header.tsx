@@ -1,5 +1,3 @@
-"use client";
-
 import * as React from "react";
 import { PanelLeft } from "lucide-react";
 
@@ -23,17 +21,12 @@ const Container = React.forwardRef<HTMLDivElement, HeaderContainerProps>(
 );
 Container.displayName = "Header.Container";
 
-export interface SidebarControllerProps
-  extends React.ComponentPropsWithoutRef<"button"> {
-  onClick: () => void;
-}
-
 const SidebarController = React.forwardRef<
   HTMLButtonElement,
-  SidebarControllerProps
->(({ onClick, ...props }, ref) => {
+  React.ComponentPropsWithoutRef<"button">
+>(({ ...props }, ref) => {
   return (
-    <button {...props} ref={ref} onClick={onClick} className="hover">
+    <button {...props} ref={ref} className="hover">
       <PanelLeft className="w-6 h-6 mr-2 text-info" />
     </button>
   );

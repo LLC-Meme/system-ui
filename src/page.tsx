@@ -1,29 +1,29 @@
 import React, { useState } from "react";
-import Header from "./components/layout/header/header";
-import Sidebar from "./components/layout/sidebar/sidebar";
-import Main from "./components/layout/main/main";
-import Collapsible from "./components/UI/collapsible/collapsible";
-import Breadcrumb from "./components/UI/breadcrumb/breadcrumb";
-import Spacer from "./components/util/spacer/spacer";
-import Surface from "./components/UI/surface/surface";
-import Title from "./components/UI/title/title";
-import Alert from "./components/UI/alert/alert";
-import Stack from "./components/util/stack/stack";
-import Button from "./components/UI/button/button";
-import Modal from "./components/UI/modal/modal";
-import SearchWindow from "./components/UI/search-window/search-window";
-import Navigation from "./components/UI/navigation/navigation";
-import Divider from "./components/UI/divider/divider";
-import Sheet from "./components/UI/sheet/sheet";
-import Label from "./components/form/label/label";
-import Input from "./components/form/input/input";
-import Selector from "./components/form/selector/selector";
-import LabelText from "./components/form/label-text/label-text";
-import Radio from "./components/form/radio/radio";
-import Checkbox from "./components/form/checkbox/checkbox";
-import Textarea from "./components/form/textarea/textarea";
-import ErrorMessage from "./components/form/error-message/error-message";
-import ThemeSwitch from "./components/UI/theme-switch/theme-switch";
+import Header from "./components/client/header/header";
+import Sidebar from "./components/server/sidebar/sidebar";
+import Main from "./components/server/main/main";
+import Collapsible from "./components/client/collapsible/collapsible";
+import Breadcrumb from "./components/server/breadcrumb/breadcrumb";
+import Spacer from "./components/server/spacer/spacer";
+import Surface from "./components/server/surface/surface";
+import Title from "./components/server/title/title";
+import Alert from "./components/server/alert/alert";
+import Stack from "./components/server/stack/stack";
+import Button from "./components/server/button/button";
+import Modal from "./components/client/modal/modal";
+import SearchWindow from "./components/server/search-window/search-window";
+import Navigation from "./components/server/navigation/navigation";
+import Divider from "./components/server/divider/divider";
+import Sheet from "./components/client/sheet/sheet";
+import Label from "./components/server/label/label";
+import Input from "./components/server/input/input";
+import Selector from "./components/client/selector/selector";
+import LabelText from "./components/server/label-text/label-text";
+import Radio from "./components/server/radio/radio";
+import Checkbox from "./components/server/checkbox/checkbox";
+import Textarea from "./components/server/textarea/textarea";
+import ErrorMessage from "./components/server/error-message/error-message";
+import ThemeSwitch from "./components/server/theme-switch/theme-switch";
 
 export default function Page() {
   const [sidebarOpen, setSidebarOpen] = useState(true);
@@ -52,7 +52,7 @@ export default function Page() {
         </Sidebar.Group>
         <Sidebar.Group>
           <Sidebar.GroupLabel>Group Label</Sidebar.GroupLabel>
-          <Collapsible.Container>
+          <Collapsible.Root>
             <Collapsible.Trigger>Collapsible Trigger</Collapsible.Trigger>
             <Collapsible.Content>
               <Collapsible.Item href="/item1">
@@ -62,8 +62,8 @@ export default function Page() {
                 Collapsible Item 2
               </Collapsible.Item>
             </Collapsible.Content>
-          </Collapsible.Container>
-          <Collapsible.Container>
+          </Collapsible.Root>
+          <Collapsible.Root>
             <Collapsible.Trigger>Collapsible Trigger</Collapsible.Trigger>
             <Collapsible.Content>
               <Collapsible.Item href="/item1">
@@ -73,8 +73,8 @@ export default function Page() {
                 Collapsible Item 2
               </Collapsible.Item>
             </Collapsible.Content>
-          </Collapsible.Container>
-          <Collapsible.Container>
+          </Collapsible.Root>
+          <Collapsible.Root>
             <Collapsible.Trigger>Collapsible Trigger</Collapsible.Trigger>
             <Collapsible.Content>
               <Collapsible.Item href="/item1">
@@ -84,8 +84,8 @@ export default function Page() {
                 Collapsible Item 2
               </Collapsible.Item>
             </Collapsible.Content>
-          </Collapsible.Container>
-          <Collapsible.Container>
+          </Collapsible.Root>
+          <Collapsible.Root>
             <Collapsible.Trigger>Collapsible Trigger</Collapsible.Trigger>
             <Collapsible.Content>
               <Collapsible.Item href="/item1">
@@ -95,8 +95,8 @@ export default function Page() {
                 Collapsible Item 2
               </Collapsible.Item>
             </Collapsible.Content>
-          </Collapsible.Container>
-          <Collapsible.Container>
+          </Collapsible.Root>
+          <Collapsible.Root>
             <Collapsible.Trigger>Collapsible Trigger</Collapsible.Trigger>
             <Collapsible.Content>
               <Collapsible.Item href="/item1">
@@ -106,8 +106,8 @@ export default function Page() {
                 Collapsible Item 2
               </Collapsible.Item>
             </Collapsible.Content>
-          </Collapsible.Container>
-          <Collapsible.Container>
+          </Collapsible.Root>
+          <Collapsible.Root>
             <Collapsible.Trigger>Collapsible Trigger</Collapsible.Trigger>
             <Collapsible.Content>
               <Collapsible.Item href="/item1">
@@ -117,7 +117,7 @@ export default function Page() {
                 Collapsible Item 2
               </Collapsible.Item>
             </Collapsible.Content>
-          </Collapsible.Container>
+          </Collapsible.Root>
         </Sidebar.Group>
       </Sidebar.Container>
 

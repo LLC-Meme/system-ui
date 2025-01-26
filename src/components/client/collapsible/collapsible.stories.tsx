@@ -4,14 +4,14 @@ import Collapsible from "./collapsible";
 
 function CollapsibleExample() {
   return (
-    <Collapsible.Container className="w-80">
+    <Collapsible.Root className="w-80">
       <Collapsible.Trigger>Collapsible Trigger</Collapsible.Trigger>
       <Collapsible.Content>
         <Collapsible.Item href="/item1">Collapsible Item 1</Collapsible.Item>
         <Collapsible.Item href="/item2">Collapsible Item 2</Collapsible.Item>
         <Collapsible.Item href="/item3">Collapsible Item 3</Collapsible.Item>
       </Collapsible.Content>
-    </Collapsible.Container>
+    </Collapsible.Root>
   );
 }
 

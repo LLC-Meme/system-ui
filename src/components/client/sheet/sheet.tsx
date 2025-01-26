@@ -4,7 +4,7 @@ import * as React from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 import { cn } from "../../../lib/cn";
 import { X } from "lucide-react";
-import Stack from "../../util/stack/stack";
+import Stack from "../../server/stack/stack";
 
 const Root = Dialog.Root;
 const Trigger = Dialog.Trigger;

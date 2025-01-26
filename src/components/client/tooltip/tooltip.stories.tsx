@@ -4,14 +4,14 @@ import Tooltip from "./tooltip";
 
 function TooltipExample() {
   return (
-    <Tooltip.Container>
+    <Tooltip.Root>
       <Tooltip.Trigger className="w-fit">
         <div>Hover me</div>
       </Tooltip.Trigger>
       <Tooltip.Content>
         <div>Tooltip content</div>
       </Tooltip.Content>
-    </Tooltip.Container>
+    </Tooltip.Root>
   );
 }
 

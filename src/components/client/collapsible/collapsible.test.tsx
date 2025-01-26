@@ -7,7 +7,7 @@ import Collapsible from "./collapsible";
 describe("Collapsible", () => {
   function TestCollapsible() {
     return (
-      <Collapsible.Container>
+      <Collapsible.Root>
         <Collapsible.Trigger aria-label="open-collapsible">
           Toggle
         </Collapsible.Trigger>
@@ -16,7 +16,7 @@ describe("Collapsible", () => {
           <Collapsible.Item>Item 1</Collapsible.Item>
           <Collapsible.Item>Item 2</Collapsible.Item>
         </Collapsible.Content>
-      </Collapsible.Container>
+      </Collapsible.Root>
     );
   }
 
