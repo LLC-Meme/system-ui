@@ -1,7 +1,7 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import Modal from "./modal";
-import Button from "../button/button";
+import Button from "../../server/button/button";
 
 function ModalExample() {
   return (

@@ -1,7 +1,7 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import Sidebar from "./sidebar";
-import Collapsible from "../../UI/collapsible/collapsible";
+import Collapsible from "../../client/collapsible/collapsible";
 
 function SidebarExample() {
   return (

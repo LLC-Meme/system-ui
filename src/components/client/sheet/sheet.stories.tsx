@@ -1,7 +1,7 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import Sheet from "./sheet";
-import Button from "../button/button";
+import Button from "../../server/button/button";
 
 function SheetExample() {
   return (

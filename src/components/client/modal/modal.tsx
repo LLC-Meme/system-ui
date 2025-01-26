@@ -3,7 +3,7 @@
 import * as React from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 import { cn } from "../../../lib/cn";
-import Stack from "../../util/stack/stack";
+import Stack from "../../server/stack/stack";
 import { X } from "lucide-react";
 
 const Root = Dialog.Root;
