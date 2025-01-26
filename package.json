@@ -1,17 +1,24 @@
 {
   "name": "meme-system-ui",
-  "version": "1.0.1",
+  "version": "1.0.5",
   "description": "React UI components for system design in LLC Meme",
   "license": "MIT",
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
-  "types": "dist/index.d.ts",
-  "publishConfig": {
-    "access": "public"
+  "main": "dist/components/index.js",
+  "module": "dist/components/index.js",
+  "types": "dist/components/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/components/index.js",
+      "require": "./dist/components/index.js"
+    },
+    "./tailwind.css": "./dist/tailwind.css"
   },
   "files": [
     "dist"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/LLC-Meme/system-ui.git"
@@ -49,6 +56,7 @@
     "chromatic": "^11.25.0",
     "eslint": "^9.19.0",
     "eslint-plugin-react": "^7.37.4",
+    "fs-extra": "^11.3.0",
     "globals": "^15.14.0",
     "husky": "^9.1.7",
     "jsdom": "^26.0.0",
@@ -72,7 +80,8 @@
     "format:check": "prettier --check src",
     "lint": "eslint src",
     "prepare": "husky",
-    "build": "tsup"
+    "build": "tsup",
+    "build:watch": "tsup -w"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx}": "npm run lint",
