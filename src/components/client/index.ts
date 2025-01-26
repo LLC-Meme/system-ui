@@ -2,6 +2,7 @@
 
 export { default as Calendar } from "./calendar/calendar";
 export { default as Collapsible } from "./collapsible/collapsible";
+export { default as Dropdown } from "./dropdown/dropdown";
 export { default as Header } from "./header/header";
 export { default as Modal } from "./modal/modal";
 export { default as Selector } from "./selector/selector";
