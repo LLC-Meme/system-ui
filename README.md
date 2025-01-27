@@ -16,6 +16,7 @@ Apple風のデザインで様々なUIを提供します。
 - radix  
 
 ## ネクストステップ  
+- "use client"の問題を解決する  
 - style定義を呼び出した側にも影響させる  
 - npm importに死ぬほど時間かかる問題を解決  
 - GitHub Actionsでnpmを自動でパブリッシュ  
