@@ -12,7 +12,6 @@ export default {
         surface: "var(--surface)",
         "surface-muted1": "var(--surface-muted1)",
         "surface-muted2": "var(--surface-muted2)",
-        overlay: "var(--overlay)",
         border: "var(--border)",
         info: "var(--info)",
         "info-muted": "var(--info-muted)",

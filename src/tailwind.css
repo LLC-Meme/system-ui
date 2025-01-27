@@ -16,10 +16,6 @@ textarea {
     @apply disabled:cursor-not-allowed disabled:opacity-[var(--hover-opacity)];
   }
 
-  .overlay {
-    @apply bg-overlay backdrop-blur-[16px] z-10;
-  }
-
   .center {
     @apply flex items-center justify-center;
   }
@@ -42,7 +38,6 @@ body {
   --surface: #fff;
   --surface-muted1: #e0dfe0;
   --surface-muted2: #f1f1f2;
-  --overlay: rgba(255, 255, 255, 0.8);
   --border: #c6c6c8;
 
   --info: #007aff;
@@ -80,7 +75,6 @@ body.dark {
   --surface: #1c1c1e;
   --surface-muted1: #38383b;
   --surface-muted2: #2c282e;
-  --overlay: rgba(28, 28, 30, 0.8);
   --border: #545458;
 
   --info: #0a84ff;
