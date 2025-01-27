@@ -14,7 +14,7 @@
     "jsx": "preserve",
     "baseUrl": "./",
     "paths": {
-      "@memellc/system-ui/*": ["src/*"]
+      "meme-system-ui/*": ["src/*"]
     }
   },
   "include": ["src", "global.d.ts"],
