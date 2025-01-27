@@ -1,5 +1,3 @@
-"use client";
-
 export { default as Calendar } from "./calendar/calendar";
 export { default as Collapsible } from "./collapsible/collapsible";
 export { default as Dropdown } from "./dropdown/dropdown";
