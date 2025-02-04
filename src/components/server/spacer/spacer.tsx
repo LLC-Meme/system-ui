@@ -7,7 +7,7 @@ export interface SpacerProps extends React.ComponentPropsWithoutRef<"div"> {
   unit?: Unit;
 }
 
-const V = React.forwardRef<HTMLDivElement, SpacerProps>(
+const VSpacer = React.forwardRef<HTMLDivElement, SpacerProps>(
   ({ unit = 1, ...props }, ref) => {
     const size = unit * 4;
     return (
@@ -15,9 +15,9 @@ const V = React.forwardRef<HTMLDivElement, SpacerProps>(
     );
   },
 );
-V.displayName = "Spacer.V";
+VSpacer.displayName = "Spacer.V";
 
-const H = React.forwardRef<HTMLDivElement, SpacerProps>(
+const HSpacer = React.forwardRef<HTMLDivElement, SpacerProps>(
   ({ unit = 1, ...props }, ref) => {
     const size = unit * 4;
     return (
@@ -25,11 +25,6 @@ const H = React.forwardRef<HTMLDivElement, SpacerProps>(
     );
   },
 );
-H.displayName = "Spacer.H";
+HSpacer.displayName = "Spacer.H";
 
-const Spacer = {
-  V,
-  H,
-};
-
-export default Spacer;
+export { VSpacer, HSpacer };

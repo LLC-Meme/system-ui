@@ -7,7 +7,7 @@ export interface CheckboxBoxProps
   className?: string;
 }
 
-const Box = React.forwardRef<HTMLInputElement, CheckboxBoxProps>(
+const CheckboxBox = React.forwardRef<HTMLInputElement, CheckboxBoxProps>(
   ({ ...props }, ref) => {
     return (
       <input
@@ -26,14 +26,14 @@ const Box = React.forwardRef<HTMLInputElement, CheckboxBoxProps>(
     );
   },
 );
-Box.displayName = "Checkbox.Box";
+CheckboxBox.displayName = "CheckboxBox";
 
 export interface CheckboxLabelProps
   extends React.LabelHTMLAttributes<HTMLLabelElement> {
   children: React.ReactNode;
 }
 
-const Label = React.forwardRef<HTMLLabelElement, CheckboxLabelProps>(
+const CheckboxLabel = React.forwardRef<HTMLLabelElement, CheckboxLabelProps>(
   ({ children, ...props }, ref) => {
     return (
       <label
@@ -50,14 +50,14 @@ const Label = React.forwardRef<HTMLLabelElement, CheckboxLabelProps>(
     );
   },
 );
-Label.displayName = "Checkbox.Label";
+CheckboxLabel.displayName = "CheckboxLabel";
 
 export interface CheckboxTextProps
   extends React.ComponentPropsWithoutRef<"span"> {
   children: React.ReactNode;
 }
 
-const Text = React.forwardRef<HTMLSpanElement, CheckboxTextProps>(
+const CheckboxText = React.forwardRef<HTMLSpanElement, CheckboxTextProps>(
   ({ children, ...props }, ref) => {
     return (
       <span ref={ref} {...props}>
@@ -66,54 +66,50 @@ const Text = React.forwardRef<HTMLSpanElement, CheckboxTextProps>(
     );
   },
 );
-Text.displayName = "Checkbox.Text";
+CheckboxText.displayName = "CheckboxText";
 
 export interface CheckboxContainerProps
   extends React.ComponentPropsWithoutRef<"div"> {
   children: React.ReactNode;
 }
 
-const Container = React.forwardRef<HTMLDivElement, CheckboxContainerProps>(
-  ({ children, ...props }, ref) => {
-    return (
-      <div
-        ref={ref}
-        {...props}
-        className={cn(props.className, "flex flex-col gap-2")}
-      >
-        {children}
-      </div>
-    );
-  },
-);
-Container.displayName = "Checkbox.Container";
+const CheckboxContainer = React.forwardRef<
+  HTMLDivElement,
+  CheckboxContainerProps
+>(({ children, ...props }, ref) => {
+  return (
+    <div
+      ref={ref}
+      {...props}
+      className={cn(props.className, "flex flex-col gap-2")}
+    >
+      {children}
+    </div>
+  );
+});
+CheckboxContainer.displayName = "CheckboxContainer";
 
 export interface CheckboxLabelTextProps
   extends React.ComponentPropsWithoutRef<"span"> {
   children: React.ReactNode;
 }
 
-const LabelText = React.forwardRef<HTMLSpanElement, CheckboxLabelTextProps>(
-  ({ children, ...props }, ref) => {
-    return (
-      <span
-        ref={ref}
-        {...props}
-        className={cn(props.className, "font-semibold")}
-      >
-        {children}
-      </span>
-    );
-  },
-);
-LabelText.displayName = "Checkbox.LabelText";
+const CheckboxLabelText = React.forwardRef<
+  HTMLSpanElement,
+  CheckboxLabelTextProps
+>(({ children, ...props }, ref) => {
+  return (
+    <span ref={ref} {...props} className={cn(props.className, "font-semibold")}>
+      {children}
+    </span>
+  );
+});
+CheckboxLabelText.displayName = "CheckboxLabelText";
 
-const Checkbox = {
-  Box,
-  Label,
-  Text,
-  Container,
-  LabelText,
+export {
+  CheckboxBox,
+  CheckboxLabel,
+  CheckboxText,
+  CheckboxContainer,
+  CheckboxLabelText,
 };
-
-export default Checkbox;

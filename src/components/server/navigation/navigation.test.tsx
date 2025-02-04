@@ -2,7 +2,7 @@ import React from "react";
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
-import Navigation from "./navigation";
+import { Navigation } from "./navigation";
 
 describe("Navigation Component", () => {
   it("<a>要素がデフォルトで表示", () => {

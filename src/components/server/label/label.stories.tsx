@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import Label from "./label";
+import { Label } from "./label";
 
 /**
  * formの`label`エレメントです。

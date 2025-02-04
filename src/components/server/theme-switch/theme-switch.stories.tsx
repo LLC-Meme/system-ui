@@ -1,14 +1,19 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import ThemeSwitch from "./theme-switch";
+import {
+  ThemeContainer,
+  ThemeLight,
+  ThemeDark,
+  ThemeSystem,
+} from "./theme-switch";
 
 function ThemeSwitchExample() {
   return (
-    <ThemeSwitch.Container>
-      <ThemeSwitch.Light />
-      <ThemeSwitch.Dark />
-      <ThemeSwitch.System current />
-    </ThemeSwitch.Container>
+    <ThemeContainer>
+      <ThemeLight />
+      <ThemeDark />
+      <ThemeSystem current />
+    </ThemeContainer>
   );
 }
 
@@ -19,7 +24,7 @@ const meta = {
     layout: "centered",
   },
   tags: ["autodocs"],
-} satisfies Meta<typeof ThemeSwitch>;
+} satisfies Meta<typeof ThemeSwitchExample>;
 
 export default meta;
 type Story = StoryObj<typeof ThemeSwitchExample>;
@@ -28,26 +33,26 @@ export const Example: Story = {
   args: {},
 };
 
-export const LightDefault: StoryObj<typeof ThemeSwitch.Light> = {
-  render: () => <ThemeSwitch.Light />,
+export const LightDefault: StoryObj<typeof ThemeLight> = {
+  render: () => <ThemeLight />,
 };
 
-export const LightCurrent: StoryObj<typeof ThemeSwitch.Light> = {
-  render: () => <ThemeSwitch.Light current />,
+export const LightCurrent: StoryObj<typeof ThemeLight> = {
+  render: () => <ThemeLight current />,
 };
 
-export const DarkDefault: StoryObj<typeof ThemeSwitch.Dark> = {
-  render: () => <ThemeSwitch.Dark />,
+export const DarkDefault: StoryObj<typeof ThemeDark> = {
+  render: () => <ThemeDark />,
 };
 
-export const DarkCurrent: StoryObj<typeof ThemeSwitch.Dark> = {
-  render: () => <ThemeSwitch.Dark current />,
+export const DarkCurrent: StoryObj<typeof ThemeDark> = {
+  render: () => <ThemeDark current />,
 };
 
-export const SystemDefault: StoryObj<typeof ThemeSwitch.System> = {
-  render: () => <ThemeSwitch.System />,
+export const SystemDefault: StoryObj<typeof ThemeSystem> = {
+  render: () => <ThemeSystem />,
 };
 
-export const SystemCurrent: StoryObj<typeof ThemeSwitch.System> = {
-  render: () => <ThemeSwitch.System current />,
+export const SystemCurrent: StoryObj<typeof ThemeSystem> = {
+  render: () => <ThemeSystem current />,
 };

@@ -2,7 +2,7 @@ import * as React from "react";
 import styles from "./radio.module.css";
 import { cn } from "../../../lib/cn";
 
-const Button = React.forwardRef<
+const RadioButton = React.forwardRef<
   HTMLInputElement,
   React.ComponentPropsWithoutRef<"input">
 >(({ ...props }, ref) => {
@@ -23,7 +23,7 @@ const Button = React.forwardRef<
     />
   );
 });
-Button.displayName = "Radio.Button";
+RadioButton.displayName = "RadioButton";
 
 export interface RadioLabelProps
   extends React.ComponentPropsWithoutRef<"label"> {
@@ -46,13 +46,13 @@ const RadioLabel = React.forwardRef<HTMLLabelElement, RadioLabelProps>(
     );
   },
 );
-RadioLabel.displayName = "Radio.Label";
+RadioLabel.displayName = "RadioLabel";
 
 export interface RadioTextProps extends React.ComponentPropsWithoutRef<"span"> {
   children: React.ReactNode;
 }
 
-const Text = React.forwardRef<HTMLSpanElement, RadioTextProps>(
+const RadioText = React.forwardRef<HTMLSpanElement, RadioTextProps>(
   ({ children, ...props }, ref) => {
     return (
       <span ref={ref} {...props}>
@@ -61,13 +61,13 @@ const Text = React.forwardRef<HTMLSpanElement, RadioTextProps>(
     );
   },
 );
-Text.displayName = "Radio.Text";
+RadioText.displayName = "RadioText";
 
 export interface RadioGroupProps extends React.ComponentPropsWithoutRef<"div"> {
   children: React.ReactNode;
 }
 
-const Group = React.forwardRef<HTMLDivElement, RadioGroupProps>(
+const RadioGroup = React.forwardRef<HTMLDivElement, RadioGroupProps>(
   ({ children, ...props }, ref) => {
     return (
       <div
@@ -80,14 +80,14 @@ const Group = React.forwardRef<HTMLDivElement, RadioGroupProps>(
     );
   },
 );
-Group.displayName = "Radio.Group";
+RadioGroup.displayName = "RadioGroup";
 
 export interface RadioLabelTextProps
   extends React.ComponentPropsWithoutRef<"span"> {
   children: React.ReactNode;
 }
 
-const LabelText = React.forwardRef<HTMLSpanElement, RadioLabelTextProps>(
+const RadioLabelText = React.forwardRef<HTMLSpanElement, RadioLabelTextProps>(
   ({ children, ...props }, ref) => {
     return (
       <span
@@ -100,14 +100,6 @@ const LabelText = React.forwardRef<HTMLSpanElement, RadioLabelTextProps>(
     );
   },
 );
-LabelText.displayName = "Radio.LabelText";
+RadioLabelText.displayName = "RadioLabelText";
 
-const Radio = {
-  Button,
-  Label: RadioLabel,
-  Group,
-  Text,
-  LabelText,
-};
-
-export default Radio;
+export { RadioButton, RadioLabel, RadioText, RadioGroup, RadioLabelText };

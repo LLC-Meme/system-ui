@@ -1,23 +1,23 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import Radio from "./radio";
+import { RadioGroup, RadioLabel, RadioButton } from "./radio";
 
 function RadioExample() {
   return (
-    <Radio.Group>
-      <Radio.Label>
-        <Radio.Button name="test" />
+    <RadioGroup>
+      <RadioLabel>
+        <RadioButton name="test" />
         <span>ラジオボタン1</span>
-      </Radio.Label>
-      <Radio.Label>
-        <Radio.Button name="test" />
+      </RadioLabel>
+      <RadioLabel>
+        <RadioButton name="test" />
         <span>ラジオボタン2</span>
-      </Radio.Label>
-      <Radio.Label>
-        <Radio.Button name="test" />
+      </RadioLabel>
+      <RadioLabel>
+        <RadioButton name="test" />
         <span>ラジオボタン3</span>
-      </Radio.Label>
-    </Radio.Group>
+      </RadioLabel>
+    </RadioGroup>
   );
 }
 

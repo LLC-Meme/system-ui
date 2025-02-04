@@ -2,12 +2,12 @@ import React from "react";
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
-import Divider from "./divider";
+import { VDivider, HDivider } from "./divider";
 
 describe("Divider", () => {
   describe("Divider.V", () => {
     it("thickness(1px)をデフォルトで表示", () => {
-      render(<Divider.V data-testid="vertical-divider" />);
+      render(<VDivider data-testid="vertical-divider" />);
       const divider = screen.getByTestId("vertical-divider");
 
       // <hr>要素であることを確認
@@ -19,7 +19,7 @@ describe("Divider", () => {
     });
 
     it("thicknessをカスタムで表示", () => {
-      render(<Divider.V thickness={3} data-testid="vertical-divider" />);
+      render(<VDivider thickness={3} data-testid="vertical-divider" />);
       const divider = screen.getByTestId("vertical-divider");
 
       // カスタムのthicknessが適用されていることを確認
@@ -28,7 +28,7 @@ describe("Divider", () => {
 
     it("追加のclassNameとstyleを適用", () => {
       render(
-        <Divider.V
+        <VDivider
           data-testid="vertical-divider"
           className="custom-class"
           style={{ borderStyle: "dashed" }}
@@ -44,7 +44,7 @@ describe("Divider", () => {
 
     it("refが正しく設定されている", () => {
       const ref = React.createRef<HTMLHRElement>();
-      render(<Divider.V ref={ref} />);
+      render(<VDivider ref={ref} />);
 
       expect(ref.current).toBeInstanceOf(HTMLHRElement);
     });
@@ -52,7 +52,7 @@ describe("Divider", () => {
 
   describe("Divider.H", () => {
     it("thickness(1px)をデフォルトで表示", () => {
-      render(<Divider.H data-testid="horizontal-divider" />);
+      render(<HDivider data-testid="horizontal-divider" />);
       const divider = screen.getByTestId("horizontal-divider");
 
       // <hr>要素であることを確認
@@ -64,7 +64,7 @@ describe("Divider", () => {
     });
 
     it("thicknessをカスタムで表示", () => {
-      render(<Divider.H thickness={1} data-testid="horizontal-divider" />);
+      render(<HDivider thickness={1} data-testid="horizontal-divider" />);
       const divider = screen.getByTestId("horizontal-divider");
 
       // カスタムのthickness(1)が適用されている
@@ -73,7 +73,7 @@ describe("Divider", () => {
 
     it("追加のclassNameとstyleを適用", () => {
       render(
-        <Divider.H
+        <HDivider
           data-testid="horizontal-divider"
           className="custom-class"
           style={{ borderStyle: "dashed" }}
@@ -89,7 +89,7 @@ describe("Divider", () => {
 
     it("refが正しく設定されている", () => {
       const ref = React.createRef<HTMLHRElement>();
-      render(<Divider.H ref={ref} />);
+      render(<HDivider ref={ref} />);
 
       expect(ref.current).toBeInstanceOf(HTMLHRElement);
     });

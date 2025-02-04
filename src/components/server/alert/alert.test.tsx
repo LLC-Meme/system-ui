@@ -2,7 +2,7 @@ import React from "react";
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
-import Alert from "./alert";
+import { Alert } from "./alert";
 
 describe("Alert", () => {
   it("個要素とともに表示される", () => {

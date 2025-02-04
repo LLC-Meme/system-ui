@@ -6,7 +6,7 @@ export interface DividerProps extends React.ComponentPropsWithoutRef<"hr"> {
   thickness?: Thickness;
 }
 
-const V = React.forwardRef<HTMLHRElement, DividerProps>(
+const VDivider = React.forwardRef<HTMLHRElement, DividerProps>(
   ({ thickness = 1, ...props }, ref) => {
     return (
       <hr
@@ -24,9 +24,9 @@ const V = React.forwardRef<HTMLHRElement, DividerProps>(
     );
   },
 );
-V.displayName = "Divider.V";
+VDivider.displayName = "Divider.V";
 
-const H = React.forwardRef<HTMLHRElement, DividerProps>(
+const HDivider = React.forwardRef<HTMLHRElement, DividerProps>(
   ({ thickness = 1, ...props }, ref) => {
     return (
       <hr
@@ -44,10 +44,6 @@ const H = React.forwardRef<HTMLHRElement, DividerProps>(
     );
   },
 );
-H.displayName = "Divider.H";
+HDivider.displayName = "Divider.H";
 
-const Divider = {
-  V,
-  H,
-};
-export default Divider;
+export { VDivider, HDivider };

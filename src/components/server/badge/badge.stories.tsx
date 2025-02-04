@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import Badge from "./badge";
+import { Badge } from "./badge";
 
 /**
  * タグ付けなどに使う小さなラベルを表示するコンポーネントです。

@@ -5,7 +5,7 @@ export interface PageTitleProps extends React.ComponentPropsWithoutRef<"h1"> {
   children: React.ReactNode;
 }
 
-const Page = React.forwardRef<HTMLHeadingElement, PageTitleProps>(
+const PageTitle = React.forwardRef<HTMLHeadingElement, PageTitleProps>(
   ({ children, ...props }, ref) => {
     return (
       <h1
@@ -18,14 +18,14 @@ const Page = React.forwardRef<HTMLHeadingElement, PageTitleProps>(
     );
   },
 );
-Page.displayName = "Title.Page";
+PageTitle.displayName = "PageTitle";
 
 export interface SectionTitleProps
   extends React.ComponentPropsWithoutRef<"h2"> {
   children: React.ReactNode;
 }
 
-const Section = React.forwardRef<HTMLHeadingElement, SectionTitleProps>(
+const SectionTitle = React.forwardRef<HTMLHeadingElement, SectionTitleProps>(
   ({ children, ...props }, ref) => {
     return (
       <h2
@@ -38,13 +38,13 @@ const Section = React.forwardRef<HTMLHeadingElement, SectionTitleProps>(
     );
   },
 );
-Section.displayName = "Title.Section";
+SectionTitle.displayName = "SectionTitle";
 
 export interface BlockTitleProps extends React.ComponentPropsWithoutRef<"h3"> {
   children: React.ReactNode;
 }
 
-const Block = React.forwardRef<HTMLHeadingElement, BlockTitleProps>(
+const BlockTitle = React.forwardRef<HTMLHeadingElement, BlockTitleProps>(
   ({ children, ...props }, ref) => {
     return (
       <h3
@@ -57,11 +57,6 @@ const Block = React.forwardRef<HTMLHeadingElement, BlockTitleProps>(
     );
   },
 );
-Block.displayName = "Title.Block";
+BlockTitle.displayName = "BlockTitle";
 
-const Title = {
-  Page,
-  Section,
-  Block,
-};
-export default Title;
+export { PageTitle, SectionTitle, BlockTitle };

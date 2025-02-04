@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import Stack from "./stack";
+import { HStack } from "./stack";
 
 /**
  * 水平方向のスタックをするためのコンポーネントです。
@@ -7,7 +7,7 @@ import Stack from "./stack";
  */
 const meta = {
   title: "Util/Stack/H",
-  component: Stack.H,
+  component: HStack,
   parameters: {
     layout: "centered",
   },
@@ -40,10 +40,10 @@ const meta = {
     },
   },
   tags: ["autodocs"],
-} satisfies Meta<typeof Stack.H>;
+} satisfies Meta<typeof HStack>;
 
 export default meta;
-type Story = StoryObj<typeof Stack.H>;
+type Story = StoryObj<typeof HStack>;
 
 export const Example: Story = {
   args: {

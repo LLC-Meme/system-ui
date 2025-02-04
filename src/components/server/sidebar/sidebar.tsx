@@ -8,7 +8,7 @@ export interface SidebarItemProps extends React.ComponentPropsWithoutRef<"a"> {
   children: React.ReactNode;
 }
 
-const Item = React.forwardRef<HTMLAnchorElement, SidebarItemProps>(
+const SidebarItem = React.forwardRef<HTMLAnchorElement, SidebarItemProps>(
   ({ current, asChild, children, ...props }, ref) => {
     const Comp = asChild ? Slot : "a";
 
@@ -28,34 +28,35 @@ const Item = React.forwardRef<HTMLAnchorElement, SidebarItemProps>(
     );
   },
 );
-Item.displayName = "Sidebar.Item";
+SidebarItem.displayName = "SidebarItem";
 
 export interface SidebarGroupLabelProps
   extends React.ComponentPropsWithoutRef<"div"> {
   children: React.ReactNode;
 }
 
-const GroupLabel = React.forwardRef<HTMLDivElement, SidebarGroupLabelProps>(
-  ({ children, ...props }, ref) => {
-    return (
-      <div
-        ref={ref}
-        {...props}
-        className="font-semibold text-foreground-muted mb-2"
-      >
-        {children}
-      </div>
-    );
-  },
-);
-GroupLabel.displayName = "Sidebar.GroupLabel";
+const SidebarGroupLabel = React.forwardRef<
+  HTMLDivElement,
+  SidebarGroupLabelProps
+>(({ children, ...props }, ref) => {
+  return (
+    <div
+      ref={ref}
+      {...props}
+      className="font-semibold text-foreground-muted mb-2"
+    >
+      {children}
+    </div>
+  );
+});
+SidebarGroupLabel.displayName = "SidebarGroupLabel";
 
 export interface SidebarGroupProps
   extends React.ComponentPropsWithoutRef<"div"> {
   children: React.ReactNode;
 }
 
-const Group = React.forwardRef<HTMLDivElement, SidebarGroupProps>(
+const SidebarGroup = React.forwardRef<HTMLDivElement, SidebarGroupProps>(
   ({ children, ...props }, ref) => {
     return (
       <div ref={ref} {...props}>
@@ -64,7 +65,7 @@ const Group = React.forwardRef<HTMLDivElement, SidebarGroupProps>(
     );
   },
 );
-Group.displayName = "Sidebar.Group";
+SidebarGroup.displayName = "SidebarGroup";
 
 export interface SidebarContainerProps
   extends React.ComponentPropsWithoutRef<"aside"> {
@@ -72,7 +73,7 @@ export interface SidebarContainerProps
   isOpen: boolean;
 }
 
-const Container = React.forwardRef<HTMLElement, SidebarContainerProps>(
+const SidebarContainer = React.forwardRef<HTMLElement, SidebarContainerProps>(
   ({ children, isOpen, ...props }, ref) => {
     return (
       <aside
@@ -91,13 +92,6 @@ const Container = React.forwardRef<HTMLElement, SidebarContainerProps>(
     );
   },
 );
-Container.displayName = "Sidebar.Container";
+SidebarContainer.displayName = "SidebarContainer";
 
-const Sidebar = {
-  Item,
-  GroupLabel,
-  Group,
-  Container,
-};
-
-export default Sidebar;
+export { SidebarItem, SidebarGroupLabel, SidebarGroup, SidebarContainer };

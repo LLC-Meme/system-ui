@@ -7,30 +7,31 @@ export interface ThemeSwitchContainerProps
   children: React.ReactNode;
 }
 
-const Container = React.forwardRef<HTMLDivElement, ThemeSwitchContainerProps>(
-  ({ children, ...props }, ref) => {
-    return (
-      <div
-        ref={ref}
-        {...props}
-        className={cn(
-          props.className,
-          "p-[2px] flex items-center justify-center rounded-full border border-info",
-        )}
-      >
-        {children}
-      </div>
-    );
-  },
-);
-Container.displayName = "ThemeSwitch.Container";
+const ThemeContainer = React.forwardRef<
+  HTMLDivElement,
+  ThemeSwitchContainerProps
+>(({ children, ...props }, ref) => {
+  return (
+    <div
+      ref={ref}
+      {...props}
+      className={cn(
+        props.className,
+        "p-[2px] flex items-center justify-center rounded-full border border-info",
+      )}
+    >
+      {children}
+    </div>
+  );
+});
+ThemeContainer.displayName = "ThemeSwitch.Container";
 
 export interface ThemeSwitchButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   current?: boolean;
 }
 
-const Light = React.forwardRef<HTMLButtonElement, ThemeSwitchButtonProps>(
+const ThemeLight = React.forwardRef<HTMLButtonElement, ThemeSwitchButtonProps>(
   ({ current, ...props }, ref) => {
     return (
       <button
@@ -48,9 +49,9 @@ const Light = React.forwardRef<HTMLButtonElement, ThemeSwitchButtonProps>(
     );
   },
 );
-Light.displayName = "ThemeSwitch.Light";
+ThemeLight.displayName = "ThemeSwitch.Light";
 
-const Dark = React.forwardRef<HTMLButtonElement, ThemeSwitchButtonProps>(
+const ThemeDark = React.forwardRef<HTMLButtonElement, ThemeSwitchButtonProps>(
   ({ current, ...props }, ref) => {
     return (
       <button
@@ -68,9 +69,9 @@ const Dark = React.forwardRef<HTMLButtonElement, ThemeSwitchButtonProps>(
     );
   },
 );
-Dark.displayName = "ThemeSwitch.Dark";
+ThemeDark.displayName = "ThemeSwitch.Dark";
 
-const System = React.forwardRef<HTMLButtonElement, ThemeSwitchButtonProps>(
+const ThemeSystem = React.forwardRef<HTMLButtonElement, ThemeSwitchButtonProps>(
   ({ current, ...props }, ref) => {
     return (
       <button
@@ -88,12 +89,6 @@ const System = React.forwardRef<HTMLButtonElement, ThemeSwitchButtonProps>(
     );
   },
 );
-System.displayName = "ThemeSwitch.System";
+ThemeSystem.displayName = "ThemeSwitch.System";
 
-const ThemeSwitch = {
-  Container,
-  Light,
-  Dark,
-  System,
-};
-export default ThemeSwitch;
+export { ThemeContainer, ThemeLight, ThemeDark, ThemeSystem };

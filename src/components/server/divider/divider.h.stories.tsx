@@ -1,6 +1,6 @@
 import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
-import Divider from "./divider";
+import { HDivider } from "./divider";
 
 /**
  * 水平方向の直線を表示するコンポーネントです。
@@ -8,7 +8,7 @@ import Divider from "./divider";
  */
 const meta = {
   title: "UI/Divider/H",
-  component: Divider.H,
+  component: HDivider,
   parameters: {
     layout: "centered",
   },
@@ -34,15 +34,15 @@ const meta = {
     },
   },
   tags: ["autodocs"],
-} satisfies Meta<typeof Divider.H>;
+} satisfies Meta<typeof HDivider>;
 
 export default meta;
-type Story = StoryObj<typeof Divider.H>;
+type Story = StoryObj<typeof HDivider>;
 
 export const Example: Story = {
   render: () => (
     <div className="w-40">
-      <Divider.H />
+      <HDivider />
     </div>
   ),
 };

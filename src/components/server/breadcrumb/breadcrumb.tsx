@@ -3,7 +3,7 @@ import { Slot } from "@radix-ui/react-slot";
 import { cn } from "../../../lib/cn";
 import { ChevronRight } from "lucide-react";
 
-function Separator() {
+function BreadcrumbSeparator() {
   return (
     <ChevronRight
       size={24}
@@ -12,7 +12,7 @@ function Separator() {
     />
   );
 }
-Separator.displayName = "Breadcrumb.Separator";
+BreadcrumbSeparator.displayName = "BreadcrumbSeparator";
 
 export interface BreadcrumbItemProps
   extends React.ComponentPropsWithoutRef<"a"> {
@@ -21,7 +21,7 @@ export interface BreadcrumbItemProps
   asChild?: boolean;
 }
 
-const Item = React.forwardRef<HTMLLIElement, BreadcrumbItemProps>(
+const BreadcrumbItem = React.forwardRef<HTMLLIElement, BreadcrumbItemProps>(
   ({ current, children, asChild, ...props }, ref) => {
     const Comp = asChild ? Slot : "a";
 
@@ -42,27 +42,22 @@ const Item = React.forwardRef<HTMLLIElement, BreadcrumbItemProps>(
     );
   },
 );
-Item.displayName = "Breadcrumb.Item";
+BreadcrumbItem.displayName = "Breadcrumb.Item";
 
 export interface BreadcrumbContainerProps {
   children: React.ReactNode;
 }
 
-const Container = React.forwardRef<HTMLOListElement, BreadcrumbContainerProps>(
-  ({ children }, ref) => {
-    return (
-      <ol ref={ref} className="flex gap-2">
-        {children}
-      </ol>
-    );
-  },
-);
-Container.displayName = "Breadcrumb.Container";
+const BreadcrumbContainer = React.forwardRef<
+  HTMLOListElement,
+  BreadcrumbContainerProps
+>(({ children }, ref) => {
+  return (
+    <ol ref={ref} className="flex gap-2">
+      {children}
+    </ol>
+  );
+});
+BreadcrumbContainer.displayName = "Breadcrumb.Container";
 
-const Breadcrumb = {
-  Separator,
-  Item,
-  Container,
-};
-
-export default Breadcrumb;
+export { BreadcrumbItem, BreadcrumbContainer, BreadcrumbSeparator };

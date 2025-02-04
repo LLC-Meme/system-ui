@@ -12,16 +12,17 @@ export interface PaginationContainerProps
   children: React.ReactNode;
 }
 
-const Container = React.forwardRef<HTMLElement, PaginationContainerProps>(
-  ({ children }, ref) => {
-    return (
-      <nav ref={ref} className="flex items-center gap-1">
-        {children}
-      </nav>
-    );
-  },
-);
-Container.displayName = "Pagination.Container";
+const PaginationContainer = React.forwardRef<
+  HTMLElement,
+  PaginationContainerProps
+>(({ children }, ref) => {
+  return (
+    <nav ref={ref} className="flex items-center gap-1">
+      {children}
+    </nav>
+  );
+});
+PaginationContainer.displayName = "Pagination.Container";
 
 export interface PaginationItemProps
   extends React.ComponentPropsWithoutRef<"a"> {
@@ -30,7 +31,7 @@ export interface PaginationItemProps
   asChild?: boolean;
 }
 
-const Item = React.forwardRef<HTMLAnchorElement, PaginationItemProps>(
+const PaginationItem = React.forwardRef<HTMLAnchorElement, PaginationItemProps>(
   ({ children, current, asChild, ...props }, ref) => {
     const Comp = asChild ? Slot : "a";
 
@@ -50,7 +51,7 @@ const Item = React.forwardRef<HTMLAnchorElement, PaginationItemProps>(
     );
   },
 );
-Item.displayName = "Pagination.Item";
+PaginationItem.displayName = "Pagination.Item";
 
 export interface PaginationButtonProps
   extends Omit<React.ComponentPropsWithoutRef<"a">, "as"> {
@@ -58,64 +59,64 @@ export interface PaginationButtonProps
   disabled?: boolean;
 }
 
-const Prev = React.forwardRef<HTMLAnchorElement, PaginationButtonProps>(
-  ({ as: Tag = "a", disabled, ...props }, ref) => {
-    return (
-      <Tag
-        ref={ref}
-        {...props}
-        className={cn(
-          props.className,
-          "center w-8 h-8 rounded-[4px] text-info",
-          "center w-8 h-8 rounded-[4px] text-info",
-          disabled && "opacity-[var(--disabled-opacity)] cursor-auto",
-          !disabled && "hover:bg-info-muted hover:cursor-pointer",
-        )}
-        aria-label="pagination-prev"
-      >
-        <ChevronLeft className="w-6 h-6 text-info" />
-      </Tag>
-    );
-  },
-);
-Prev.displayName = "Pagination.Prev";
+const PaginationPrev = React.forwardRef<
+  HTMLAnchorElement,
+  PaginationButtonProps
+>(({ as: Tag = "a", disabled, ...props }, ref) => {
+  return (
+    <Tag
+      ref={ref}
+      {...props}
+      className={cn(
+        props.className,
+        "center w-8 h-8 rounded-[4px] text-info",
+        "center w-8 h-8 rounded-[4px] text-info",
+        disabled && "opacity-[var(--disabled-opacity)] cursor-auto",
+        !disabled && "hover:bg-info-muted hover:cursor-pointer",
+      )}
+      aria-label="pagination-prev"
+    >
+      <ChevronLeft className="w-6 h-6 text-info" />
+    </Tag>
+  );
+});
+PaginationPrev.displayName = "Pagination.Prev";
 
-const Next = React.forwardRef<HTMLAnchorElement, PaginationButtonProps>(
-  ({ as: Tag = "a", disabled, ...props }, ref) => {
-    return (
-      <Tag
-        ref={ref}
-        {...props}
-        className={cn(
-          props.className,
-          "center w-8 h-8 rounded-[4px] text-info",
-          disabled && "opacity-[var(--disabled-opacity)] cursor-auto",
-          !disabled && "hover:bg-info-muted hover:cursor-pointer",
-        )}
-        aria-label="pagination-next"
-      >
-        <ChevronRight className="w-6 h-6 text-info" />
-      </Tag>
-    );
-  },
-);
-Next.displayName = "Pagination.Next";
+const PaginationNext = React.forwardRef<
+  HTMLAnchorElement,
+  PaginationButtonProps
+>(({ as: Tag = "a", disabled, ...props }, ref) => {
+  return (
+    <Tag
+      ref={ref}
+      {...props}
+      className={cn(
+        props.className,
+        "center w-8 h-8 rounded-[4px] text-info",
+        disabled && "opacity-[var(--disabled-opacity)] cursor-auto",
+        !disabled && "hover:bg-info-muted hover:cursor-pointer",
+      )}
+      aria-label="pagination-next"
+    >
+      <ChevronRight className="w-6 h-6 text-info" />
+    </Tag>
+  );
+});
+PaginationNext.displayName = "Pagination.Next";
 
-function Ellipsis() {
+function PaginationEllipsis() {
   return (
     <div className="w-8 h-8 center" aria-label="pagination-ellipsis">
       <LucideEllipsis className="w-6 h-6 text-info" />
     </div>
   );
 }
-Ellipsis.displayName = "Pagination.Ellipsis";
+PaginationEllipsis.displayName = "Pagination.Ellipsis";
 
-const Pagination = {
-  Container,
-  Prev,
-  Next,
-  Item,
-  Ellipsis,
+export {
+  PaginationContainer,
+  PaginationItem,
+  PaginationPrev,
+  PaginationNext,
+  PaginationEllipsis,
 };
-
-export default Pagination;

@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import Title from "./title";
+import { PageTitle } from "./title";
 
 const meta = {
   title: "UI/Title/Page",
-  component: Title.Page,
+  component: PageTitle,
   parameters: {
     layout: "centered",
   },
@@ -25,10 +25,10 @@ const meta = {
     },
   },
   tags: ["autodocs"],
-} satisfies Meta<typeof Title.Page>;
+} satisfies Meta<typeof PageTitle>;
 
 export default meta;
-type Story = StoryObj<typeof Title.Page>;
+type Story = StoryObj<typeof PageTitle>;
 
 export const Example: Story = {
   args: {

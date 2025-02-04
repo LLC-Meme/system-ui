@@ -1,86 +1,72 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import Sidebar from "./sidebar";
-import Collapsible from "../../client/collapsible/collapsible";
+import {
+  SidebarContainer,
+  SidebarGroup,
+  SidebarGroupLabel,
+  SidebarItem,
+} from "./sidebar";
+import {
+  CollapsibleRoot,
+  CollapsibleItem,
+  CollapsibleTrigger,
+  CollapsibleContent,
+} from "../../client/collapsible/collapsible";
 
 function SidebarExample() {
   return (
-    <Sidebar.Container isOpen className="w-80">
-      <Sidebar.Group>
-        <Sidebar.GroupLabel>Group Label</Sidebar.GroupLabel>
-        <Sidebar.Item>Item</Sidebar.Item>
-        <Sidebar.Item current>Current Item</Sidebar.Item>
-      </Sidebar.Group>
-      <Sidebar.Group>
-        <Sidebar.GroupLabel>Group Label</Sidebar.GroupLabel>
-        <Collapsible.Root>
-          <Collapsible.Trigger>Collapsible Trigger</Collapsible.Trigger>
-          <Collapsible.Content>
-            <Collapsible.Item href="/item1">
-              Collapsible Item 1
-            </Collapsible.Item>
-            <Collapsible.Item href="/item2">
-              Collapsible Item 2
-            </Collapsible.Item>
-          </Collapsible.Content>
-        </Collapsible.Root>
-        <Collapsible.Root>
-          <Collapsible.Trigger>Collapsible Trigger</Collapsible.Trigger>
-          <Collapsible.Content>
-            <Collapsible.Item href="/item1">
-              Collapsible Item 1
-            </Collapsible.Item>
-            <Collapsible.Item href="/item2">
-              Collapsible Item 2
-            </Collapsible.Item>
-          </Collapsible.Content>
-        </Collapsible.Root>
-        <Collapsible.Root>
-          <Collapsible.Trigger>Collapsible Trigger</Collapsible.Trigger>
-          <Collapsible.Content>
-            <Collapsible.Item href="/item1">
-              Collapsible Item 1
-            </Collapsible.Item>
-            <Collapsible.Item href="/item2">
-              Collapsible Item 2
-            </Collapsible.Item>
-          </Collapsible.Content>
-        </Collapsible.Root>
-        <Collapsible.Root>
-          <Collapsible.Trigger>Collapsible Trigger</Collapsible.Trigger>
-          <Collapsible.Content>
-            <Collapsible.Item href="/item1">
-              Collapsible Item 1
-            </Collapsible.Item>
-            <Collapsible.Item href="/item2">
-              Collapsible Item 2
-            </Collapsible.Item>
-          </Collapsible.Content>
-        </Collapsible.Root>
-        <Collapsible.Root>
-          <Collapsible.Trigger>Collapsible Trigger</Collapsible.Trigger>
-          <Collapsible.Content>
-            <Collapsible.Item href="/item1">
-              Collapsible Item 1
-            </Collapsible.Item>
-            <Collapsible.Item href="/item2">
-              Collapsible Item 2
-            </Collapsible.Item>
-          </Collapsible.Content>
-        </Collapsible.Root>
-        <Collapsible.Root>
-          <Collapsible.Trigger>Collapsible Trigger</Collapsible.Trigger>
-          <Collapsible.Content>
-            <Collapsible.Item href="/item1">
-              Collapsible Item 1
-            </Collapsible.Item>
-            <Collapsible.Item href="/item2">
-              Collapsible Item 2
-            </Collapsible.Item>
-          </Collapsible.Content>
-        </Collapsible.Root>
-      </Sidebar.Group>
-    </Sidebar.Container>
+    <SidebarContainer isOpen className="w-80">
+      <SidebarGroup>
+        <SidebarGroupLabel>Group Label</SidebarGroupLabel>
+        <SidebarItem>Item</SidebarItem>
+        <SidebarItem current>Current Item</SidebarItem>
+      </SidebarGroup>
+      <SidebarGroup>
+        <SidebarGroupLabel>Group Label</SidebarGroupLabel>
+        <CollapsibleRoot>
+          <CollapsibleTrigger>Collapsible Trigger</CollapsibleTrigger>
+          <CollapsibleContent>
+            <CollapsibleItem href="/item1">Collapsible Item 1</CollapsibleItem>
+            <CollapsibleItem href="/item2">Collapsible Item 2</CollapsibleItem>
+          </CollapsibleContent>
+        </CollapsibleRoot>
+        <CollapsibleRoot>
+          <CollapsibleTrigger>Collapsible Trigger</CollapsibleTrigger>
+          <CollapsibleContent>
+            <CollapsibleItem href="/item1">Collapsible Item 1</CollapsibleItem>
+            <CollapsibleItem href="/item2">Collapsible Item 2</CollapsibleItem>
+          </CollapsibleContent>
+        </CollapsibleRoot>
+        <CollapsibleRoot>
+          <CollapsibleTrigger>Collapsible Trigger</CollapsibleTrigger>
+          <CollapsibleContent>
+            <CollapsibleItem href="/item1">Collapsible Item 1</CollapsibleItem>
+            <CollapsibleItem href="/item2">Collapsible Item 2</CollapsibleItem>
+          </CollapsibleContent>
+        </CollapsibleRoot>
+        <CollapsibleRoot>
+          <CollapsibleTrigger>Collapsible Trigger</CollapsibleTrigger>
+          <CollapsibleContent>
+            <CollapsibleItem href="/item1">Collapsible Item 1</CollapsibleItem>
+            <CollapsibleItem href="/item2">Collapsible Item 2</CollapsibleItem>
+          </CollapsibleContent>
+        </CollapsibleRoot>
+        <CollapsibleRoot>
+          <CollapsibleTrigger>Collapsible Trigger</CollapsibleTrigger>
+          <CollapsibleContent>
+            <CollapsibleItem href="/item1">Collapsible Item 1</CollapsibleItem>
+            <CollapsibleItem href="/item2">Collapsible Item 2</CollapsibleItem>
+          </CollapsibleContent>
+        </CollapsibleRoot>
+        <CollapsibleRoot>
+          <CollapsibleTrigger>Collapsible Trigger</CollapsibleTrigger>
+          <CollapsibleContent>
+            <CollapsibleItem href="/item1">Collapsible Item 1</CollapsibleItem>
+            <CollapsibleItem href="/item2">Collapsible Item 2</CollapsibleItem>
+          </CollapsibleContent>
+        </CollapsibleRoot>
+      </SidebarGroup>
+    </SidebarContainer>
   );
 }
 

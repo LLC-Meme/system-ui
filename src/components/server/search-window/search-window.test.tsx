@@ -2,16 +2,14 @@ import React from "react";
 import "@testing-library/jest-dom";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
-import SearchWindow from "./search-window";
-
-const { Container, Input } = SearchWindow;
+import { SearchWindowContainer, SearchWindowInput } from "./search-window";
 
 describe("SearchWindow", () => {
   it("Containerがデフォルトのclassで表示", () => {
     render(
-      <Container data-testid="search-container">
-        <Input />
-      </Container>,
+      <SearchWindowContainer data-testid="search-container">
+        <SearchWindowInput />
+      </SearchWindowContainer>,
     );
 
     const container = screen.getByTestId("search-container");
@@ -27,9 +25,12 @@ describe("SearchWindow", () => {
 
   it("カスタムのclassNameが適用されている", () => {
     render(
-      <Container data-testid="search-container" className="custom-container">
-        <Input />
-      </Container>,
+      <SearchWindowContainer
+        data-testid="search-container"
+        className="custom-container"
+      >
+        <SearchWindowInput />
+      </SearchWindowContainer>,
     );
     const container = screen.getByTestId("search-container");
     expect(container).toHaveClass("custom-container");
@@ -39,9 +40,9 @@ describe("SearchWindow", () => {
     const containerRef = React.createRef<HTMLDivElement>();
 
     render(
-      <Container ref={containerRef}>
-        <Input />
-      </Container>,
+      <SearchWindowContainer ref={containerRef}>
+        <SearchWindowInput />
+      </SearchWindowContainer>,
     );
 
     // refがContainerに適用されていることを確認
@@ -50,9 +51,9 @@ describe("SearchWindow", () => {
 
   it("inputがデフォルトのclassで表示", () => {
     render(
-      <Container>
-        <Input data-testid="search-input" placeholder="Search..." />
-      </Container>,
+      <SearchWindowContainer>
+        <SearchWindowInput data-testid="search-input" placeholder="Search..." />
+      </SearchWindowContainer>,
     );
     const inputEl = screen.getByTestId("search-input");
 
@@ -73,9 +74,12 @@ describe("SearchWindow", () => {
 
   it("inputにカスタムのクラスが適用", () => {
     render(
-      <Container>
-        <Input data-testid="search-input" className="custom-input" />
-      </Container>,
+      <SearchWindowContainer>
+        <SearchWindowInput
+          data-testid="search-input"
+          className="custom-input"
+        />
+      </SearchWindowContainer>,
     );
     const inputEl = screen.getByTestId("search-input");
     expect(inputEl).toHaveClass("custom-input");
@@ -85,9 +89,9 @@ describe("SearchWindow", () => {
     const inputRef = React.createRef<HTMLInputElement>();
 
     render(
-      <Container>
-        <Input ref={inputRef} />
-      </Container>,
+      <SearchWindowContainer>
+        <SearchWindowInput ref={inputRef} />
+      </SearchWindowContainer>,
     );
 
     // refがinputに適用されていることを確認
@@ -96,9 +100,9 @@ describe("SearchWindow", () => {
 
   it("inputに入力できる", () => {
     render(
-      <Container>
-        <Input data-testid="search-input" />
-      </Container>,
+      <SearchWindowContainer>
+        <SearchWindowInput data-testid="search-input" />
+      </SearchWindowContainer>,
     );
     const inputEl = screen.getByTestId("search-input") as HTMLInputElement;
 

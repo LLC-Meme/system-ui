@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import Stack from "./stack";
+import { VStack } from "./stack";
 
 /**
  * 垂直方向のスタックをするためのコンポーネントです。
@@ -7,7 +7,7 @@ import Stack from "./stack";
  */
 const meta = {
   title: "Util/Stack/V",
-  component: Stack.V,
+  component: VStack,
   parameters: {
     layout: "centered",
   },
@@ -40,10 +40,10 @@ const meta = {
     },
   },
   tags: ["autodocs"],
-} satisfies Meta<typeof Stack.V>;
+} satisfies Meta<typeof VStack>;
 
 export default meta;
-type Story = StoryObj<typeof Stack.V>;
+type Story = StoryObj<typeof VStack>;
 
 export const Example: Story = {
   args: {

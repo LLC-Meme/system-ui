@@ -2,7 +2,7 @@ import React from "react";
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
-import Main from "./main";
+import { Main } from "./main";
 
 describe("Main", () => {
   it("デフォルトのclassとchildrenを表示", () => {

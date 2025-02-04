@@ -16,7 +16,7 @@ export interface StackProps extends React.ComponentPropsWithoutRef<"div"> {
   gap?: Gap;
 }
 
-const V = React.forwardRef<HTMLDivElement, StackProps>(
+const VStack = React.forwardRef<HTMLDivElement, StackProps>(
   ({ children, gap = "none", ...props }, ref) => {
     return (
       <div
@@ -29,9 +29,9 @@ const V = React.forwardRef<HTMLDivElement, StackProps>(
     );
   },
 );
-V.displayName = "Stack.V";
+VStack.displayName = "Stack.V";
 
-const H = React.forwardRef<HTMLDivElement, StackProps>(
+const HStack = React.forwardRef<HTMLDivElement, StackProps>(
   ({ children, gap = "none", ...props }, ref) => {
     return (
       <div
@@ -44,10 +44,6 @@ const H = React.forwardRef<HTMLDivElement, StackProps>(
     );
   },
 );
-H.displayName = "Stack.H";
+HStack.displayName = "Stack.H";
 
-const Stack = {
-  V,
-  H,
-};
-export default Stack;
+export { VStack, HStack };
