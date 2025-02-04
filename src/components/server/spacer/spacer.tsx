@@ -15,7 +15,7 @@ const VSpacer = React.forwardRef<HTMLDivElement, SpacerProps>(
     );
   },
 );
-VSpacer.displayName = "Spacer.V";
+VSpacer.displayName = "VSpacer";
 
 const HSpacer = React.forwardRef<HTMLDivElement, SpacerProps>(
   ({ unit = 1, ...props }, ref) => {
@@ -25,6 +25,6 @@ const HSpacer = React.forwardRef<HTMLDivElement, SpacerProps>(
     );
   },
 );
-HSpacer.displayName = "Spacer.H";
+HSpacer.displayName = "HSpacer";
 
 export { VSpacer, HSpacer };

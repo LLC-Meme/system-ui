@@ -24,7 +24,7 @@ const VDivider = React.forwardRef<HTMLHRElement, DividerProps>(
     );
   },
 );
-VDivider.displayName = "Divider.V";
+VDivider.displayName = "VDivider";
 
 const HDivider = React.forwardRef<HTMLHRElement, DividerProps>(
   ({ thickness = 1, ...props }, ref) => {
@@ -44,6 +44,6 @@ const HDivider = React.forwardRef<HTMLHRElement, DividerProps>(
     );
   },
 );
-HDivider.displayName = "Divider.H";
+HDivider.displayName = "HDivider";
 
 export { VDivider, HDivider };

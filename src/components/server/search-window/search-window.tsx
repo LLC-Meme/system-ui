@@ -25,7 +25,7 @@ const SearchWindowContainer = React.forwardRef<
     </div>
   );
 });
-SearchWindowContainer.displayName = "SearchWindow.Container";
+SearchWindowContainer.displayName = "SearchWindowContainer";
 
 function MagnifyingGlass({ className }: { className: string }) {
   return <Search className={cn(className, "pointer-events-none w-5 h-5")} />;
@@ -49,6 +49,6 @@ const SearchWindowInput = React.forwardRef<
     />
   );
 });
-SearchWindowInput.displayName = "SearchWindow.Input";
+SearchWindowInput.displayName = "SearchWindowInput";
 
 export { SearchWindowContainer, SearchWindowInput };

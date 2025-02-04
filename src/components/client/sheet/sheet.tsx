@@ -4,7 +4,7 @@ import * as React from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 import { cn } from "../../../lib/cn";
 import { X } from "lucide-react";
-import Stack from "../../server/stack/stack";
+import { HStack } from "../../server/stack/stack";
 
 const SheetRoot = Dialog.Root;
 const SheetTrigger = Dialog.Trigger;
@@ -44,11 +44,11 @@ const SheetContent = React.forwardRef<
           "rounded-tl-2xl rounded-bl-2xl overflow-scroll",
         )}
       >
-        <Stack.H className="justify-end mb-4">
+        <HStack className="justify-end mb-4">
           <SheetClose className="hover:text-foreground-muted">
             <X className="w-6 h-6" />
           </SheetClose>
-        </Stack.H>
+        </HStack>
         {children}
       </Dialog.Content>
     </Dialog.Portal>

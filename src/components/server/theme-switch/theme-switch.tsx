@@ -24,7 +24,7 @@ const ThemeContainer = React.forwardRef<
     </div>
   );
 });
-ThemeContainer.displayName = "ThemeSwitch.Container";
+ThemeContainer.displayName = "ThemeContainer";
 
 export interface ThemeSwitchButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -49,7 +49,7 @@ const ThemeLight = React.forwardRef<HTMLButtonElement, ThemeSwitchButtonProps>(
     );
   },
 );
-ThemeLight.displayName = "ThemeSwitch.Light";
+ThemeLight.displayName = "ThemeLight";
 
 const ThemeDark = React.forwardRef<HTMLButtonElement, ThemeSwitchButtonProps>(
   ({ current, ...props }, ref) => {
@@ -69,7 +69,7 @@ const ThemeDark = React.forwardRef<HTMLButtonElement, ThemeSwitchButtonProps>(
     );
   },
 );
-ThemeDark.displayName = "ThemeSwitch.Dark";
+ThemeDark.displayName = "ThemeDark";
 
 const ThemeSystem = React.forwardRef<HTMLButtonElement, ThemeSwitchButtonProps>(
   ({ current, ...props }, ref) => {
@@ -89,6 +89,6 @@ const ThemeSystem = React.forwardRef<HTMLButtonElement, ThemeSwitchButtonProps>(
     );
   },
 );
-ThemeSystem.displayName = "ThemeSwitch.System";
+ThemeSystem.displayName = "ThemeSystem";
 
 export { ThemeContainer, ThemeLight, ThemeDark, ThemeSystem };

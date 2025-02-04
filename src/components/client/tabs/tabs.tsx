@@ -33,7 +33,7 @@ const Tabs = React.forwardRef<HTMLDivElement, TabProps>(
     );
   },
 );
-Tabs.displayName = "Tab";
+Tabs.displayName = "Tabs";
 
 function Item({
   children,

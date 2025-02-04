@@ -42,7 +42,7 @@ const BreadcrumbItem = React.forwardRef<HTMLLIElement, BreadcrumbItemProps>(
     );
   },
 );
-BreadcrumbItem.displayName = "Breadcrumb.Item";
+BreadcrumbItem.displayName = "BreadcrumbItem";
 
 export interface BreadcrumbContainerProps {
   children: React.ReactNode;
@@ -58,6 +58,6 @@ const BreadcrumbContainer = React.forwardRef<
     </ol>
   );
 });
-BreadcrumbContainer.displayName = "Breadcrumb.Container";
+BreadcrumbContainer.displayName = "BreadcrumbContainer";
 
 export { BreadcrumbItem, BreadcrumbContainer, BreadcrumbSeparator };

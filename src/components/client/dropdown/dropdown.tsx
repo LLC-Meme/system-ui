@@ -4,7 +4,7 @@ import * as React from "react";
 import * as RadixDropdown from "@radix-ui/react-dropdown-menu";
 import { ChevronRight } from "lucide-react";
 import { cn } from "../../../lib/cn";
-import * as D from "../../server/divider/divider";
+import { HDivider } from "../../server/divider/divider";
 
 const DropdownRoot = RadixDropdown.Root;
 const DropdownTrigger = RadixDropdown.Trigger;
@@ -115,7 +115,7 @@ const DropdownItem = React.forwardRef<
 DropdownItem.displayName = "DropdownItem";
 
 const DropdownDivider = () => {
-  return <D.default.H thickness={1} />;
+  return <HDivider thickness={1} />;
 };
 DropdownDivider.displayName = "DropdownDivider";
 

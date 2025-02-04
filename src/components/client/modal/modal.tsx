@@ -3,7 +3,7 @@
 import * as React from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 import { cn } from "../../../lib/cn";
-import Stack from "../../server/stack/stack";
+import { HStack } from "../../server/stack/stack";
 import { X } from "lucide-react";
 
 const ModalRoot = Dialog.Root;
@@ -42,11 +42,11 @@ const ModalContent = React.forwardRef<
       )}
       {...props}
     >
-      <Stack.H className="justify-end mb-4">
+      <HStack className="justify-end mb-4">
         <ModalClose aria-label="close-modal">
           <X className="w-6 h-6" />
         </ModalClose>
-      </Stack.H>
+      </HStack>
       {children}
     </Dialog.Content>
   </Dialog.Portal>
