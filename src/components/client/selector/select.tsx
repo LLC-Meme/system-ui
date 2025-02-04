@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { cn } from "../../../lib/cn";
+import SelectorDefaultOption from "./default-option";
 
 export interface SelectorSelectProps
   extends React.ComponentPropsWithoutRef<"select"> {
@@ -62,32 +63,4 @@ const SelectorSelect = React.forwardRef<HTMLSelectElement, SelectorSelectProps>(
 );
 SelectorSelect.displayName = "SelectorSelect";
 
-export interface SelectorOptionProps
-  extends React.OptionHTMLAttributes<HTMLOptionElement> {
-  children: React.ReactNode;
-}
-
-const SelectorOption = React.forwardRef<HTMLOptionElement, SelectorOptionProps>(
-  ({ children, ...props }, ref) => {
-    return (
-      <option ref={ref} {...props}>
-        {children}
-      </option>
-    );
-  },
-);
-SelectorOption.displayName = "SelectorOption";
-
-const SelectorDefaultOption = React.forwardRef<
-  HTMLOptionElement,
-  SelectorOptionProps
->(({ children, ...props }, ref) => {
-  return (
-    <option ref={ref} disabled selected {...props}>
-      {children}
-    </option>
-  );
-});
-SelectorDefaultOption.displayName = "SelectorDefaultOption";
-
-export { SelectorSelect, SelectorOption, SelectorDefaultOption };
+export default SelectorSelect;

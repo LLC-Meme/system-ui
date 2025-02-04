@@ -4,11 +4,8 @@ import * as React from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 import { cn } from "../../../lib/cn";
 import { X } from "lucide-react";
-import { HStack } from "../../server/stack/stack";
-
-const SheetRoot = Dialog.Root;
-const SheetTrigger = Dialog.Trigger;
-const SheetClose = Dialog.Close;
+import HStack from "../../server/stack/h-stack";
+import SheetClose from "./close";
 
 interface SheetOverlayProps extends Dialog.DialogOverlayProps {
   className?: string;
@@ -56,33 +53,4 @@ const SheetContent = React.forwardRef<
 });
 SheetContent.displayName = "SheetContent";
 
-const SheetTitle = React.forwardRef<
-  React.ComponentRef<typeof Dialog.Title>,
-  React.ComponentPropsWithoutRef<typeof Dialog.Title>
->(({ className, ...props }, ref) => {
-  return (
-    <Dialog.Title
-      ref={ref}
-      className={cn("text-lg font-bold", className)}
-      {...props}
-    />
-  );
-});
-SheetTitle.displayName = "SheetTitle";
-
-const SheetDescription = React.forwardRef<
-  React.ComponentRef<typeof Dialog.Description>,
-  React.ComponentPropsWithoutRef<typeof Dialog.Description>
->(({ className, ...props }, ref) => {
-  return <Dialog.Description ref={ref} className={className} {...props} />;
-});
-SheetDescription.displayName = "SheetDescription";
-
-export {
-  SheetRoot,
-  SheetTrigger,
-  SheetContent,
-  SheetTitle,
-  SheetDescription,
-  SheetClose,
-};
+export default SheetContent;

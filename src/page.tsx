@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import {
   HeaderContainer,
   HeaderSidebarController,
-} from "./components/client/header/header";
+} from "./components/server/header/header";
 import {
   SidebarContainer,
   SidebarGroup,
@@ -55,7 +55,7 @@ import {
   SelectorSelect,
   SelectorOption,
   SelectorDefaultOption,
-} from "./components/client/selector/selector";
+} from "./components/client/selector/select";
 import { LabelText } from "./components/server/label-text/label-text";
 import {
   RadioButton,

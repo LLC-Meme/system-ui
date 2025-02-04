@@ -3,12 +3,9 @@
 import * as React from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 import { cn } from "../../../lib/cn";
-import { HStack } from "../../server/stack/stack";
 import { X } from "lucide-react";
-
-const ModalRoot = Dialog.Root;
-const ModalTrigger = Dialog.Trigger;
-const ModalClose = Dialog.Close;
+import HStack from "../../server/stack/h-stack";
+import ModalClose from "./close";
 
 function ModalOverlay({
   className,
@@ -53,29 +50,4 @@ const ModalContent = React.forwardRef<
 ));
 ModalContent.displayName = "ModalContent";
 
-const ModalTitle = React.forwardRef<
-  React.ComponentRef<typeof Dialog.Title>,
-  React.ComponentPropsWithoutRef<typeof Dialog.Title>
->(({ className, ...props }, ref) => {
-  return (
-    <Dialog.Title ref={ref} className={cn("font-bold", className)} {...props} />
-  );
-});
-ModalTitle.displayName = "ModalTitle";
-
-const ModalDescription = React.forwardRef<
-  React.ComponentRef<typeof Dialog.Description>,
-  React.ComponentPropsWithoutRef<typeof Dialog.Description>
->(({ className, ...props }, ref) => {
-  return <Dialog.Description ref={ref} className={className} {...props} />;
-});
-ModalDescription.displayName = "ModalDescription";
-
-export {
-  ModalRoot,
-  ModalTrigger,
-  ModalContent,
-  ModalTitle,
-  ModalDescription,
-  ModalClose,
-};
+export default ModalContent;

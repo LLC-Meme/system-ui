@@ -61,4 +61,4 @@ function Item({
   );
 }
 
-export { Tabs };
+export default Tabs;

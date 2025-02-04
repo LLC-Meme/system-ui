@@ -183,4 +183,4 @@ const Day = React.memo(function Day({
   );
 });
 
-export { Calendar };
+export default Calendar;
