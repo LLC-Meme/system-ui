@@ -49,4 +49,4 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
 );
 Alert.displayName = "Alert";
 
-export { Alert };
+export default Alert;

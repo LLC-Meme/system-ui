@@ -1,24 +1,23 @@
 import * as React from "react";
 import { cn } from "../../../lib/cn";
 
-export interface LabelProps
-  extends React.LabelHTMLAttributes<HTMLLabelElement> {
+export interface RadioGroupProps extends React.ComponentPropsWithoutRef<"div"> {
   children: React.ReactNode;
 }
 
-const Label = React.forwardRef<HTMLLabelElement, LabelProps>(
+const RadioGroup = React.forwardRef<HTMLDivElement, RadioGroupProps>(
   ({ children, ...props }, ref) => {
     return (
-      <label
+      <div
         ref={ref}
         {...props}
         className={cn(props.className, "flex flex-col gap-2")}
       >
         {children}
-      </label>
+      </div>
     );
   },
 );
-Label.displayName = "Label";
+RadioGroup.displayName = "RadioGroup";
 
-export default Label;
+export default RadioGroup;

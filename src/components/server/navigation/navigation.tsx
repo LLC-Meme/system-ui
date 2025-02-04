@@ -27,4 +27,4 @@ const Navigation = React.forwardRef<HTMLAnchorElement, NavigationProps>(
 );
 Navigation.displayName = "Navigation";
 
-export { Navigation };
+export default Navigation;

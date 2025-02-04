@@ -1,11 +1,12 @@
 import * as React from "react";
 import { cn } from "../../../lib/cn";
 
-export interface LabelTextProps extends React.HTMLAttributes<HTMLSpanElement> {
+export interface RadioLabelTextProps
+  extends React.ComponentPropsWithoutRef<"span"> {
   children: React.ReactNode;
 }
 
-const LabelText = React.forwardRef<HTMLSpanElement, LabelTextProps>(
+const RadioLabelText = React.forwardRef<HTMLSpanElement, RadioLabelTextProps>(
   ({ children, ...props }, ref) => {
     return (
       <span
@@ -18,6 +19,6 @@ const LabelText = React.forwardRef<HTMLSpanElement, LabelTextProps>(
     );
   },
 );
-LabelText.displayName = "LabelText";
+RadioLabelText.displayName = "RadioLabelText";
 
-export default LabelText;
+export default RadioLabelText;

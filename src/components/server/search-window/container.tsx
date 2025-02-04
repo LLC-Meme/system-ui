@@ -31,24 +31,4 @@ function MagnifyingGlass({ className }: { className: string }) {
   return <Search className={cn(className, "pointer-events-none w-5 h-5")} />;
 }
 
-const SearchWindowInput = React.forwardRef<
-  HTMLInputElement,
-  React.ComponentPropsWithoutRef<"input">
->(({ ...props }, ref) => {
-  return (
-    <input
-      ref={ref}
-      {...props}
-      className={cn(
-        props.className,
-        "w-full h-full bg-transparent rounded-lg",
-        "pl-9 pr-2 outline-none",
-        "focus:border focus:border-info focus:pl-[35px]",
-        "placeholder:text-foreground-muted",
-      )}
-    />
-  );
-});
-SearchWindowInput.displayName = "SearchWindowInput";
-
-export { SearchWindowContainer, SearchWindowInput };
+export default SearchWindowContainer;

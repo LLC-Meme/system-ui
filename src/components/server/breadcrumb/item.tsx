@@ -1,18 +1,6 @@
 import * as React from "react";
 import { Slot } from "@radix-ui/react-slot";
 import { cn } from "../../../lib/cn";
-import { ChevronRight } from "lucide-react";
-
-function BreadcrumbSeparator() {
-  return (
-    <ChevronRight
-      size={24}
-      className="w-3 h-3 color-foreground mt-1"
-      aria-label="breadcrumb-separator"
-    />
-  );
-}
-BreadcrumbSeparator.displayName = "BreadcrumbSeparator";
 
 export interface BreadcrumbItemProps
   extends React.ComponentPropsWithoutRef<"a"> {
@@ -44,20 +32,4 @@ const BreadcrumbItem = React.forwardRef<HTMLLIElement, BreadcrumbItemProps>(
 );
 BreadcrumbItem.displayName = "BreadcrumbItem";
 
-export interface BreadcrumbContainerProps {
-  children: React.ReactNode;
-}
-
-const BreadcrumbContainer = React.forwardRef<
-  HTMLOListElement,
-  BreadcrumbContainerProps
->(({ children }, ref) => {
-  return (
-    <ol ref={ref} className="flex gap-2">
-      {children}
-    </ol>
-  );
-});
-BreadcrumbContainer.displayName = "BreadcrumbContainer";
-
-export { BreadcrumbItem, BreadcrumbContainer, BreadcrumbSeparator };
+export default BreadcrumbItem;
