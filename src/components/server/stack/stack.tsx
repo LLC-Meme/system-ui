@@ -29,7 +29,7 @@ const VStack = React.forwardRef<HTMLDivElement, StackProps>(
     );
   },
 );
-VStack.displayName = "Stack.V";
+VStack.displayName = "VStack";
 
 const HStack = React.forwardRef<HTMLDivElement, StackProps>(
   ({ children, gap = "none", ...props }, ref) => {
@@ -44,6 +44,6 @@ const HStack = React.forwardRef<HTMLDivElement, StackProps>(
     );
   },
 );
-HStack.displayName = "Stack.H";
+HStack.displayName = "HStack";
 
 export { VStack, HStack };
