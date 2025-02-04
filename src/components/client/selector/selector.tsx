@@ -8,7 +8,7 @@ export interface SelectorSelectProps
   children: React.ReactNode;
 }
 
-const Select = React.forwardRef<HTMLSelectElement, SelectorSelectProps>(
+const SelectorSelect = React.forwardRef<HTMLSelectElement, SelectorSelectProps>(
   ({ children, ...props }, ref) => {
     const [isDefault, setIsDefault] = React.useState(true);
 
@@ -20,7 +20,8 @@ const Select = React.forwardRef<HTMLSelectElement, SelectorSelectProps>(
     };
 
     const hasDefaultOption = React.Children.toArray(children).some(
-      (child) => React.isValidElement(child) && child.type === DefaultOption,
+      (child) =>
+        React.isValidElement(child) && child.type === SelectorDefaultOption,
     );
 
     React.useEffect(() => {
@@ -59,14 +60,14 @@ const Select = React.forwardRef<HTMLSelectElement, SelectorSelectProps>(
     );
   },
 );
-Select.displayName = "Selector.Select";
+SelectorSelect.displayName = "SelectorSelect";
 
 export interface SelectorOptionProps
   extends React.OptionHTMLAttributes<HTMLOptionElement> {
   children: React.ReactNode;
 }
 
-const Option = React.forwardRef<HTMLOptionElement, SelectorOptionProps>(
+const SelectorOption = React.forwardRef<HTMLOptionElement, SelectorOptionProps>(
   ({ children, ...props }, ref) => {
     return (
       <option ref={ref} {...props}>
@@ -75,23 +76,18 @@ const Option = React.forwardRef<HTMLOptionElement, SelectorOptionProps>(
     );
   },
 );
-Option.displayName = "Selector.Option";
+SelectorOption.displayName = "SelectorOption";
 
-const DefaultOption = React.forwardRef<HTMLOptionElement, SelectorOptionProps>(
-  ({ children, ...props }, ref) => {
-    return (
-      <option ref={ref} disabled selected {...props}>
-        {children}
-      </option>
-    );
-  },
-);
-DefaultOption.displayName = "Selector.DefaultOption";
+const SelectorDefaultOption = React.forwardRef<
+  HTMLOptionElement,
+  SelectorOptionProps
+>(({ children, ...props }, ref) => {
+  return (
+    <option ref={ref} disabled selected {...props}>
+      {children}
+    </option>
+  );
+});
+SelectorDefaultOption.displayName = "SelectorDefaultOption";
 
-const Selector = {
-  Select,
-  Option,
-  DefaultOption,
-};
-
-export default Selector;
+export { SelectorSelect, SelectorOption, SelectorDefaultOption };

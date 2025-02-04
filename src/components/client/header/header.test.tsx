@@ -2,17 +2,15 @@ import React from "react";
 import "@testing-library/jest-dom";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { describe, it, expect, vi } from "vitest";
-import Header from "./header";
-
-const { Container, SidebarController } = Header;
+import { HeaderContainer, HeaderSidebarController } from "./header";
 
 describe("Header", () => {
   describe("Container", () => {
     it("<header>要素がデフォルトのクラスで表示", () => {
       render(
-        <Container data-testid="header-container">
+        <HeaderContainer data-testid="header-container">
           <p>Header Content</p>
-        </Container>,
+        </HeaderContainer>,
       );
       const headerEl = screen.getByTestId("header-container");
 
@@ -38,9 +36,9 @@ describe("Header", () => {
     it("refを渡す", () => {
       const ref = React.createRef<HTMLDivElement>();
       render(
-        <Container ref={ref} data-testid="header-container-ref">
+        <HeaderContainer ref={ref} data-testid="header-container-ref">
           <p>Header Content</p>
-        </Container>,
+        </HeaderContainer>,
       );
       expect(ref.current?.tagName).toBe("HEADER");
     });
@@ -49,7 +47,10 @@ describe("Header", () => {
   describe("SidebarController", () => {
     it("<button>要素をデフォルトのクラスで表示", () => {
       render(
-        <SidebarController onClick={() => {}} data-testid="sidebar-button" />,
+        <HeaderSidebarController
+          onClick={() => {}}
+          data-testid="sidebar-button"
+        />,
       );
       const buttonEl = screen.getByTestId("sidebar-button");
 
@@ -60,7 +61,7 @@ describe("Header", () => {
     it("クリックした時にonClickが呼ばれる", () => {
       const handleClick = vi.fn();
       render(
-        <SidebarController
+        <HeaderSidebarController
           onClick={handleClick}
           data-testid="sidebar-button"
         />,
@@ -72,7 +73,7 @@ describe("Header", () => {
 
     it("refを渡す", () => {
       const ref = React.createRef<HTMLButtonElement>();
-      render(<SidebarController ref={ref} onClick={() => {}} />);
+      render(<HeaderSidebarController ref={ref} onClick={() => {}} />);
       expect(ref.current?.tagName).toBe("BUTTON");
     });
   });

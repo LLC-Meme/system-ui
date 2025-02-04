@@ -3,17 +3,17 @@ import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
 import userEvent from "@testing-library/user-event";
-import Tooltip from "./tooltip";
-
-const { Root, Trigger, Content } = Tooltip;
+import { TooltipRoot, TooltipTrigger, TooltipContent } from "./tooltip";
 
 describe("Tooltip", () => {
   function TestTooltip() {
     return (
-      <Root>
-        <Trigger data-testid="tooltip-trigger">Hover me</Trigger>
-        <Content data-testid="tooltip-content">Tooltip text</Content>
-      </Root>
+      <TooltipRoot>
+        <TooltipTrigger data-testid="tooltip-trigger">Hover me</TooltipTrigger>
+        <TooltipContent data-testid="tooltip-content">
+          Tooltip text
+        </TooltipContent>
+      </TooltipRoot>
     );
   }
 

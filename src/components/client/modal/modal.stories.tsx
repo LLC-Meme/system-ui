@@ -1,19 +1,19 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import Modal from "./modal";
+import { ModalRoot, ModalTrigger, ModalContent } from "./modal";
 import Button from "../../server/button/button";
 
 function ModalExample() {
   return (
-    <Modal.Root>
-      <Modal.Trigger>
+    <ModalRoot>
+      <ModalTrigger>
         <Button>Open modal</Button>
-      </Modal.Trigger>
-      <Modal.Content>
+      </ModalTrigger>
+      <ModalContent>
         <h1>Modal content</h1>
         <p>Some text in the modal</p>
-      </Modal.Content>
-    </Modal.Root>
+      </ModalContent>
+    </ModalRoot>
   );
 }
 

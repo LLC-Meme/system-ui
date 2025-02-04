@@ -1,14 +1,14 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import Selector from "./selector";
+import { SelectorSelect, SelectorOption } from "./selector";
 
 function SelectorExample() {
   return (
-    <Selector.Select>
-      <Selector.Option value="1">選択肢1</Selector.Option>
-      <Selector.Option value="2">選択肢2</Selector.Option>
-      <Selector.Option value="3">選択肢3</Selector.Option>
-    </Selector.Select>
+    <SelectorSelect>
+      <SelectorOption value="1">選択肢1</SelectorOption>
+      <SelectorOption value="2">選択肢2</SelectorOption>
+      <SelectorOption value="3">選択肢3</SelectorOption>
+    </SelectorSelect>
   );
 }
 

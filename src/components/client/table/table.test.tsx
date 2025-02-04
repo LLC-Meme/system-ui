@@ -2,31 +2,29 @@ import React from "react";
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
-import Table from "./table";
-
-const { Container, Head, Body, Foot, Row, HeadingCell, Cell } = Table;
+import { Table, Thead, Tbody, Tr, Th, Td, Tfoot } from "./table";
 
 describe("Table", () => {
   it("basicスタイルのtableのclassが正しい", () => {
     render(
-      <Container tableStyle="basic" data-testid="table-basic">
-        <Head>
-          <Row>
-            <HeadingCell>Column 1</HeadingCell>
-            <HeadingCell>Column 2</HeadingCell>
-          </Row>
-        </Head>
-        <Body>
-          <Row muted>
-            <Cell>Row 1, Cell 1</Cell>
-            <Cell>Row 1, Cell 2</Cell>
-          </Row>
-          <Row>
-            <Cell>Row 2, Cell 1</Cell>
-            <Cell>Row 2, Cell 2</Cell>
-          </Row>
-        </Body>
-      </Container>,
+      <Table tableStyle="basic" data-testid="table-basic">
+        <Thead>
+          <Tr>
+            <Th>Column 1</Th>
+            <Th>Column 2</Th>
+          </Tr>
+        </Thead>
+        <Tbody>
+          <Tr muted>
+            <Td>Row 1, Cell 1</Td>
+            <Td>Row 1, Cell 2</Td>
+          </Tr>
+          <Tr>
+            <Td>Row 2, Cell 1</Td>
+            <Td>Row 2, Cell 2</Td>
+          </Tr>
+        </Tbody>
+      </Table>,
     );
 
     // Containerにbasicスタイルのclassが適用されていることを確認
@@ -52,23 +50,23 @@ describe("Table", () => {
 
   it("plainスタイルのtableのclassが正しい", () => {
     render(
-      <Container tableStyle="plain" data-testid="table-plain">
-        <Head>
-          <Row>
-            <HeadingCell>Col A</HeadingCell>
-          </Row>
-        </Head>
-        <Body>
-          <Row>
-            <Cell>Row A, Cell A</Cell>
-          </Row>
-        </Body>
-        <Foot>
-          <Row>
-            <Cell>Footer content</Cell>
-          </Row>
-        </Foot>
-      </Container>,
+      <Table tableStyle="plain" data-testid="table-plain">
+        <Thead>
+          <Tr>
+            <Th>Col A</Th>
+          </Tr>
+        </Thead>
+        <Tbody>
+          <Tr>
+            <Td>Row A, Cell A</Td>
+          </Tr>
+        </Tbody>
+        <Tfoot>
+          <Tr>
+            <Td>Footer content</Td>
+          </Tr>
+        </Tfoot>
+      </Table>,
     );
 
     // Containerにbasicスタイルのclassが適用されていないことを確認
@@ -94,47 +92,47 @@ describe("Table", () => {
   it("tableが正しい構造で表示", () => {
     // 実際のユースケースを想定したサンプル
     render(
-      <Container tableStyle="basic" data-testid="basic-table">
-        <Head>
-          <Row>
-            <HeadingCell>Column 1</HeadingCell>
-            <HeadingCell>Column 2</HeadingCell>
-            <HeadingCell>Column 3</HeadingCell>
-            <HeadingCell>Column 4</HeadingCell>
-            <HeadingCell>Column 5</HeadingCell>
-          </Row>
-        </Head>
-        <Body>
-          <Row muted>
-            <Cell>Row 1, Cell 1</Cell>
-            <Cell>Row 1, Cell 2</Cell>
-            <Cell>Row 1, Cell 3</Cell>
-            <Cell>Row 1, Cell 4</Cell>
-            <Cell>Row 1, Cell 5</Cell>
-          </Row>
-          <Row>
-            <Cell>Row 2, Cell 1</Cell>
-            <Cell>Row 2, Cell 2</Cell>
-            <Cell>Row 2, Cell 3</Cell>
-            <Cell>Row 2, Cell 4</Cell>
-            <Cell>Row 2, Cell 5</Cell>
-          </Row>
-          <Row muted>
-            <Cell>Row 3, Cell 1</Cell>
-            <Cell>Row 3, Cell 2</Cell>
-            <Cell>Row 3, Cell 3</Cell>
-            <Cell>Row 3, Cell 4</Cell>
-            <Cell>Row 3, Cell 5</Cell>
-          </Row>
-          <Row>
-            <Cell>Row 4, Cell 1</Cell>
-            <Cell>Row 4, Cell 2</Cell>
-            <Cell>Row 4, Cell 3</Cell>
-            <Cell>Row 4, Cell 4</Cell>
-            <Cell>Row 4, Cell 5</Cell>
-          </Row>
-        </Body>
-      </Container>,
+      <Table tableStyle="basic" data-testid="basic-table">
+        <Thead>
+          <Tr>
+            <Th>Column 1</Th>
+            <Th>Column 2</Th>
+            <Th>Column 3</Th>
+            <Th>Column 4</Th>
+            <Th>Column 5</Th>
+          </Tr>
+        </Thead>
+        <Tbody>
+          <Tr muted>
+            <Td>Row 1, Cell 1</Td>
+            <Td>Row 1, Cell 2</Td>
+            <Td>Row 1, Cell 3</Td>
+            <Td>Row 1, Cell 4</Td>
+            <Td>Row 1, Cell 5</Td>
+          </Tr>
+          <Tr>
+            <Td>Row 2, Cell 1</Td>
+            <Td>Row 2, Cell 2</Td>
+            <Td>Row 2, Cell 3</Td>
+            <Td>Row 2, Cell 4</Td>
+            <Td>Row 2, Cell 5</Td>
+          </Tr>
+          <Tr muted>
+            <Td>Row 3, Cell 1</Td>
+            <Td>Row 3, Cell 2</Td>
+            <Td>Row 3, Cell 3</Td>
+            <Td>Row 3, Cell 4</Td>
+            <Td>Row 3, Cell 5</Td>
+          </Tr>
+          <Tr>
+            <Td>Row 4, Cell 1</Td>
+            <Td>Row 4, Cell 2</Td>
+            <Td>Row 4, Cell 3</Td>
+            <Td>Row 4, Cell 4</Td>
+            <Td>Row 4, Cell 5</Td>
+          </Tr>
+        </Tbody>
+      </Table>,
     );
 
     // 5行のテーブルが表示されていることを確認
@@ -153,13 +151,13 @@ describe("Table", () => {
   it("tableにrefが適用", () => {
     const ref = React.createRef<HTMLTableElement>();
     render(
-      <Container ref={ref} data-testid="ref-table">
-        <Body>
-          <Row>
-            <Cell>Cell 1</Cell>
-          </Row>
-        </Body>
-      </Container>,
+      <Table ref={ref} data-testid="ref-table">
+        <Tbody>
+          <Tr>
+            <Td>Cell 1</Td>
+          </Tr>
+        </Tbody>
+      </Table>,
     );
 
     expect(ref.current).toBeInstanceOf(HTMLTableElement);

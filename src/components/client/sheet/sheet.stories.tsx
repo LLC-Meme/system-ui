@@ -1,16 +1,16 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import Sheet from "./sheet";
+import { SheetRoot, SheetTrigger, SheetContent } from "./sheet";
 import Button from "../../server/button/button";
 
 function SheetExample() {
   return (
-    <Sheet.Root>
-      <Sheet.Trigger>
+    <SheetRoot>
+      <SheetTrigger>
         <Button>Open sheet</Button>
-      </Sheet.Trigger>
-      <Sheet.Content>Sheet content</Sheet.Content>
-    </Sheet.Root>
+      </SheetTrigger>
+      <SheetContent>Sheet content</SheetContent>
+    </SheetRoot>
   );
 }
 

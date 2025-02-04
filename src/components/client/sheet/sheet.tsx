@@ -6,15 +6,15 @@ import { cn } from "../../../lib/cn";
 import { X } from "lucide-react";
 import Stack from "../../server/stack/stack";
 
-const Root = Dialog.Root;
-const Trigger = Dialog.Trigger;
-const Close = Dialog.Close;
+const SheetRoot = Dialog.Root;
+const SheetTrigger = Dialog.Trigger;
+const SheetClose = Dialog.Close;
 
 interface SheetOverlayProps extends Dialog.DialogOverlayProps {
   className?: string;
 }
 
-function Overlay({ className, ...props }: SheetOverlayProps) {
+function SheetOverlay({ className, ...props }: SheetOverlayProps) {
   return (
     <Dialog.DialogOverlay
       {...props}
@@ -27,13 +27,13 @@ function Overlay({ className, ...props }: SheetOverlayProps) {
   );
 }
 
-const Content = React.forwardRef<
+const SheetContent = React.forwardRef<
   React.ComponentRef<typeof Dialog.Content>,
   React.ComponentPropsWithoutRef<typeof Dialog.Content>
 >(({ className, children, ...props }, ref) => {
   return (
     <Dialog.Portal>
-      <Overlay />
+      <SheetOverlay />
       <Dialog.Content
         ref={ref}
         {...props}
@@ -45,18 +45,18 @@ const Content = React.forwardRef<
         )}
       >
         <Stack.H className="justify-end mb-4">
-          <Close className="hover:text-foreground-muted">
+          <SheetClose className="hover:text-foreground-muted">
             <X className="w-6 h-6" />
-          </Close>
+          </SheetClose>
         </Stack.H>
         {children}
       </Dialog.Content>
     </Dialog.Portal>
   );
 });
-Content.displayName = "Sheet.Content";
+SheetContent.displayName = "SheetContent";
 
-const Title = React.forwardRef<
+const SheetTitle = React.forwardRef<
   React.ComponentRef<typeof Dialog.Title>,
   React.ComponentPropsWithoutRef<typeof Dialog.Title>
 >(({ className, ...props }, ref) => {
@@ -68,22 +68,21 @@ const Title = React.forwardRef<
     />
   );
 });
-Title.displayName = "Modal.Title";
+SheetTitle.displayName = "SheetTitle";
 
-const Description = React.forwardRef<
+const SheetDescription = React.forwardRef<
   React.ComponentRef<typeof Dialog.Description>,
   React.ComponentPropsWithoutRef<typeof Dialog.Description>
 >(({ className, ...props }, ref) => {
   return <Dialog.Description ref={ref} className={className} {...props} />;
 });
-Description.displayName = "Modal.Description";
+SheetDescription.displayName = "SheetDescription";
 
-const Sheet = {
-  Root,
-  Trigger,
-  Content,
-  Close,
-  Title,
-  Description,
+export {
+  SheetRoot,
+  SheetTrigger,
+  SheetContent,
+  SheetTitle,
+  SheetDescription,
+  SheetClose,
 };
-export default Sheet;

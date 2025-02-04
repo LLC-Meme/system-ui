@@ -1,13 +1,13 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import Header from "./header";
+import { HeaderContainer, HeaderSidebarController } from "./header";
 
 function HeaderExample() {
   return (
-    <Header.Container>
-      <Header.SidebarController onClick={() => {}} />
+    <HeaderContainer>
+      <HeaderSidebarController onClick={() => {}} />
       <div className="ml-4 text-lg font-semibold">Acme Dashboard</div>
-    </Header.Container>
+    </HeaderContainer>
   );
 }
 

@@ -6,7 +6,7 @@ export interface HeaderContainerProps
   children: React.ReactNode;
 }
 
-const Container = React.forwardRef<HTMLDivElement, HeaderContainerProps>(
+const HeaderContainer = React.forwardRef<HTMLDivElement, HeaderContainerProps>(
   ({ children, ...props }, ref) => {
     return (
       <header
@@ -19,9 +19,9 @@ const Container = React.forwardRef<HTMLDivElement, HeaderContainerProps>(
     );
   },
 );
-Container.displayName = "Header.Container";
+HeaderContainer.displayName = "HeaderContainer";
 
-const SidebarController = React.forwardRef<
+const HeaderSidebarController = React.forwardRef<
   HTMLButtonElement,
   React.ComponentPropsWithoutRef<"button">
 >(({ ...props }, ref) => {
@@ -31,11 +31,6 @@ const SidebarController = React.forwardRef<
     </button>
   );
 });
-SidebarController.displayName = "Header.SidebarController";
+HeaderSidebarController.displayName = "HeaderSidebarController";
 
-const Header = {
-  Container,
-  SidebarController,
-};
-
-export default Header;
+export { HeaderContainer, HeaderSidebarController };

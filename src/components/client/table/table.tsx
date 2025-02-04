@@ -13,7 +13,7 @@ export interface TableProps extends React.ComponentPropsWithoutRef<"table"> {
   children: React.ReactNode;
 }
 
-const Container = React.forwardRef<HTMLTableElement, TableProps>(
+const Table = React.forwardRef<HTMLTableElement, TableProps>(
   ({ tableStyle = "basic", children, ...props }, ref) => {
     return (
       <TableStyleContext.Provider value={tableStyle}>
@@ -35,9 +35,9 @@ const Container = React.forwardRef<HTMLTableElement, TableProps>(
     );
   },
 );
-Container.displayName = "Table.Container";
+Table.displayName = "Table";
 
-function Head({
+function Thead({
   children,
   ...props
 }: React.PropsWithChildren<
@@ -45,9 +45,9 @@ function Head({
 >) {
   return <thead {...props}>{children}</thead>;
 }
-Head.displayName = "Table.Head";
+Thead.displayName = "Thead";
 
-function Body({
+function Tbody({
   children,
   ...props
 }: React.PropsWithChildren<
@@ -55,9 +55,9 @@ function Body({
 >) {
   return <tbody {...props}>{children}</tbody>;
 }
-Body.displayName = "Table.Body";
+Tbody.displayName = "Tbody";
 
-function Foot({
+function Tfoot({
   children,
   ...props
 }: React.PropsWithChildren<
@@ -65,9 +65,9 @@ function Foot({
 >) {
   return <tfoot {...props}>{children}</tfoot>;
 }
-Foot.displayName = "Table.Foot";
+Tfoot.displayName = "Tfoot";
 
-function Row({
+function Tr({
   children,
   muted = false,
   className,
@@ -90,9 +90,9 @@ function Row({
     </tr>
   );
 }
-Row.displayName = "Table.Row";
+Tr.displayName = "Tr";
 
-function HeadingCell({
+function Th({
   children,
   className,
   ...props
@@ -116,9 +116,9 @@ function HeadingCell({
     </th>
   );
 }
-HeadingCell.displayName = "Table.HeadingCell";
+Th.displayName = "Th";
 
-function Cell({
+function Td({
   children,
   className,
   ...props
@@ -139,16 +139,6 @@ function Cell({
     </td>
   );
 }
-Cell.displayName = "Table.Cell";
+Td.displayName = "Td";
 
-const Table = {
-  Container,
-  Head,
-  Body,
-  Foot,
-  Row,
-  HeadingCell,
-  Cell,
-};
-
-export default Table;
+export { Table, Thead, Tbody, Tfoot, Tr, Th, Td };

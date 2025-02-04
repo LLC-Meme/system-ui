@@ -19,7 +19,7 @@ export interface CollapsibleRootProps
   children: React.ReactNode;
 }
 
-const Root = React.forwardRef<HTMLDivElement, CollapsibleRootProps>(
+const CollapsibleRoot = React.forwardRef<HTMLDivElement, CollapsibleRootProps>(
   ({ children, ...props }, ref) => {
     const [isOpen, setIsOpen] = React.useState(false);
     return (
@@ -36,55 +36,57 @@ const Root = React.forwardRef<HTMLDivElement, CollapsibleRootProps>(
     );
   },
 );
-Root.displayName = "Collapsible.Root";
+CollapsibleRoot.displayName = "CollapsibleRoot";
 
 export interface CollapsibleTriggerProps
   extends React.ComponentPropsWithoutRef<"button"> {
   children: React.ReactNode;
 }
 
-const Trigger = React.forwardRef<HTMLButtonElement, CollapsibleTriggerProps>(
-  ({ children, ...props }, ref) => {
-    const { isOpen } = React.useContext(CollapsibleContext);
-    return (
-      <RadixCollapsible.Trigger
-        ref={ref}
-        {...props}
+const CollapsibleTrigger = React.forwardRef<
+  HTMLButtonElement,
+  CollapsibleTriggerProps
+>(({ children, ...props }, ref) => {
+  const { isOpen } = React.useContext(CollapsibleContext);
+  return (
+    <RadixCollapsible.Trigger
+      ref={ref}
+      {...props}
+      className={cn(
+        props.className,
+        "w-full py-2 px-4 flex items-center justify-between rounded-[4px] cursor-pointer hover:bg-surface-muted2",
+      )}
+    >
+      <div className="flex gap-2">{children}</div>
+      <ChevronRight
+        strokeWidth={3}
         className={cn(
-          props.className,
-          "w-full py-2 px-4 flex items-center justify-between rounded-[4px] cursor-pointer hover:bg-surface-muted2",
+          "w-5 h-5 text-info",
+          "transition-transform",
+          isOpen && "transform rotate-90",
         )}
-      >
-        <div className="flex gap-2">{children}</div>
-        <ChevronRight
-          strokeWidth={3}
-          className={cn(
-            "w-5 h-5 text-info",
-            "transition-transform",
-            isOpen && "transform rotate-90",
-          )}
-        />
-      </RadixCollapsible.Trigger>
-    );
-  },
-);
-Trigger.displayName = "Collapsible.Trigger";
+      />
+    </RadixCollapsible.Trigger>
+  );
+});
+CollapsibleTrigger.displayName = "CollapsibleTrigger";
 
 export interface CollapsibleContentProps
   extends React.ComponentPropsWithoutRef<"div"> {
   children: React.ReactNode;
 }
 
-const Content = React.forwardRef<HTMLDivElement, CollapsibleContentProps>(
-  ({ children, ...props }, ref) => {
-    return (
-      <RadixCollapsible.Content ref={ref} {...props}>
-        {children}
-      </RadixCollapsible.Content>
-    );
-  },
-);
-Content.displayName = "Collapsible.Content";
+const CollapsibleContent = React.forwardRef<
+  HTMLDivElement,
+  CollapsibleContentProps
+>(({ children, ...props }, ref) => {
+  return (
+    <RadixCollapsible.Content ref={ref} {...props}>
+      {children}
+    </RadixCollapsible.Content>
+  );
+});
+CollapsibleContent.displayName = "CollapsibleContent";
 
 export interface CollapsibleItemProps
   extends React.ComponentPropsWithoutRef<"a"> {
@@ -93,32 +95,31 @@ export interface CollapsibleItemProps
   asChild?: boolean;
 }
 
-const Item = React.forwardRef<HTMLAnchorElement, CollapsibleItemProps>(
-  ({ children, current, asChild, ...props }, ref) => {
-    const Comp = asChild ? Slot : "a";
-    return (
-      <Comp
-        ref={ref}
-        {...props}
-        className={cn(
-          props.className,
-          "py-2 pl-8 pr-4 flex gap-2 rounded-[4px]",
-          !current && "hover:bg-surface-muted2",
-          current && "bg-surface-muted1 font-medium",
-        )}
-      >
-        {children}
-      </Comp>
-    );
-  },
-);
-Item.displayName = "Collapsible.Item";
+const CollapsibleItem = React.forwardRef<
+  HTMLAnchorElement,
+  CollapsibleItemProps
+>(({ children, current, asChild, ...props }, ref) => {
+  const Comp = asChild ? Slot : "a";
+  return (
+    <Comp
+      ref={ref}
+      {...props}
+      className={cn(
+        props.className,
+        "py-2 pl-8 pr-4 flex gap-2 rounded-[4px]",
+        !current && "hover:bg-surface-muted2",
+        current && "bg-surface-muted1 font-medium",
+      )}
+    >
+      {children}
+    </Comp>
+  );
+});
+CollapsibleItem.displayName = "CollapsibleItem";
 
-const Collapsible = {
-  Root,
-  Trigger,
-  Content,
-  Item,
+export {
+  CollapsibleRoot,
+  CollapsibleTrigger,
+  CollapsibleContent,
+  CollapsibleItem,
 };
-
-export default Collapsible;

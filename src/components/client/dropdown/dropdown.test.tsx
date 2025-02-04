@@ -3,25 +3,31 @@ import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, it, expect } from "vitest";
-import Dropdown from "./dropdown";
+import {
+  DropdownRoot,
+  DropdownTrigger,
+  DropdownContent,
+  DropdownItem,
+  DropdownDivider,
+} from "./dropdown";
 
 describe("Dropdown", () => {
   function TestDropdown() {
     return (
-      <Dropdown.Root>
-        <Dropdown.Trigger aria-label="open-dropdown">
+      <DropdownRoot>
+        <DropdownTrigger aria-label="open-dropdown">
           メニューを開く
-        </Dropdown.Trigger>
-        <Dropdown.Content>
-          <Dropdown.Item>アイテム 1</Dropdown.Item>
-          <Dropdown.Divider />
-          <Dropdown.Item>アイテム 2</Dropdown.Item>
-          <Dropdown.Divider />
-          <Dropdown.Item variant="danger" aria-label="delete">
+        </DropdownTrigger>
+        <DropdownContent>
+          <DropdownItem>アイテム 1</DropdownItem>
+          <DropdownDivider />
+          <DropdownItem>アイテム 2</DropdownItem>
+          <DropdownDivider />
+          <DropdownItem variant="danger" aria-label="delete">
             削除
-          </Dropdown.Item>
-        </Dropdown.Content>
-      </Dropdown.Root>
+          </DropdownItem>
+        </DropdownContent>
+      </DropdownRoot>
     );
   }
 

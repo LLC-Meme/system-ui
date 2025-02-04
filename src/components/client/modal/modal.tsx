@@ -6,11 +6,11 @@ import { cn } from "../../../lib/cn";
 import Stack from "../../server/stack/stack";
 import { X } from "lucide-react";
 
-const Root = Dialog.Root;
-const Trigger = Dialog.Trigger;
-const Close = Dialog.Close;
+const ModalRoot = Dialog.Root;
+const ModalTrigger = Dialog.Trigger;
+const ModalClose = Dialog.Close;
 
-function Overlay({
+function ModalOverlay({
   className,
   ...props
 }: React.ComponentProps<typeof Dialog.Overlay>) {
@@ -26,12 +26,12 @@ function Overlay({
   );
 }
 
-const Content = React.forwardRef<
+const ModalContent = React.forwardRef<
   React.ComponentRef<typeof Dialog.Content>,
   React.ComponentPropsWithoutRef<typeof Dialog.Content>
 >(({ className, children, ...props }, ref) => (
   <Dialog.Portal>
-    <Overlay />
+    <ModalOverlay />
     <Dialog.Content
       ref={ref}
       className={cn(
@@ -43,17 +43,17 @@ const Content = React.forwardRef<
       {...props}
     >
       <Stack.H className="justify-end mb-4">
-        <Close aria-label="close-modal">
+        <ModalClose aria-label="close-modal">
           <X className="w-6 h-6" />
-        </Close>
+        </ModalClose>
       </Stack.H>
       {children}
     </Dialog.Content>
   </Dialog.Portal>
 ));
-Content.displayName = "Modal.Content";
+ModalContent.displayName = "ModalContent";
 
-const Title = React.forwardRef<
+const ModalTitle = React.forwardRef<
   React.ComponentRef<typeof Dialog.Title>,
   React.ComponentPropsWithoutRef<typeof Dialog.Title>
 >(({ className, ...props }, ref) => {
@@ -61,22 +61,21 @@ const Title = React.forwardRef<
     <Dialog.Title ref={ref} className={cn("font-bold", className)} {...props} />
   );
 });
-Title.displayName = "Modal.Title";
+ModalTitle.displayName = "ModalTitle";
 
-const Description = React.forwardRef<
+const ModalDescription = React.forwardRef<
   React.ComponentRef<typeof Dialog.Description>,
   React.ComponentPropsWithoutRef<typeof Dialog.Description>
 >(({ className, ...props }, ref) => {
   return <Dialog.Description ref={ref} className={className} {...props} />;
 });
-Description.displayName = "Modal.Description";
+ModalDescription.displayName = "ModalDescription";
 
-const Modal = {
-  Root,
-  Trigger,
-  Content,
-  Close,
-  Title,
-  Description,
+export {
+  ModalRoot,
+  ModalTrigger,
+  ModalContent,
+  ModalTitle,
+  ModalDescription,
+  ModalClose,
 };
-export default Modal;

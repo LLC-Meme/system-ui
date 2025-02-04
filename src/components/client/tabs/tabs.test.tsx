@@ -2,7 +2,7 @@ import React from "react";
 import "@testing-library/jest-dom";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { describe, it, expect, vi } from "vitest";
-import Tabs from "./tabs";
+import { Tabs } from "./tabs";
 
 describe("Tabs", () => {
   it("正しい選択肢数でtabを表示", () => {

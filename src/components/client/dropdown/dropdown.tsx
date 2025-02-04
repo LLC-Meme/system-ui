@@ -6,11 +6,11 @@ import { ChevronRight } from "lucide-react";
 import { cn } from "../../../lib/cn";
 import * as D from "../../server/divider/divider";
 
-const Root = RadixDropdown.Root;
-const Trigger = RadixDropdown.Trigger;
-const Sub = RadixDropdown.Sub;
+const DropdownRoot = RadixDropdown.Root;
+const DropdownTrigger = RadixDropdown.Trigger;
+const DropdownSub = RadixDropdown.Sub;
 
-const SubTrigger = React.forwardRef<
+const DropdownSubTrigger = React.forwardRef<
   React.ComponentRef<typeof RadixDropdown.SubTrigger>,
   React.ComponentPropsWithoutRef<typeof RadixDropdown.SubTrigger> & {
     inset?: boolean;
@@ -34,9 +34,9 @@ const SubTrigger = React.forwardRef<
     </RadixDropdown.SubTrigger>
   );
 });
-SubTrigger.displayName = "Dropdown.SubTrigger";
+DropdownSubTrigger.displayName = "DropdownSubTrigger";
 
-const SubContent = React.forwardRef<
+const DropdownSubContent = React.forwardRef<
   React.ComponentRef<typeof RadixDropdown.SubContent>,
   React.ComponentPropsWithoutRef<typeof RadixDropdown.SubContent>
 >(({ className, children, ...props }, ref) => {
@@ -55,9 +55,9 @@ const SubContent = React.forwardRef<
     </RadixDropdown.Portal>
   );
 });
-SubContent.displayName = "Dropdown.SubContent";
+DropdownSubContent.displayName = "DropdownSubContent";
 
-const Group = React.forwardRef<
+const DropdownGroup = React.forwardRef<
   React.ComponentRef<typeof RadixDropdown.Group>,
   React.ComponentPropsWithoutRef<typeof RadixDropdown.Group>
 >(({ className, children, ...props }, ref) => {
@@ -67,9 +67,9 @@ const Group = React.forwardRef<
     </RadixDropdown.Group>
   );
 });
-Group.displayName = "Dropdown.Group";
+DropdownGroup.displayName = "DropdownGroup";
 
-const Content = React.forwardRef<
+const DropdownContent = React.forwardRef<
   React.ComponentRef<typeof RadixDropdown.Content>,
   React.ComponentPropsWithoutRef<typeof RadixDropdown.Content>
 >(({ className, sideOffset = 4, ...props }, ref) => {
@@ -89,9 +89,9 @@ const Content = React.forwardRef<
     </RadixDropdown.Group>
   );
 });
-Content.displayName = "Dropdown.Content";
+DropdownContent.displayName = "DropdownContent";
 
-const Item = React.forwardRef<
+const DropdownItem = React.forwardRef<
   React.ComponentRef<typeof RadixDropdown.Item>,
   React.ComponentPropsWithoutRef<typeof RadixDropdown.Item> & {
     inset?: boolean;
@@ -112,21 +112,21 @@ const Item = React.forwardRef<
     />
   );
 });
-Item.displayName = "Dropdown.Item";
+DropdownItem.displayName = "DropdownItem";
 
-const Divider = () => {
+const DropdownDivider = () => {
   return <D.default.H thickness={1} />;
 };
-Divider.displayName = "Dropdown.Divider";
+DropdownDivider.displayName = "DropdownDivider";
 
-const Dropdown = {
-  Root,
-  Trigger,
-  Sub,
-  SubTrigger,
-  SubContent,
-  Content,
-  Item,
-  Divider,
+export {
+  DropdownRoot,
+  DropdownTrigger,
+  DropdownSub,
+  DropdownSubTrigger,
+  DropdownSubContent,
+  DropdownGroup,
+  DropdownContent,
+  DropdownItem,
+  DropdownDivider,
 };
-export default Dropdown;
