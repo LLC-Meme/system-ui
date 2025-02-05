@@ -14,7 +14,13 @@ const dummy = [
 ];
 
 function BarChartExample() {
-  return <BarChart data={dummy} className="w-[800px] h-80" />;
+  return (
+    <BarChart
+      data={dummy}
+      className="w-[800px] h-80"
+      dataKeys={["value1", "value2", "value3"]}
+    />
+  );
 }
 
 const meta = {

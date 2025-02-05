@@ -9,6 +9,7 @@ import {
   YAxis,
   XAxis,
 } from "recharts";
+import { colorMap, colorOrders } from "../colors";
 
 export type BarChartDataItem = {
   name: string | number | Date;
@@ -21,10 +22,11 @@ export interface BarChartProps {
   data: BarChartData;
   hasXAxis?: boolean;
   hasYAxis?: boolean;
+  dataKeys: string[];
 }
 
 export const BarChart = React.forwardRef<HTMLDivElement, BarChartProps>(
-  ({ className, data, hasXAxis = true, hasYAxis = true }, ref) => {
+  ({ className, data, hasXAxis = true, hasYAxis = true, dataKeys }, ref) => {
     return (
       <div ref={ref} className={className}>
         <ResponsiveContainer width="100%" height="100%">
@@ -47,7 +49,14 @@ export const BarChart = React.forwardRef<HTMLDivElement, BarChartProps>(
               tickLine={false}
               stroke="var(--foreground-muted)"
             />
-            <Bar dataKey="value1" fill="#8884d8" radius={[8, 8, 0, 0]} />
+            {dataKeys.map((key, index) => (
+              <Bar
+                key={key}
+                dataKey={key}
+                fill={`var(--${colorMap[colorOrders[index % colorOrders.length]]})`}
+                radius={[4, 4, 0, 0]}
+              />
+            ))}
           </RechartsBarChart>
         </ResponsiveContainer>
       </div>
