@@ -62,6 +62,7 @@ import {
   LineChart,
   BarChart,
   PieChart,
+  HSpacer,
 } from "./components";
 import { type LineChartData } from "./components/client/chart/line-chart/line-chart";
 import { type BarChartData } from "./components/client/chart/bar-chart/bar-chart";
@@ -392,7 +393,7 @@ export default function Page() {
 
         <VSpacer unit={2} />
 
-        <HStack className="space-x-8">
+        <HStack>
           <Surface className="flex-1">
             <BlockTitle>Bar Chart</BlockTitle>
             <BarChart
@@ -402,6 +403,8 @@ export default function Page() {
               hasLegend
             />
           </Surface>
+
+          <HSpacer unit={2} />
 
           <Surface className="w-[400px]">
             <BlockTitle>Pie Chart</BlockTitle>
