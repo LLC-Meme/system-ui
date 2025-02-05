@@ -21,7 +21,7 @@ export interface LineChartProps {
   data: LineChartData;
   className?: string;
   color?: Color;
-  dataKey?: string;
+  dataKey: string | string[];
 }
 
 const colorMap = {
@@ -39,8 +39,30 @@ const colorMap = {
   brown: "brown",
 };
 
+const colorOrders: (keyof typeof colorMap)[] = [
+  "blue",
+  "green",
+  "red",
+  "purple",
+  "yellow",
+  "teal",
+  "pink",
+  "mint",
+  "orange",
+  "cyan",
+  "indigo",
+  "brown",
+] satisfies Color[];
+
 const LineChart = React.forwardRef<HTMLDivElement, LineChartProps>(
-  ({ data, className, color = "blue", dataKey }, ref) => {
+  ({ data, className, dataKey }, ref) => {
+    const keys = typeof dataKey === "string" ? [dataKey] : dataKey;
+
+    const keyToColor: Record<string, keyof typeof colorMap> = {};
+    keys.forEach((key, index) => {
+      keyToColor[key] = colorOrders[index] || colorOrders[0];
+    });
+
     const CustomTooltip = ({
       active,
       payload,
@@ -53,7 +75,7 @@ const LineChart = React.forwardRef<HTMLDivElement, LineChartProps>(
           <HStack className="items-center">
             <div
               className="w-3 h-3 rounded-sm mr-1"
-              style={{ backgroundColor: `var(--${colorMap[color]})` }}
+              style={{ backgroundColor: "var(--info)" }}
             />
             <div className="text-foreground-muted min-w-12">
               {payload[0].name}
@@ -69,18 +91,21 @@ const LineChart = React.forwardRef<HTMLDivElement, LineChartProps>(
         <ResponsiveContainer width="100%" height="100%">
           <RechartsLineChart data={data} width={400} height={400}>
             <CartesianGrid strokeDasharray="2 2" stroke="var(--border)" />
-            <Line
-              type="linear"
-              dataKey={dataKey}
-              stroke={`var(--${colorMap[color]})`}
-              dot={false}
-              strokeWidth={2}
-              activeDot={{
-                fill: `var(--${colorMap[color]})`,
-                r: 4,
-                strokeWidth: 0,
-              }}
-            />
+            {keys.map((key) => (
+              <Line
+                key={key}
+                type="linear"
+                dataKey={key}
+                stroke={`var(--${colorMap[keyToColor[key]]})`}
+                dot={false}
+                strokeWidth={2}
+                activeDot={{
+                  fill: `var(--${colorMap[keyToColor[key]]})`,
+                  r: 4,
+                  strokeWidth: 0,
+                }}
+              />
+            ))}
             <Tooltip
               content={<CustomTooltip />}
               cursor={{
