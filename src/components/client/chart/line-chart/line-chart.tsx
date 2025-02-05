@@ -25,7 +25,7 @@ export interface LineChartProps {
   data: LineChartData;
   className?: string;
   color?: Color;
-  dataKey: string[];
+  dataKeys: string[];
   hasXAxis?: boolean;
   hasYAxis?: boolean;
   hasLegend?: boolean;
@@ -43,14 +43,14 @@ const LineChart = React.forwardRef<HTMLDivElement, LineChartProps>(
     {
       data,
       className,
-      dataKey,
+      dataKeys,
       hasYAxis = true,
       hasXAxis = true,
       hasLegend = false,
     },
     ref,
   ) => {
-    const keys = dataKey;
+    const keys = dataKeys;
 
     const keyToColor: Record<string, keyof typeof colorMap> = {};
     keys.forEach((key, index) => {

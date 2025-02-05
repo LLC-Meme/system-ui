@@ -363,7 +363,7 @@ export default function Page() {
           <LineChart
             className="w-full h-96 py-8"
             data={dummy}
-            dataKey={["value1", "value2", "value3"]}
+            dataKeys={["value1", "value2", "value3"]}
             hasYAxis={true}
             hasXAxis={true}
           />
