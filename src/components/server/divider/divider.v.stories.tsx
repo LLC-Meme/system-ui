@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Meta, StoryObj } from "@storybook/react";
-import { VDivider } from "./divider";
+import VDivider from "./v-divider";
 
 /**
  * 垂直方向の直線を表示するコンポーネントです。

@@ -2,7 +2,7 @@ import React from "react";
 import "@testing-library/jest-dom";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { describe, it, expect, vi } from "vitest";
-import { Input } from "./input";
+import Input from "./input";
 
 describe("Input", () => {
   it("デフォルトのクラスでinputが表示される", () => {

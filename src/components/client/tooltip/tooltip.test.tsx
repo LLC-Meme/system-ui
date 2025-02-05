@@ -3,7 +3,9 @@ import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
 import userEvent from "@testing-library/user-event";
-import { TooltipRoot, TooltipTrigger, TooltipContent } from "./tooltip";
+import TooltipRoot from "./root";
+import TooltipTrigger from "./trigger";
+import TooltipContent from "./content";
 
 describe("Tooltip", () => {
   function TestTooltip() {

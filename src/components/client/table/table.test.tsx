@@ -2,7 +2,13 @@ import React from "react";
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
-import { Table, Thead, Tbody, Tr, Th, Td, Tfoot } from "./table";
+import Table from "./table";
+import Thead from "./thead";
+import Tbody from "./tbody";
+import Tfoot from "./tfoot";
+import Tr from "./tr";
+import Th from "./th";
+import Td from "./td";
 
 describe("Table", () => {
   it("basicスタイルのtableのclassが正しい", () => {

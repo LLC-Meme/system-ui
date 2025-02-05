@@ -2,23 +2,26 @@ import React from "react";
 import "@testing-library/jest-dom";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
-import { RadioGroup, RadioLabel, RadioButton } from "./radio";
+import RadioGroup from "./group";
+import RadioLabel from "./label";
+import RadioInput from "./input";
+import RadioText from "./text";
 
 describe("Radio コンポーネント", () => {
   it("Radio.Group が正しくレンダリングされる", () => {
     render(
       <RadioGroup data-testid="radio-group">
         <RadioLabel>
-          <RadioButton name="test" />
-          <span>ラジオボタン1</span>
+          <RadioInput name="test" />
+          <RadioText>ラジオボタン1</RadioText>
         </RadioLabel>
         <RadioLabel>
-          <RadioButton name="test" />
-          <span>ラジオボタン2</span>
+          <RadioInput name="test" />
+          <RadioText>ラジオボタン2</RadioText>
         </RadioLabel>
         <RadioLabel>
-          <RadioButton name="test" />
-          <span>ラジオボタン3</span>
+          <RadioInput name="test" />
+          <RadioText>ラジオボタン3</RadioText>
         </RadioLabel>
       </RadioGroup>,
     );
@@ -28,57 +31,57 @@ describe("Radio コンポーネント", () => {
     expect(group).toBeInTheDocument();
 
     // ラジオボタンが3つ表示されていることを確認
-    const radioButtons = screen.getAllByRole("radio");
-    expect(radioButtons).toHaveLength(3);
+    const RadioInputs = screen.getAllByRole("radio");
+    expect(RadioInputs).toHaveLength(3);
   });
 
   it("ラジオボタンの選択が正しく動作する", () => {
     render(
       <RadioGroup>
         <RadioLabel>
-          <RadioButton name="test" value="1" />
-          <span>ラジオボタン1</span>
+          <RadioInput name="test" value="1" />
+          <RadioText>ラジオボタン1</RadioText>
         </RadioLabel>
         <RadioLabel>
-          <RadioButton name="test" value="2" />
-          <span>ラジオボタン2</span>
+          <RadioInput name="test" value="2" />
+          <RadioText>ラジオボタン2</RadioText>
         </RadioLabel>
         <RadioLabel>
-          <RadioButton name="test" value="3" />
-          <span>ラジオボタン3</span>
+          <RadioInput name="test" value="3" />
+          <RadioText>ラジオボタン3</RadioText>
         </RadioLabel>
       </RadioGroup>,
     );
 
-    const radioButtons = screen.getAllByRole("radio");
+    const radioInputs = screen.getAllByRole("radio");
 
     // 初期状態ではどのラジオボタンも選択されていないことを確認
-    radioButtons.forEach((button) => {
+    radioInputs.forEach((button) => {
       expect(button).not.toBeChecked();
     });
 
     // ラジオボタン1を選択
-    fireEvent.click(radioButtons[0]);
-    expect(radioButtons[0]).toBeChecked();
+    fireEvent.click(radioInputs[0]);
+    expect(radioInputs[0]).toBeChecked();
 
     // ラジオボタン2を選択すると、ラジオボタン1の選択が外れることを確認
-    fireEvent.click(radioButtons[1]);
-    expect(radioButtons[0]).not.toBeChecked();
-    expect(radioButtons[1]).toBeChecked();
+    fireEvent.click(radioInputs[1]);
+    expect(radioInputs[0]).not.toBeChecked();
+    expect(radioInputs[1]).toBeChecked();
   });
 
   it("追加のクラス名が適用される", () => {
     render(
       <RadioGroup>
         <RadioLabel>
-          <RadioButton name="test" className="custom-class" />
-          <span>ラジオボタン1</span>
+          <RadioInput name="test" className="custom-class" />
+          <RadioText>ラジオボタン1</RadioText>
         </RadioLabel>
       </RadioGroup>,
     );
 
-    const radioButton = screen.getByRole("radio");
-    expect(radioButton).toHaveClass("custom-class");
+    const radioInputs = screen.getByRole("radio");
+    expect(radioInputs).toHaveClass("custom-class");
   });
 
   it("Radio.Groupにrefが適用される", () => {
@@ -86,8 +89,8 @@ describe("Radio コンポーネント", () => {
     render(
       <RadioGroup ref={ref}>
         <RadioLabel>
-          <RadioButton name="test" />
-          <span>ラジオボタン1</span>
+          <RadioInput name="test" />
+          <RadioText>ラジオボタン1</RadioText>
         </RadioLabel>
       </RadioGroup>,
     );
@@ -101,8 +104,8 @@ describe("Radio コンポーネント", () => {
     render(
       <RadioGroup>
         <RadioLabel>
-          <RadioButton ref={ref} name="test" />
-          <span>ラジオボタン1</span>
+          <RadioInput ref={ref} name="test" />
+          <RadioText>ラジオボタン1</RadioText>
         </RadioLabel>
       </RadioGroup>,
     );

@@ -2,7 +2,7 @@ import React from "react";
 import "@testing-library/jest-dom";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { describe, it, expect, vi, beforeAll, afterAll } from "vitest";
-import { Calendar } from "./calendar";
+import Calendar from "./calendar";
 
 describe("Calendar component", () => {
   // テスト実行前にシステム日時を2025年1月15日に設定して時間を固定

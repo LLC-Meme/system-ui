@@ -1,6 +1,11 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import { Table, Thead, Tbody, Tr, Th, Td } from "./table";
+import Table from "./table";
+import Thead from "./thead";
+import Tbody from "./tbody";
+import Tr from "./tr";
+import Th from "./th";
+import Td from "./td";
 
 function BasicTable() {
   return (

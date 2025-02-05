@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { LabelText } from "./label-text";
+import LabelText from "./label-text";
 
 /**
  * `input`、`select`などフォーム内の各アイテムに対するラベルを表現するコンポーネント。

@@ -2,7 +2,8 @@ import React from "react";
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
-import { VSpacer, HSpacer } from "./spacer";
+import HSpacer from "./h-spacer";
+import VSpacer from "./v-spacer";
 
 describe("Spacer.V", () => {
   it("表示される", () => {

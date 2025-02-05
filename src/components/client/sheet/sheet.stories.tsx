@@ -1,6 +1,8 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import { SheetRoot, SheetTrigger, SheetContent } from "./sheet";
+import SheetRoot from "./root";
+import SheetTrigger from "./trigger";
+import SheetContent from "./content";
 import Button from "../../server/button/button";
 
 function SheetExample() {

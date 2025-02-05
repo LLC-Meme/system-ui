@@ -1,11 +1,9 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import {
-  CollapsibleRoot,
-  CollapsibleContent,
-  CollapsibleTrigger,
-  CollapsibleItem,
-} from "./collapsible";
+import CollapsibleRoot from "./root";
+import CollapsibleTrigger from "./trigger";
+import CollapsibleContent from "./content";
+import CollapsibleItem from "./item";
 
 function CollapsibleExample() {
   return (

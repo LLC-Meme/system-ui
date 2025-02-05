@@ -2,21 +2,19 @@ import React from "react";
 import "@testing-library/jest-dom";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { describe, it, expect, vi } from "vitest";
-import {
-  ThemeContainer,
-  ThemeLight,
-  ThemeDark,
-  ThemeSystem,
-} from "./theme-switch";
+import ThemeSwitchContainer from "./container";
+import ThemeSwitchLight from "./light";
+import ThemeSwitchDark from "./dark";
+import ThemeSwitchSystem from "./system";
 
 describe("ThemeSwitch", () => {
   describe("ThemeSwitch.Container", () => {
     it("renders children correctly", () => {
       // コンテナが子要素を正しくレンダリングするかを確認する
       render(
-        <ThemeContainer data-testid="theme-container">
+        <ThemeSwitchContainer data-testid="theme-container">
           <div>Child Element</div>
-        </ThemeContainer>,
+        </ThemeSwitchContainer>,
       );
       const containerEl = screen.getByTestId("theme-container");
 
@@ -39,7 +37,7 @@ describe("ThemeSwitch", () => {
   describe("ThemeSwitch.Light", () => {
     it("renders with correct aria-label and icon", () => {
       // Lightテーマのボタンが正しくレンダリングされるかを確認する
-      render(<ThemeLight data-testid="light-button" current />);
+      render(<ThemeSwitchLight data-testid="light-button" current />);
       const buttonEl = screen.getByTestId("light-button");
 
       // 確認: aria-labelが正しいか
@@ -59,7 +57,9 @@ describe("ThemeSwitch", () => {
     it("triggers onClick event when clicked", () => {
       // onClickイベントが正しくトリガーされるかを確認する
       const handleClick = vi.fn();
-      render(<ThemeLight data-testid="light-button" onClick={handleClick} />);
+      render(
+        <ThemeSwitchLight data-testid="light-button" onClick={handleClick} />,
+      );
 
       const buttonEl = screen.getByTestId("light-button");
       fireEvent.click(buttonEl);
@@ -72,7 +72,7 @@ describe("ThemeSwitch", () => {
   describe("ThemeSwitch.Dark", () => {
     it("renders with correct aria-label and icon", () => {
       // Darkテーマのボタンが正しくレンダリングされるかを確認する
-      render(<ThemeDark data-testid="dark-button" current={false} />);
+      render(<ThemeSwitchDark data-testid="dark-button" current={false} />);
       const buttonEl = screen.getByTestId("dark-button");
 
       // 確認: aria-labelが正しいか
@@ -93,7 +93,7 @@ describe("ThemeSwitch", () => {
   describe("ThemeSwitch.System", () => {
     it("renders with correct aria-label and icon", () => {
       // Systemテーマのボタンが正しくレンダリングされるかを確認する
-      render(<ThemeSystem data-testid="system-button" />);
+      render(<ThemeSwitchSystem data-testid="system-button" />);
       const buttonEl = screen.getByTestId("system-button");
 
       // 確認: aria-labelが正しいか
@@ -113,7 +113,9 @@ describe("ThemeSwitch", () => {
     it("triggers onClick event when clicked", () => {
       // onClickイベントが正しくトリガーされるかを確認する
       const handleClick = vi.fn();
-      render(<ThemeSystem data-testid="system-button" onClick={handleClick} />);
+      render(
+        <ThemeSwitchSystem data-testid="system-button" onClick={handleClick} />,
+      );
 
       const buttonEl = screen.getByTestId("system-button");
       fireEvent.click(buttonEl);

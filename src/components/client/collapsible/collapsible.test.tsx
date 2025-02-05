@@ -2,12 +2,10 @@ import React from "react";
 import "@testing-library/jest-dom";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
-import {
-  CollapsibleRoot,
-  CollapsibleContent,
-  CollapsibleTrigger,
-  CollapsibleItem,
-} from "./collapsible";
+import CollapsibleRoot from "./root";
+import CollapsibleTrigger from "./trigger";
+import CollapsibleContent from "./content";
+import CollapsibleItem from "./item";
 
 describe("Collapsible", () => {
   function TestCollapsible() {

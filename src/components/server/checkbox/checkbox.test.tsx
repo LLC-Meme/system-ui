@@ -2,11 +2,12 @@ import React from "react";
 import "@testing-library/jest-dom";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { describe, it, expect, vi } from "vitest";
-import { CheckboxBox, CheckboxLabel } from "./checkbox";
+import CheckboxLabel from "./label";
+import CheckboxInput from "./input";
 
 describe("CheckboxコンポーネントのBox", () => {
   it("正しくcheckboxとしてレンダリングされる", () => {
-    render(<CheckboxBox data-testid="checkbox-box" />);
+    render(<CheckboxInput data-testid="checkbox-box" />);
     const checkboxEl = screen.getByTestId("checkbox-box");
 
     // 要素が<input type="checkbox">であることを確認
@@ -28,20 +29,22 @@ describe("CheckboxコンポーネントのBox", () => {
   });
 
   it("classNameがマージされる", () => {
-    render(<CheckboxBox data-testid="checkbox-box" className="custom-class" />);
+    render(
+      <CheckboxInput data-testid="checkbox-box" className="custom-class" />,
+    );
     const checkboxEl = screen.getByTestId("checkbox-box");
     expect(checkboxEl).toHaveClass("custom-class");
   });
 
   it("refを正しく受け取る", () => {
     const ref = React.createRef<HTMLInputElement>();
-    render(<CheckboxBox ref={ref} data-testid="checkbox-box-ref" />);
+    render(<CheckboxInput ref={ref} data-testid="checkbox-box-ref" />);
     expect(ref.current).toBeInstanceOf(HTMLInputElement);
   });
 
   it("checked属性が反映される", () => {
     render(
-      <CheckboxBox
+      <CheckboxInput
         data-testid="checkbox-checked"
         checked
         onChange={() => {}}
@@ -56,7 +59,7 @@ describe("CheckboxコンポーネントのBox", () => {
   });
 
   it("disabled属性が反映される", () => {
-    render(<CheckboxBox data-testid="checkbox-disabled" disabled />);
+    render(<CheckboxInput data-testid="checkbox-disabled" disabled />);
     const checkboxEl = screen.getByTestId("checkbox-disabled");
     expect(checkboxEl).toBeDisabled();
   });
@@ -64,7 +67,7 @@ describe("CheckboxコンポーネントのBox", () => {
   it("onChangeハンドラが呼ばれる", () => {
     const handleChange = vi.fn();
     render(
-      <CheckboxBox data-testid="checkbox-onchange" onChange={handleChange} />,
+      <CheckboxInput data-testid="checkbox-onchange" onChange={handleChange} />,
     );
     const checkboxEl = screen.getByTestId(
       "checkbox-onchange",

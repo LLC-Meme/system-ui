@@ -1,28 +1,24 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import {
-  SidebarContainer,
-  SidebarGroup,
-  SidebarGroupLabel,
-  SidebarItem,
-} from "./sidebar";
-import {
-  CollapsibleRoot,
-  CollapsibleItem,
-  CollapsibleTrigger,
-  CollapsibleContent,
-} from "../../client/collapsible/collapsible";
+import SidebarContainer from "./container";
+import SidebarGroup from "./group";
+import SidebarGroupTitle from "./group-title";
+import SidebarItem from "./item";
+import CollapsibleRoot from "../../client/collapsible/root";
+import CollapsibleTrigger from "../../client/collapsible/trigger";
+import CollapsibleContent from "../../client/collapsible/content";
+import CollapsibleItem from "../../client/collapsible/item";
 
 function SidebarExample() {
   return (
     <SidebarContainer isOpen className="w-80">
       <SidebarGroup>
-        <SidebarGroupLabel>Group Label</SidebarGroupLabel>
+        <SidebarGroupTitle>Group Label</SidebarGroupTitle>
         <SidebarItem>Item</SidebarItem>
         <SidebarItem current>Current Item</SidebarItem>
       </SidebarGroup>
       <SidebarGroup>
-        <SidebarGroupLabel>Group Label</SidebarGroupLabel>
+        <SidebarGroupTitle>Group Label</SidebarGroupTitle>
         <CollapsibleRoot>
           <CollapsibleTrigger>Collapsible Trigger</CollapsibleTrigger>
           <CollapsibleContent>

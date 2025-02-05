@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { VStack } from "./stack";
+import VStack from "./v-stack";
 
 /**
  * 垂直方向のスタックをするためのコンポーネントです。

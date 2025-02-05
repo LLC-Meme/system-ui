@@ -3,13 +3,11 @@ import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, it, expect } from "vitest";
-import {
-  DropdownRoot,
-  DropdownTrigger,
-  DropdownContent,
-  DropdownItem,
-  DropdownDivider,
-} from "./dropdown";
+import DropdownRoot from "./root";
+import DropdownTrigger from "./trigger";
+import DropdownContent from "./content";
+import DropdownItem from "./item";
+import DropdownDivider from "./divider";
 
 describe("Dropdown", () => {
   function TestDropdown() {

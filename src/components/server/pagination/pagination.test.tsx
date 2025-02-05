@@ -2,13 +2,11 @@ import React from "react";
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
-import {
-  PaginationContainer,
-  PaginationItem,
-  PaginationEllipsis,
-  PaginationNext,
-  PaginationPrev,
-} from "./pagination";
+import PaginationContainer from "./container";
+import PaginationItem from "./item";
+import PaginationNext from "./next";
+import PaginationPrev from "./prev";
+import PaginationEllipsis from "./ellipsis";
 
 describe("Pagination Component", () => {
   it("ページネーションコンポーネントを表示", () => {

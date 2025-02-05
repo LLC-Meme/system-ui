@@ -1,15 +1,13 @@
 import React from "react";
 import { type Meta, StoryObj } from "@storybook/react";
-import {
-  DropdownRoot,
-  DropdownTrigger,
-  DropdownContent,
-  DropdownItem,
-  DropdownDivider,
-  DropdownSub,
-  DropdownSubTrigger,
-  DropdownSubContent,
-} from "./dropdown";
+import DropdownRoot from "./root";
+import DropdownTrigger from "./trigger";
+import DropdownContent from "./content";
+import DropdownItem from "./item";
+import DropdownDivider from "./divider";
+import DropdownSub from "./sub";
+import DropdownSubTrigger from "./sub-trigger";
+import DropdownSubContent from "./sub-content";
 import Button from "../../server/button/button";
 
 function DropdownExample() {

@@ -1,6 +1,7 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import { HeaderContainer, HeaderSidebarController } from "./header";
+import HeaderContainer from "./container";
+import HeaderSidebarController from "./sidebar-controller";
 
 function HeaderExample() {
   return (

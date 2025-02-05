@@ -1,12 +1,14 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import { CheckboxBox, CheckboxLabel } from "./checkbox";
+import CheckboxLabel from "./label";
+import CheckboxInput from "./input";
+import CheckboxText from "./text";
 
 const CheckboxExample = () => {
   return (
     <CheckboxLabel>
-      <CheckboxBox />
-      <span>テキスト</span>
+      <CheckboxInput />
+      <CheckboxText>テキスト</CheckboxText>
     </CheckboxLabel>
   );
 };

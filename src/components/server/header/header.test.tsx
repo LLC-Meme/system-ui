@@ -2,7 +2,8 @@ import React from "react";
 import "@testing-library/jest-dom";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { describe, it, expect, vi } from "vitest";
-import { HeaderContainer, HeaderSidebarController } from "./header";
+import HeaderContainer from "./container";
+import HeaderSidebarController from "./sidebar-controller";
 
 describe("Header", () => {
   describe("Container", () => {

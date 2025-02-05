@@ -2,7 +2,7 @@ import React from "react";
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
-import { Badge } from "./badge";
+import Badge from "./badge";
 
 describe("Badge", () => {
   it("Badgeを表示", () => {

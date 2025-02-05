@@ -2,7 +2,8 @@ import React from "react";
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
-import { VDivider, HDivider } from "./divider";
+import HDivider from "./h-divider";
+import VDivider from "./v-divider";
 
 describe("Divider", () => {
   describe("Divider.V", () => {

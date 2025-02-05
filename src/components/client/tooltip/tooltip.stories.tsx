@@ -1,6 +1,8 @@
 import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
-import { TooltipRoot, TooltipTrigger, TooltipContent } from "./tooltip";
+import TooltipRoot from "./root";
+import TooltipTrigger from "./trigger";
+import TooltipContent from "./content";
 
 function TooltipExample() {
   return (

@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { HSpacer } from "./spacer";
+import HSpacer from "./h-spacer";
 
 /**
  * 水平方向のスペーシングをするためのコンポーネントです。

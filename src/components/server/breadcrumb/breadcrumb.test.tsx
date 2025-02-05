@@ -2,11 +2,9 @@ import React from "react";
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
-import {
-  BreadcrumbContainer,
-  BreadcrumbItem,
-  BreadcrumbSeparator,
-} from "./breadcrumb";
+import BreadcrumbContainer from "./container";
+import BreadcrumbItem from "./item";
+import BreadcrumbSeparator from "./separator";
 
 describe("Breadcrumb", () => {
   describe("Container", () => {

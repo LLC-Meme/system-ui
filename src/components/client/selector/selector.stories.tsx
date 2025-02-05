@@ -1,6 +1,7 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import { SelectorSelect, SelectorOption } from "./select";
+import SelectorSelect from "./select";
+import SelectorOption from "./option";
 
 function SelectorExample() {
   return (

@@ -1,12 +1,10 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import {
-  PaginationContainer,
-  PaginationItem,
-  PaginationEllipsis,
-  PaginationNext,
-  PaginationPrev,
-} from "./pagination";
+import PaginationContainer from "./container";
+import PaginationItem from "./item";
+import PaginationNext from "./next";
+import PaginationPrev from "./prev";
+import PaginationEllipsis from "./ellipsis";
 
 function PaginationExample() {
   return (

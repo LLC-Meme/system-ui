@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { BlockTitle } from "./title";
+import BlockTitle from "./block";
 
 const meta = {
   title: "UI/Title/Block",

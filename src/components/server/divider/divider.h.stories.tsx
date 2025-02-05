@@ -1,6 +1,6 @@
 import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
-import { HDivider } from "./divider";
+import HDivider from "./h-divider";
 
 /**
  * 水平方向の直線を表示するコンポーネントです。

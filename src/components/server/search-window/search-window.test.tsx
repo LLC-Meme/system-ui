@@ -2,7 +2,8 @@ import React from "react";
 import "@testing-library/jest-dom";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
-import { SearchWindowContainer, SearchWindowInput } from "./search-window";
+import SearchWindowContainer from "./container";
+import SearchWindowInput from "./input";
 
 describe("SearchWindow", () => {
   it("Containerがデフォルトのclassで表示", () => {

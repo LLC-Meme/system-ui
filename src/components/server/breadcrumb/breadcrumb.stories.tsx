@@ -1,10 +1,8 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import {
-  BreadcrumbContainer,
-  BreadcrumbItem,
-  BreadcrumbSeparator,
-} from "./breadcrumb";
+import BreadcrumbContainer from "./container";
+import BreadcrumbItem from "./item";
+import BreadcrumbSeparator from "./separator";
 
 function BreadcrumbExample() {
   return (

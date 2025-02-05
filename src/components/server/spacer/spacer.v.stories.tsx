@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { VSpacer } from "./spacer";
+import VSpacer from "./v-spacer";
 
 /**
  * 垂直方向のスペーシングをするためのコンポーネントです。

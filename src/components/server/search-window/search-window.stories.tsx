@@ -1,6 +1,7 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import { SearchWindowContainer, SearchWindowInput } from "./search-window";
+import SearchWindowContainer from "./container";
+import SearchWindowInput from "./input";
 
 function SearchWindowExample() {
   return (

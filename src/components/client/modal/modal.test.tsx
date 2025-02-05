@@ -3,7 +3,10 @@ import "@testing-library/jest-dom";
 import { render, screen, fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, it, expect } from "vitest";
-import { ModalRoot, ModalTrigger, ModalContent, ModalClose } from "./modal";
+import ModalRoot from "./root";
+import ModalTrigger from "./trigger";
+import ModalContent from "./content";
+import ModalClose from "./close";
 
 describe("Modal", () => {
   // テスト用のコンポーネントを作成

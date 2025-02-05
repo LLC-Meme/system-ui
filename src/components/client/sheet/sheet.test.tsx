@@ -2,7 +2,10 @@ import React from "react";
 import "@testing-library/jest-dom";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
-import { SheetRoot, SheetTrigger, SheetContent, SheetClose } from "./sheet";
+import SheetRoot from "./root";
+import SheetTrigger from "./trigger";
+import SheetContent from "./content";
+import SheetClose from "./close";
 
 describe("Sheet", () => {
   // テスト用のsheetコンポーネントを作成

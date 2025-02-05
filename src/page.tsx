@@ -2,83 +2,64 @@ import React, { useState } from "react";
 import {
   HeaderContainer,
   HeaderSidebarController,
-} from "./components/server/header/header";
-import {
   SidebarContainer,
   SidebarGroup,
-  SidebarGroupLabel,
+  SidebarGroupTitle,
   SidebarItem,
-} from "./components/server/sidebar/sidebar";
-import { Main } from "./components";
-import {
+  Main,
   CollapsibleRoot,
   CollapsibleContent,
   CollapsibleTrigger,
   CollapsibleItem,
-} from "./components/client/collapsible/collapsible";
-import {
   BreadcrumbContainer,
   BreadcrumbItem,
   BreadcrumbSeparator,
-} from "./components/server/breadcrumb/breadcrumb";
-import { VSpacer } from "./components/server/spacer/spacer";
-import { Surface } from "./components/server/surface/surface";
-import { PageTitle, SectionTitle } from "./components/server/title/title";
-import { Alert } from "./components/server/alert/alert";
-import { HStack } from "./components/server/stack/stack";
-import { Button } from "./components/server/button/button";
-import {
+  VSpacer,
+  Surface,
+  PageTitle,
+  SectionTitle,
+  Alert,
+  HStack,
+  Button,
   ModalRoot,
   ModalTrigger,
   ModalContent,
   ModalTitle,
   ModalClose,
   ModalDescription,
-} from "./components/client/modal/modal";
-import {
   SearchWindowContainer,
   SearchWindowInput,
-} from "./components/server/search-window/search-window";
-import { Navigation } from "./components/server/navigation/navigation";
-import { HDivider } from "./components/server/divider/divider";
-import {
+  Navigation,
+  HDivider,
   SheetRoot,
   SheetContent,
   SheetTrigger,
   SheetTitle,
   SheetDescription,
   SheetClose,
-} from "./components/client/sheet/sheet";
-import { Label } from "./components/server/label/label";
-import { Input } from "./components/server/input/input";
-import {
+  Label,
+  Input,
   SelectorSelect,
   SelectorOption,
   SelectorDefaultOption,
-} from "./components/client/selector/select";
-import { LabelText } from "./components/server/label-text/label-text";
-import {
-  RadioButton,
+  LabelText,
+  RadioInput,
   RadioGroup,
   RadioLabel,
   RadioText,
   RadioLabelText,
-} from "./components/server/radio/radio";
-import {
-  CheckboxBox,
+  CheckboxInput,
   CheckboxText,
   CheckboxLabel,
   CheckboxLabelText,
   CheckboxContainer,
-} from "./components/server/checkbox/checkbox";
-import { Textarea } from "./components/server/textarea/textarea";
-import { ErrorMessage } from "./components/server/error-message/error-message";
-import {
-  ThemeContainer,
-  ThemeDark,
-  ThemeLight,
-  ThemeSystem,
-} from "./components/server/theme-switch/theme-switch";
+  Textarea,
+  ErrorMessage,
+  ThemeSwitchContainer,
+  ThemeSwitchDark,
+  ThemeSwitchLight,
+  ThemeSwitchSystem,
+} from "./components";
 
 export default function Page() {
   const [sidebarOpen, setSidebarOpen] = useState(true);
@@ -89,22 +70,22 @@ export default function Page() {
         <HeaderSidebarController onClick={() => setSidebarOpen(!sidebarOpen)} />
         <h1 className="text-2xl font-bold whitespace-nowrap">Acme Inc.</h1>
         <HStack className="w-full justify-end">
-          <ThemeContainer>
-            <ThemeLight />
-            <ThemeDark />
-            <ThemeSystem current />
-          </ThemeContainer>
+          <ThemeSwitchContainer>
+            <ThemeSwitchDark />
+            <ThemeSwitchLight />
+            <ThemeSwitchSystem current />
+          </ThemeSwitchContainer>
         </HStack>
       </HeaderContainer>
 
       <SidebarContainer isOpen={sidebarOpen}>
         <SidebarGroup>
-          <SidebarGroupLabel>Group Label</SidebarGroupLabel>
+          <SidebarGroupTitle>Group Label</SidebarGroupTitle>
           <SidebarItem>Item</SidebarItem>
           <SidebarItem current>Current Item</SidebarItem>
         </SidebarGroup>
         <SidebarGroup>
-          <SidebarGroupLabel>Group Label</SidebarGroupLabel>
+          <SidebarGroupTitle>Group Label</SidebarGroupTitle>
           <CollapsibleRoot>
             <CollapsibleTrigger>Collapsible Trigger</CollapsibleTrigger>
             <CollapsibleContent>
@@ -323,15 +304,15 @@ export default function Page() {
                   <RadioGroup>
                     <RadioLabelText>Radio Group</RadioLabelText>
                     <RadioLabel>
-                      <RadioButton name="test" />
+                      <RadioInput name="test" />
                       <RadioText>Option 1</RadioText>
                     </RadioLabel>
                     <RadioLabel>
-                      <RadioButton name="test" />
+                      <RadioInput name="test" />
                       <RadioText>Option 2</RadioText>
                     </RadioLabel>
                     <RadioLabel>
-                      <RadioButton name="test" />
+                      <RadioInput name="test" />
                       <RadioText>Option 3</RadioText>
                     </RadioLabel>
                   </RadioGroup>
@@ -339,11 +320,11 @@ export default function Page() {
                   <CheckboxContainer>
                     <CheckboxLabelText>Checkbox</CheckboxLabelText>
                     <CheckboxLabel>
-                      <CheckboxBox />
+                      <CheckboxInput />
                       <CheckboxText>Checkbox 1</CheckboxText>
                     </CheckboxLabel>
                     <CheckboxLabel>
-                      <CheckboxBox />
+                      <CheckboxInput />
                       <CheckboxText>Checkbox 2</CheckboxText>
                     </CheckboxLabel>
                   </CheckboxContainer>

@@ -2,7 +2,7 @@ import React from "react";
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
-import { Label } from "./label";
+import Label from "./label";
 
 describe("Label コンポーネント", () => {
   it("ラベルが正しくレンダリングされる", () => {
