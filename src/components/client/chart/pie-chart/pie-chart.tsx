@@ -32,7 +32,7 @@ interface CustomTooltipPayloadItem {
 }
 
 const PieChart = React.forwardRef<HTMLDivElement, PieChartProps>(
-  ({ className, data, hasLegend = true }, ref) => {
+  ({ className, data, hasLegend = false }, ref) => {
     const total = data.reduce((sum, item) => sum + item.value, 0);
 
     interface CustomLegendPayloadItem {

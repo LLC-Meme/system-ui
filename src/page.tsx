@@ -61,6 +61,7 @@ import {
   ThemeSwitchSystem,
   LineChart,
   BarChart,
+  PieChart,
 } from "./components";
 import { type LineChartData } from "./components/client/chart/line-chart/line-chart";
 
@@ -74,6 +75,13 @@ const dummy: LineChartData = Array.from({ length: 31 }, (_, index) => {
     value3: Math.floor(Math.random() * 500),
   };
 });
+
+const pieDummy = [
+  { name: "Group A", value: 400 },
+  { name: "Group B", value: 300 },
+  { name: "Group C", value: 300 },
+  { name: "Group D", value: 200 },
+];
 
 export default function Page() {
   const [sidebarOpen, setSidebarOpen] = useState(true);
@@ -377,6 +385,12 @@ export default function Page() {
             data={dummy}
             dataKeys={["value1", "value2", "value3"]}
           />
+        </Surface>
+
+        <VSpacer unit={2} />
+
+        <Surface>
+          <PieChart className="w-full h-96 py-8" data={pieDummy} hasLegend />
         </Surface>
 
         {/* Table */}

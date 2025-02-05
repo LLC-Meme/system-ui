@@ -10,7 +10,7 @@ const dummy = [
 ];
 
 function PieChartExample() {
-  return <PieChart data={dummy} className="w-[800px] h-80" />;
+  return <PieChart data={dummy} className="w-[800px] h-80" hasLegend />;
 }
 
 const meta = {
