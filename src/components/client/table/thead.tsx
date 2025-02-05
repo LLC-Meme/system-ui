@@ -1,13 +1,13 @@
 import * as React from "react";
 
-function Thead({
+const Thead = ({
   children,
   ...props
 }: React.PropsWithChildren<
   React.TableHTMLAttributes<HTMLTableSectionElement>
->) {
+>) => {
   return <thead {...props}>{children}</thead>;
-}
+};
 Thead.displayName = "Thead";
 
 export default Thead;

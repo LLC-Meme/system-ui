@@ -1,7 +1,7 @@
 import * as React from "react";
 import { ChevronRight } from "lucide-react";
 
-function BreadcrumbSeparator() {
+const BreadcrumbSeparator = () => {
   return (
     <ChevronRight
       size={24}
@@ -9,7 +9,7 @@ function BreadcrumbSeparator() {
       aria-label="breadcrumb-separator"
     />
   );
-}
+};
 BreadcrumbSeparator.displayName = "BreadcrumbSeparator";
 
 export default BreadcrumbSeparator;

@@ -4,13 +4,13 @@ import * as React from "react";
 import { cn } from "../../../lib/cn";
 import { TableStyleContext } from "./type";
 
-function Td({
+const Td = ({
   children,
   className,
   ...props
 }: React.PropsWithChildren<React.TdHTMLAttributes<HTMLTableCellElement>> & {
   className?: string;
-}) {
+}) => {
   const tableStyle = React.useContext(TableStyleContext);
   return (
     <td
@@ -24,7 +24,7 @@ function Td({
       {children}
     </td>
   );
-}
+};
 Td.displayName = "Td";
 
 export default Td;

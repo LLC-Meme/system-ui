@@ -4,7 +4,7 @@ import * as React from "react";
 import { cn } from "../../../lib/cn";
 import { TableStyleContext } from "./type";
 
-function Th({
+const Th = ({
   children,
   className,
   ...props
@@ -12,7 +12,7 @@ function Th({
   React.TableHTMLAttributes<HTMLTableHeaderCellElement>
 > & {
   className?: string;
-}) {
+}) => {
   const tableStyle = React.useContext(TableStyleContext);
   return (
     <th
@@ -27,7 +27,7 @@ function Th({
       {children}
     </th>
   );
-}
+};
 Th.displayName = "Th";
 
 export default Th;

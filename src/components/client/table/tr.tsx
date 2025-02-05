@@ -5,7 +5,7 @@ import styles from "./table.module.css";
 import { cn } from "../../../lib/cn";
 import { TableStyleContext } from "./type";
 
-function Tr({
+const Tr = ({
   children,
   muted = false,
   className,
@@ -13,7 +13,7 @@ function Tr({
 }: React.PropsWithChildren<React.TableHTMLAttributes<HTMLTableRowElement>> & {
   className?: string;
   muted?: boolean;
-}) {
+}) => {
   const tableStyle = React.useContext(TableStyleContext);
   return (
     <tr
@@ -27,7 +27,7 @@ function Tr({
       {children}
     </tr>
   );
-}
+};
 Tr.displayName = "Tr";
 
 export default Tr;
