@@ -60,6 +60,7 @@ import {
   ThemeSwitchLight,
   ThemeSwitchSystem,
   LineChart,
+  BarChart,
 } from "./components";
 import { type LineChartData } from "./components/client/chart/line-chart/line-chart";
 
@@ -365,6 +366,16 @@ export default function Page() {
             data={dummy}
             dataKeys={["value1", "value2", "value3"]}
             hasLegend
+          />
+        </Surface>
+
+        <VSpacer unit={2} />
+
+        <Surface>
+          <BarChart
+            className="w-full h-96 py-8"
+            data={dummy}
+            dataKeys={["value1", "value2", "value3"]}
           />
         </Surface>
 
