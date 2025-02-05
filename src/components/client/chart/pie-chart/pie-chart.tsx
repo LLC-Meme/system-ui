@@ -7,6 +7,7 @@ import {
   ResponsiveContainer,
   Cell,
   Tooltip,
+  Legend,
 } from "recharts";
 import HStack from "../../../server/stack/h-stack";
 import { colorMap, colorOrders } from "../colors";
@@ -21,6 +22,7 @@ export type PieChartData = PieChartDataItem[];
 export interface PieChartProps {
   className?: string;
   data: PieChartData;
+  hasLegend?: boolean;
 }
 
 interface CustomTooltipPayloadItem {
@@ -30,10 +32,41 @@ interface CustomTooltipPayloadItem {
 }
 
 const PieChart = React.forwardRef<HTMLDivElement, PieChartProps>(
-  ({ className, data }, ref) => {
+  ({ className, data, hasLegend = true }, ref) => {
     const total = data.reduce((sum, item) => sum + item.value, 0);
 
-    // new code: custom tooltip component
+    interface CustomLegendPayloadItem {
+      value: string | number;
+    }
+
+    interface CustomLegendProps {
+      payload?: CustomLegendPayloadItem[];
+    }
+
+    const CustomLegend: React.FC<CustomLegendProps> = ({ payload }) => {
+      if (!payload) return null;
+      return (
+        <HStack className="justify-center space-x-4">
+          {payload.map((entry) => {
+            const idx = data.findIndex((item) => item.name === entry.value);
+            const color =
+              idx >= 0
+                ? `var(--${colorMap[colorOrders[idx % colorOrders.length]]})`
+                : "#000";
+            return (
+              <HStack key={entry.value} className="items-center space-x-1">
+                <div
+                  className="w-3 h-3 rounded-sm"
+                  style={{ backgroundColor: color }}
+                />
+                <span className="text-sm font-medium">{entry.value}</span>
+              </HStack>
+            );
+          })}
+        </HStack>
+      );
+    };
+
     const CustomTooltip = ({
       active,
       payload,
@@ -84,6 +117,7 @@ const PieChart = React.forwardRef<HTMLDivElement, PieChartProps>(
               ))}
             </Pie>
             <Tooltip content={<CustomTooltip />} />
+            {hasLegend && <Legend content={<CustomLegend />} />}
           </RechartsPieChart>
         </ResponsiveContainer>
       </div>
