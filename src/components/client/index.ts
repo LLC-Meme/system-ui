@@ -1,4 +1,5 @@
 export * from "./calendar";
+export * from "./chart";
 export * from "./collapsible";
 export * from "./dropdown";
 export * from "./modal";
