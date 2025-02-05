@@ -3,14 +3,14 @@ import { type Meta, type StoryObj } from "@storybook/react";
 import LineChart from "./line-chart";
 
 const dummy = [
-  { name: "1", value1: 400, value2: 100 },
-  { name: "2", value1: 300, value2: 193 },
-  { name: "3", value1: 300, value2: 325 },
-  { name: "4", value1: 200, value2: 51 },
-  { name: "5", value1: 278, value2: 19 },
-  { name: "6", value1: 189, value2: 139 },
-  { name: "7", value1: 0, value2: 327 },
-  { name: "8", value1: 42, value2: 12 },
+  { name: "1", value1: 400, value2: 100, value3: 300 },
+  { name: "2", value1: 300, value2: 193, value3: 240 },
+  { name: "3", value1: 300, value2: 325, value3: 190 },
+  { name: "4", value1: 200, value2: 51, value3: 60 },
+  { name: "5", value1: 278, value2: 19, value3: 360 },
+  { name: "6", value1: 189, value2: 139, value3: 10 },
+  { name: "7", value1: 0, value2: 327, value3: 320 },
+  { name: "8", value1: 42, value2: 12, value3: 120 },
 ];
 
 function LineChartExample() {
@@ -18,7 +18,7 @@ function LineChartExample() {
     <LineChart
       className="w-[800px] h-80"
       data={dummy}
-      dataKey={["value1", "value2"]}
+      dataKey={["value1", "value2", "value3"]}
     />
   );
 }

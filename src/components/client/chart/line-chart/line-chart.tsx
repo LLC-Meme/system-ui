@@ -24,6 +24,13 @@ export interface LineChartProps {
   dataKey: string | string[];
 }
 
+interface LineChartTooltipPayload {
+  dataKey: string;
+  value: number | string;
+  name: string;
+  payload: LineChartDataItem;
+}
+
 const colorMap = {
   red: "alert",
   orange: "warning",
@@ -66,22 +73,29 @@ const LineChart = React.forwardRef<HTMLDivElement, LineChartProps>(
     const CustomTooltip = ({
       active,
       payload,
-    }: React.ComponentProps<typeof Tooltip>) => {
+    }: {
+      active?: boolean;
+      payload?: LineChartTooltipPayload[];
+    }) => {
       if (!active || !payload || payload.length === 0) return null;
       const dataItem = payload[0].payload;
       return (
         <div className="p-2 bg-surface rounded-lg border border-border text-sm">
           <div className="font-bold mb-1">{dataItem.name}</div>
-          <HStack className="items-center">
-            <div
-              className="w-3 h-3 rounded-sm mr-1"
-              style={{ backgroundColor: "var(--info)" }}
-            />
-            <div className="text-foreground-muted min-w-12">
-              {payload[0].name}
-            </div>
-            <div className="font-semibold">{payload[0].value}</div>
-          </HStack>
+          {payload.map((entry) => (
+            <HStack key={entry.dataKey} className="items-center">
+              <div
+                className="w-3 h-3 rounded-sm mr-1"
+                style={{
+                  backgroundColor: `var(--${colorMap[keyToColor[entry.dataKey]]})`,
+                }}
+              />
+              <div className="text-foreground-muted min-w-16">
+                {entry.dataKey}
+              </div>
+              <div className="font-semibold">{entry.value}</div>
+            </HStack>
+          ))}
         </div>
       );
     };
