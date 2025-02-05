@@ -13,14 +13,7 @@ const dummy = [
 ];
 
 function LineChartExample() {
-  return (
-    <LineChart
-      className="w-[640px] h-64"
-      data={dummy}
-      color="blue"
-      dataKey="value"
-    />
-  );
+  return <LineChart className="w-[640px] h-64" data={dummy} dataKey="value" />;
 }
 
 const meta = {
