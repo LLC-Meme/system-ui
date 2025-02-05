@@ -13,7 +13,7 @@ import HStack from "../../../server/stack/h-stack";
 
 export type LineChartDataItem = {
   name: string;
-  [key: string]: number | string;
+  [key: string]: number | string | null | undefined;
 };
 export type LineChartData = LineChartDataItem[];
 
@@ -21,7 +21,7 @@ export interface LineChartProps {
   data: LineChartData;
   className?: string;
   color?: Color;
-  dataKey: string | string[];
+  dataKey: string[];
 }
 
 interface LineChartTooltipPayload {
@@ -63,7 +63,7 @@ const colorOrders: (keyof typeof colorMap)[] = [
 
 const LineChart = React.forwardRef<HTMLDivElement, LineChartProps>(
   ({ data, className, dataKey }, ref) => {
-    const keys = typeof dataKey === "string" ? [dataKey] : dataKey;
+    const keys = dataKey;
 
     const keyToColor: Record<string, keyof typeof colorMap> = {};
     keys.forEach((key, index) => {
