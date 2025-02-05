@@ -49,16 +49,16 @@ const colorMap = {
 const colorOrders: (keyof typeof colorMap)[] = [
   "blue",
   "green",
-  "red",
-  "purple",
-  "yellow",
-  "teal",
   "pink",
+  "cyan",
+  "yellow",
+  "purple",
   "mint",
   "orange",
-  "cyan",
   "indigo",
+  "teal",
   "brown",
+  "red",
 ] satisfies Color[];
 
 const LineChart = React.forwardRef<HTMLDivElement, LineChartProps>(
