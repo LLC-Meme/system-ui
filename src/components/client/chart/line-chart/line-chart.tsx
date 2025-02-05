@@ -154,6 +154,7 @@ const LineChart = React.forwardRef<HTMLDivElement, LineChartProps>(
               stroke="var(--foreground-muted)"
               tickLine={false}
               axisLine={false}
+              className="text-sm"
             />
             <XAxis
               hide={!hasXAxis}
@@ -162,6 +163,7 @@ const LineChart = React.forwardRef<HTMLDivElement, LineChartProps>(
               tickFormatter={formatTick}
               tickLine={false}
               axisLine={false}
+              className="text-sm"
             />
             {hasLegend && <Legend content={<CustomLegend />} />}
             <Tooltip

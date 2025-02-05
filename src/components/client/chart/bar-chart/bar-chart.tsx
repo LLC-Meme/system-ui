@@ -42,12 +42,14 @@ export const BarChart = React.forwardRef<HTMLDivElement, BarChartProps>(
               axisLine={false}
               tickLine={false}
               stroke="var(--foreground-muted)"
+              className="text-sm"
             />
             <YAxis
               hide={!hasYAxis}
               axisLine={false}
               tickLine={false}
               stroke="var(--foreground-muted)"
+              className="text-sm"
             />
             {dataKeys.map((key, index) => (
               <Bar

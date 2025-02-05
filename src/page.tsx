@@ -364,8 +364,7 @@ export default function Page() {
             className="w-full h-96 py-8"
             data={dummy}
             dataKeys={["value1", "value2", "value3"]}
-            hasYAxis={true}
-            hasXAxis={true}
+            hasLegend
           />
         </Surface>
 
