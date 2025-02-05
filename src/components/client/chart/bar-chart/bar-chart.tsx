@@ -30,7 +30,7 @@ export const BarChart = React.forwardRef<HTMLDivElement, BarChartProps>(
               strokeWidth={1}
               stroke="var(--border)"
             />
-            <Bar dataKey="value1" fill="#8884d8" />
+            <Bar dataKey="value1" fill="#8884d8" radius={[8, 8, 0, 0]} />
           </RechartsBarChart>
         </ResponsiveContainer>
       </div>
