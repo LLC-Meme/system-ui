@@ -11,7 +11,7 @@ import {
   Tooltip,
 } from "recharts";
 import HStack from "../../../server/stack/h-stack";
-import { colorMap, colorOrders, formatName } from "../utils";
+import { colorMap, colorOrders, formatName, formatTick } from "../utils";
 
 export type BarChartDataItem = {
   name: string | number | Date;
@@ -85,6 +85,7 @@ export const BarChart = React.forwardRef<HTMLDivElement, BarChartProps>(
               dataKey="name"
               axisLine={false}
               tickLine={false}
+              tickFormatter={formatTick}
               stroke="var(--foreground-muted)"
               className="text-sm"
             />
