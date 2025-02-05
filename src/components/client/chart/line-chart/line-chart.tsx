@@ -158,6 +158,13 @@ const LineChart = React.forwardRef<HTMLDivElement, LineChartProps>(
               />
             )}
             {hasLegend && <Legend content={<CustomLegend />} />}
+            <Tooltip
+              content={<CustomTooltip />}
+              cursor={{
+                stroke: "var(--border)",
+                strokeWidth: 1,
+              }}
+            />
             {keys.map((key) => (
               <Line
                 key={key}
@@ -173,13 +180,6 @@ const LineChart = React.forwardRef<HTMLDivElement, LineChartProps>(
                 }}
               />
             ))}
-            <Tooltip
-              content={<CustomTooltip />}
-              cursor={{
-                stroke: "var(--border)",
-                strokeWidth: 1,
-              }}
-            />
           </RechartsLineChart>
         </ResponsiveContainer>
       </div>
