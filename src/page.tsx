@@ -64,8 +64,20 @@ import {
   PieChart,
 } from "./components";
 import { type LineChartData } from "./components/client/chart/line-chart/line-chart";
+import { type BarChartData } from "./components/client/chart/bar-chart/bar-chart";
 
-const dummy: LineChartData = Array.from({ length: 31 }, (_, index) => {
+const lineDummy: LineChartData = Array.from({ length: 31 }, (_, index) => {
+  const day = index + 1;
+  const date = new Date(2024, 11, day + 15);
+  return {
+    name: date,
+    value1: Math.floor(Math.random() * 500),
+    value2: Math.floor(Math.random() * 500),
+    value3: Math.floor(Math.random() * 500),
+  };
+});
+
+const barDummy: BarChartData = Array.from({ length: 8 }, (_, index) => {
   const day = index + 1;
   const date = new Date(2024, 11, day + 15);
   return {
@@ -369,9 +381,10 @@ export default function Page() {
         <VSpacer unit={2} />
 
         <Surface>
+          <SectionTitle>Line Chart</SectionTitle>
           <LineChart
             className="w-full h-96 py-8"
-            data={dummy}
+            data={lineDummy}
             dataKeys={["value1", "value2", "value3"]}
             hasLegend
           />
@@ -379,19 +392,21 @@ export default function Page() {
 
         <VSpacer unit={2} />
 
-        <Surface>
-          <BarChart
-            className="w-full h-96 py-8"
-            data={dummy}
-            dataKeys={["value1", "value2", "value3"]}
-          />
-        </Surface>
+        <HStack className="space-x-8">
+          <Surface className="flex-1">
+            <SectionTitle>Bar Chart</SectionTitle>
+            <BarChart
+              className="w-full h-96 py-8"
+              data={barDummy}
+              dataKeys={["value1", "value2", "value3"]}
+            />
+          </Surface>
 
-        <VSpacer unit={2} />
-
-        <Surface>
-          <PieChart className="w-full h-96 py-8" data={pieDummy} hasLegend />
-        </Surface>
+          <Surface className="w-[400px]">
+            <SectionTitle>Pie Chart</SectionTitle>
+            <PieChart className="w-full h-80" data={pieDummy} hasLegend />
+          </Surface>
+        </HStack>
 
         {/* Table */}
         {/* Tabs */}
