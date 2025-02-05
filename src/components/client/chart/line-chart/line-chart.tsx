@@ -9,6 +9,7 @@ import {
   Tooltip,
 } from "recharts";
 import { type Color } from "../../../../types";
+import HStack from "../../../server/stack/h-stack";
 
 export type LineChartDataItem = {
   name: string;
@@ -39,6 +40,29 @@ const colorMap = {
 
 const LineChart = React.forwardRef<HTMLDivElement, LineChartProps>(
   ({ data, className, color = "blue" }, ref) => {
+    const CustomTooltip = ({
+      active,
+      payload,
+    }: React.ComponentProps<typeof Tooltip>) => {
+      if (!active || !payload || payload.length === 0) return null;
+      const dataItem = payload[0].payload;
+      return (
+        <div className="p-2 bg-surface rounded-lg border border-border text-sm">
+          <div className="font-bold mb-1">{dataItem.name}</div>
+          <HStack className="items-center">
+            <div
+              className="w-3 h-3 rounded-sm mr-1"
+              style={{ backgroundColor: `var(--${colorMap[color]})` }}
+            />
+            <div className="text-foreground-muted min-w-12">
+              {payload[0].name}
+            </div>
+            <div className="font-semibold">{payload[0].value}</div>
+          </HStack>
+        </div>
+      );
+    };
+
     return (
       <div className={className} ref={ref}>
         <ResponsiveContainer width="100%" height="100%">
@@ -57,12 +81,7 @@ const LineChart = React.forwardRef<HTMLDivElement, LineChartProps>(
               }}
             />
             <Tooltip
-              contentStyle={{
-                backgroundColor: "var(--surface)",
-                borderRadius: "8px",
-                border: "1px solid var(--border)",
-                fontSize: "var(--text-sm)",
-              }}
+              content={<CustomTooltip />}
               cursor={{
                 stroke: "var(--border)",
                 strokeWidth: 1,
