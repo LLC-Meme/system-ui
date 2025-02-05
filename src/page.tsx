@@ -59,7 +59,20 @@ import {
   ThemeSwitchDark,
   ThemeSwitchLight,
   ThemeSwitchSystem,
+  LineChart,
 } from "./components";
+import { type LineChartData } from "./components/client/chart/line-chart/line-chart";
+
+const dummy: LineChartData = Array.from({ length: 31 }, (_, index) => {
+  const day = index + 1;
+  const date = new Date(2024, 11, day + 15);
+  return {
+    name: date,
+    value1: Math.floor(Math.random() * 500),
+    value2: Math.floor(Math.random() * 500),
+    value3: Math.floor(Math.random() * 500),
+  };
+});
 
 export default function Page() {
   const [sidebarOpen, setSidebarOpen] = useState(true);
@@ -342,6 +355,18 @@ export default function Page() {
               </SheetContent>
             </SheetRoot>
           </HStack>
+        </Surface>
+
+        <VSpacer unit={2} />
+
+        <Surface>
+          <LineChart
+            className="w-full h-96 py-8"
+            data={dummy}
+            dataKey={["value1", "value2", "value3"]}
+            hasYAxis={true}
+            hasXAxis={true}
+          />
         </Surface>
 
         {/* Table */}
