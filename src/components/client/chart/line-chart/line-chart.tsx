@@ -149,14 +149,20 @@ const LineChart = React.forwardRef<HTMLDivElement, LineChartProps>(
         <ResponsiveContainer width="100%" height="100%">
           <RechartsLineChart data={data} width={400} height={400}>
             <CartesianGrid strokeDasharray="2 2" stroke="var(--border)" />
-            {hasYAxis && <YAxis stroke="var(--border)" />}
-            {hasXAxis && (
-              <XAxis
-                stroke="var(--border)"
-                dataKey="name"
-                tickFormatter={formatTick}
-              />
-            )}
+            <YAxis
+              hide={!hasYAxis}
+              stroke="var(--foreground-muted)"
+              tickLine={false}
+              axisLine={false}
+            />
+            <XAxis
+              hide={!hasXAxis}
+              stroke="var(--foreground-muted)"
+              dataKey="name"
+              tickFormatter={formatTick}
+              tickLine={false}
+              axisLine={false}
+            />
             {hasLegend && <Legend content={<CustomLegend />} />}
             <Tooltip
               content={<CustomTooltip />}
