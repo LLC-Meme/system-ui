@@ -31,6 +31,7 @@ function LineChartExample() {
       dataKey={["value1", "value2", "value3"]}
       hasYAxis
       hasXAxis
+      hasLegend
     />
   );
 }

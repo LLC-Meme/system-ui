@@ -9,6 +9,7 @@ import {
   Tooltip,
   XAxis,
   YAxis,
+  Legend,
 } from "recharts";
 import { type Color } from "../../../../types";
 import HStack from "../../../server/stack/h-stack";
@@ -26,6 +27,7 @@ export interface LineChartProps {
   dataKey: string[];
   hasXAxis?: boolean;
   hasYAxis?: boolean;
+  hasLegend?: boolean;
 }
 
 interface LineChartTooltipPayload {
@@ -66,7 +68,17 @@ const colorOrders: (keyof typeof colorMap)[] = [
 ] satisfies Color[];
 
 const LineChart = React.forwardRef<HTMLDivElement, LineChartProps>(
-  ({ data, className, dataKey, hasYAxis = false, hasXAxis = false }, ref) => {
+  (
+    {
+      data,
+      className,
+      dataKey,
+      hasYAxis = false,
+      hasXAxis = false,
+      hasLegend = false,
+    },
+    ref,
+  ) => {
     const keys = dataKey;
 
     const keyToColor: Record<string, keyof typeof colorMap> = {};
@@ -130,6 +142,37 @@ const LineChart = React.forwardRef<HTMLDivElement, LineChartProps>(
       );
     };
 
+    interface CustomLegendPayloadItem {
+      value: string | number;
+    }
+
+    interface CustomLegendProps {
+      payload?: CustomLegendPayloadItem[];
+      width?: number;
+      height?: number;
+    }
+
+    const CustomLegend: React.FC<CustomLegendProps> = ({ payload }) => {
+      if (!payload) return null;
+      return (
+        <HStack gap="sm" className="w-full justify-center">
+          {payload.map((entry) => {
+            const dataKey = String(entry.value);
+            const color = `var(--${colorMap[keyToColor[dataKey]]})`;
+            return (
+              <HStack key={dataKey} className="items-center space-x-1">
+                <div
+                  className="w-3 h-3 rounded-sm"
+                  style={{ backgroundColor: color }}
+                />
+                <span className="text-sm font-medium">{dataKey}</span>
+              </HStack>
+            );
+          })}
+        </HStack>
+      );
+    };
+
     return (
       <div className={className} ref={ref}>
         <ResponsiveContainer width="100%" height="100%">
@@ -143,6 +186,7 @@ const LineChart = React.forwardRef<HTMLDivElement, LineChartProps>(
                 tickFormatter={formatTick}
               />
             )}
+            {hasLegend && <Legend content={<CustomLegend />} />}
             {keys.map((key) => (
               <Line
                 key={key}
