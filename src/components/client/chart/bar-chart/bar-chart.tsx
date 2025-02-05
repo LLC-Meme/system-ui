@@ -5,6 +5,7 @@ import {
   Bar,
   BarChart as RechartsBarChart,
   ResponsiveContainer,
+  CartesianGrid,
 } from "recharts";
 
 export type BarChartDataItem = {
@@ -24,6 +25,11 @@ export const BarChart = React.forwardRef<HTMLDivElement, BarChartProps>(
       <div ref={ref} className={className}>
         <ResponsiveContainer width="100%" height="100%">
           <RechartsBarChart data={data}>
+            <CartesianGrid
+              vertical={false}
+              strokeWidth={1}
+              stroke="var(--border)"
+            />
             <Bar dataKey="value1" fill="#8884d8" />
           </RechartsBarChart>
         </ResponsiveContainer>
