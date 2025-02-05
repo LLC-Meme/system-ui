@@ -43,13 +43,18 @@ const LineChart = React.forwardRef<HTMLDivElement, LineChartProps>(
       <div className={className} ref={ref}>
         <ResponsiveContainer width="100%" height="100%">
           <RechartsLineChart data={data} width={400} height={400}>
-            <CartesianGrid strokeDasharray="2 2" />
+            <CartesianGrid strokeDasharray="2 2" stroke="var(--border)" />
             <Line
               type="linear"
               dataKey="value"
               stroke={`var(--${colorMap[color]})`}
               dot={false}
               strokeWidth={2}
+              activeDot={{
+                fill: `var(--${colorMap[color]})`,
+                r: 4,
+                strokeWidth: 0,
+              }}
             />
             <Tooltip
               contentStyle={{
@@ -57,6 +62,10 @@ const LineChart = React.forwardRef<HTMLDivElement, LineChartProps>(
                 borderRadius: "8px",
                 border: "1px solid var(--border)",
                 fontSize: "var(--text-sm)",
+              }}
+              cursor={{
+                stroke: "var(--border)",
+                strokeWidth: 1,
               }}
             />
           </RechartsLineChart>
