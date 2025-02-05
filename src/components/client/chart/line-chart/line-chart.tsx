@@ -44,8 +44,8 @@ const LineChart = React.forwardRef<HTMLDivElement, LineChartProps>(
       data,
       className,
       dataKey,
-      hasYAxis = false,
-      hasXAxis = false,
+      hasYAxis = true,
+      hasXAxis = true,
       hasLegend = false,
     },
     ref,
@@ -168,7 +168,7 @@ const LineChart = React.forwardRef<HTMLDivElement, LineChartProps>(
               content={<CustomTooltip />}
               cursor={{
                 stroke: "var(--border)",
-                strokeWidth: 1,
+                strokeWidth: 2,
               }}
             />
             {keys.map((key) => (

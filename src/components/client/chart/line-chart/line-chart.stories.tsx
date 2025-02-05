@@ -29,8 +29,6 @@ function LineChartExample() {
       className="w-[800px] h-80"
       data={dummy}
       dataKey={["value1", "value2", "value3"]}
-      hasYAxis
-      hasXAxis
       hasLegend
     />
   );

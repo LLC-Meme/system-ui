@@ -19,10 +19,12 @@ export type BarChartData = BarChartDataItem[];
 export interface BarChartProps {
   className?: string;
   data: BarChartData;
+  hasXAxis?: boolean;
+  hasYAxis?: boolean;
 }
 
 export const BarChart = React.forwardRef<HTMLDivElement, BarChartProps>(
-  ({ className, data }, ref) => {
+  ({ className, data, hasXAxis = true, hasYAxis = true }, ref) => {
     return (
       <div ref={ref} className={className}>
         <ResponsiveContainer width="100%" height="100%">
@@ -33,12 +35,14 @@ export const BarChart = React.forwardRef<HTMLDivElement, BarChartProps>(
               stroke="var(--border)"
             />
             <XAxis
+              hide={!hasXAxis}
               dataKey="name"
               axisLine={false}
               tickLine={false}
               stroke="var(--foreground-muted)"
             />
             <YAxis
+              hide={!hasYAxis}
               axisLine={false}
               tickLine={false}
               stroke="var(--foreground-muted)"
