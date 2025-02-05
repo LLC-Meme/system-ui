@@ -1,6 +1,6 @@
 {
   "name": "meme-system-ui",
-  "version": "1.1.1",
+  "version": "1.2.1",
   "description": "React UI components for system design in LLC Meme",
   "license": "MIT",
   "main": "dist/components/index.js",
@@ -82,8 +82,8 @@
     "format:check": "prettier --check src",
     "lint": "eslint src",
     "prepare": "husky",
-    "build": "tsup",
-    "build:watch": "tsup -w"
+    "build": "NODE_OPTIONS='--max-old-space-size=8192' tsup",
+    "build:watch": "NODE_OPTIONS='--max-old-space-size=8192' tsup -w"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx}": "npm run lint",
