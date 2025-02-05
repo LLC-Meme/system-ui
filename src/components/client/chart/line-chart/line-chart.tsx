@@ -7,13 +7,15 @@ import {
   ResponsiveContainer,
   CartesianGrid,
   Tooltip,
+  XAxis,
+  YAxis,
 } from "recharts";
 import { type Color } from "../../../../types";
 import HStack from "../../../server/stack/h-stack";
 
 export type LineChartDataItem = {
-  name: string;
-  [key: string]: number | string | null | undefined;
+  name: string | number | Date;
+  [key: string]: number | string | null | undefined | Date;
 };
 export type LineChartData = LineChartDataItem[];
 
@@ -22,6 +24,8 @@ export interface LineChartProps {
   className?: string;
   color?: Color;
   dataKey: string[];
+  hasXAxis?: boolean;
+  hasYAxis?: boolean;
 }
 
 interface LineChartTooltipPayload {
@@ -62,13 +66,24 @@ const colorOrders: (keyof typeof colorMap)[] = [
 ] satisfies Color[];
 
 const LineChart = React.forwardRef<HTMLDivElement, LineChartProps>(
-  ({ data, className, dataKey }, ref) => {
+  ({ data, className, dataKey, hasYAxis = false, hasXAxis = false }, ref) => {
     const keys = dataKey;
 
     const keyToColor: Record<string, keyof typeof colorMap> = {};
     keys.forEach((key, index) => {
       keyToColor[key] = colorOrders[index] || colorOrders[0];
     });
+
+    const formatName = (name: string | number | Date): string => {
+      if (typeof name === "string") return name;
+      if (typeof name === "number") return name.toString();
+      const year = name.getFullYear();
+      const month = name.getMonth() + 1;
+      const day = name.getDate();
+      return `${year}-${month < 10 ? `0${month}` : month}-${
+        day < 10 ? `0${day}` : day
+      }`;
+    };
 
     const CustomTooltip = ({
       active,
@@ -81,7 +96,7 @@ const LineChart = React.forwardRef<HTMLDivElement, LineChartProps>(
       const dataItem = payload[0].payload;
       return (
         <div className="p-2 bg-surface rounded-lg border border-border text-sm">
-          <div className="font-bold mb-1">{dataItem.name}</div>
+          <div className="font-bold mb-1">{formatName(dataItem.name)}</div>
           {payload.map((entry) => (
             <HStack key={entry.dataKey} className="items-center">
               <div
@@ -105,6 +120,8 @@ const LineChart = React.forwardRef<HTMLDivElement, LineChartProps>(
         <ResponsiveContainer width="100%" height="100%">
           <RechartsLineChart data={data} width={400} height={400}>
             <CartesianGrid strokeDasharray="2 2" stroke="var(--border)" />
+            {hasYAxis && <YAxis stroke="var(--border)" />}
+            {hasXAxis && <XAxis stroke="var(--border)" dataKey="name" />}
             {keys.map((key) => (
               <Line
                 key={key}
