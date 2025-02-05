@@ -6,6 +6,8 @@ import {
   BarChart as RechartsBarChart,
   ResponsiveContainer,
   CartesianGrid,
+  YAxis,
+  XAxis,
 } from "recharts";
 
 export type BarChartDataItem = {
@@ -30,6 +32,8 @@ export const BarChart = React.forwardRef<HTMLDivElement, BarChartProps>(
               strokeWidth={1}
               stroke="var(--border)"
             />
+            <XAxis dataKey="name" axisLine={false} tickLine={false} />
+            <YAxis axisLine={false} tickLine={false} />
             <Bar dataKey="value1" fill="#8884d8" radius={[8, 8, 0, 0]} />
           </RechartsBarChart>
         </ResponsiveContainer>
