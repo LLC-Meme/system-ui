@@ -11,8 +11,9 @@ import {
   YAxis,
   Legend,
 } from "recharts";
-import { type Color } from "../../../../types";
 import HStack from "../../../server/stack/h-stack";
+import { type Color } from "../../../../types";
+import { colorMap, colorOrders } from "../colors";
 
 export type LineChartDataItem = {
   name: string | number | Date;
@@ -36,36 +37,6 @@ interface LineChartTooltipPayload {
   name: string;
   payload: LineChartDataItem;
 }
-
-const colorMap = {
-  red: "alert",
-  orange: "warning",
-  yellow: "yellow",
-  green: "success",
-  mint: "mint",
-  teal: "teal",
-  cyan: "cyan",
-  blue: "info",
-  indigo: "indigo",
-  purple: "purple",
-  pink: "pink",
-  brown: "brown",
-};
-
-const colorOrders: (keyof typeof colorMap)[] = [
-  "blue",
-  "purple",
-  "yellow",
-  "green",
-  "orange",
-  "indigo",
-  "pink",
-  "cyan",
-  "mint",
-  "teal",
-  "brown",
-  "red",
-] satisfies Color[];
 
 const LineChart = React.forwardRef<HTMLDivElement, LineChartProps>(
   (
