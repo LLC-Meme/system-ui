@@ -383,7 +383,7 @@ export default function Page() {
         <Surface>
           <SectionTitle>Line Chart</SectionTitle>
           <LineChart
-            className="w-full h-96 py-8"
+            className="w-full h-[480px] py-8"
             data={lineDummy}
             dataKeys={["product1", "product2", "product3"]}
             hasLegend
