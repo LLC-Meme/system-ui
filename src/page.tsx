@@ -17,7 +17,7 @@ import {
   VSpacer,
   Surface,
   PageTitle,
-  SectionTitle,
+  BlockTitle,
   Alert,
   HStack,
   Button,
@@ -223,7 +223,7 @@ export default function Page() {
         <VSpacer />
 
         <Surface>
-          <SectionTitle>Section Title</SectionTitle>
+          <BlockTitle>Section Title</BlockTitle>
           <p className="mt-4">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec
             odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla
@@ -258,7 +258,7 @@ export default function Page() {
         <VSpacer unit={2} />
 
         <Surface>
-          <SectionTitle>Section Title</SectionTitle>
+          <BlockTitle>Section Title</BlockTitle>
           <p className="mt-4">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec
             odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla
@@ -284,7 +284,7 @@ export default function Page() {
         <VSpacer unit={2} />
 
         <Surface>
-          <SectionTitle>Section Title</SectionTitle>
+          <BlockTitle>Section Title</BlockTitle>
           <p className="mt-4">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec
             odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla
@@ -381,7 +381,7 @@ export default function Page() {
         <VSpacer unit={2} />
 
         <Surface>
-          <SectionTitle>Line Chart</SectionTitle>
+          <BlockTitle>Line Chart</BlockTitle>
           <LineChart
             className="w-full h-[480px] py-8"
             data={lineDummy}
@@ -394,7 +394,7 @@ export default function Page() {
 
         <HStack className="space-x-8">
           <Surface className="flex-1">
-            <SectionTitle>Bar Chart</SectionTitle>
+            <BlockTitle>Bar Chart</BlockTitle>
             <BarChart
               className="w-full h-96 py-8"
               data={barDummy}
@@ -403,7 +403,7 @@ export default function Page() {
           </Surface>
 
           <Surface className="w-[400px]">
-            <SectionTitle>Pie Chart</SectionTitle>
+            <BlockTitle>Pie Chart</BlockTitle>
             <PieChart className="w-full h-80" data={pieDummy} hasLegend />
           </Surface>
         </HStack>
