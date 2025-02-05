@@ -122,7 +122,7 @@ const LineChart = React.forwardRef<HTMLDivElement, LineChartProps>(
       if (!active || !payload || payload.length === 0) return null;
       const dataItem = payload[0].payload;
       return (
-        <div className="p-2 bg-surface rounded-lg border border-border text-sm">
+        <div className="px-4 py-2 bg-surface rounded-lg border border-border text-sm">
           <div className="font-bold mb-1">{formatName(dataItem.name)}</div>
           {payload.map((entry) => (
             <HStack key={entry.dataKey} className="items-center">
