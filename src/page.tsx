@@ -399,6 +399,7 @@ export default function Page() {
               className="w-full h-96 py-8"
               data={barDummy}
               dataKeys={["US", "Japan", "China"]}
+              hasLegend
             />
           </Surface>
 

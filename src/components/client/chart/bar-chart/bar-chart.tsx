@@ -9,6 +9,7 @@ import {
   YAxis,
   XAxis,
   Tooltip,
+  Legend,
 } from "recharts";
 import HStack from "../../../server/stack/h-stack";
 import { colorMap, colorOrders, formatName, formatTick } from "../utils";
@@ -22,13 +23,24 @@ export type BarChartData = BarChartDataItem[];
 export interface BarChartProps {
   className?: string;
   data: BarChartData;
+  dataKeys: string[];
   hasXAxis?: boolean;
   hasYAxis?: boolean;
-  dataKeys: string[];
+  hasLegend?: boolean;
 }
 
 export const BarChart = React.forwardRef<HTMLDivElement, BarChartProps>(
-  ({ className, data, hasXAxis = true, hasYAxis = true, dataKeys }, ref) => {
+  (
+    {
+      className,
+      data,
+      hasXAxis = true,
+      hasYAxis = true,
+      dataKeys,
+      hasLegend = false,
+    },
+    ref,
+  ) => {
     const keys = dataKeys;
     const keyToColor: Record<string, keyof typeof colorMap> = {};
     keys.forEach((key, index) => {
@@ -71,6 +83,37 @@ export const BarChart = React.forwardRef<HTMLDivElement, BarChartProps>(
       );
     };
 
+    interface CustomLegendPayloadItem {
+      value: string | number;
+    }
+
+    interface CustomLegendProps {
+      payload?: CustomLegendPayloadItem[];
+      width?: number;
+      height?: number;
+    }
+
+    const CustomLegend: React.FC<CustomLegendProps> = ({ payload }) => {
+      if (!payload) return null;
+      return (
+        <HStack gap="sm" className="w-full justify-center">
+          {payload.map((entry) => {
+            const dataKey = String(entry.value);
+            const color = `var(--${colorMap[keyToColor[dataKey]]})`;
+            return (
+              <HStack key={dataKey} className="items-center space-x-1">
+                <div
+                  className="w-3 h-3 rounded-sm"
+                  style={{ backgroundColor: color }}
+                />
+                <span className="text-sm font-medium">{dataKey}</span>
+              </HStack>
+            );
+          })}
+        </HStack>
+      );
+    };
+
     return (
       <div ref={ref} className={className}>
         <ResponsiveContainer width="100%" height="100%">
@@ -100,6 +143,7 @@ export const BarChart = React.forwardRef<HTMLDivElement, BarChartProps>(
               content={<CustomTooltip />}
               cursor={{ fill: "var(--surface-muted2)" }}
             />
+            {hasLegend && <Legend content={<CustomLegend />} />}
             {dataKeys.map((key, index) => (
               <Bar
                 key={key}

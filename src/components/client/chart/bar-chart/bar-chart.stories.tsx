@@ -19,6 +19,7 @@ function BarChartExample() {
       data={dummy}
       className="w-[800px] h-80"
       dataKeys={["value1", "value2", "value3"]}
+      hasLegend
     />
   );
 }
