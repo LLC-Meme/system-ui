@@ -71,9 +71,9 @@ const lineDummy: LineChartData = Array.from({ length: 31 }, (_, index) => {
   const date = new Date(2024, 11, day + 15);
   return {
     name: date,
-    value1: Math.floor(Math.random() * 500),
-    value2: Math.floor(Math.random() * 500),
-    value3: Math.floor(Math.random() * 500),
+    product1: Math.floor(Math.random() * 500),
+    product2: Math.floor(Math.random() * 500),
+    product3: Math.floor(Math.random() * 500),
   };
 });
 
@@ -82,9 +82,9 @@ const barDummy: BarChartData = Array.from({ length: 8 }, (_, index) => {
   const date = new Date(2024, 11, day + 15);
   return {
     name: date,
-    value1: Math.floor(Math.random() * 500),
-    value2: Math.floor(Math.random() * 500),
-    value3: Math.floor(Math.random() * 500),
+    US: Math.floor(Math.random() * 1000),
+    Japan: Math.floor(Math.random() * 1000),
+    China: Math.floor(Math.random() * 1000),
   };
 });
 
@@ -385,7 +385,7 @@ export default function Page() {
           <LineChart
             className="w-full h-96 py-8"
             data={lineDummy}
-            dataKeys={["value1", "value2", "value3"]}
+            dataKeys={["product1", "product2", "product3"]}
             hasLegend
           />
         </Surface>
@@ -398,7 +398,7 @@ export default function Page() {
             <BarChart
               className="w-full h-96 py-8"
               data={barDummy}
-              dataKeys={["value1", "value2", "value3"]}
+              dataKeys={["US", "Japan", "China"]}
             />
           </Surface>
 
