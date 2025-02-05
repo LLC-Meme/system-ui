@@ -12,7 +12,7 @@ const SectionTitle = React.forwardRef<HTMLHeadingElement, SectionTitleProps>(
       <h2
         ref={ref}
         {...props}
-        className={cn(props.className, "text-lg font-bold text-foreground")}
+        className={cn(props.className, "text-xl font-bold text-foreground")}
       >
         {children}
       </h2>

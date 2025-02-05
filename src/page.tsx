@@ -102,7 +102,7 @@ export default function Page() {
     <div>
       <HeaderContainer>
         <HeaderSidebarController onClick={() => setSidebarOpen(!sidebarOpen)} />
-        <h1 className="text-2xl font-bold whitespace-nowrap">Acme Inc.</h1>
+        <h1 className="text-xl font-bold whitespace-nowrap">Acme Inc.</h1>
         <HStack className="w-full justify-end">
           <ThemeSwitchContainer>
             <ThemeSwitchDark />

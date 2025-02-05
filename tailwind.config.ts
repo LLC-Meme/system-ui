@@ -40,10 +40,11 @@ export default {
         "brown-muted": "var(--brown-muted)",
       },
       fontSize: {
-        sm: "var(--text-sm)",
-        md: "var(--text-md)",
-        lg: "var(--text-lg)",
-        xl: "var(--text-xl)",
+        "sm": "var(--text-sm)",
+        "md": "var(--text-md)",
+        "lg": "var(--text-lg)",
+        "xl": "var(--text-xl)",
+        "2xl": "var(--text-2xl)",
       },
       keyframes: {
         "fade-in": {
