@@ -10,7 +10,7 @@ import {
   Legend,
 } from "recharts";
 import HStack from "../../../server/stack/h-stack";
-import { colorMap, colorOrders } from "../colors";
+import { colorMap, colorOrders } from "../utils";
 
 export interface PieChartDataItem {
   name: string;

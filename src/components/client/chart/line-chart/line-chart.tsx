@@ -13,7 +13,7 @@ import {
 } from "recharts";
 import HStack from "../../../server/stack/h-stack";
 import { type Color } from "../../../../types";
-import { colorMap, colorOrders } from "../colors";
+import { colorMap, colorOrders } from "../utils";
 
 export type LineChartDataItem = {
   name: string | number | Date;

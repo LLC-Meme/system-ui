@@ -9,7 +9,7 @@ import {
   YAxis,
   XAxis,
 } from "recharts";
-import { colorMap, colorOrders } from "../colors";
+import { colorMap, colorOrders } from "../utils";
 
 export type BarChartDataItem = {
   name: string | number | Date;
