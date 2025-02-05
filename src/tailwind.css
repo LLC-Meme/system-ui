@@ -29,6 +29,11 @@ body {
 body {
   --disabled-opacity: 0.4;
   --hover-opacity: 0.7;
+
+  --text-sm: 12px;
+  --text-md: 16px;
+  --text-lg: 24px;
+  --text-xl: 32px;
 }
 
 body {
