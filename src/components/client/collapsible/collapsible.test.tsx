@@ -2,21 +2,24 @@ import React from "react";
 import "@testing-library/jest-dom";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
-import Collapsible from "./collapsible";
+import CollapsibleRoot from "./root";
+import CollapsibleTrigger from "./trigger";
+import CollapsibleContent from "./content";
+import CollapsibleItem from "./item";
 
 describe("Collapsible", () => {
   function TestCollapsible() {
     return (
-      <Collapsible.Root>
-        <Collapsible.Trigger aria-label="open-collapsible">
+      <CollapsibleRoot>
+        <CollapsibleTrigger aria-label="open-collapsible">
           Toggle
-        </Collapsible.Trigger>
-        <Collapsible.Content>
+        </CollapsibleTrigger>
+        <CollapsibleContent>
           <p>Collapsible Content</p>
-          <Collapsible.Item>Item 1</Collapsible.Item>
-          <Collapsible.Item>Item 2</Collapsible.Item>
-        </Collapsible.Content>
-      </Collapsible.Root>
+          <CollapsibleItem>Item 1</CollapsibleItem>
+          <CollapsibleItem>Item 2</CollapsibleItem>
+        </CollapsibleContent>
+      </CollapsibleRoot>
     );
   }
 

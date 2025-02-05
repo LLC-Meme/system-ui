@@ -12,7 +12,6 @@ export default {
         surface: "var(--surface)",
         "surface-muted1": "var(--surface-muted1)",
         "surface-muted2": "var(--surface-muted2)",
-        overlay: "var(--overlay)",
         border: "var(--border)",
         info: "var(--info)",
         "info-muted": "var(--info-muted)",
@@ -41,10 +40,11 @@ export default {
         "brown-muted": "var(--brown-muted)",
       },
       fontSize: {
-        sm: "12px",
-        md: "16px",
-        lg: "24px",
-        xl: "32px",
+        "sm": "var(--text-sm)",
+        "md": "var(--text-md)",
+        "lg": "var(--text-lg)",
+        "xl": "var(--text-xl)",
+        "2xl": "var(--text-2xl)",
       },
       keyframes: {
         "fade-in": {

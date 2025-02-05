@@ -1,196 +1,264 @@
 import React, { useState } from "react";
-import Header from "./components/client/header/header";
-import Sidebar from "./components/server/sidebar/sidebar";
-import Main from "./components/server/main/main";
-import Collapsible from "./components/client/collapsible/collapsible";
-import Breadcrumb from "./components/server/breadcrumb/breadcrumb";
-import Spacer from "./components/server/spacer/spacer";
-import Surface from "./components/server/surface/surface";
-import Title from "./components/server/title/title";
-import Alert from "./components/server/alert/alert";
-import Stack from "./components/server/stack/stack";
-import Button from "./components/server/button/button";
-import Modal from "./components/client/modal/modal";
-import SearchWindow from "./components/server/search-window/search-window";
-import Navigation from "./components/server/navigation/navigation";
-import Divider from "./components/server/divider/divider";
-import Sheet from "./components/client/sheet/sheet";
-import Label from "./components/server/label/label";
-import Input from "./components/server/input/input";
-import Selector from "./components/client/selector/selector";
-import LabelText from "./components/server/label-text/label-text";
-import Radio from "./components/server/radio/radio";
-import Checkbox from "./components/server/checkbox/checkbox";
-import Textarea from "./components/server/textarea/textarea";
-import ErrorMessage from "./components/server/error-message/error-message";
-import ThemeSwitch from "./components/server/theme-switch/theme-switch";
+import {
+  HeaderContainer,
+  HeaderSidebarController,
+  SidebarContainer,
+  SidebarGroup,
+  SidebarGroupTitle,
+  SidebarItem,
+  Main,
+  CollapsibleRoot,
+  CollapsibleContent,
+  CollapsibleTrigger,
+  CollapsibleItem,
+  BreadcrumbContainer,
+  BreadcrumbItem,
+  BreadcrumbSeparator,
+  VSpacer,
+  Surface,
+  PageTitle,
+  BlockTitle,
+  Alert,
+  HStack,
+  Button,
+  ModalRoot,
+  ModalTrigger,
+  ModalContent,
+  ModalTitle,
+  ModalClose,
+  ModalDescription,
+  SearchWindowContainer,
+  SearchWindowInput,
+  Navigation,
+  HDivider,
+  SheetRoot,
+  SheetContent,
+  SheetTrigger,
+  SheetTitle,
+  SheetDescription,
+  SheetClose,
+  Label,
+  Input,
+  SelectorSelect,
+  SelectorOption,
+  SelectorDefaultOption,
+  LabelText,
+  RadioInput,
+  RadioGroup,
+  RadioLabel,
+  RadioText,
+  RadioLabelText,
+  CheckboxInput,
+  CheckboxText,
+  CheckboxLabel,
+  CheckboxLabelText,
+  CheckboxContainer,
+  Textarea,
+  ErrorMessage,
+  ThemeSwitchContainer,
+  ThemeSwitchDark,
+  ThemeSwitchLight,
+  ThemeSwitchSystem,
+  LineChart,
+  BarChart,
+  PieChart,
+} from "./components";
+import { type LineChartData } from "./components/client/chart/line-chart/line-chart";
+import { type BarChartData } from "./components/client/chart/bar-chart/bar-chart";
+
+const lineDummy: LineChartData = Array.from({ length: 31 }, (_, index) => {
+  const day = index + 1;
+  const date = new Date(2024, 11, day + 15);
+  return {
+    name: date,
+    product1: Math.floor(Math.random() * 500),
+    product2: Math.floor(Math.random() * 500),
+    product3: Math.floor(Math.random() * 500),
+  };
+});
+
+const barDummy: BarChartData = Array.from({ length: 8 }, (_, index) => {
+  const day = index + 1;
+  const date = new Date(2024, 11, day + 15);
+  return {
+    name: date,
+    US: Math.floor(Math.random() * 1000),
+    Japan: Math.floor(Math.random() * 1000),
+    China: Math.floor(Math.random() * 1000),
+  };
+});
+
+const pieDummy = [
+  { name: "Group A", value: 400 },
+  { name: "Group B", value: 300 },
+  { name: "Group C", value: 300 },
+  { name: "Group D", value: 200 },
+];
 
 export default function Page() {
   const [sidebarOpen, setSidebarOpen] = useState(true);
 
   return (
     <div>
-      <Header.Container>
-        <Header.SidebarController
-          onClick={() => setSidebarOpen(!sidebarOpen)}
-        />
-        <h1 className="text-2xl font-bold whitespace-nowrap">Acme Inc.</h1>
-        <Stack.H className="w-full justify-end">
-          <ThemeSwitch.Container>
-            <ThemeSwitch.Light />
-            <ThemeSwitch.Dark />
-            <ThemeSwitch.System current />
-          </ThemeSwitch.Container>
-        </Stack.H>
-      </Header.Container>
+      <HeaderContainer>
+        <HeaderSidebarController onClick={() => setSidebarOpen(!sidebarOpen)} />
+        <h1 className="text-xl font-bold whitespace-nowrap">Acme Inc.</h1>
+        <HStack className="w-full justify-end">
+          <ThemeSwitchContainer>
+            <ThemeSwitchDark />
+            <ThemeSwitchLight />
+            <ThemeSwitchSystem current />
+          </ThemeSwitchContainer>
+        </HStack>
+      </HeaderContainer>
 
-      <Sidebar.Container isOpen={sidebarOpen}>
-        <Sidebar.Group>
-          <Sidebar.GroupLabel>Group Label</Sidebar.GroupLabel>
-          <Sidebar.Item>Item</Sidebar.Item>
-          <Sidebar.Item current>Current Item</Sidebar.Item>
-        </Sidebar.Group>
-        <Sidebar.Group>
-          <Sidebar.GroupLabel>Group Label</Sidebar.GroupLabel>
-          <Collapsible.Root>
-            <Collapsible.Trigger>Collapsible Trigger</Collapsible.Trigger>
-            <Collapsible.Content>
-              <Collapsible.Item href="/item1">
+      <SidebarContainer isOpen={sidebarOpen}>
+        <SidebarGroup>
+          <SidebarGroupTitle>Group Label</SidebarGroupTitle>
+          <SidebarItem>Item</SidebarItem>
+          <SidebarItem current>Current Item</SidebarItem>
+        </SidebarGroup>
+        <SidebarGroup>
+          <SidebarGroupTitle>Group Label</SidebarGroupTitle>
+          <CollapsibleRoot>
+            <CollapsibleTrigger>Collapsible Trigger</CollapsibleTrigger>
+            <CollapsibleContent>
+              <CollapsibleItem href="/item1">
                 Collapsible Item 1
-              </Collapsible.Item>
-              <Collapsible.Item href="/item2">
+              </CollapsibleItem>
+              <CollapsibleItem href="/item2">
                 Collapsible Item 2
-              </Collapsible.Item>
-            </Collapsible.Content>
-          </Collapsible.Root>
-          <Collapsible.Root>
-            <Collapsible.Trigger>Collapsible Trigger</Collapsible.Trigger>
-            <Collapsible.Content>
-              <Collapsible.Item href="/item1">
+              </CollapsibleItem>
+            </CollapsibleContent>
+          </CollapsibleRoot>
+          <CollapsibleRoot>
+            <CollapsibleTrigger>Collapsible Trigger</CollapsibleTrigger>
+            <CollapsibleContent>
+              <CollapsibleItem href="/item1">
                 Collapsible Item 1
-              </Collapsible.Item>
-              <Collapsible.Item href="/item2">
+              </CollapsibleItem>
+              <CollapsibleItem href="/item2">
                 Collapsible Item 2
-              </Collapsible.Item>
-            </Collapsible.Content>
-          </Collapsible.Root>
-          <Collapsible.Root>
-            <Collapsible.Trigger>Collapsible Trigger</Collapsible.Trigger>
-            <Collapsible.Content>
-              <Collapsible.Item href="/item1">
+              </CollapsibleItem>
+            </CollapsibleContent>
+          </CollapsibleRoot>
+          <CollapsibleRoot>
+            <CollapsibleTrigger>Collapsible Trigger</CollapsibleTrigger>
+            <CollapsibleContent>
+              <CollapsibleItem href="/item1">
                 Collapsible Item 1
-              </Collapsible.Item>
-              <Collapsible.Item href="/item2">
+              </CollapsibleItem>
+              <CollapsibleItem href="/item2">
                 Collapsible Item 2
-              </Collapsible.Item>
-            </Collapsible.Content>
-          </Collapsible.Root>
-          <Collapsible.Root>
-            <Collapsible.Trigger>Collapsible Trigger</Collapsible.Trigger>
-            <Collapsible.Content>
-              <Collapsible.Item href="/item1">
+              </CollapsibleItem>
+            </CollapsibleContent>
+          </CollapsibleRoot>
+          <CollapsibleRoot>
+            <CollapsibleTrigger>Collapsible Trigger</CollapsibleTrigger>
+            <CollapsibleContent>
+              <CollapsibleItem href="/item1">
                 Collapsible Item 1
-              </Collapsible.Item>
-              <Collapsible.Item href="/item2">
+              </CollapsibleItem>
+              <CollapsibleItem href="/item2">
                 Collapsible Item 2
-              </Collapsible.Item>
-            </Collapsible.Content>
-          </Collapsible.Root>
-          <Collapsible.Root>
-            <Collapsible.Trigger>Collapsible Trigger</Collapsible.Trigger>
-            <Collapsible.Content>
-              <Collapsible.Item href="/item1">
+              </CollapsibleItem>
+            </CollapsibleContent>
+          </CollapsibleRoot>
+          <CollapsibleRoot>
+            <CollapsibleTrigger>Collapsible Trigger</CollapsibleTrigger>
+            <CollapsibleContent>
+              <CollapsibleItem href="/item1">
                 Collapsible Item 1
-              </Collapsible.Item>
-              <Collapsible.Item href="/item2">
+              </CollapsibleItem>
+              <CollapsibleItem href="/item2">
                 Collapsible Item 2
-              </Collapsible.Item>
-            </Collapsible.Content>
-          </Collapsible.Root>
-          <Collapsible.Root>
-            <Collapsible.Trigger>Collapsible Trigger</Collapsible.Trigger>
-            <Collapsible.Content>
-              <Collapsible.Item href="/item1">
+              </CollapsibleItem>
+            </CollapsibleContent>
+          </CollapsibleRoot>
+          <CollapsibleRoot>
+            <CollapsibleTrigger>Collapsible Trigger</CollapsibleTrigger>
+            <CollapsibleContent>
+              <CollapsibleItem href="/item1">
                 Collapsible Item 1
-              </Collapsible.Item>
-              <Collapsible.Item href="/item2">
+              </CollapsibleItem>
+              <CollapsibleItem href="/item2">
                 Collapsible Item 2
-              </Collapsible.Item>
-            </Collapsible.Content>
-          </Collapsible.Root>
-        </Sidebar.Group>
-      </Sidebar.Container>
+              </CollapsibleItem>
+            </CollapsibleContent>
+          </CollapsibleRoot>
+        </SidebarGroup>
+      </SidebarContainer>
 
       <Main sidebarOpen={sidebarOpen}>
-        <Breadcrumb.Container>
-          <Breadcrumb.Item href="/" current={false}>
+        <BreadcrumbContainer>
+          <BreadcrumbItem href="/" current={false}>
             Home
-          </Breadcrumb.Item>
-          <Breadcrumb.Separator />
-          <Breadcrumb.Item href="/dashboard" current={false}>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem href="/dashboard" current={false}>
             Dashboard
-          </Breadcrumb.Item>
-          <Breadcrumb.Separator />
-          <Breadcrumb.Item href="/dashboard/sales" current={false}>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem href="/dashboard/sales" current={false}>
             Sales
-          </Breadcrumb.Item>
-          <Breadcrumb.Separator />
-          <Breadcrumb.Item href="/dashboard/sales/data" current={true}>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem href="/dashboard/sales/data" current={true}>
             Data
-          </Breadcrumb.Item>
-        </Breadcrumb.Container>
+          </BreadcrumbItem>
+        </BreadcrumbContainer>
 
-        <Spacer.V unit={2} />
+        <VSpacer unit={2} />
 
-        <SearchWindow.Container>
-          <SearchWindow.Input placeholder="Search" />
-        </SearchWindow.Container>
+        <SearchWindowContainer>
+          <SearchWindowInput placeholder="Search" />
+        </SearchWindowContainer>
 
-        <Spacer.V unit={2} />
+        <VSpacer unit={2} />
 
-        <Title.Page>Data</Title.Page>
+        <PageTitle>Data</PageTitle>
 
         <Alert variant="danger">This is an danger alert</Alert>
 
-        <Spacer.V />
+        <VSpacer />
 
         <Surface>
-          <Title.Section>Section Title</Title.Section>
+          <BlockTitle>Section Title</BlockTitle>
           <p className="mt-4">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec
             odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla
             quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent
             mauris. Fusce nec tellus sed augue semper porta.
           </p>
-          <Stack.H className="justify-end mt-6">
-            <Modal.Root>
-              <Modal.Trigger asChild>
+          <HStack className="justify-end mt-6">
+            <ModalRoot>
+              <ModalTrigger asChild>
                 <Button>Open Modal</Button>
-              </Modal.Trigger>
-              <Modal.Content className="w-96">
-                <Modal.Title>Modal Title</Modal.Title>
-                <Modal.Description className="mt-2">
+              </ModalTrigger>
+              <ModalContent className="w-96">
+                <ModalTitle>Modal Title</ModalTitle>
+                <ModalDescription className="mt-2">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   Integer nec odio. Praesent libero. Sed cursus ante dapibus
                   diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.
                   Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed
                   augue semper porta.
-                </Modal.Description>
-                <Stack.H className="justify-between mt-6">
-                  <Modal.Close asChild>
+                </ModalDescription>
+                <HStack className="justify-between mt-6">
+                  <ModalClose asChild>
                     <Button variant="danger">Close</Button>
-                  </Modal.Close>
+                  </ModalClose>
                   <Button>Save</Button>
-                </Stack.H>
-              </Modal.Content>
-            </Modal.Root>
-          </Stack.H>
+                </HStack>
+              </ModalContent>
+            </ModalRoot>
+          </HStack>
         </Surface>
 
-        <Spacer.V unit={2} />
+        <VSpacer unit={2} />
 
         <Surface>
-          <Title.Section>Section Title</Title.Section>
+          <BlockTitle>Section Title</BlockTitle>
           <p className="mt-4">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec
             odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla
@@ -213,102 +281,133 @@ export default function Page() {
           </p>
         </Surface>
 
-        <Spacer.V unit={2} />
+        <VSpacer unit={2} />
 
         <Surface>
-          <Title.Section>Section Title</Title.Section>
+          <BlockTitle>Section Title</BlockTitle>
           <p className="mt-4">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec
             odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla
             quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent
             mauris. Fusce nec tellus sed augue semper porta.
           </p>
-          <Divider.H className="my-4" />
+          <HDivider className="my-4" />
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec
             odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla
             quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent
             mauris. Fusce nec tellus sed augue semper porta.
           </p>
-          <Divider.H className="my-4" />
+          <HDivider className="my-4" />
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec
             odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla
             quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent
             mauris. Fusce nec tellus sed augue semper porta.
           </p>
-          <Stack.H className="justify-end mt-6">
-            <Sheet.Root>
-              <Sheet.Trigger asChild>
+          <HStack className="justify-end mt-6">
+            <SheetRoot>
+              <SheetTrigger asChild>
                 <Button>Open Sheet</Button>
-              </Sheet.Trigger>
-              <Sheet.Content>
-                <Sheet.Title>Sheet Title</Sheet.Title>
-                <Sheet.Description className="mt-2">
+              </SheetTrigger>
+              <SheetContent>
+                <SheetTitle>Sheet Title</SheetTitle>
+                <SheetDescription className="mt-2">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </Sheet.Description>
-                <Spacer.V />
+                </SheetDescription>
+                <VSpacer />
 
                 <form className="flex flex-col gap-6 mt-2">
                   <Label>
                     <LabelText>Input</LabelText>
                     <Input placeholder="input something" />
-                    <ErrorMessage>This is an error message.</ErrorMessage>
+                    <ErrorMessage>This is an error message</ErrorMessage>
                   </Label>
                   <Label>
                     <LabelText>Selector</LabelText>
-                    <Selector.Select className="w-full">
-                      <Selector.DefaultOption>
+                    <SelectorSelect className="w-full">
+                      <SelectorDefaultOption>
                         Select an option
-                      </Selector.DefaultOption>
-                      <Selector.Option>Option 1</Selector.Option>
-                      <Selector.Option>Option 2</Selector.Option>
-                      <Selector.Option>Option 3</Selector.Option>
-                    </Selector.Select>
+                      </SelectorDefaultOption>
+                      <SelectorOption>Option 1</SelectorOption>
+                      <SelectorOption>Option 2</SelectorOption>
+                      <SelectorOption>Option 3</SelectorOption>
+                    </SelectorSelect>
                   </Label>
 
-                  <Radio.Group>
-                    <Radio.LabelText>Radio Group</Radio.LabelText>
-                    <Radio.Label>
-                      <Radio.Button name="test" />
-                      <Radio.Text>Option 1</Radio.Text>
-                    </Radio.Label>
-                    <Radio.Label>
-                      <Radio.Button name="test" />
-                      <Radio.Text>Option 2</Radio.Text>
-                    </Radio.Label>
-                    <Radio.Label>
-                      <Radio.Button name="test" />
-                      <Radio.Text>Option 3</Radio.Text>
-                    </Radio.Label>
-                  </Radio.Group>
+                  <RadioGroup>
+                    <RadioLabelText>Radio Group</RadioLabelText>
+                    <RadioLabel>
+                      <RadioInput name="test" />
+                      <RadioText>Option 1</RadioText>
+                    </RadioLabel>
+                    <RadioLabel>
+                      <RadioInput name="test" />
+                      <RadioText>Option 2</RadioText>
+                    </RadioLabel>
+                    <RadioLabel>
+                      <RadioInput name="test" />
+                      <RadioText>Option 3</RadioText>
+                    </RadioLabel>
+                  </RadioGroup>
 
-                  <Checkbox.Container>
-                    <Checkbox.LabelText>Checkbox</Checkbox.LabelText>
-                    <Checkbox.Label>
-                      <Checkbox.Box />
-                      <Checkbox.Text>Checkbox 1</Checkbox.Text>
-                    </Checkbox.Label>
-                    <Checkbox.Label>
-                      <Checkbox.Box />
-                      <Checkbox.Text>Checkbox 2</Checkbox.Text>
-                    </Checkbox.Label>
-                  </Checkbox.Container>
+                  <CheckboxContainer>
+                    <CheckboxLabelText>Checkbox</CheckboxLabelText>
+                    <CheckboxLabel>
+                      <CheckboxInput />
+                      <CheckboxText>Checkbox 1</CheckboxText>
+                    </CheckboxLabel>
+                    <CheckboxLabel>
+                      <CheckboxInput />
+                      <CheckboxText>Checkbox 2</CheckboxText>
+                    </CheckboxLabel>
+                  </CheckboxContainer>
 
                   <Label>
                     <LabelText>Textarea</LabelText>
                     <Textarea placeholder="input something" />
                   </Label>
 
-                  <Spacer.V />
-                  <Sheet.Close asChild>
+                  <VSpacer />
+                  <SheetClose asChild>
                     <Button variant="default">Save</Button>
-                  </Sheet.Close>
+                  </SheetClose>
                 </form>
-              </Sheet.Content>
-            </Sheet.Root>
-          </Stack.H>
+              </SheetContent>
+            </SheetRoot>
+          </HStack>
         </Surface>
+
+        <VSpacer unit={2} />
+
+        <Surface>
+          <BlockTitle>Line Chart</BlockTitle>
+          <LineChart
+            className="w-full h-[480px] py-8"
+            data={lineDummy}
+            dataKeys={["product1", "product2", "product3"]}
+            hasLegend
+          />
+        </Surface>
+
+        <VSpacer unit={2} />
+
+        <HStack className="space-x-8">
+          <Surface className="flex-1">
+            <BlockTitle>Bar Chart</BlockTitle>
+            <BarChart
+              className="w-full h-96 py-8"
+              data={barDummy}
+              dataKeys={["US", "Japan", "China"]}
+              hasLegend
+            />
+          </Surface>
+
+          <Surface className="w-[400px]">
+            <BlockTitle>Pie Chart</BlockTitle>
+            <PieChart className="w-full h-80" data={pieDummy} hasLegend />
+          </Surface>
+        </HStack>
 
         {/* Table */}
         {/* Tabs */}

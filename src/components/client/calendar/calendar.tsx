@@ -62,7 +62,7 @@ const Calendar = React.forwardRef<HTMLDivElement, CalendarProps>(
     }, [focusedMonth]);
 
     return (
-      <div ref={ref} className="p-6 overlay rounded-lg">
+      <div ref={ref} className="p-6 bg-surface rounded-lg">
         <div className="flex items-center justify-between">
           <PrevMonthButton onClick={handlePrevMonthClick} />
           <div className="text-lg">

@@ -1,17 +1,19 @@
 import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
-import Tooltip from "./tooltip";
+import TooltipRoot from "./root";
+import TooltipTrigger from "./trigger";
+import TooltipContent from "./content";
 
 function TooltipExample() {
   return (
-    <Tooltip.Root>
-      <Tooltip.Trigger className="w-fit">
+    <TooltipRoot>
+      <TooltipTrigger className="w-fit">
         <div>Hover me</div>
-      </Tooltip.Trigger>
-      <Tooltip.Content>
+      </TooltipTrigger>
+      <TooltipContent>
         <div>Tooltip content</div>
-      </Tooltip.Content>
-    </Tooltip.Root>
+      </TooltipContent>
+    </TooltipRoot>
   );
 }
 

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import Calendar, { CalendarProps } from "./calendar";
+import Calendar, { type CalendarProps } from "./calendar";
 
 /**
  * カレンダーコンポーネント

@@ -2,14 +2,14 @@ import React from "react";
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
-import Title from "./title";
-
-const { Page, Section, Block } = Title;
+import PageTitle from "./page";
+import SectionTitle from "./section";
+import BlockTitle from "./block";
 
 describe("Title", () => {
   describe("PageTitle", () => {
     it("h1要素がデフォルトのclassで表示", () => {
-      render(<Page data-testid="title-page">Hello Page</Page>);
+      render(<PageTitle data-testid="title-page">Hello Page</PageTitle>);
       const titleEl = screen.getByTestId("title-page");
 
       expect(titleEl.tagName).toBe("H1");
@@ -19,9 +19,9 @@ describe("Title", () => {
 
     it("デフォルトと追加のclassが両方適用", () => {
       render(
-        <Page data-testid="title-page" className="custom-page-class">
+        <PageTitle data-testid="title-page" className="custom-page-class">
           With Custom Class
-        </Page>,
+        </PageTitle>,
       );
       const titleEl = screen.getByTestId("title-page");
       expect(titleEl).toHaveClass(
@@ -34,7 +34,7 @@ describe("Title", () => {
 
     it("refが適用", () => {
       const ref = React.createRef<HTMLHeadingElement>();
-      render(<Page ref={ref}>Ref Test</Page>);
+      render(<PageTitle ref={ref}>Ref Test</PageTitle>);
       expect(ref.current).toBeInstanceOf(HTMLHeadingElement);
       expect(ref.current?.tagName).toBe("H1");
     });
@@ -42,7 +42,9 @@ describe("Title", () => {
 
   describe("SectionTitle", () => {
     it("h1要素がデフォルトのclassで表示", () => {
-      render(<Section data-testid="title-section">Hello Section</Section>);
+      render(
+        <SectionTitle data-testid="title-section">Hello Section</SectionTitle>,
+      );
       const titleEl = screen.getByTestId("title-section");
 
       expect(titleEl.tagName).toBe("H2");
@@ -52,9 +54,12 @@ describe("Title", () => {
 
     it("デフォルトと追加のclassが両方適用", () => {
       render(
-        <Section data-testid="title-section" className="custom-section-class">
+        <SectionTitle
+          data-testid="title-section"
+          className="custom-section-class"
+        >
           With Custom Class
-        </Section>,
+        </SectionTitle>,
       );
       const titleEl = screen.getByTestId("title-section");
       expect(titleEl).toHaveClass(
@@ -67,7 +72,7 @@ describe("Title", () => {
 
     it("refが適用", () => {
       const ref = React.createRef<HTMLHeadingElement>();
-      render(<Section ref={ref}>Ref Test</Section>);
+      render(<SectionTitle ref={ref}>Ref Test</SectionTitle>);
       expect(ref.current).toBeInstanceOf(HTMLHeadingElement);
       expect(ref.current?.tagName).toBe("H2");
     });
@@ -75,7 +80,7 @@ describe("Title", () => {
 
   describe("BlockTitle", () => {
     it("h3要素がデフォルトのclassで表示", () => {
-      render(<Block data-testid="title-block">Hello Block</Block>);
+      render(<BlockTitle data-testid="title-block">Hello Block</BlockTitle>);
       const titleEl = screen.getByTestId("title-block");
 
       expect(titleEl.tagName).toBe("H3");
@@ -85,9 +90,9 @@ describe("Title", () => {
 
     it("デフォルトと追加のclassが両方適用", () => {
       render(
-        <Block data-testid="title-block" className="custom-block-class">
+        <BlockTitle data-testid="title-block" className="custom-block-class">
           With Custom Class
-        </Block>,
+        </BlockTitle>,
       );
       const titleEl = screen.getByTestId("title-block");
       expect(titleEl).toHaveClass(
@@ -100,7 +105,7 @@ describe("Title", () => {
 
     it("refが適用", () => {
       const ref = React.createRef<HTMLHeadingElement>();
-      render(<Block ref={ref}>Ref Test</Block>);
+      render(<BlockTitle ref={ref}>Ref Test</BlockTitle>);
       expect(ref.current).toBeInstanceOf(HTMLHeadingElement);
       expect(ref.current?.tagName).toBe("H3");
     });

@@ -1,19 +1,23 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import Pagination from "./pagination";
+import PaginationContainer from "./container";
+import PaginationItem from "./item";
+import PaginationNext from "./next";
+import PaginationPrev from "./prev";
+import PaginationEllipsis from "./ellipsis";
 
 function PaginationExample() {
   return (
-    <Pagination.Container>
-      <Pagination.Prev href="/1" disabled />
-      <Pagination.Item href="/1" current>
+    <PaginationContainer>
+      <PaginationPrev href="/1" disabled />
+      <PaginationItem href="/1" current>
         1
-      </Pagination.Item>
-      <Pagination.Item href="/2">2</Pagination.Item>
-      <Pagination.Ellipsis />
-      <Pagination.Item href="/20">20</Pagination.Item>
-      <Pagination.Next href="/2" />
-    </Pagination.Container>
+      </PaginationItem>
+      <PaginationItem href="/2">2</PaginationItem>
+      <PaginationEllipsis />
+      <PaginationItem href="/20">20</PaginationItem>
+      <PaginationNext href="/2" />
+    </PaginationContainer>
   );
 }
 

@@ -1,33 +1,40 @@
 import React from "react";
 import { type Meta, StoryObj } from "@storybook/react";
-import Dropdown from "./dropdown";
+import DropdownRoot from "./root";
+import DropdownTrigger from "./trigger";
+import DropdownContent from "./content";
+import DropdownItem from "./item";
+import DropdownDivider from "./divider";
+import DropdownSub from "./sub";
+import DropdownSubTrigger from "./sub-trigger";
+import DropdownSubContent from "./sub-content";
 import Button from "../../server/button/button";
 
 function DropdownExample() {
   return (
-    <Dropdown.Root>
-      <Dropdown.Trigger asChild>
+    <DropdownRoot>
+      <DropdownTrigger asChild>
         <Button>Open Dropdown</Button>
-      </Dropdown.Trigger>
-      <Dropdown.Content>
-        <Dropdown.Item>Dropdown Item 1</Dropdown.Item>
-        <Dropdown.Divider />
-        <Dropdown.Item>Dropdown Item 2</Dropdown.Item>
-        <Dropdown.Divider />
-        <Dropdown.Sub>
-          <Dropdown.SubTrigger>Dropdown Item 3</Dropdown.SubTrigger>
-          <Dropdown.SubContent>
-            <Dropdown.Item>Dropdown Sub Item 1</Dropdown.Item>
-            <Dropdown.Divider />
-            <Dropdown.Item>Dropdown Sub Item 2</Dropdown.Item>
-            <Dropdown.Divider />
-            <Dropdown.Item>Dropdown Sub Item 3</Dropdown.Item>
-          </Dropdown.SubContent>
-        </Dropdown.Sub>
-        <Dropdown.Divider />
-        <Dropdown.Item variant="danger">Dropdown Item 4</Dropdown.Item>
-      </Dropdown.Content>
-    </Dropdown.Root>
+      </DropdownTrigger>
+      <DropdownContent>
+        <DropdownItem>Dropdown Item 1</DropdownItem>
+        <DropdownDivider />
+        <DropdownItem>Dropdown Item 2</DropdownItem>
+        <DropdownDivider />
+        <DropdownSub>
+          <DropdownSubTrigger>Dropdown Item 3</DropdownSubTrigger>
+          <DropdownSubContent>
+            <DropdownItem>Dropdown Sub Item 1</DropdownItem>
+            <DropdownDivider />
+            <DropdownItem>Dropdown Sub Item 2</DropdownItem>
+            <DropdownDivider />
+            <DropdownItem>Dropdown Sub Item 3</DropdownItem>
+          </DropdownSubContent>
+        </DropdownSub>
+        <DropdownDivider />
+        <DropdownItem variant="danger">Dropdown Item 4</DropdownItem>
+      </DropdownContent>
+    </DropdownRoot>
   );
 }
 

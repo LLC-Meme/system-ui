@@ -3,18 +3,21 @@ import "@testing-library/jest-dom";
 import { render, screen, fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, it, expect } from "vitest";
-import Modal from "./modal";
+import ModalRoot from "./root";
+import ModalTrigger from "./trigger";
+import ModalContent from "./content";
+import ModalClose from "./close";
 
 describe("Modal", () => {
   // テスト用のコンポーネントを作成
   function TestModal() {
     return (
-      <Modal.Root>
-        <Modal.Trigger aria-label="open-modal">Open Modal</Modal.Trigger>
-        <Modal.Content>
+      <ModalRoot>
+        <ModalTrigger aria-label="open-modal">Open Modal</ModalTrigger>
+        <ModalContent>
           <p>Modal content here</p>
-        </Modal.Content>
-      </Modal.Root>
+        </ModalContent>
+      </ModalRoot>
     );
   }
 
@@ -55,13 +58,13 @@ describe("Modal", () => {
     // モーダル内に別のCloseボタンがある場合
     function TestModalWithAdditionalClose() {
       return (
-        <Modal.Root>
-          <Modal.Trigger aria-label="open-modal">Open Modal</Modal.Trigger>
-          <Modal.Content>
+        <ModalRoot>
+          <ModalTrigger aria-label="open-modal">Open Modal</ModalTrigger>
+          <ModalContent>
             <p>Modal content here</p>
-            <Modal.Close aria-label="additional-close-modal">X</Modal.Close>
-          </Modal.Content>
-        </Modal.Root>
+            <ModalClose aria-label="additional-close-modal">X</ModalClose>
+          </ModalContent>
+        </ModalRoot>
       );
     }
 

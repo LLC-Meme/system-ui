@@ -2,21 +2,22 @@ import React from "react";
 import "@testing-library/jest-dom";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
-import Sheet from "./sheet";
-
-const { Root, Trigger, Content, Close } = Sheet;
+import SheetRoot from "./root";
+import SheetTrigger from "./trigger";
+import SheetContent from "./content";
+import SheetClose from "./close";
 
 describe("Sheet", () => {
   // テスト用のsheetコンポーネントを作成
   function TestSheet() {
     return (
-      <Root>
-        <Trigger aria-label="open-sheet">Open Sheet</Trigger>
-        <Content>
+      <SheetRoot>
+        <SheetTrigger aria-label="open-sheet">Open Sheet</SheetTrigger>
+        <SheetContent>
           <p>Sheet Content</p>
-          <Close aria-label="close-sheet">X</Close>
-        </Content>
-      </Root>
+          <SheetClose aria-label="close-sheet">X</SheetClose>
+        </SheetContent>
+      </SheetRoot>
     );
   }
 

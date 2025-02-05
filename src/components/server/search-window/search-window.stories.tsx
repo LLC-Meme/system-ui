@@ -1,12 +1,13 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import SearchWindow from "./search-window";
+import SearchWindowContainer from "./container";
+import SearchWindowInput from "./input";
 
 function SearchWindowExample() {
   return (
-    <SearchWindow.Container>
-      <SearchWindow.Input placeholder="Search..." />
-    </SearchWindow.Container>
+    <SearchWindowContainer>
+      <SearchWindowInput placeholder="Search..." />
+    </SearchWindowContainer>
   );
 }
 

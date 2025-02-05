@@ -2,14 +2,13 @@ import React from "react";
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
-import Stack from "./stack";
-
-const { V, H } = Stack;
+import HStack from "./h-stack";
+import VStack from "./v-stack";
 
 describe("Stackコンポーネント", () => {
   describe("Stack.Vコンポーネント(縦スタック)", () => {
     it("デフォルトでgap=noneの場合はgap-0クラスになる", () => {
-      render(<V data-testid="stack-v-default">内容</V>);
+      render(<VStack data-testid="stack-v-default">内容</VStack>);
       const stackEl = screen.getByTestId("stack-v-default");
       // デフォルト gap = none => gap-0
       expect(stackEl).toHaveClass("flex", "flex-col", "gap-0");
@@ -17,9 +16,9 @@ describe("Stackコンポーネント", () => {
 
     it("gap=mdの場合、gap-8クラスが適用される", () => {
       render(
-        <V data-testid="stack-v-md" gap="md">
+        <VStack data-testid="stack-v-md" gap="md">
           内容
-        </V>,
+        </VStack>,
       );
       const stackEl = screen.getByTestId("stack-v-md");
       // gapMap.md = 8 => gap-8
@@ -28,9 +27,9 @@ describe("Stackコンポーネント", () => {
 
     it("追加のclassNameが合わさる", () => {
       render(
-        <V data-testid="stack-v-custom" className="custom-stack" gap="sm">
+        <VStack data-testid="stack-v-custom" className="custom-stack" gap="sm">
           内容
-        </V>,
+        </VStack>,
       );
       const stackEl = screen.getByTestId("stack-v-custom");
       // gap=sm => gap-4
@@ -40,9 +39,9 @@ describe("Stackコンポーネント", () => {
     it("refを正しくforwardする", () => {
       const ref = React.createRef<HTMLDivElement>();
       render(
-        <V ref={ref} data-testid="stack-v-ref">
+        <VStack ref={ref} data-testid="stack-v-ref">
           内容
-        </V>,
+        </VStack>,
       );
       expect(ref.current).toBeInstanceOf(HTMLDivElement);
     });
@@ -50,7 +49,7 @@ describe("Stackコンポーネント", () => {
 
   describe("Stack.Hコンポーネント(横スタック)", () => {
     it("デフォルトでgap=noneの場合はgap-0クラスになる", () => {
-      render(<H data-testid="stack-h-default">内容</H>);
+      render(<HStack data-testid="stack-h-default">内容</HStack>);
       const stackEl = screen.getByTestId("stack-h-default");
       // デフォルト gap = none => gap-0
       expect(stackEl).toHaveClass("flex", "gap-0");
@@ -58,9 +57,9 @@ describe("Stackコンポーネント", () => {
 
     it("gap=lgの場合、gap-12クラスが適用される", () => {
       render(
-        <H data-testid="stack-h-lg" gap="lg">
+        <HStack data-testid="stack-h-lg" gap="lg">
           内容
-        </H>,
+        </HStack>,
       );
       const stackEl = screen.getByTestId("stack-h-lg");
       // gapMap.lg = 12 => gap-12
@@ -69,9 +68,9 @@ describe("Stackコンポーネント", () => {
 
     it("追加のclassNameが合わさる", () => {
       render(
-        <H data-testid="stack-h-custom" className="another-stack" gap="xs">
+        <HStack data-testid="stack-h-custom" className="another-stack" gap="xs">
           内容
-        </H>,
+        </HStack>,
       );
       const stackEl = screen.getByTestId("stack-h-custom");
       // gap=xs => gap-2
@@ -81,9 +80,9 @@ describe("Stackコンポーネント", () => {
     it("refを正しくforwardする", () => {
       const ref = React.createRef<HTMLDivElement>();
       render(
-        <H ref={ref} data-testid="stack-h-ref">
+        <HStack ref={ref} data-testid="stack-h-ref">
           内容
-        </H>,
+        </HStack>,
       );
       expect(ref.current).toBeInstanceOf(HTMLDivElement);
     });

@@ -2,16 +2,17 @@ import React from "react";
 import "@testing-library/jest-dom";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
-import Selector from "./selector";
+import SelectorSelect from "./select";
+import SelectorOption from "./option";
 
 describe("Selector コンポーネント", () => {
   it("正しい選択肢がレンダリングされる", () => {
     render(
-      <Selector.Select data-testid="select">
-        <Selector.Option value="1">選択肢1</Selector.Option>
-        <Selector.Option value="2">選択肢2</Selector.Option>
-        <Selector.Option value="3">選択肢3</Selector.Option>
-      </Selector.Select>,
+      <SelectorSelect data-testid="select">
+        <SelectorOption value="1">選択肢1</SelectorOption>
+        <SelectorOption value="2">選択肢2</SelectorOption>
+        <SelectorOption value="3">選択肢3</SelectorOption>
+      </SelectorSelect>,
     );
 
     // セレクトボックスが存在することを確認
@@ -26,12 +27,12 @@ describe("Selector コンポーネント", () => {
 
   it("選択された値が正しく変更される", () => {
     render(
-      <Selector.Select data-testid="select" defaultValue="">
-        <Selector.Option value="">選択してください</Selector.Option>
-        <Selector.Option value="1">選択肢1</Selector.Option>
-        <Selector.Option value="2">選択肢2</Selector.Option>
-        <Selector.Option value="3">選択肢3</Selector.Option>
-      </Selector.Select>,
+      <SelectorSelect data-testid="select" defaultValue="">
+        <SelectorOption value="">選択してください</SelectorOption>
+        <SelectorOption value="1">選択肢1</SelectorOption>
+        <SelectorOption value="2">選択肢2</SelectorOption>
+        <SelectorOption value="3">選択肢3</SelectorOption>
+      </SelectorSelect>,
     );
 
     const select = screen.getByTestId("select") as HTMLSelectElement;
@@ -50,9 +51,9 @@ describe("Selector コンポーネント", () => {
 
   it("追加のクラス名が適用される", () => {
     render(
-      <Selector.Select className="custom-class" data-testid="select">
-        <Selector.Option value="1">選択肢1</Selector.Option>
-      </Selector.Select>,
+      <SelectorSelect className="custom-class" data-testid="select">
+        <SelectorOption value="1">選択肢1</SelectorOption>
+      </SelectorSelect>,
     );
 
     const select = screen.getByTestId("select");
@@ -62,9 +63,9 @@ describe("Selector コンポーネント", () => {
   it("refが正しく適用される", () => {
     const ref = React.createRef<HTMLSelectElement>();
     render(
-      <Selector.Select ref={ref}>
-        <Selector.Option value="1">選択肢1</Selector.Option>
-      </Selector.Select>,
+      <SelectorSelect ref={ref}>
+        <SelectorOption value="1">選択肢1</SelectorOption>
+      </SelectorSelect>,
     );
 
     expect(ref.current).toBeInstanceOf(HTMLSelectElement);
@@ -72,11 +73,11 @@ describe("Selector コンポーネント", () => {
 
   it("選択肢に追加のクラス名が適用される", () => {
     render(
-      <Selector.Select>
-        <Selector.Option value="1" className="option-class">
+      <SelectorSelect>
+        <SelectorOption value="1" className="option-class">
           選択肢1
-        </Selector.Option>
-      </Selector.Select>,
+        </SelectorOption>
+      </SelectorSelect>,
     );
 
     const option = screen.getByText("選択肢1");

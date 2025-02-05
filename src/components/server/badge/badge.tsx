@@ -1,25 +1,12 @@
 import * as React from "react";
 import { cn } from "../../../lib/cn";
+import { type Color } from "../../../types";
 
 export interface BadgeProps
   extends React.PropsWithChildren<React.HTMLAttributes<HTMLDivElement>> {
   /** バッジの色  */
   color: Color;
 }
-
-type Color =
-  | "red"
-  | "orange"
-  | "yellow"
-  | "green"
-  | "mint"
-  | "teal"
-  | "cyan"
-  | "blue"
-  | "indigo"
-  | "purple"
-  | "pink"
-  | "brown";
 
 const Badge = React.forwardRef<HTMLDivElement, BadgeProps>(
   ({ color, children, ...props }, ref) => {

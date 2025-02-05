@@ -2,18 +2,20 @@ import React from "react";
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
-import Pagination from "./pagination";
-
-const { Container, Prev, Next, Item, Ellipsis } = Pagination;
+import PaginationContainer from "./container";
+import PaginationItem from "./item";
+import PaginationNext from "./next";
+import PaginationPrev from "./prev";
+import PaginationEllipsis from "./ellipsis";
 
 describe("Pagination Component", () => {
   it("ページネーションコンポーネントを表示", () => {
     render(
-      <Container>
-        <Item href="#">1</Item>
-        <Item href="#">2</Item>
-        <Next href="#" />
-      </Container>,
+      <PaginationContainer>
+        <PaginationItem href="#">1</PaginationItem>
+        <PaginationItem href="#">2</PaginationItem>
+        <PaginationNext href="#" />
+      </PaginationContainer>,
     );
 
     const container = screen.getByRole("navigation");
@@ -22,7 +24,7 @@ describe("Pagination Component", () => {
   });
 
   it("Prevボタンを表示", () => {
-    render(<Prev href="#" />);
+    render(<PaginationPrev href="#" />);
     const prevButton = screen.getByLabelText("pagination-prev");
 
     expect(prevButton).toBeInTheDocument();
@@ -37,7 +39,7 @@ describe("Pagination Component", () => {
   });
 
   it("Nextボタンを表示", () => {
-    render(<Next href="#" />);
+    render(<PaginationNext href="#" />);
     const nextButton = screen.getByLabelText("pagination-next");
 
     expect(nextButton).toBeInTheDocument();
@@ -53,9 +55,9 @@ describe("Pagination Component", () => {
 
   it("Itemを表示", () => {
     render(
-      <Item href="#" data-testid="pagination-item">
+      <PaginationItem href="#" data-testid="pagination-item">
         1
-      </Item>,
+      </PaginationItem>,
     );
     const item = screen.getByTestId("pagination-item");
 
@@ -73,9 +75,9 @@ describe("Pagination Component", () => {
 
   it("Itemのcurrentを指定", () => {
     render(
-      <Item href="#" current data-testid="current-item">
+      <PaginationItem href="#" current data-testid="current-item">
         2
-      </Item>,
+      </PaginationItem>,
     );
     const currentItem = screen.getByTestId("current-item");
 
@@ -86,9 +88,9 @@ describe("Pagination Component", () => {
 
   it("asChildをtrueにすると任意のコンポーネントを表示", () => {
     render(
-      <Item asChild>
+      <PaginationItem asChild>
         <button data-testid="custom-item">Custom Button</button>
-      </Item>,
+      </PaginationItem>,
     );
 
     const customItem = screen.getByTestId("custom-item");
@@ -105,7 +107,7 @@ describe("Pagination Component", () => {
   });
 
   it("Ellipsisを表示", () => {
-    render(<Ellipsis />);
+    render(<PaginationEllipsis />);
     const ellipsis = screen.getByLabelText("pagination-ellipsis");
 
     expect(ellipsis).toBeInTheDocument();
@@ -113,9 +115,9 @@ describe("Pagination Component", () => {
 
   it("Prevボタンにasでカスタムの要素を指定", () => {
     render(
-      <Prev as="button" data-testid="prev-custom">
+      <PaginationPrev as="button" data-testid="prev-custom">
         Custom Prev
-      </Prev>,
+      </PaginationPrev>,
     );
 
     const customPrev = screen.getByTestId("prev-custom");
@@ -133,9 +135,9 @@ describe("Pagination Component", () => {
 
   it("Nextボタンにasでカスタムの要素を指定", () => {
     render(
-      <Next as="button" data-testid="next-custom">
+      <PaginationNext as="button" data-testid="next-custom">
         Custom Next
-      </Next>,
+      </PaginationNext>,
     );
 
     const customNext = screen.getByTestId("next-custom");
@@ -155,9 +157,9 @@ describe("Pagination Component", () => {
     // nav要素のrefを設定
     const ref = React.createRef<HTMLDivElement>();
     render(
-      <Container ref={ref}>
-        <Item href="#">1</Item>
-      </Container>,
+      <PaginationContainer ref={ref}>
+        <PaginationItem href="#">1</PaginationItem>
+      </PaginationContainer>,
     );
 
     // refが正しく設定されていることを確認
@@ -169,7 +171,7 @@ describe("Pagination Component", () => {
   it("Prevにrefを設定", () => {
     // button要素のrefを設定
     const ref = React.createRef<HTMLAnchorElement>();
-    render(<Prev ref={ref} href="#" />);
+    render(<PaginationPrev ref={ref} href="#" />);
 
     // refが正しく設定されていることを確認
     expect(ref.current).toBeInstanceOf(HTMLAnchorElement);
@@ -180,7 +182,7 @@ describe("Pagination Component", () => {
   it("Nextにrefを設定", () => {
     // button要素のrefを設定
     const ref = React.createRef<HTMLAnchorElement>();
-    render(<Next ref={ref} href="#" />);
+    render(<PaginationNext ref={ref} href="#" />);
 
     // refが正しく設定されていることを確認
     expect(ref.current).toBeInstanceOf(HTMLAnchorElement);
@@ -192,9 +194,9 @@ describe("Pagination Component", () => {
     // a要素のrefを設定
     const ref = React.createRef<HTMLAnchorElement>();
     render(
-      <Item ref={ref} href="#">
+      <PaginationItem ref={ref} href="#">
         1
-      </Item>,
+      </PaginationItem>,
     );
 
     // refが正しく設定されていることを確認

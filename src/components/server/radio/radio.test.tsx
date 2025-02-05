@@ -2,25 +2,28 @@ import React from "react";
 import "@testing-library/jest-dom";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
-import Radio from "./radio";
+import RadioGroup from "./group";
+import RadioLabel from "./label";
+import RadioInput from "./input";
+import RadioText from "./text";
 
 describe("Radio コンポーネント", () => {
   it("Radio.Group が正しくレンダリングされる", () => {
     render(
-      <Radio.Group data-testid="radio-group">
-        <Radio.Label>
-          <Radio.Button name="test" />
-          <span>ラジオボタン1</span>
-        </Radio.Label>
-        <Radio.Label>
-          <Radio.Button name="test" />
-          <span>ラジオボタン2</span>
-        </Radio.Label>
-        <Radio.Label>
-          <Radio.Button name="test" />
-          <span>ラジオボタン3</span>
-        </Radio.Label>
-      </Radio.Group>,
+      <RadioGroup data-testid="radio-group">
+        <RadioLabel>
+          <RadioInput name="test" />
+          <RadioText>ラジオボタン1</RadioText>
+        </RadioLabel>
+        <RadioLabel>
+          <RadioInput name="test" />
+          <RadioText>ラジオボタン2</RadioText>
+        </RadioLabel>
+        <RadioLabel>
+          <RadioInput name="test" />
+          <RadioText>ラジオボタン3</RadioText>
+        </RadioLabel>
+      </RadioGroup>,
     );
 
     // Radio.Group が存在することを確認
@@ -28,68 +31,68 @@ describe("Radio コンポーネント", () => {
     expect(group).toBeInTheDocument();
 
     // ラジオボタンが3つ表示されていることを確認
-    const radioButtons = screen.getAllByRole("radio");
-    expect(radioButtons).toHaveLength(3);
+    const RadioInputs = screen.getAllByRole("radio");
+    expect(RadioInputs).toHaveLength(3);
   });
 
   it("ラジオボタンの選択が正しく動作する", () => {
     render(
-      <Radio.Group>
-        <Radio.Label>
-          <Radio.Button name="test" value="1" />
-          <span>ラジオボタン1</span>
-        </Radio.Label>
-        <Radio.Label>
-          <Radio.Button name="test" value="2" />
-          <span>ラジオボタン2</span>
-        </Radio.Label>
-        <Radio.Label>
-          <Radio.Button name="test" value="3" />
-          <span>ラジオボタン3</span>
-        </Radio.Label>
-      </Radio.Group>,
+      <RadioGroup>
+        <RadioLabel>
+          <RadioInput name="test" value="1" />
+          <RadioText>ラジオボタン1</RadioText>
+        </RadioLabel>
+        <RadioLabel>
+          <RadioInput name="test" value="2" />
+          <RadioText>ラジオボタン2</RadioText>
+        </RadioLabel>
+        <RadioLabel>
+          <RadioInput name="test" value="3" />
+          <RadioText>ラジオボタン3</RadioText>
+        </RadioLabel>
+      </RadioGroup>,
     );
 
-    const radioButtons = screen.getAllByRole("radio");
+    const radioInputs = screen.getAllByRole("radio");
 
     // 初期状態ではどのラジオボタンも選択されていないことを確認
-    radioButtons.forEach((button) => {
+    radioInputs.forEach((button) => {
       expect(button).not.toBeChecked();
     });
 
     // ラジオボタン1を選択
-    fireEvent.click(radioButtons[0]);
-    expect(radioButtons[0]).toBeChecked();
+    fireEvent.click(radioInputs[0]);
+    expect(radioInputs[0]).toBeChecked();
 
     // ラジオボタン2を選択すると、ラジオボタン1の選択が外れることを確認
-    fireEvent.click(radioButtons[1]);
-    expect(radioButtons[0]).not.toBeChecked();
-    expect(radioButtons[1]).toBeChecked();
+    fireEvent.click(radioInputs[1]);
+    expect(radioInputs[0]).not.toBeChecked();
+    expect(radioInputs[1]).toBeChecked();
   });
 
   it("追加のクラス名が適用される", () => {
     render(
-      <Radio.Group>
-        <Radio.Label>
-          <Radio.Button name="test" className="custom-class" />
-          <span>ラジオボタン1</span>
-        </Radio.Label>
-      </Radio.Group>,
+      <RadioGroup>
+        <RadioLabel>
+          <RadioInput name="test" className="custom-class" />
+          <RadioText>ラジオボタン1</RadioText>
+        </RadioLabel>
+      </RadioGroup>,
     );
 
-    const radioButton = screen.getByRole("radio");
-    expect(radioButton).toHaveClass("custom-class");
+    const radioInputs = screen.getByRole("radio");
+    expect(radioInputs).toHaveClass("custom-class");
   });
 
   it("Radio.Groupにrefが適用される", () => {
     const ref = React.createRef<HTMLDivElement>();
     render(
-      <Radio.Group ref={ref}>
-        <Radio.Label>
-          <Radio.Button name="test" />
-          <span>ラジオボタン1</span>
-        </Radio.Label>
-      </Radio.Group>,
+      <RadioGroup ref={ref}>
+        <RadioLabel>
+          <RadioInput name="test" />
+          <RadioText>ラジオボタン1</RadioText>
+        </RadioLabel>
+      </RadioGroup>,
     );
 
     // refが正しく設定されていることを確認
@@ -99,12 +102,12 @@ describe("Radio コンポーネント", () => {
   it("Radio.Buttonにrefが適用される", () => {
     const ref = React.createRef<HTMLInputElement>();
     render(
-      <Radio.Group>
-        <Radio.Label>
-          <Radio.Button ref={ref} name="test" />
-          <span>ラジオボタン1</span>
-        </Radio.Label>
-      </Radio.Group>,
+      <RadioGroup>
+        <RadioLabel>
+          <RadioInput ref={ref} name="test" />
+          <RadioText>ラジオボタン1</RadioText>
+        </RadioLabel>
+      </RadioGroup>,
     );
 
     // refが正しく設定されていることを確認

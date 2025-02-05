@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import Spacer from "./spacer";
+import VSpacer from "./v-spacer";
 
 /**
  * 垂直方向のスペーシングをするためのコンポーネントです。
@@ -7,7 +7,7 @@ import Spacer from "./spacer";
  */
 const meta = {
   title: "Util/Spacer/V",
-  component: Spacer.V,
+  component: VSpacer,
   parameters: {
     layout: "centered",
   },
@@ -33,10 +33,10 @@ const meta = {
     },
   },
   tags: ["autodocs"],
-} satisfies Meta<typeof Spacer.V>;
+} satisfies Meta<typeof VSpacer>;
 
 export default meta;
-type Story = StoryObj<typeof Spacer.V>;
+type Story = StoryObj<typeof VSpacer>;
 
 export const Example: Story = {
   args: {
