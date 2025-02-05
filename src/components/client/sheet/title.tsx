@@ -3,6 +3,7 @@
 import * as React from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 import { cn } from "../../../lib/cn";
+import BlockTitle from "../../server/title/block";
 
 const SheetTitle = React.forwardRef<
   React.ComponentRef<typeof Dialog.Title>,
@@ -13,7 +14,9 @@ const SheetTitle = React.forwardRef<
       ref={ref}
       className={cn("text-lg font-bold", className)}
       {...props}
-    />
+    >
+      <BlockTitle>{props.children}</BlockTitle>
+    </Dialog.Title>
   );
 });
 SheetTitle.displayName = "SheetTitle";
