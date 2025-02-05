@@ -85,6 +85,21 @@ const LineChart = React.forwardRef<HTMLDivElement, LineChartProps>(
       }`;
     };
 
+    const formatTick = (value: string | number | Date): string => {
+      let date: Date | null = null;
+      if (value instanceof Date) {
+        date = value;
+      } else if (typeof value === "string" && !isNaN(Date.parse(value))) {
+        date = new Date(value);
+      }
+      if (date) {
+        const month = date.getMonth() + 1;
+        const day = date.getDate();
+        return `${month < 10 ? `0${month}` : month}/${day < 10 ? `0${day}` : day}`;
+      }
+      return value.toString();
+    };
+
     const CustomTooltip = ({
       active,
       payload,
@@ -121,7 +136,13 @@ const LineChart = React.forwardRef<HTMLDivElement, LineChartProps>(
           <RechartsLineChart data={data} width={400} height={400}>
             <CartesianGrid strokeDasharray="2 2" stroke="var(--border)" />
             {hasYAxis && <YAxis stroke="var(--border)" />}
-            {hasXAxis && <XAxis stroke="var(--border)" dataKey="name" />}
+            {hasXAxis && (
+              <XAxis
+                stroke="var(--border)"
+                dataKey="name"
+                tickFormatter={formatTick}
+              />
+            )}
             {keys.map((key) => (
               <Line
                 key={key}
