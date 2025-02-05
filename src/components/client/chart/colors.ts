@@ -17,15 +17,15 @@ export const colorMap = {
 
 export const colorOrders: (keyof typeof colorMap)[] = [
   "blue",
-  "purple",
-  "yellow",
-  "green",
-  "orange",
-  "indigo",
-  "pink",
+  "teal",
   "cyan",
   "mint",
-  "teal",
-  "brown",
+  "indigo",
+  "purple",
+  "pink",
   "red",
+  "orange",
+  "brown",
+  "yellow",
+  "green",
 ] satisfies Color[];
