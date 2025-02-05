@@ -21,6 +21,7 @@ export interface LineChartProps {
   data: LineChartData;
   className?: string;
   color?: Color;
+  dataKey?: string;
 }
 
 const colorMap = {
@@ -39,7 +40,7 @@ const colorMap = {
 };
 
 const LineChart = React.forwardRef<HTMLDivElement, LineChartProps>(
-  ({ data, className, color = "blue" }, ref) => {
+  ({ data, className, color = "blue", dataKey }, ref) => {
     const CustomTooltip = ({
       active,
       payload,
@@ -70,7 +71,7 @@ const LineChart = React.forwardRef<HTMLDivElement, LineChartProps>(
             <CartesianGrid strokeDasharray="2 2" stroke="var(--border)" />
             <Line
               type="linear"
-              dataKey="value"
+              dataKey={dataKey}
               stroke={`var(--${colorMap[color]})`}
               dot={false}
               strokeWidth={2}
