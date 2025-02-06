@@ -11,7 +11,7 @@ const BlockTitle = React.forwardRef<HTMLHeadingElement, BlockTitleProps>(
       <h3
         ref={ref}
         {...props}
-        className={cn(props.className, "text-lg font-bold text-foreground")}
+        className={cn(props.className, "text-lg font-bold")}
       >
         {children}
       </h3>
