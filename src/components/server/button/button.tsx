@@ -31,6 +31,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           "px-6 py-2 font-bold rounded-lg flex items-center justify-center",
           "hover disabled",
           "focus:outline-offset-2 focus:outline-info",
+          !props.disabled && "active:scale-[99%] transition-transform",
         )}
       >
         {children}
