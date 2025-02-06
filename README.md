@@ -20,4 +20,4 @@ Apple風のデザインで様々なUIを提供します。
 ### 当ライブラリをインストール
 `npm install meme-system-ui`
 ### cssファイルを読み込む
-`node_modules/meme-system-ui/dist/tailwind.css`を読み込む
+`import "meme-system-ui/tailwind.css"`でcssを読み込む
