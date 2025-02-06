@@ -14,11 +14,11 @@ const ThemeSwitchDark = React.forwardRef<
       className={cn(
         props.className,
         current ? "bg-info text-on-status" : "bg-none text-info",
-        "w-8 h-8 center rounded-full",
+        "w-6 h-6 center rounded-full",
       )}
       aria-label="dark-theme"
     >
-      <Moon size={24} className="w-5 h-5" />
+      <Moon size={24} className="w-4 h-4" />
     </button>
   );
 });
