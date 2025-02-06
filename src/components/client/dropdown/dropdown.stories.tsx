@@ -14,7 +14,7 @@ function DropdownExample() {
   return (
     <DropdownRoot>
       <DropdownTrigger asChild>
-        <Button>Open Dropdown</Button>
+        <Button className="focus:outline-none">Open Dropdown</Button>
       </DropdownTrigger>
       <DropdownContent>
         <DropdownItem>Dropdown Item 1</DropdownItem>
