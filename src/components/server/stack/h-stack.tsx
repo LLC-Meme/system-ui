@@ -3,12 +3,12 @@ import { cn } from "../../../lib/cn";
 import { type StackProps, gapMap } from "./type";
 
 const HStack = React.forwardRef<HTMLDivElement, StackProps>(
-  ({ children, gap = "none", ...props }, ref) => {
+  ({ children, gap, ...props }, ref) => {
     return (
       <div
         ref={ref}
         {...props}
-        className={cn(props.className, "flex", `gap-${gapMap[gap]}`)}
+        className={cn(props.className, "flex", !!gap && `gap-${gapMap[gap]}`)}
       >
         {children}
       </div>
