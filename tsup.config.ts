@@ -1,5 +1,4 @@
 import { defineConfig } from "tsup";
-import fs from "fs-extra";
 
 export default defineConfig({
   entry: [
@@ -7,7 +6,7 @@ export default defineConfig({
     "src/components/**/*.tsx",
     "src/lib/**/*.ts",
     "src/components/**/*.css",
-    "src/tailwind.css",
+    // "src/tailwind.css",
     "!src/**/*.test.*",
     "!src/**/*.stories.*",
   ],
@@ -16,8 +15,5 @@ export default defineConfig({
   bundle: false,
   outDir: "dist",
   clean: true,
-  async onSuccess() {
-    await fs.copy('src/tailwind.css', 'dist/tailwind.css');
-  },
   external: ["react", "react-dom"]
 });
