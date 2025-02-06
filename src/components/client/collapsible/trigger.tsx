@@ -9,12 +9,13 @@ import { CollapsibleContext } from "./root";
 export interface CollapsibleTriggerProps
   extends React.ComponentPropsWithoutRef<"button"> {
   children: React.ReactNode;
+  current?: boolean;
 }
 
 const CollapsibleTrigger = React.forwardRef<
   HTMLButtonElement,
   CollapsibleTriggerProps
->(({ children, ...props }, ref) => {
+>(({ children, current, ...props }, ref) => {
   const { isOpen } = React.useContext(CollapsibleContext);
   return (
     <RadixCollapsible.Trigger
@@ -22,7 +23,9 @@ const CollapsibleTrigger = React.forwardRef<
       {...props}
       className={cn(
         props.className,
-        "w-full py-2 px-4 flex items-center justify-between rounded-[4px] cursor-pointer hover:bg-surface-muted2",
+        "w-full py-2 px-4 flex items-center justify-between rounded-[4px] cursor-pointer",
+        current && "bg-surface-muted1 font-medium",
+        !current && "hover:bg-surface-muted2",
       )}
     >
       <div className="flex gap-2">{children}</div>
