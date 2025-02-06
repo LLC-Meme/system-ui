@@ -16,6 +16,8 @@ Apple風のデザインで様々なUIを提供します。
 - radix
 - recharts
 
-## ネクストステップ
-- style定義を呼び出した側にも影響させる
-- ドキュメントを丁寧に書く
+## 使い方
+### 当ライブラリをインストール
+`npm install meme-system-ui`
+### cssファイルを読み込む
+`node_modules/meme-system-ui/dist/tailwind.css`を読み込む
