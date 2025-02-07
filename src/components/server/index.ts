@@ -19,5 +19,4 @@ export * from "./spacer";
 export * from "./stack";
 export * from "./surface";
 export * from "./textarea";
-export * from "./theme-switch";
 export * from "./title";

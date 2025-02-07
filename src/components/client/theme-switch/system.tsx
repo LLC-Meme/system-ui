@@ -1,11 +1,16 @@
+"use client";
+
 import * as React from "react";
 import { cn } from "../../../lib/cn";
-import { type ThemeSwitchButtonProps } from "./type";
+import { type ThemeSwitchButtonProps, useMounted } from "./utils";
 
-const ThemeSwitchDark = React.forwardRef<
+const ThemeSwitchSystem = React.forwardRef<
   HTMLButtonElement,
   ThemeSwitchButtonProps
 >(({ current, ...props }, ref) => {
+  const mounted = useMounted();
+
+  if (!mounted) return null;
   return (
     <button
       ref={ref}
@@ -15,7 +20,7 @@ const ThemeSwitchDark = React.forwardRef<
         current ? "bg-info text-on-status" : "bg-none text-info",
         "w-6 h-6 center rounded-full",
       )}
-      aria-label="dark-theme"
+      aria-label="system-theme"
     >
       <svg
         className="w-4 h-4"
@@ -29,11 +34,13 @@ const ThemeSwitchDark = React.forwardRef<
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+        <rect width="20" height="14" x="2" y="3" rx="2" />
+        <line x1="8" x2="16" y1="21" y2="21" />
+        <line x1="12" x2="12" y1="17" y2="21" />
       </svg>
     </button>
   );
 });
-ThemeSwitchDark.displayName = "ThemeSwitchDark";
+ThemeSwitchSystem.displayName = "ThemeSwitchSystem";
 
-export default ThemeSwitchDark;
+export default ThemeSwitchSystem;
