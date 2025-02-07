@@ -14,5 +14,5 @@ export default defineConfig({
   bundle: false,
   outDir: "dist",
   clean: true,
-  external: ["react", "react-dom"]
+  external: ["react", "react-dom", "lucide-react"],
 });
