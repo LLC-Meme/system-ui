@@ -1,6 +1,6 @@
 import * as React from "react";
 import { cn } from "../../../lib/cn";
-import { OctagonAlert } from "lucide-react";
+import { AlertOctagon } from "lucide-react";
 
 export interface ErrorMessageProps
   extends React.ComponentPropsWithoutRef<"div"> {
@@ -18,7 +18,7 @@ const ErrorMessage = React.forwardRef<HTMLDivElement, ErrorMessageProps>(
           "text-alert flex items-center text-sm font-medium",
         )}
       >
-        <OctagonAlert size={24} className="w-4 h-4 inline-block mr-1" />
+        <AlertOctagon size={24} className="w-4 h-4 inline-block mr-1" />
         {children}
       </div>
     );
