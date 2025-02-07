@@ -1,6 +1,5 @@
 import * as React from "react";
 import { cn } from "../../../lib/cn";
-import { ChevronRight } from "lucide-react";
 import { type PaginationButtonProps } from "./type";
 
 const PaginationNext = React.forwardRef<
@@ -19,7 +18,20 @@ const PaginationNext = React.forwardRef<
       )}
       aria-label="pagination-next"
     >
-      <ChevronRight className="w-6 h-6 text-info" />
+      <svg
+        className="w-6 h-6 text-info"
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="m9 18 6-6-6-6" />
+      </svg>
     </Tag>
   );
 });

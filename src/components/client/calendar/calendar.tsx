@@ -2,7 +2,6 @@
 
 import * as React from "react";
 import { cn } from "../../../lib/cn";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export interface CalendarProps {
   /** 選択された日付 */
@@ -125,7 +124,20 @@ const PrevMonthButton = React.memo(function PrevMonthButton({
       onClick={onClick}
       aria-label="prev-month"
     >
-      <ChevronLeft size={24} className="w-4 h-4 text-info" />
+      <svg
+        className="w-4 h-4 text-info"
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="m15 18-6-6 6-6" />
+      </svg>
     </button>
   );
 });
@@ -141,7 +153,20 @@ const NextMonthButton = React.memo(function NextMonthButton({
       onClick={onClick}
       aria-label="next-month"
     >
-      <ChevronRight className="w-4 h-4 text-info" />
+      <svg
+        className="w-4 h-4 text-info"
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="m9 18 6-6-6-6" />
+      </svg>
     </button>
   );
 });

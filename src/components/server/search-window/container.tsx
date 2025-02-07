@@ -1,6 +1,5 @@
 import * as React from "react";
 import { cn } from "../../../lib/cn";
-import { Search } from "lucide-react";
 
 export interface SearchWindowContainerProps
   extends React.ComponentPropsWithoutRef<"div"> {
@@ -20,15 +19,31 @@ const SearchWindowContainer = React.forwardRef<
         "relative bg-surface-muted1 h-8 rounded-lg",
       )}
     >
-      <MagnifyingGlass className="absolute top-1/2 left-2 transform -translate-y-1/2" />
+      <MagnifyingGlass />
       {children}
     </div>
   );
 });
 SearchWindowContainer.displayName = "SearchWindowContainer";
 
-function MagnifyingGlass({ className }: { className: string }) {
-  return <Search className={cn(className, "pointer-events-none w-5 h-5")} />;
+function MagnifyingGlass() {
+  return (
+    <svg
+      className="pointer-events-none w-5 h-5 absolute top-1/2 left-2 transform -translate-y-1/2"
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <circle cx="11" cy="11" r="8" />
+      <path d="m21 21-4.3-4.3" />
+    </svg>
+  );
 }
 
 export default SearchWindowContainer;
