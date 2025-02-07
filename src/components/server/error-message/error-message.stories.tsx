@@ -16,10 +16,10 @@ const meta = {
       },
       control: false,
     },
-    children: {
+    message: {
       description: "エラーメッセージの内容",
       table: {
-        type: { summary: "React.ReactNode" },
+        type: { summary: "string | undefined | null" },
       },
       control: {
         type: "text",
@@ -34,6 +34,6 @@ type Story = StoryObj<typeof ErrorMessage>;
 
 export const Example: Story = {
   args: {
-    children: "エラーメッセージ",
+    message: "エラーメッセージ",
   },
 };
