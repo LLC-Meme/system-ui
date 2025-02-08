@@ -16,10 +16,7 @@ const VDivider = React.forwardRef<HTMLHRElement, DividerProps>(
           width: `${thickness}px`,
           ...props.style,
         }}
-        className={cn(
-          props.className,
-          "h-full bg-border rounded-full border-none",
-        )}
+        className={cn(props.className, "bg-border rounded-full border-none")}
       />
     );
   },

@@ -61,7 +61,7 @@ describe("Divider", () => {
       // デフォルトのthickness(2)が適用されている
       expect(divider).toHaveStyle({ height: "1px" });
       // デフォルトのクラスが適用されている
-      expect(divider).toHaveClass("w-full", "bg-border", "rounded-full");
+      expect(divider).toHaveClass("bg-border", "rounded-full");
     });
 
     it("thicknessをカスタムで表示", () => {

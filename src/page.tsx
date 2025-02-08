@@ -292,14 +292,14 @@ export default function Page() {
             quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent
             mauris. Fusce nec tellus sed augue semper porta.
           </p>
-          <HDivider className="my-4" />
+          <HDivider className="w-[calc(100%+4rem)] -mx-8 my-4" />
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec
             odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla
             quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent
             mauris. Fusce nec tellus sed augue semper porta.
           </p>
-          <HDivider className="my-4" />
+          <HDivider className="w-[calc(100%+4rem)] -mx-8 my-4" />
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec
             odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla
