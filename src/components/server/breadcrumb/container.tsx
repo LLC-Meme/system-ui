@@ -12,7 +12,7 @@ const BreadcrumbContainer = React.forwardRef<
   BreadcrumbContainerProps
 >(({ children }, ref) => {
   return (
-    <ol ref={ref} className="flex gap-2">
+    <ol ref={ref} className="flex items-center gap-2">
       {children}
     </ol>
   );

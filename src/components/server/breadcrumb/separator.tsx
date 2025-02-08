@@ -7,7 +7,7 @@ import * as React from "react";
 const BreadcrumbSeparator = () => {
   return (
     <svg
-      className="w-3 h-3 color-foreground mt-1"
+      className="w-3 h-3 color-foreground"
       aria-label="breadcrumb-separator"
       xmlns="http://www.w3.org/2000/svg"
       width="24"

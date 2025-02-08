@@ -3,23 +3,18 @@ import type { Meta, StoryObj } from "@storybook/react";
 import BreadcrumbContainer from "./container";
 import BreadcrumbItem from "./item";
 import BreadcrumbSeparator from "./separator";
+import BreadcrumbHome from "./home";
 
 function BreadcrumbExample() {
   return (
     <BreadcrumbContainer>
-      <BreadcrumbItem href="/" current={false}>
-        Home
-      </BreadcrumbItem>
+      <BreadcrumbHome href="/" />
       <BreadcrumbSeparator />
-      <BreadcrumbItem href="/dashboard" current={false}>
-        Dashboard
-      </BreadcrumbItem>
+      <BreadcrumbItem href="/dashboard">Dashboard</BreadcrumbItem>
       <BreadcrumbSeparator />
-      <BreadcrumbItem href="/dashboard/sales" current={false}>
-        Sales
-      </BreadcrumbItem>
+      <BreadcrumbItem href="/dashboard/sales">Sales</BreadcrumbItem>
       <BreadcrumbSeparator />
-      <BreadcrumbItem href="/dashboard/sales/data" current={true}>
+      <BreadcrumbItem href="/dashboard/sales/data" current>
         Data
       </BreadcrumbItem>
     </BreadcrumbContainer>
