@@ -7,6 +7,11 @@ const OPACITIES = [
   0.17, 0.25, 0.33, 0.42, 0.5, 0.58, 0.66, 0.75, 0.83, 1, 0.92, 0.08,
 ];
 
+/**
+ * ローディングスピナー
+ * 読込中や処理中などに表示させる
+ * classNameで大きさ(width, height)などのスタイルを変更できる
+ */
 const Spinner = ({ className }: { className?: string }) => {
   const lines = useCallback(
     () =>

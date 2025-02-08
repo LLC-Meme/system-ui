@@ -4,6 +4,11 @@ import * as React from "react";
 import * as RadixDropdown from "@radix-ui/react-dropdown-menu";
 import { cn } from "../../../lib/cn";
 
+/**
+ * ドロップダウンのサブトリガー部分
+ * ドロップダウンからさらにドロップダウンを表示する際に用いる
+ * これをホバーするとサブコンテンツが表示される
+ */
 const DropdownSubTrigger = React.forwardRef<
   React.ComponentRef<typeof RadixDropdown.SubTrigger>,
   React.ComponentPropsWithoutRef<typeof RadixDropdown.SubTrigger> & {

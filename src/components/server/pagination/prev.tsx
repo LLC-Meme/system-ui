@@ -2,6 +2,11 @@ import * as React from "react";
 import { cn } from "../../../lib/cn";
 import { type PaginationButtonProps } from "./type";
 
+/**
+ * ページネーションの前ページへ遷移するためのボタン
+ * @param {React.ElementType} as ボタンの要素 デフォルトは"a" 適宜リンクの要素を指定できる
+ * @param {boolean} disabled ボタンが無効かどうか
+ */
 const PaginationPrev = React.forwardRef<
   HTMLAnchorElement,
   PaginationButtonProps

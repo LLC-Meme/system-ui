@@ -9,6 +9,12 @@ export interface BreadcrumbItemProps
   asChild?: boolean;
 }
 
+/**
+ * Breadcrumbのアイテム
+ * リンクとして用いる
+ * @param {boolean} current 現在のページかどうか
+ * @param {boolean} asChild 子要素として用いるか, trueの場合に子として別個のリンクコンポーネントを用いる
+ */
 const BreadcrumbItem = React.forwardRef<HTMLLIElement, BreadcrumbItemProps>(
   ({ current, children, asChild, ...props }, ref) => {
     const Comp = asChild ? Slot : "a";

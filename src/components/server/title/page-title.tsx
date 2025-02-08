@@ -5,6 +5,10 @@ export interface PageTitleProps extends React.ComponentPropsWithoutRef<"h1"> {
   children: React.ReactNode;
 }
 
+/**
+ * ページのタイトルを表すコンポーネント
+ * `<h1>`要素に該当する
+ */
 const PageTitle = React.forwardRef<HTMLHeadingElement, PageTitleProps>(
   ({ children, ...props }, ref) => {
     return (

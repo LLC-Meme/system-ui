@@ -7,6 +7,10 @@ export interface CheckboxInputProps
   className?: string;
 }
 
+/**
+ * Checkboxのinput要素
+ * チェックマーク(✅️)を表示する
+ */
 const CheckboxInput = React.forwardRef<HTMLInputElement, CheckboxInputProps>(
   ({ ...props }, ref) => {
     return (

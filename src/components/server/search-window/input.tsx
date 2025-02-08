@@ -1,6 +1,9 @@
 import * as React from "react";
 import { cn } from "../../../lib/cn";
 
+/**
+ * 検索ウィンドウの`<input>`要素
+ */
 const SearchWindowInput = React.forwardRef<
   HTMLInputElement,
   React.ComponentPropsWithoutRef<"input">

@@ -21,6 +21,10 @@ function ModalOverlay({
   );
 }
 
+/**
+ * モーダルのコンテンツ部分
+ * モーダルの中身の部分はこれでラッピングする
+ */
 const ModalContent = React.forwardRef<
   React.ComponentRef<typeof Dialog.Content>,
   React.ComponentPropsWithoutRef<typeof Dialog.Content>

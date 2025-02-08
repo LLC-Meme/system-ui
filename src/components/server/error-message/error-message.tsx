@@ -6,6 +6,12 @@ export interface ErrorMessageProps
   message?: string | undefined | null;
 }
 
+/**
+ * エラーメッセージを表示するコンポーネント
+ * メッセージがない場合は何も表示しない
+ * メッセージがある場合は、アイコンとメッセージを表示する
+ * @param {string} message エラーメッセージ
+ */
 const ErrorMessage = React.forwardRef<HTMLDivElement, ErrorMessageProps>(
   ({ message, ...props }, ref) => {
     return (

@@ -5,6 +5,9 @@ import styles from "./table.module.css";
 import { cn } from "../../../lib/cn";
 import { TableStyleContext } from "./type";
 
+/**
+ * `<tr>`要素に該当するコンポーネント
+ */
 const Tr = ({
   children,
   muted = false,

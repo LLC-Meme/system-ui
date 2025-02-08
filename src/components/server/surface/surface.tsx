@@ -6,6 +6,9 @@ export interface SurfaceProps
   children: React.ReactNode;
 }
 
+/**
+ * サーフェスのコンポーネント
+ */
 const Surface = React.forwardRef<HTMLDivElement, SurfaceProps>(
   ({ children, ...props }, ref) => {
     return (

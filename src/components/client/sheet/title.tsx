@@ -3,8 +3,11 @@
 import * as React from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 import { cn } from "../../../lib/cn";
-import BlockTitle from "../../server/title/block";
+import BlockTitle from "../../server/title/block-title";
 
+/**
+ * シートのタイトルを表示するコンポーネント
+ */
 const SheetTitle = React.forwardRef<
   React.ComponentRef<typeof Dialog.Title>,
   React.ComponentPropsWithoutRef<typeof Dialog.Title>

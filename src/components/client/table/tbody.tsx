@@ -1,5 +1,8 @@
 import * as React from "react";
 
+/**
+ * `<tbody>`要素に該当するコンポーネント
+ */
 const Tbody = ({
   children,
   ...props

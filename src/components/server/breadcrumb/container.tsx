@@ -4,6 +4,9 @@ export interface BreadcrumbContainerProps {
   children: React.ReactNode;
 }
 
+/**
+ * Breadcrumbの全てのコンポーネントをラッピングするコンポーネント
+ */
 const BreadcrumbContainer = React.forwardRef<
   HTMLOListElement,
   BreadcrumbContainerProps

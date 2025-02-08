@@ -1,5 +1,9 @@
 import * as React from "react";
 
+/**
+ * Breadcrumbのセパレーター
+ * Breadcrumbの各要素の間に表示される矢印
+ */
 const BreadcrumbSeparator = () => {
   return (
     <svg

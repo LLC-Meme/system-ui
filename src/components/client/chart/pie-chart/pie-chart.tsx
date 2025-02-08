@@ -13,15 +13,20 @@ import HStack from "../../../server/stack/h-stack";
 import { colorMap, colorOrders } from "../utils";
 
 export interface PieChartDataItem {
+  /** 名前 */
   name: string;
+  /** 値 */
   value: number;
 }
 
 export type PieChartData = PieChartDataItem[];
 
 export interface PieChartProps {
+  /** クラス名 */
   className?: string;
+  /** データ */
   data: PieChartData;
+  /** legendを表示するか */
   hasLegend?: boolean;
 }
 
@@ -31,6 +36,11 @@ interface CustomTooltipPayloadItem {
   payload: PieChartDataItem;
 }
 
+/**
+ * 円グラフコンポーネント
+ * @param {PieChartData} data データ
+ * @param {boolean} hasLegend legendを表示するか
+ */
 const PieChart = React.forwardRef<HTMLDivElement, PieChartProps>(
   ({ className, data, hasLegend = false }, ref) => {
     const total = data.reduce((sum, item) => sum + item.value, 0);

@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import SegmentTitle from "./segment";
+import SectionTitle from "./section-title";
 
 const meta = {
-  title: "UI/Title/Segment",
-  component: SegmentTitle,
+  title: "UI/Title/Section",
+  component: SectionTitle,
   parameters: {
     layout: "centered",
   },
@@ -17,7 +17,7 @@ const meta = {
       control: false,
     },
     children: {
-      description: "セグメントタイトルに表示するコンテンツ",
+      description: "セクションタイトルに表示するコンテンツ",
       table: {
         type: { summary: "React.ReactNode" },
       },
@@ -25,13 +25,13 @@ const meta = {
     },
   },
   tags: ["autodocs"],
-} satisfies Meta<typeof SegmentTitle>;
+} satisfies Meta<typeof SectionTitle>;
 
 export default meta;
-type Story = StoryObj<typeof SegmentTitle>;
+type Story = StoryObj<typeof SectionTitle>;
 
 export const Example: Story = {
   args: {
-    children: "セグメントタイトル",
+    children: "セクションタイトル",
   },
 };

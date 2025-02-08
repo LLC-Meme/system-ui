@@ -6,6 +6,9 @@ export interface CheckboxLabelProps
   children: React.ReactNode;
 }
 
+/**
+ * Checkbox用の`<label>`コンポーネント
+ */
 const CheckboxLabel = React.forwardRef<HTMLLabelElement, CheckboxLabelProps>(
   ({ children, ...props }, ref) => {
     return (

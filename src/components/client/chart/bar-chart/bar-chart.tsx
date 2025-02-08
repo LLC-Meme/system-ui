@@ -15,20 +15,37 @@ import HStack from "../../../server/stack/h-stack";
 import { colorMap, colorOrders, formatName, formatTick } from "../utils";
 
 export type BarChartDataItem = {
+  /** X軸の値 */
   name: string | number | Date;
+  /** データ, キーの値を複数与えることで複数のグラフを表示可能 */
   [key: string]: number | string | null | undefined | Date;
 };
 export type BarChartData = BarChartDataItem[];
 
 export interface BarChartProps {
+  /** クラス名 */
   className?: string;
+  /** データ */
   data: BarChartData;
+  /** データのキー */
   dataKeys: string[];
+  /** X軸の各値を表示するか */
   hasXAxis?: boolean;
+  /** Y軸の各値を表示するか */
   hasYAxis?: boolean;
+  /** legendを表示するか */
   hasLegend?: boolean;
 }
 
+/**
+ * 棒グラフコンポーネント
+ * @param {string} className クラス名
+ * @param {BarChartData} data データ
+ * @param {string[]} dataKeys データのキー 表示するデータを指定する
+ * @param {boolean} hasXAxis X軸の各値を表示するか
+ * @param {boolean} hasYAxis Y軸の各値を表示するか
+ * @param {boolean} hasLegend legendを表示するか
+ */
 export const BarChart = React.forwardRef<HTMLDivElement, BarChartProps>(
   (
     {

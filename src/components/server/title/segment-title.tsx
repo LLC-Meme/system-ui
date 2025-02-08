@@ -6,6 +6,10 @@ export interface SegmentTitleProps
   children: React.ReactNode;
 }
 
+/**
+ * セグメントのタイトルを表すコンポーネント
+ * `<h4>`要素に該当する
+ */
 const SegmentTitle = React.forwardRef<HTMLHeadingElement, SegmentTitleProps>(
   ({ children, ...props }, ref) => {
     return (

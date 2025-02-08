@@ -8,6 +8,12 @@ export interface SidebarItemProps extends React.ComponentPropsWithoutRef<"a"> {
   children: React.ReactNode;
 }
 
+/**
+ * サイドバーのアイテム
+ * リンクとして用いる
+ * @param {boolean} current 現在のページかどうか
+ * @param {boolean} asChild 子要素として用いるか, trueの場合に子として別個のリンクコンポーネントを用いる
+ */
 const SidebarItem = React.forwardRef<HTMLAnchorElement, SidebarItemProps>(
   ({ current, asChild, children, ...props }, ref) => {
     const Comp = asChild ? Slot : "a";

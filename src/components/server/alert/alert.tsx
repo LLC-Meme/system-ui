@@ -6,6 +6,10 @@ export interface AlertProps extends React.ComponentPropsWithoutRef<"div"> {
   variant: "info" | "success" | "warning" | "danger";
 }
 
+/**
+ * アラートコンポーネント
+ * @param {string} variant 色のバリエーション
+ */
 const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
   ({ children, variant, ...props }, ref) => {
     return (

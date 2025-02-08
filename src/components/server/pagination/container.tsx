@@ -5,6 +5,9 @@ export interface PaginationContainerProps
   children: React.ReactNode;
 }
 
+/**
+ * ページネーションのコンテナコンポーネント
+ */
 const PaginationContainer = React.forwardRef<
   HTMLElement,
   PaginationContainerProps

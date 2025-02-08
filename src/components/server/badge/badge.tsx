@@ -8,6 +8,10 @@ export interface BadgeProps
   color: Color;
 }
 
+/**
+ * バッジコンポーネント
+ * @param {Color} color バッジの色
+ */
 const Badge = React.forwardRef<HTMLDivElement, BadgeProps>(
   ({ color, children, ...props }, ref) => {
     return (

@@ -23,6 +23,10 @@ function SheetOverlay({ className, ...props }: SheetOverlayProps) {
   );
 }
 
+/**
+ * シートのコンテンツ部分
+ * シートの中身の部分はこれでラッピングする
+ */
 const SheetContent = React.forwardRef<
   React.ComponentRef<typeof Dialog.Content>,
   React.ComponentPropsWithoutRef<typeof Dialog.Content>

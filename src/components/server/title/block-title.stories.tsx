@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import PageTitle from "./page";
+import BlockTitle from "./block-title";
 
 const meta = {
-  title: "UI/Title/Page",
-  component: PageTitle,
+  title: "UI/Title/Block",
+  component: BlockTitle,
   parameters: {
     layout: "centered",
   },
@@ -17,7 +17,7 @@ const meta = {
       control: false,
     },
     children: {
-      description: "ページタイトルに表示するコンテンツ",
+      description: "ブロックタイトルに表示するコンテンツ",
       table: {
         type: { summary: "React.ReactNode" },
       },
@@ -25,13 +25,13 @@ const meta = {
     },
   },
   tags: ["autodocs"],
-} satisfies Meta<typeof PageTitle>;
+} satisfies Meta<typeof BlockTitle>;
 
 export default meta;
-type Story = StoryObj<typeof PageTitle>;
+type Story = StoryObj<typeof BlockTitle>;
 
 export const Example: Story = {
   args: {
-    children: "ページタイトル",
+    children: "ブロックタイトル",
   },
 };

@@ -5,6 +5,9 @@ export interface CheckboxTextProps
   children: React.ReactNode;
 }
 
+/**
+ * Checkboxのテキスト部分
+ */
 const CheckboxText = React.forwardRef<HTMLSpanElement, CheckboxTextProps>(
   ({ children, ...props }, ref) => {
     return (

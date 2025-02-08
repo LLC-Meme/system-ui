@@ -2,6 +2,10 @@ import * as React from "react";
 import styles from "./radio.module.css";
 import { cn } from "../../../lib/cn";
 
+/**
+ * ラジオボタンのinput要素
+ * ラジオボタン(◯)を表示する
+ */
 const RadioInput = React.forwardRef<
   HTMLInputElement,
   React.ComponentPropsWithoutRef<"input">

@@ -4,6 +4,10 @@ import * as React from "react";
 import * as RadixDropdown from "@radix-ui/react-dropdown-menu";
 import { cn } from "../../../lib/cn";
 
+/**
+ * ドロップダウンのコンテンツ部分
+ * @param {number} sideOffset 左側の余白
+ */
 const DropdownContent = React.forwardRef<
   React.ComponentRef<typeof RadixDropdown.Content>,
   React.ComponentPropsWithoutRef<typeof RadixDropdown.Content>

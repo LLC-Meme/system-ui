@@ -9,6 +9,12 @@ export interface TabProps extends React.ComponentPropsWithoutRef<"div"> {
   setSelectedValue: React.Dispatch<React.SetStateAction<string>>;
 }
 
+/**
+ * タブを表示するコンポーネント
+ * @param {string[]} values タブの値
+ * @param {string} selectedValue 選択されているタブの値
+ * @param {React.Dispatch<React.SetStateAction<string>>} setSelectedValue タブの値をセットする関数
+ */
 const Tabs = React.forwardRef<HTMLDivElement, TabProps>(
   ({ values, selectedValue, setSelectedValue, ...props }, ref) => {
     return (

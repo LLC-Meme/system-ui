@@ -11,6 +11,12 @@ export interface CollapsibleItemProps
   asChild?: boolean;
 }
 
+/**
+ * Collapsibleの折りたたまれた部分のアイテム
+ * リンクとして用いる
+ * @param {boolean} current 現在のページかどうか
+ * @param {boolean} asChild 子要素として用いるか, trueの場合に子として別個のリンクコンポーネントを用いる
+ */
 const CollapsibleItem = React.forwardRef<
   HTMLAnchorElement,
   CollapsibleItemProps

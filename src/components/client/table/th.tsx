@@ -4,6 +4,9 @@ import * as React from "react";
 import { cn } from "../../../lib/cn";
 import { TableStyleContext } from "./type";
 
+/**
+ * `<th>`要素に該当するコンポーネント
+ */
 const Th = ({
   children,
   className,

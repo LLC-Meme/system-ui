@@ -6,6 +6,10 @@ export interface MainProps extends React.ComponentPropsWithoutRef<"main"> {
   sidebarOpen: boolean;
 }
 
+/**
+ * `<main>`コンポーネント
+ * ダッシュボード内のコンテンツをラップする
+ */
 const Main = React.forwardRef<HTMLDivElement, MainProps>(
   ({ children, sidebarOpen, ...props }, ref) => {
     return (

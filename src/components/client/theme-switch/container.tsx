@@ -6,6 +6,9 @@ export interface ThemeSwitchContainerProps
   children: React.ReactNode;
 }
 
+/**
+ * テーマ変更の各アイテム全てをラッピングするコンポーネント
+ */
 const ThemeSwitchContainer = React.forwardRef<
   HTMLDivElement,
   ThemeSwitchContainerProps

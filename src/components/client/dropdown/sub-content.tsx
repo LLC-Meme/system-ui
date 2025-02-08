@@ -4,6 +4,10 @@ import * as React from "react";
 import * as RadixDropdown from "@radix-ui/react-dropdown-menu";
 import { cn } from "../../../lib/cn";
 
+/**
+ * ドロップダウンのサブコンテンツ部分
+ * ドロップダウンからさらにドロップダウンを表示する際に用いる
+ */
 const DropdownSubContent = React.forwardRef<
   React.ComponentRef<typeof RadixDropdown.SubContent>,
   React.ComponentPropsWithoutRef<typeof RadixDropdown.SubContent>

@@ -8,6 +8,9 @@ export interface CollapsibleContentProps
   children: React.ReactNode;
 }
 
+/**
+ * Collapsibleの折りたたまれた部分をラッピングするコンポーネント
+ */
 const CollapsibleContent = React.forwardRef<
   HTMLDivElement,
   CollapsibleContentProps

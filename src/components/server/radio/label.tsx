@@ -6,6 +6,9 @@ export interface RadioLabelProps
   children: React.ReactNode;
 }
 
+/**
+ * 各ラジオボタンをラップする`<label>`コンポーネント
+ */
 const RadioLabel = React.forwardRef<HTMLLabelElement, RadioLabelProps>(
   ({ children, ...props }, ref) => {
     return (

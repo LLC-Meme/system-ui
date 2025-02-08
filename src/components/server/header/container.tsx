@@ -6,6 +6,9 @@ export interface HeaderContainerProps
   children: React.ReactNode;
 }
 
+/**
+ * ヘッダーのコンテナ
+ */
 const HeaderContainer = React.forwardRef<HTMLDivElement, HeaderContainerProps>(
   ({ children, ...props }, ref) => {
     return (

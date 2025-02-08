@@ -4,6 +4,11 @@ import * as React from "react";
 import * as RadixDropdown from "@radix-ui/react-dropdown-menu";
 import { cn } from "../../../lib/cn";
 
+/**
+ * ドロップダウンのアイテムコンポーネント
+ * @param {boolean} inset インセットするかどうか
+ * @param {string} variant テキストの色
+ */
 const DropdownItem = React.forwardRef<
   React.ComponentRef<typeof RadixDropdown.Item>,
   React.ComponentPropsWithoutRef<typeof RadixDropdown.Item> & {

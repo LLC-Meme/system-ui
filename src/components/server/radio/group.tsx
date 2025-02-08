@@ -5,6 +5,9 @@ export interface RadioGroupProps extends React.ComponentPropsWithoutRef<"div"> {
   children: React.ReactNode;
 }
 
+/**
+ * 複数のラジオボタンを用いる際にその全てをラップするコンポーネント
+ */
 const RadioGroup = React.forwardRef<HTMLDivElement, RadioGroupProps>(
   ({ children, ...props }, ref) => {
     return (

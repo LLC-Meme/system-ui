@@ -7,6 +7,10 @@ export interface SidebarContainerProps
   isOpen: boolean;
 }
 
+/**
+ * サイドバーのコンテナ
+ * サイドバー内の全ての要素をラップする
+ */
 const SidebarContainer = React.forwardRef<HTMLElement, SidebarContainerProps>(
   ({ children, isOpen, ...props }, ref) => {
     return (

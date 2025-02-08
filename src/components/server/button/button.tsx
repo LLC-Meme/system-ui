@@ -15,6 +15,11 @@ export interface ButtonProps extends React.ComponentPropsWithoutRef<"button"> {
   asChild?: boolean;
 }
 
+/**
+ * ボタンコンポーネント
+ * @param {ButtonVariant} variant ボタンのデザインバリアント
+ * @param {boolean} asChild ボタン以外の要素を使う場合（a, div, etc.）にtrueを指定します。
+ */
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ variant = "default", children, className, asChild, ...props }, ref) => {
     const Component = asChild ? Slot : "button";

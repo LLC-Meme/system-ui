@@ -16,6 +16,10 @@ export interface CollapsibleRootProps
   children: React.ReactNode;
 }
 
+/**
+ * Collapsibleのルートコンポーネント、collapsibleの全てをこれでラップする
+ * ビューに影響は与えない
+ */
 const CollapsibleRoot = React.forwardRef<HTMLDivElement, CollapsibleRootProps>(
   ({ children, ...props }, ref) => {
     const [isOpen, setIsOpen] = React.useState(false);

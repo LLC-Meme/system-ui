@@ -14,6 +14,13 @@ export interface CalendarProps {
   disableBefore?: Date;
 }
 
+/**
+ * 日付を選択するカレンダーコンポーネント
+ * @param {Date | null} date 選択された日付
+ * @param {React.Dispatch<React.SetStateAction<Date | null>>} setDate 日付を設定する関数
+ * @param {Date} disableAfter この日付以降を無効にする(その日を含む)
+ * @param {Date} disableBefore この日付以前を無効にする(その日を含む)
+ */
 const Calendar = React.forwardRef<HTMLDivElement, CalendarProps>(
   ({ date, setDate, disableAfter, disableBefore }, ref) => {
     const [focusedYear, setFocusedYear] = React.useState(

@@ -5,6 +5,9 @@ export interface SidebarGroupProps
   children: React.ReactNode;
 }
 
+/**
+ * サイドバーのアイテムをグループ化するコンポーネント
+ */
 const SidebarGroup = React.forwardRef<HTMLDivElement, SidebarGroupProps>(
   ({ children, ...props }, ref) => {
     return (

@@ -1,6 +1,9 @@
 import * as React from "react";
 import { cn } from "../../../lib/cn";
 
+/**
+ * `<textarea>`要素のコンポーネント
+ */
 const Textarea = React.forwardRef<
   HTMLTextAreaElement,
   React.ComponentPropsWithoutRef<"textarea">

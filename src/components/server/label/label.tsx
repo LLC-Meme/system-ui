@@ -6,6 +6,10 @@ export interface LabelProps
   children: React.ReactNode;
 }
 
+/**
+ * `<label>`コンポーネント
+ * フォーム内の各アイテムをこれでラップする
+ */
 const Label = React.forwardRef<HTMLLabelElement, LabelProps>(
   ({ children, ...props }, ref) => {
     return (

@@ -9,6 +9,12 @@ export interface PaginationItemProps
   asChild?: boolean;
 }
 
+/**
+ * ページネーションの各ページを表すアイテム
+ * リンクとして用いる
+ * @param {boolean} current 現在のページかどうか
+ * @param {boolean} asChild 子要素として用いるか, trueの場合に子として別個のリンクコンポーネントを用いる
+ */
 const PaginationItem = React.forwardRef<HTMLAnchorElement, PaginationItemProps>(
   ({ children, current, asChild, ...props }, ref) => {
     const Comp = asChild ? Slot : "a";

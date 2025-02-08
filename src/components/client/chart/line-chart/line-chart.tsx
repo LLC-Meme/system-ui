@@ -12,22 +12,28 @@ import {
   Legend,
 } from "recharts";
 import HStack from "../../../server/stack/h-stack";
-import { type Color } from "../../../../types";
 import { colorMap, colorOrders, formatName, formatTick } from "../utils";
 
 export type LineChartDataItem = {
+  /** X軸の値 */
   name: string | number | Date;
+  /** データ, キーの値を複数与えることで複数のグラフを表示可能 */
   [key: string]: number | string | null | undefined | Date;
 };
 export type LineChartData = LineChartDataItem[];
 
 export interface LineChartProps {
+  /** データ */
   data: LineChartData;
+  /** クラス名 */
   className?: string;
-  color?: Color;
+  /** データのキー */
   dataKeys: string[];
+  /** X軸の各値を表示するか */
   hasXAxis?: boolean;
+  /** Y軸の各値を表示するか */
   hasYAxis?: boolean;
+  /** legendを表示するか */
   hasLegend?: boolean;
 }
 
@@ -38,6 +44,14 @@ interface LineChartTooltipPayload {
   payload: LineChartDataItem;
 }
 
+/**
+ * 折れ線グラフコンポーネント
+ * @param {LineChartData} data データ
+ * @param {string[]} dataKeys データのキー 表示するデータを指定する
+ * @param {boolean} hasYAxis Y軸の各値を表示するか
+ * @param {boolean} hasXAxis X軸の各値を表示するか
+ * @param {boolean} hasLegend legendを表示するか
+ */
 const LineChart = React.forwardRef<HTMLDivElement, LineChartProps>(
   (
     {

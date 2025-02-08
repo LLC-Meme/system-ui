@@ -1,5 +1,8 @@
 import * as React from "react";
 
+/**
+ * `<tfoot>`要素に該当するコンポーネント
+ */
 const Tfoot = ({
   children,
   ...props

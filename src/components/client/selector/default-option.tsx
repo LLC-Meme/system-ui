@@ -7,6 +7,10 @@ export interface SelectorDefaultOptionProps
   children: React.ReactNode;
 }
 
+/**
+ * セレクターのデフォルトの選択肢
+ * 適宜、"項目を選択してください"などの文言を表示する
+ */
 const SelectorDefaultOption = React.forwardRef<
   HTMLOptionElement,
   SelectorDefaultOptionProps

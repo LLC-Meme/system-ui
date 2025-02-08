@@ -1,5 +1,8 @@
 import * as React from "react";
 
+/**
+ * `<thead>`要素に該当するコンポーネント
+ */
 const Thead = ({
   children,
   ...props

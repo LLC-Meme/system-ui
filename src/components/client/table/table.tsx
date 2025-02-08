@@ -10,6 +10,11 @@ export interface TableProps extends React.ComponentPropsWithoutRef<"table"> {
   children: React.ReactNode;
 }
 
+/**
+ * `<table>`要素に該当するコンポーネント
+ * `tableStyle`を指定することで子の各テーブル要素にスタイルが反映される
+ * @param {TableStyle} tableStyle テーブルのスタイル
+ */
 const Table = React.forwardRef<HTMLTableElement, TableProps>(
   ({ tableStyle = "basic", children, ...props }, ref) => {
     return (

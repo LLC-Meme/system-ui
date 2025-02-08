@@ -7,6 +7,10 @@ export interface NavigationProps extends React.ComponentPropsWithoutRef<"a"> {
   asChild?: boolean;
 }
 
+/**
+ * リンク用のコンポーネント
+ * @param {boolean} asChild 子要素として用いるか, trueの場合に子として別個のリンクコンポーネントを用いる
+ */
 const Navigation = React.forwardRef<HTMLAnchorElement, NavigationProps>(
   ({ children, asChild, ...props }, ref) => {
     const Comp = asChild ? Slot : "a";

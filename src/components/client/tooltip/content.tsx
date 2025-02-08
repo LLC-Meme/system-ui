@@ -4,6 +4,9 @@ import * as React from "react";
 import * as TooltipPrimitive from "@radix-ui/react-tooltip";
 import { cn } from "../../../lib/cn";
 
+/**
+ * Tooltipのコンテンツ部分をラッピングするコンポーネント
+ */
 const TooltipContent = React.forwardRef<
   React.ComponentRef<typeof TooltipPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof TooltipPrimitive.Content>

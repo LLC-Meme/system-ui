@@ -1,5 +1,8 @@
 import * as React from "react";
 
+/**
+ * ページネーションの省略記号コンポーネント
+ */
 const PaginationEllipsis = () => {
   return (
     <div className="w-8 h-8 center" aria-label="pagination-ellipsis">

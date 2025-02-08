@@ -6,6 +6,10 @@ export interface SectionTitleProps
   children: React.ReactNode;
 }
 
+/**
+ * セクションのタイトルを表すコンポーネント
+ * `<h2>`要素に該当する
+ */
 const SectionTitle = React.forwardRef<HTMLHeadingElement, SectionTitleProps>(
   ({ children, ...props }, ref) => {
     return (

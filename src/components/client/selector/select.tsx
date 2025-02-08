@@ -9,6 +9,9 @@ export interface SelectorSelectProps
   children: React.ReactNode;
 }
 
+/**
+ * セレクターの選択肢をラッピングするコンポーネント
+ */
 const SelectorSelect = React.forwardRef<HTMLSelectElement, SelectorSelectProps>(
   ({ children, ...props }, ref) => {
     const [isDefault, setIsDefault] = React.useState(true);

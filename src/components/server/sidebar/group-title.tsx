@@ -5,6 +5,9 @@ export interface SidebarGroupTitleProps
   children: React.ReactNode;
 }
 
+/**
+ * サイドバー内のグループのタイトル
+ */
 const SidebarGroupTitle = React.forwardRef<
   HTMLDivElement,
   SidebarGroupTitleProps

@@ -6,6 +6,9 @@ export interface CheckboxLabelTextProps
   children: React.ReactNode;
 }
 
+/**
+ * なんのチェックボックスかを示すテキスト
+ */
 const CheckboxLabelText = React.forwardRef<
   HTMLSpanElement,
   CheckboxLabelTextProps

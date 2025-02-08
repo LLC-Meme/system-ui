@@ -1,5 +1,9 @@
 import * as React from "react";
 
+/**
+ * ヘッダー内に配置するサイドバーのコントローラー
+ * 適宜`onClick`を設定して使用する
+ */
 const HeaderSidebarController = React.forwardRef<
   HTMLButtonElement,
   React.ComponentPropsWithoutRef<"button">

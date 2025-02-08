@@ -4,6 +4,9 @@ export interface RadioTextProps extends React.ComponentPropsWithoutRef<"span"> {
   children: React.ReactNode;
 }
 
+/**
+ * 各ラジオボタンの文章
+ */
 const RadioText = React.forwardRef<HTMLSpanElement, RadioTextProps>(
   ({ children, ...props }, ref) => {
     return (

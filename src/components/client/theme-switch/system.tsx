@@ -4,6 +4,9 @@ import * as React from "react";
 import { cn } from "../../../lib/cn";
 import { type ThemeSwitchButtonProps, useMounted } from "./utils";
 
+/**
+ * ライトテーマへの切り替えボタンコンポーネント
+ */
 const ThemeSwitchSystem = React.forwardRef<
   HTMLButtonElement,
   ThemeSwitchButtonProps

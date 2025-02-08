@@ -5,6 +5,9 @@ export interface LabelTextProps extends React.HTMLAttributes<HTMLSpanElement> {
   children: React.ReactNode;
 }
 
+/**
+ * 各フォームアイテムの説明文のコンポーネント
+ */
 const LabelText = React.forwardRef<HTMLSpanElement, LabelTextProps>(
   ({ children, ...props }, ref) => {
     return (

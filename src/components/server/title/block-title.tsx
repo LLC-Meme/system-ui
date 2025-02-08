@@ -5,6 +5,10 @@ export interface BlockTitleProps extends React.ComponentPropsWithoutRef<"h3"> {
   children: React.ReactNode;
 }
 
+/**
+ * ブロックのタイトルを表すコンポーネント
+ * `<h3>`要素に該当する
+ */
 const BlockTitle = React.forwardRef<HTMLHeadingElement, BlockTitleProps>(
   ({ children, ...props }, ref) => {
     return (

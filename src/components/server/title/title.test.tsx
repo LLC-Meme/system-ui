@@ -2,9 +2,9 @@ import React from "react";
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
-import PageTitle from "./page";
-import SectionTitle from "./section";
-import BlockTitle from "./block";
+import PageTitle from "./page-title";
+import SectionTitle from "./section-title";
+import BlockTitle from "./block-title";
 
 describe("Title", () => {
   describe("PageTitle", () => {

@@ -6,6 +6,9 @@ export interface InputProps
   className?: string;
 }
 
+/**
+ * 一般的な`<input>`コンポーネント
+ */
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
   ({ className, ...props }, ref) => {
     return (

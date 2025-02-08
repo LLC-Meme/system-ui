@@ -6,6 +6,9 @@ export interface CheckboxContainerProps
   children: React.ReactNode;
 }
 
+/**
+ * Checkboxの各コンポーネント全てをラッピングするコンポーネント
+ */
 const CheckboxContainer = React.forwardRef<
   HTMLDivElement,
   CheckboxContainerProps

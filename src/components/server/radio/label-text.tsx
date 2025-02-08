@@ -6,6 +6,9 @@ export interface RadioLabelTextProps
   children: React.ReactNode;
 }
 
+/**
+ * ラジオボタングループの説明文
+ */
 const RadioLabelText = React.forwardRef<HTMLSpanElement, RadioLabelTextProps>(
   ({ children, ...props }, ref) => {
     return (

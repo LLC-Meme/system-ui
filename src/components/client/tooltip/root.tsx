@@ -3,6 +3,10 @@
 import * as React from "react";
 import * as TooltipPrimitive from "@radix-ui/react-tooltip";
 
+/**
+ * Tooltipの全てのコンポーネントをラッピングするコンポーネント
+ * ビューには影響を与えない
+ */
 const TooltipRoot = ({
   children,
   ...props

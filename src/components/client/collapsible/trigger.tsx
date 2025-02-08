@@ -11,6 +11,11 @@ export interface CollapsibleTriggerProps
   current?: boolean;
 }
 
+/**
+ * Collapsibleのトリガー部分のアイテム
+ * これをクリックすることで折りたたみ部分が表示される
+ * @param {boolean} current 現在のページかどうか
+ */
 const CollapsibleTrigger = React.forwardRef<
   HTMLButtonElement,
   CollapsibleTriggerProps

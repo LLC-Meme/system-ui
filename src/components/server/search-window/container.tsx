@@ -6,6 +6,9 @@ export interface SearchWindowContainerProps
   children: React.ReactNode;
 }
 
+/**
+ * 検索窓のコンテナ
+ */
 const SearchWindowContainer = React.forwardRef<
   HTMLDivElement,
   SearchWindowContainerProps
