@@ -30,7 +30,7 @@ const CollapsibleItem = React.forwardRef<
         props.className,
         "py-2 pl-8 pr-4 flex gap-2 rounded-[4px]",
         !current && "hover:bg-surface-muted2",
-        current && "bg-surface-muted1 font-medium",
+        current && "bg-surface-muted1 font-semibold",
       )}
     >
       {children}
