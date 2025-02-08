@@ -1,13 +1,13 @@
 {
   "name": "meme-system-ui",
-  "version": "1.3.8",
+  "version": "1.3.10",
   "description": "React UI components for system design in LLC Meme",
   "license": "MIT",
   "main": "dist/components/index.js",
   "module": "dist/components/index.js",
   "types": "dist/components/index.d.ts",
   "exports": {
-    ".": {
+    "./components": {
       "import": "./dist/components/index.js",
       "require": "./dist/components/index.js"
     },
