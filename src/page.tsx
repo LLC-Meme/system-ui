@@ -209,19 +209,13 @@ export default function Page() {
           </BreadcrumbItem>
         </BreadcrumbContainer>
 
-        <VSpacer unit={2} />
-
         <SearchWindowContainer>
           <SearchWindowInput placeholder="Search" />
         </SearchWindowContainer>
 
-        <VSpacer unit={2} />
-
         <PageTitle>Data</PageTitle>
 
         <Alert variant="danger">This is an danger alert</Alert>
-
-        <VSpacer />
 
         <Surface>
           <BlockTitle>Section Title</BlockTitle>
@@ -256,8 +250,6 @@ export default function Page() {
           </HStack>
         </Surface>
 
-        <VSpacer unit={2} />
-
         <Surface>
           <BlockTitle>Section Title</BlockTitle>
           <p className="mt-4">
@@ -281,8 +273,6 @@ export default function Page() {
             augue semper porta.
           </p>
         </Surface>
-
-        <VSpacer unit={2} />
 
         <Surface>
           <BlockTitle>Section Title</BlockTitle>
@@ -379,8 +369,6 @@ export default function Page() {
           </HStack>
         </Surface>
 
-        <VSpacer unit={2} />
-
         <Surface>
           <BlockTitle>Line Chart</BlockTitle>
           <LineChart
@@ -390,8 +378,6 @@ export default function Page() {
             hasLegend
           />
         </Surface>
-
-        <VSpacer unit={2} />
 
         <HStack>
           <Surface className="flex-1">

@@ -20,7 +20,7 @@ const Main = React.forwardRef<HTMLDivElement, MainProps>(
           props.className,
           "mt-16 pt-6 px-8 pb-12 flex flex-col gap-8",
           "transition-[margin-left]",
-          sidebarOpen ? "ml-80" : "ml-0",
+          sidebarOpen ? "ml-64" : "ml-0",
         )}
       >
         {children}
