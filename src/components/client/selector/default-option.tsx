@@ -16,7 +16,7 @@ const SelectorDefaultOption = React.forwardRef<
   SelectorDefaultOptionProps
 >(({ children, ...props }, ref) => {
   return (
-    <option ref={ref} disabled selected {...props}>
+    <option ref={ref} disabled value="" {...props}>
       {children}
     </option>
   );

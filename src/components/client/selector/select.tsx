@@ -2,7 +2,6 @@
 
 import * as React from "react";
 import { cn } from "../../../lib/cn";
-import SelectorDefaultOption from "./default-option";
 
 export interface SelectorSelectProps
   extends React.ComponentPropsWithoutRef<"select"> {
@@ -13,33 +12,31 @@ export interface SelectorSelectProps
  * セレクターの選択肢をラッピングするコンポーネント
  */
 const SelectorSelect = React.forwardRef<HTMLSelectElement, SelectorSelectProps>(
-  ({ children, ...props }, ref) => {
-    const [isDefault, setIsDefault] = React.useState(true);
-
-    const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-      if (props.onChange) {
-        props.onChange(event);
-      }
-      setIsDefault(event.target.value === "");
-    };
-
-    const hasDefaultOption = React.Children.toArray(children).some(
-      (child) =>
-        React.isValidElement(child) && child.type === SelectorDefaultOption,
+  ({ children, onChange, ...props }, ref) => {
+    const [internalValue, setInternalValue] = React.useState(
+      props.defaultValue !== undefined ? props.defaultValue : "",
     );
 
-    React.useEffect(() => {
-      if (!hasDefaultOption) {
-        setIsDefault(false);
+    const currentValue =
+      props.value !== undefined ? props.value : internalValue;
+
+    const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+      if (props.value === undefined) {
+        setInternalValue(e.target.value);
       }
-    }, [hasDefaultOption]);
+      if (onChange) {
+        onChange(e);
+      }
+    };
+
+    const isEmptyOption = currentValue === "";
 
     return (
       <div className="relative">
         <select
           ref={ref}
-          {...props}
           onChange={handleChange}
+          {...props}
           className={cn(
             props.className,
             "appearance-none bg-transparent outline-none cursor-pointer",
@@ -47,7 +44,7 @@ const SelectorSelect = React.forwardRef<HTMLSelectElement, SelectorSelectProps>(
             "border border-border rounded-lg",
             "focus:border-info",
             "invalid:border-alert",
-            isDefault ? "text-foreground-muted" : "text-foreground",
+            isEmptyOption ? "text-foreground-muted" : "text-foreground",
           )}
         >
           {children}

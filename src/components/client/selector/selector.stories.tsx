@@ -2,10 +2,12 @@ import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import SelectorSelect from "./select";
 import SelectorOption from "./option";
+import SelectorDefaultOption from "./default-option";
 
 function SelectorExample() {
   return (
-    <SelectorSelect>
+    <SelectorSelect defaultValue={""}>
+      <SelectorDefaultOption>選択してください</SelectorDefaultOption>
       <SelectorOption value="1">選択肢1</SelectorOption>
       <SelectorOption value="2">選択肢2</SelectorOption>
       <SelectorOption value="3">選択肢3</SelectorOption>
