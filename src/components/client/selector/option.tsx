@@ -2,7 +2,7 @@
 
 import * as React from "react";
 
-export interface SelectorOptionProps
+export interface OptionProps
   extends React.OptionHTMLAttributes<HTMLOptionElement> {
   children: React.ReactNode;
 }
@@ -10,7 +10,7 @@ export interface SelectorOptionProps
 /**
  * セレクターの選択肢
  */
-const SelectorOption = React.forwardRef<HTMLOptionElement, SelectorOptionProps>(
+const Option = React.forwardRef<HTMLOptionElement, OptionProps>(
   ({ children, ...props }, ref) => {
     return (
       <option ref={ref} {...props}>
@@ -19,6 +19,6 @@ const SelectorOption = React.forwardRef<HTMLOptionElement, SelectorOptionProps>(
     );
   },
 );
-SelectorOption.displayName = "SelectorOption";
+Option.displayName = "Option";
 
-export default SelectorOption;
+export default Option;

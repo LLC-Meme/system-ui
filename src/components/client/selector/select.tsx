@@ -3,15 +3,14 @@
 import * as React from "react";
 import { cn } from "../../../lib/cn";
 
-export interface SelectorSelectProps
-  extends React.ComponentPropsWithoutRef<"select"> {
+export interface SelectProps extends React.ComponentPropsWithoutRef<"select"> {
   children: React.ReactNode;
 }
 
 /**
  * セレクターの選択肢をラッピングするコンポーネント
  */
-const SelectorSelect = React.forwardRef<HTMLSelectElement, SelectorSelectProps>(
+const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
   ({ children, onChange, ...props }, ref) => {
     const [internalValue, setInternalValue] = React.useState(
       props.defaultValue !== undefined ? props.defaultValue : "",
@@ -61,6 +60,6 @@ const SelectorSelect = React.forwardRef<HTMLSelectElement, SelectorSelectProps>(
     );
   },
 );
-SelectorSelect.displayName = "SelectorSelect";
+Select.displayName = "Select";
 
-export default SelectorSelect;
+export default Select;
