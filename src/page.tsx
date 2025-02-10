@@ -24,9 +24,7 @@ import {
   ModalRoot,
   ModalTrigger,
   ModalContent,
-  ModalTitle,
   ModalClose,
-  ModalDescription,
   SearchWindowContainer,
   SearchWindowInput,
   Navigation,
@@ -34,8 +32,6 @@ import {
   SheetRoot,
   SheetContent,
   SheetTrigger,
-  SheetTitle,
-  SheetDescription,
   SheetClose,
   Label,
   Input,
@@ -231,14 +227,14 @@ export default function Page() {
                 <Button>Open Modal</Button>
               </ModalTrigger>
               <ModalContent className="w-96">
-                <ModalTitle>Modal Title</ModalTitle>
-                <ModalDescription className="mt-2">
+                <BlockTitle>Modal Title</BlockTitle>
+                <p className="mt-2">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   Integer nec odio. Praesent libero. Sed cursus ante dapibus
                   diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.
                   Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed
                   augue semper porta.
-                </ModalDescription>
+                </p>
                 <HStack className="justify-between mt-6">
                   <ModalClose asChild>
                     <Button variant="danger">Close</Button>
@@ -302,10 +298,10 @@ export default function Page() {
                 <Button>Open Sheet</Button>
               </SheetTrigger>
               <SheetContent>
-                <SheetTitle>Sheet Title</SheetTitle>
-                <SheetDescription className="mt-2">
+                <BlockTitle>Sheet Title</BlockTitle>
+                <p className="mt-2">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </SheetDescription>
+                </p>
                 <VSpacer />
 
                 <form className="flex flex-col gap-6 mt-2">

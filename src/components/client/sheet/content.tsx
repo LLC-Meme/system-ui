@@ -3,7 +3,6 @@
 import * as React from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 import { cn } from "../../../lib/cn";
-import HStack from "../../server/stack/h-stack";
 import SheetClose from "./close";
 
 interface SheetOverlayProps extends Dialog.DialogOverlayProps {
@@ -44,25 +43,25 @@ const SheetContent = React.forwardRef<
           "rounded-tl-2xl rounded-bl-2xl overflow-scroll",
         )}
       >
-        <HStack className="justify-end mb-4">
-          <SheetClose className="hover:text-foreground-muted">
-            <svg
-              className="w-6 h-6"
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M18 6 6 18" />
-              <path d="m6 6 12 12" />
-            </svg>
-          </SheetClose>
-        </HStack>
+        <SheetClose className="hover:text-foreground-muted absolute top-8 right-8">
+          <svg
+            className="w-6 h-6"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="M18 6 6 18" />
+            <path d="m6 6 12 12" />
+          </svg>
+        </SheetClose>
+        <Dialog.Title hidden />
+        <Dialog.Description hidden />
         {children}
       </Dialog.Content>
     </Dialog.Portal>

@@ -58,6 +58,8 @@ const ModalContent = React.forwardRef<
           <path d="m6 6 12 12" />
         </svg>
       </ModalClose>
+      <Dialog.Description hidden />
+      <Dialog.Title hidden />
       {children}
     </Dialog.Content>
   </Dialog.Portal>
