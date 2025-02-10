@@ -23,7 +23,7 @@ const Caption = ({
       {...props}
       className={cn(
         className,
-        "caption-top bg-surface-muted2 font-bold text-foreground-muted py-2 rounded-tl-2xl rounded-tr-2xl",
+        "caption-top bg-surface-muted1 font-bold text-foreground-muted py-2 rounded-tl-2xl rounded-tr-2xl",
       )}
     >
       {children}
