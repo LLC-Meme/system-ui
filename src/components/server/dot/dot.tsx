@@ -1,6 +1,6 @@
 import * as React from "react";
 import { cn } from "../../../lib/cn";
-import { type Color } from "../../../types";
+import { type Color } from "../../../types/color";
 
 export interface DotProps extends React.ComponentPropsWithoutRef<"div"> {
   color: Color;

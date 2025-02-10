@@ -6,6 +6,7 @@ export default defineConfig({
     "src/components/**/*.tsx",
     "src/lib/**/*.ts",
     "src/components/**/*.css",
+    "src/types/**/*.ts",
     "!src/**/*.test.*",
     "!src/**/*.stories.*",
   ],

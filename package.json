@@ -1,6 +1,6 @@
 {
   "name": "meme-system-ui",
-  "version": "1.4.20",
+  "version": "1.4.26",
   "description": "React UI components for system design in LLC Meme",
   "license": "MIT",
   "main": "dist/components/index.js",
@@ -14,6 +14,10 @@
     "./lib": {
       "import": "./dist/lib/index.js",
       "require": "./dist/lib/index.js"
+    },
+    "./types": {
+      "import": "./dist/types/index.d.ts",
+      "require": "./dist/types/index.d.ts"
     },
     "./tailwind.css": "./dist/tailwind.css"
   },
