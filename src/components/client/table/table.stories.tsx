@@ -8,6 +8,7 @@ import Th from "./th";
 import Td from "./td";
 import Caption from "./caption";
 import PlainTableItem from "./plain-table-item";
+import Badge from "../../server/badge/badge";
 
 function BasicTable() {
   return (
@@ -27,7 +28,9 @@ function BasicTable() {
           <Td>Row 1, Cell 2</Td>
           <Td>Row 1, Cell 3</Td>
           <Td>Row 1, Cell 4</Td>
-          <Td>Row 1, Cell 5</Td>
+          <Td>
+            <Badge color="purple">test</Badge>
+          </Td>
         </Tr>
         <Tr>
           <Td>Row 2, Cell 1</Td>

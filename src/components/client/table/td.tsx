@@ -20,7 +20,7 @@ const Td = ({
       <div
         className={cn(
           className,
-          tableStyle === "basic" && "p-4 border-t border-border",
+          tableStyle === "basic" && "p-4",
           tableStyle === "minimal" && "py-1",
         )}
       >

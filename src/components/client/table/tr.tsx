@@ -23,10 +23,11 @@ const Tr = ({
       {...props}
       className={cn(
         className,
-        tableStyle === "minimal" && styles.minimalRow,
+        tableStyle === "basic" && `${muted && "bg-surface-muted2"}`,
+        tableStyle === "minimal" &&
+          `${styles.minimalRow} ${muted && styles.mutedRow}`,
         tableStyle === "plain" &&
-          `${styles.plainRow} hover:bg-surface-muted2 transition-colors border-b border-border`,
-        muted && styles.mutedRow,
+          `${styles.plainRow} ${muted && styles.mutedRow} hover:bg-surface-muted2 transition-colors border-b border-border`,
       )}
     >
       {children}
