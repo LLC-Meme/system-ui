@@ -56,7 +56,7 @@ describe("Table", () => {
 
   it("plainスタイルのtableのclassが正しい", () => {
     render(
-      <Table tableStyle="plain" data-testid="table-plain">
+      <Table tableStyle="minimal" data-testid="table-plain">
         <Thead>
           <Tr>
             <Th>Col A</Th>

@@ -23,7 +23,7 @@ const Tr = ({
       {...props}
       className={cn(
         className,
-        tableStyle === "plain" && styles.plainRow,
+        tableStyle === "minimal" && styles.minimalRow,
         muted && styles.mutedRow,
       )}
     >

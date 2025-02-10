@@ -1,25 +1,25 @@
-.plainRow td:first-child div {
+.minimalRow td:first-child div {
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
 }
 
-.plainRow td:first-child,
-.plainRow th:first-child {
+.minimalRow td:first-child,
+.minimalRow th:first-child {
   padding-left: 16px;
 }
 
-.plainRow td:last-child div {
+.minimalRow td:last-child div {
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
 }
 
-.plainRow td:last-child,
-.plainRow th:last-child {
+.minimalRow td:last-child,
+.minimalRow th:last-child {
   padding-right: 16px;
 }
 
-.plainRow td div,
-.plainRow th div {
+.minimalRow td div,
+.minimalRow th div {
   padding-left: 8px;
   padding-right: 8px;
 }
@@ -28,6 +28,6 @@
   background-color: var(--surface-muted2);
 }
 
-.plainTbody tr:last-child td {
+.minimalTbody tr:last-child td {
   padding-bottom: 16px;
 }

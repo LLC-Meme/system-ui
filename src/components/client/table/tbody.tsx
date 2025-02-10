@@ -19,7 +19,7 @@ const Tbody = ({
   return (
     <tbody
       {...props}
-      className={cn(tableStyle === "plain" && styles.plainTbody, className)}
+      className={cn(tableStyle === "minimal" && styles.minimalTbody, className)}
     >
       {children}
     </tbody>

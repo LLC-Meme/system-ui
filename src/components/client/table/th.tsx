@@ -24,7 +24,7 @@ const Th = ({
         className,
         "text-left",
         tableStyle === "basic" && "font-semibold p-4 pr-24",
-        tableStyle === "plain" &&
+        tableStyle === "minimal" &&
           "font-semibold py-1 border-y border-border border-spacing-0",
       )}
     >

@@ -21,7 +21,7 @@ const Td = ({
         className={cn(
           className,
           tableStyle === "basic" && "p-4 border-t border-border",
-          tableStyle === "plain" && "py-1",
+          tableStyle === "minimal" && "py-1",
         )}
       >
         {children}

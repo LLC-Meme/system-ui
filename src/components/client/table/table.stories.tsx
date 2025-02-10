@@ -54,9 +54,9 @@ function BasicTable() {
   );
 }
 
-function PlainTable() {
+function MinimalTable() {
   return (
-    <Table tableStyle="plain">
+    <Table tableStyle="minimal">
       <Caption>Caption</Caption>
       <Thead>
         <Tr>
@@ -103,7 +103,7 @@ function PlainTable() {
 
 /**
  * テーブルコンポーネントです。
- * `basic`スタイルと`plain`スタイルの2つのスタイルを提供します。
+ * `basic`スタイルと`minimal`スタイルの2つのスタイルを提供します。
  *
  *
  * ## **使い方**
@@ -132,6 +132,6 @@ export const basic: Story = {
   render: BasicTable,
 };
 
-export const plain: Story = {
-  render: PlainTable,
+export const minimal: Story = {
+  render: MinimalTable,
 };
