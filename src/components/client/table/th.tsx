@@ -25,10 +25,10 @@ const Th = ({
         "text-left",
         tableStyle === "basic" && "font-semibold p-4 pr-24",
         tableStyle === "plain" &&
-          "font-semibold pl-2 pr-12 py-1 border-y border-border",
+          "font-semibold py-1 border-y border-border border-spacing-0",
       )}
     >
-      {children}
+      <div>{children}</div>
     </th>
   );
 };

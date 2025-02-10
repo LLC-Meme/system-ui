@@ -1,15 +1,29 @@
 import * as React from "react";
+import styles from "./table.module.css";
+import { cn } from "../../../lib/cn";
+import { TableStyleContext } from "./type";
 
 /**
  * `<tbody>`要素に該当するコンポーネント
  */
 const Tbody = ({
   children,
+  className,
   ...props
 }: React.PropsWithChildren<
-  React.TableHTMLAttributes<HTMLTableSectionElement>
+  React.TableHTMLAttributes<HTMLTableSectionElement> & {
+    className?: string;
+  }
 >) => {
-  return <tbody {...props}>{children}</tbody>;
+  const tableStyle = React.useContext(TableStyleContext);
+  return (
+    <tbody
+      {...props}
+      className={cn(tableStyle === "plain" && styles.plainTbody, className)}
+    >
+      {children}
+    </tbody>
+  );
 };
 Tbody.displayName = "Tbody";
 

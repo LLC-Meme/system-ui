@@ -16,15 +16,16 @@ const Td = ({
 }) => {
   const tableStyle = React.useContext(TableStyleContext);
   return (
-    <td
-      {...props}
-      className={cn(
-        className,
-        tableStyle === "basic" && "p-4 border-t border-border",
-        tableStyle === "plain" && "px-2 py-1",
-      )}
-    >
-      {children}
+    <td {...props}>
+      <div
+        className={cn(
+          className,
+          tableStyle === "basic" && "p-4 border-t border-border",
+          tableStyle === "plain" && "py-1",
+        )}
+      >
+        {children}
+      </div>
     </td>
   );
 };

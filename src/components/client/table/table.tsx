@@ -22,13 +22,16 @@ const Table = React.forwardRef<HTMLTableElement, TableProps>(
         <table
           ref={ref}
           {...props}
+          border={0}
+          cellSpacing={0}
+          cellPadding={0}
           className={cn(
             styles.table,
             props.className,
-            "border-separate border-spacing-0",
             tableStyle === "basic" &&
-              "border border-border rounded-lg overflow-hidden",
-            tableStyle === "plain" && "",
+              "border border-border border-separate rounded-lg overflow-hidden",
+            tableStyle === "plain" &&
+              "bg-surface rounded-bl-2xl rounded-br-2xl",
           )}
         >
           {children}

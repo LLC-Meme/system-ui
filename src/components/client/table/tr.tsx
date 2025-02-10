@@ -24,7 +24,7 @@ const Tr = ({
       className={cn(
         className,
         tableStyle === "plain" && styles.plainRow,
-        muted && "bg-surface-muted2",
+        muted && styles.mutedRow,
       )}
     >
       {children}
