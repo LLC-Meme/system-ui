@@ -1,3 +1,4 @@
+export { default as Caption } from "./caption";
 export { default as Table } from "./table";
 export { default as Tbody } from "./tbody";
 export { default as Td } from "./td";
