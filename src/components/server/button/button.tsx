@@ -2,7 +2,7 @@ import * as React from "react";
 import { cn } from "../../../lib/cn";
 import { Slot } from "@radix-ui/react-slot";
 
-type ButtonVariant = "default" | "danger" | "outline";
+type ButtonVariant = "default" | "danger" | "outline" | "danger-outline";
 
 export interface ButtonProps extends React.ComponentPropsWithoutRef<"button"> {
   /** ボタンのデザインバリアント */
@@ -33,6 +33,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           variant === "default" && "bg-info text-on-status",
           variant === "danger" && "bg-alert text-on-status",
           variant === "outline" && "border border-info text-info",
+          variant === "danger-outline" && "border border-alert text-alert",
           "px-6 py-2 font-bold rounded-lg flex items-center justify-center",
           "hover disabled",
           "focus:outline-offset-2 focus:outline-info",
