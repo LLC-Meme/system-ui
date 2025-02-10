@@ -4,6 +4,7 @@ export * from "./breadcrumb";
 export * from "./button";
 export * from "./checkbox";
 export * from "./divider";
+export * from "./dot";
 export * from "./error-message";
 export * from "./header";
 export * from "./input";
