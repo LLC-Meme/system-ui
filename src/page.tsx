@@ -39,9 +39,9 @@ import {
   SheetClose,
   Label,
   Input,
-  SelectorSelect,
-  SelectorOption,
-  SelectorDefaultOption,
+  Select,
+  Option,
+  DefaultOption,
   LabelText,
   RadioInput,
   RadioGroup,
@@ -316,14 +316,12 @@ export default function Page() {
                   </Label>
                   <Label>
                     <LabelText>Selector</LabelText>
-                    <SelectorSelect className="w-full">
-                      <SelectorDefaultOption>
-                        Select an option
-                      </SelectorDefaultOption>
-                      <SelectorOption>Option 1</SelectorOption>
-                      <SelectorOption>Option 2</SelectorOption>
-                      <SelectorOption>Option 3</SelectorOption>
-                    </SelectorSelect>
+                    <Select className="w-full">
+                      <DefaultOption>Select an option</DefaultOption>
+                      <Option>Option 1</Option>
+                      <Option>Option 2</Option>
+                      <Option>Option 3</Option>
+                    </Select>
                   </Label>
 
                   <RadioGroup>
