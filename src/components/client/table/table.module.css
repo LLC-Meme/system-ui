@@ -31,3 +31,12 @@
 .minimalTbody tr:last-child td {
   padding-bottom: 16px;
 }
+
+.plainRow td {
+  padding: 16px 24px;
+  background-color: transparent;
+}
+
+.plainTbody tr:last-child {
+  border: none;
+}

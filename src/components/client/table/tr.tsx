@@ -24,6 +24,8 @@ const Tr = ({
       className={cn(
         className,
         tableStyle === "minimal" && styles.minimalRow,
+        tableStyle === "plain" &&
+          `${styles.plainRow} hover:bg-surface-muted2 transition-colors border-b border-border`,
         muted && styles.mutedRow,
       )}
     >

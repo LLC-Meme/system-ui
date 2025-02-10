@@ -7,6 +7,7 @@ import Tr from "./tr";
 import Th from "./th";
 import Td from "./td";
 import Caption from "./caption";
+import PlainTableItem from "./plain-table-item";
 
 function BasicTable() {
   return (
@@ -48,6 +49,71 @@ function BasicTable() {
           <Td>Row 4, Cell 3</Td>
           <Td>Row 4, Cell 4</Td>
           <Td>Row 4, Cell 5</Td>
+        </Tr>
+      </Tbody>
+    </Table>
+  );
+}
+
+function PlainTable() {
+  return (
+    <Table tableStyle="plain" className="w-[800px]">
+      <Tbody>
+        <Tr>
+          <Td>
+            <PlainTableItem label="id">Row 1, Cell 1</PlainTableItem>
+          </Td>
+          <Td>
+            <PlainTableItem label="name">Row 1, Cell 2</PlainTableItem>
+          </Td>
+          <Td>
+            <PlainTableItem label="age">Row 1, Cell 3</PlainTableItem>
+          </Td>
+          <Td>
+            <PlainTableItem label="address">Row 1, Cell 4</PlainTableItem>
+          </Td>
+        </Tr>
+        <Tr>
+          <Td>
+            <PlainTableItem label="id">Row 2, Cell 1</PlainTableItem>
+          </Td>
+          <Td>
+            <PlainTableItem label="name">Row 2, Cell 2</PlainTableItem>
+          </Td>
+          <Td>
+            <PlainTableItem label="age">Row 2, Cell 3</PlainTableItem>
+          </Td>
+          <Td>
+            <PlainTableItem label="address">Row 2, Cell 4</PlainTableItem>
+          </Td>
+        </Tr>
+        <Tr>
+          <Td>
+            <PlainTableItem label="id">Row 3, Cell 1</PlainTableItem>
+          </Td>
+          <Td>
+            <PlainTableItem label="name">Row 3, Cell 2</PlainTableItem>
+          </Td>
+          <Td>
+            <PlainTableItem label="age">Row 3, Cell 3</PlainTableItem>
+          </Td>
+          <Td>
+            <PlainTableItem label="address">Row 3, Cell 4</PlainTableItem>
+          </Td>
+        </Tr>
+        <Tr>
+          <Td>
+            <PlainTableItem label="id">Row 4, Cell 1</PlainTableItem>
+          </Td>
+          <Td>
+            <PlainTableItem label="name">Row 4, Cell 2</PlainTableItem>
+          </Td>
+          <Td>
+            <PlainTableItem label="age">Row 4, Cell 3</PlainTableItem>
+          </Td>
+          <Td>
+            <PlainTableItem label="address">Row 4, Cell 4</PlainTableItem>
+          </Td>
         </Tr>
       </Tbody>
     </Table>
@@ -134,4 +200,8 @@ export const basic: Story = {
 
 export const minimal: Story = {
   render: MinimalTable,
+};
+
+export const plain: Story = {
+  render: PlainTable,
 };

@@ -32,6 +32,7 @@ const Table = React.forwardRef<HTMLTableElement, TableProps>(
               "border border-border border-separate rounded-lg overflow-hidden",
             tableStyle === "minimal" &&
               "bg-surface rounded-bl-2xl rounded-br-2xl",
+            tableStyle === "plain" && "bg-surface rounded-2xl",
           )}
         >
           {children}
