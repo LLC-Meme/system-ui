@@ -23,7 +23,7 @@ const Tr = ({
       {...props}
       className={cn(
         className,
-        tableStyle === "plain" && styles.row,
+        tableStyle === "plain" && styles.plainRow,
         muted && "bg-surface-muted2",
       )}
     >
