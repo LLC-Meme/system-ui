@@ -84,9 +84,10 @@
     "format:check": "prettier --check src",
     "lint": "eslint src",
     "prepare": "husky",
-    "build": "NODE_OPTIONS='--max-old-space-size=8192' tsup && npm run build:css",
+    "build": "npm run clean && NODE_OPTIONS='--max-old-space-size=8192' tsup && npm run build:css",
     "build:css": "tailwindcss -i src/tailwind.css -o dist/tailwind.css --minify",
-    "build:watch": "NODE_OPTIONS='--max-old-space-size=8192' tsup -w"
+    "build:watch": "NODE_OPTIONS='--max-old-space-size=8192' tsup -w",
+    "clean": "rm -rf dist"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx}": "npm run lint",
