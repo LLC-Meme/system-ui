@@ -19,5 +19,6 @@ export * from "./sidebar";
 export * from "./spacer";
 export * from "./stack";
 export * from "./surface";
+export * from "./table";
 export * from "./textarea";
 export * from "./title";

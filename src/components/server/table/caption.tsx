@@ -1,10 +1,8 @@
 import * as React from "react";
-import { cn } from "../../../lib/cn";
 
 export interface CaptionProps
   extends React.ComponentPropsWithoutRef<"caption"> {
   children: React.ReactNode;
-  className?: string;
 }
 
 /**
@@ -13,20 +11,9 @@ export interface CaptionProps
  */
 const Caption = ({
   children,
-  className,
   ...props
 }: React.PropsWithChildren<CaptionProps>) => {
-  return (
-    <caption
-      {...props}
-      className={cn(
-        className,
-        "caption-top bg-surface-muted1 font-bold text-foreground-muted py-2 rounded-tl-2xl rounded-tr-2xl",
-      )}
-    >
-      {children}
-    </caption>
-  );
+  return <caption {...props}>{children}</caption>;
 };
 Caption.displayName = "Caption";
 

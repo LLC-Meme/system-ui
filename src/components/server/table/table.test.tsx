@@ -21,7 +21,7 @@ describe("Table", () => {
           </Tr>
         </Thead>
         <Tbody>
-          <Tr muted>
+          <Tr>
             <Td>Row 1, Cell 1</Td>
             <Td>Row 1, Cell 2</Td>
           </Tr>
@@ -109,7 +109,7 @@ describe("Table", () => {
           </Tr>
         </Thead>
         <Tbody>
-          <Tr muted>
+          <Tr>
             <Td>Row 1, Cell 1</Td>
             <Td>Row 1, Cell 2</Td>
             <Td>Row 1, Cell 3</Td>
@@ -123,7 +123,7 @@ describe("Table", () => {
             <Td>Row 2, Cell 4</Td>
             <Td>Row 2, Cell 5</Td>
           </Tr>
-          <Tr muted>
+          <Tr>
             <Td>Row 3, Cell 1</Td>
             <Td>Row 3, Cell 2</Td>
             <Td>Row 3, Cell 3</Td>

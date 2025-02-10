@@ -8,7 +8,6 @@ import Th from "./th";
 import Td from "./td";
 import Caption from "./caption";
 import PlainTableItem from "./plain-table-item";
-import Badge from "../../server/badge/badge";
 
 function BasicTable() {
   return (
@@ -23,14 +22,12 @@ function BasicTable() {
         </Tr>
       </Thead>
       <Tbody>
-        <Tr muted>
+        <Tr>
           <Td>Row 1, Cell 1</Td>
           <Td>Row 1, Cell 2</Td>
           <Td>Row 1, Cell 3</Td>
           <Td>Row 1, Cell 4</Td>
-          <Td>
-            <Badge color="purple">test</Badge>
-          </Td>
+          <Td>Row 1, Cell 5</Td>
         </Tr>
         <Tr>
           <Td>Row 2, Cell 1</Td>
@@ -39,7 +36,7 @@ function BasicTable() {
           <Td>Row 2, Cell 4</Td>
           <Td>Row 2, Cell 5</Td>
         </Tr>
-        <Tr muted>
+        <Tr>
           <Td>Row 3, Cell 1</Td>
           <Td>Row 3, Cell 2</Td>
           <Td>Row 3, Cell 3</Td>
@@ -144,7 +141,7 @@ function MinimalTable() {
           <Td>Row 1, Cell 4</Td>
           <Td>Row 1, Cell 5</Td>
         </Tr>
-        <Tr muted>
+        <Tr>
           <Td>Row 2, Cell 1</Td>
           <Td>Row 2, Cell 2</Td>
           <Td>Row 2, Cell 3</Td>
@@ -158,7 +155,7 @@ function MinimalTable() {
           <Td>Row 3, Cell 4</Td>
           <Td>Row 3, Cell 5</Td>
         </Tr>
-        <Tr muted>
+        <Tr>
           <Td>Row 4, Cell 1</Td>
           <Td>Row 4, Cell 2</Td>
           <Td>Row 4, Cell 3</Td>
