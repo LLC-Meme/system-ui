@@ -1,6 +1,6 @@
 {
   "name": "meme-system-ui",
-  "version": "1.4.26",
+  "version": "1.4.30",
   "description": "React UI components for system design in LLC Meme",
   "license": "MIT",
   "main": "dist/components/index.js",
@@ -88,10 +88,11 @@
     "format:check": "prettier --check src",
     "lint": "eslint src",
     "prepare": "husky",
-    "build": "npm run clean && NODE_OPTIONS='--max-old-space-size=8192' tsup && npm run build:css",
+    "build": "NODE_OPTIONS='--max-old-space-size=8192' tsup && npm run build:css",
     "build:css": "tailwindcss -i src/tailwind.css -o dist/tailwind.css --minify",
     "build:watch": "NODE_OPTIONS='--max-old-space-size=8192' tsup -w",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist",
+    "re": "npm run clean && npm run build"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx}": "npm run lint",
