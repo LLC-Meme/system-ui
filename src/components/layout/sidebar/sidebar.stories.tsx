@@ -4,10 +4,10 @@ import SidebarContainer from "./container";
 import SidebarGroup from "./group";
 import SidebarGroupTitle from "./group-title";
 import SidebarItem from "./item";
-import CollapsibleRoot from "../../client/collapsible/root";
-import CollapsibleTrigger from "../../client/collapsible/trigger";
-import CollapsibleContent from "../../client/collapsible/content";
-import CollapsibleItem from "../../client/collapsible/item";
+import CollapsibleRoot from "../../UI/collapsible/root";
+import CollapsibleTrigger from "../../UI/collapsible/trigger";
+import CollapsibleContent from "../../UI/collapsible/content";
+import CollapsibleItem from "../../UI/collapsible/item";
 
 function SidebarExample() {
   return (
