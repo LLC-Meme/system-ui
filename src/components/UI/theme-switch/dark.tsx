@@ -2,7 +2,8 @@
 
 import * as React from "react";
 import { cn } from "../../../lib/cn";
-import { type ThemeSwitchButtonProps, useMounted } from "./utils";
+import { type ThemeSwitchButtonProps } from "./utils";
+import useMounted from "../../../hooks/useMounted";
 
 /**
  * ダークテーマ切り替えボタンコンポーネント
