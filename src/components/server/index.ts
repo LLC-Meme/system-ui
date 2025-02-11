@@ -15,6 +15,7 @@ export * from "./navigation";
 export * from "./pagination";
 export * from "./radio";
 export * from "./search-window";
+export * from "./selector";
 export * from "./sidebar";
 export * from "./spacer";
 export * from "./stack";

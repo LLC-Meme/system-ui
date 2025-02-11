@@ -312,7 +312,7 @@ export default function Page() {
                   </Label>
                   <Label>
                     <LabelText>Selector</LabelText>
-                    <Select className="w-full">
+                    <Select className="w-full" defaultValue={""}>
                       <DefaultOption>Select an option</DefaultOption>
                       <Option>Option 1</Option>
                       <Option>Option 2</Option>

@@ -1,7 +1,6 @@
-"use client";
-
 import * as React from "react";
 import { cn } from "../../../lib/cn";
+import styles from "./selector.module.css";
 
 export interface SelectProps extends React.ComponentPropsWithoutRef<"select"> {
   children: React.ReactNode;
@@ -11,39 +10,20 @@ export interface SelectProps extends React.ComponentPropsWithoutRef<"select"> {
  * セレクターの選択肢をラッピングするコンポーネント
  */
 const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
-  ({ children, onChange, ...props }, ref) => {
-    const [internalValue, setInternalValue] = React.useState(
-      props.defaultValue !== undefined ? props.defaultValue : "",
-    );
-
-    const currentValue =
-      props.value !== undefined ? props.value : internalValue;
-
-    const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-      if (props.value === undefined) {
-        setInternalValue(e.target.value);
-      }
-      if (onChange) {
-        onChange(e);
-      }
-    };
-
-    const isEmptyOption = currentValue === "";
-
+  ({ children, ...props }, ref) => {
     return (
       <div className="relative">
         <select
           ref={ref}
-          onChange={handleChange}
           {...props}
           className={cn(
             props.className,
+            styles.select,
             "appearance-none bg-transparent outline-none cursor-pointer",
             "px-4 py-2",
             "border border-border rounded-lg",
             "focus:border-info",
             "invalid:border-alert",
-            isEmptyOption ? "text-foreground-muted" : "text-foreground",
           )}
         >
           {children}
