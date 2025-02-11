@@ -17,9 +17,7 @@ function ToastExample() {
             title: "Scheduled: Catch up ",
             description: "Friday, February 10, 2023 at 5:57 PM",
             action: (
-              <ToastAction altText="Goto schedule to undo">
-                <Button className="ml-16">Undo</Button>
-              </ToastAction>
+              <ToastAction altText="Goto schedule to undo">Undo</ToastAction>
             ),
           });
         }}

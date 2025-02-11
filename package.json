@@ -1,6 +1,6 @@
 {
   "name": "meme-system-ui",
-  "version": "1.4.34",
+  "version": "1.4.35",
   "description": "React UI components for system design in LLC Meme",
   "license": "MIT",
   "main": "dist/components/index.js",
