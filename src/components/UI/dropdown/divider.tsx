@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import HDivider from "../../server/divider/h-divider";
+import HDivider from "../divider/h-divider";
 
 /**
  * Dropdownの区切り線コンポーネント

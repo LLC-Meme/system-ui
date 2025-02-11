@@ -9,7 +9,7 @@ import {
   Tooltip,
   Legend,
 } from "recharts";
-import HStack from "../../../server/stack/h-stack";
+import HStack from "../../util/stack/h-stack";
 import { colorMap, colorOrders } from "../utils";
 
 export interface PieChartDataItem {

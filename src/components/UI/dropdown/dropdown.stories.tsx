@@ -8,7 +8,7 @@ import DropdownDivider from "./divider";
 import DropdownSub from "./sub";
 import DropdownSubTrigger from "./sub-trigger";
 import DropdownSubContent from "./sub-content";
-import Button from "../../server/button/button";
+import Button from "../button/button";
 
 function DropdownExample() {
   return (

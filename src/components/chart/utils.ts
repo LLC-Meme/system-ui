@@ -1,4 +1,4 @@
-import { type Color } from "../../../types/color";
+import { type Color } from "../../types/color";
 
 export const colorMap = {
   red: "alert",
