@@ -11,7 +11,7 @@ import {
   Tooltip,
   Legend,
 } from "recharts";
-import HStack from "../../../server/stack/h-stack";
+import HStack from "../../util/stack/h-stack";
 import { colorMap, colorOrders, formatName, formatTick } from "../utils";
 
 export type BarChartDataItem = {

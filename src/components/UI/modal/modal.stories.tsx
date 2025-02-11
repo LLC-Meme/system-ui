@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import ModalRoot from "./root";
 import ModalTrigger from "./trigger";
 import ModalContent from "./content";
-import Button from "../../server/button/button";
+import Button from "../button/button";
 
 function ModalExample() {
   return (

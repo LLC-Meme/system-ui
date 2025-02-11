@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import SheetRoot from "./root";
 import SheetTrigger from "./trigger";
 import SheetContent from "./content";
-import Button from "../../server/button/button";
+import Button from "../button/button";
 
 function SheetExample() {
   return (
