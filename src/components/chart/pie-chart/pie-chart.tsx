@@ -119,12 +119,14 @@ const PieChart = React.forwardRef<HTMLDivElement, PieChartProps>(
               className="outline-none"
               innerRadius={80}
               cornerRadius={8}
+              paddingAngle={2}
             >
-              {data.map((entry, index) => (
+              {data.map((_, index) => (
                 <Cell
                   key={`cell-${index}`}
                   fill={`var(--${colorMap[colorOrders[index % colorOrders.length]]})`}
                   strokeWidth={2}
+                  stroke="transparent"
                 />
               ))}
             </Pie>
